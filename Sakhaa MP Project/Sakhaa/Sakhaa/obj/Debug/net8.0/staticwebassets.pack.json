@@ -1,0 +1,633 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sakhaa.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Sakhaa.6ru2w4op2n.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\3-help.jpg",
+      "PackagePath": "staticwebassets\\images\\3-help.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\Charity.jpg",
+      "PackagePath": "staticwebassets\\images\\Charity.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\Group 82.png",
+      "PackagePath": "staticwebassets\\images\\Group 82.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG.png",
+      "PackagePath": "staticwebassets\\images\\bodyBG.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG1.png",
+      "PackagePath": "staticwebassets\\images\\bodyBG1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\circle1.png",
+      "PackagePath": "staticwebassets\\images\\circle1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\deal (1).png",
+      "PackagePath": "staticwebassets\\images\\deal (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\generous 1.png",
+      "PackagePath": "staticwebassets\\images\\generous 1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift-box.png",
+      "PackagePath": "staticwebassets\\images\\gift-box.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift.png",
+      "PackagePath": "staticwebassets\\images\\gift.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\girlImg.png",
+      "PackagePath": "staticwebassets\\images\\girlImg.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero.png",
+      "PackagePath": "staticwebassets\\images\\hero.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero_1.jpg",
+      "PackagePath": "staticwebassets\\images\\hero_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\homeAbout.jpeg",
+      "PackagePath": "staticwebassets\\images\\homeAbout.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_1-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_1-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_2-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_2-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_4-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_4-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_5-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_5-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_6-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_6-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_7-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_7-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_8-min.jpg",
+      "PackagePath": "staticwebassets\\images\\img_v_8-min.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\leftCircle.png",
+      "PackagePath": "staticwebassets\\images\\leftCircle.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\love-letter.png",
+      "PackagePath": "staticwebassets\\images\\love-letter.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\money.png",
+      "PackagePath": "staticwebassets\\images\\money.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\pragrams.png",
+      "PackagePath": "staticwebassets\\images\\pragrams.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program1.png",
+      "PackagePath": "staticwebassets\\images\\program1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program2.png",
+      "PackagePath": "staticwebassets\\images\\program2.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program3.png",
+      "PackagePath": "staticwebassets\\images\\program3.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program4.png",
+      "PackagePath": "staticwebassets\\images\\program4.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\rightCircle.png",
+      "PackagePath": "staticwebassets\\images\\rightCircle.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\self-love (1).png",
+      "PackagePath": "staticwebassets\\images\\self-love (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg1.jpeg",
+      "PackagePath": "staticwebassets\\images\\statisticsImg1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg2.jpeg",
+      "PackagePath": "staticwebassets\\images\\statisticsImg2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg3.jpeg",
+      "PackagePath": "staticwebassets\\images\\statisticsImg3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\successStories.png",
+      "PackagePath": "staticwebassets\\images\\successStories.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\sustainable 1.png",
+      "PackagePath": "staticwebassets\\images\\sustainable 1.png"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\about.js",
+      "PackagePath": "staticwebassets\\javaScript\\about.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\giftForm.js",
+      "PackagePath": "staticwebassets\\javaScript\\giftForm.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\home.js",
+      "PackagePath": "staticwebassets\\javaScript\\home.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\navAndFooterFetch.js",
+      "PackagePath": "staticwebassets\\javaScript\\navAndFooterFetch.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\payment.js",
+      "PackagePath": "staticwebassets\\javaScript\\payment.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2 (1).pdf",
+      "PackagePath": "staticwebassets\\publicReports\\Angular Part#2 (1).pdf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2.pdf",
+      "PackagePath": "staticwebassets\\publicReports\\Angular Part#2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css",
+      "PackagePath": "staticwebassets\\styles\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css.map",
+      "PackagePath": "staticwebassets\\styles\\about.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.scss",
+      "PackagePath": "staticwebassets\\styles\\about.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css",
+      "PackagePath": "staticwebassets\\styles\\contact.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css.map",
+      "PackagePath": "staticwebassets\\styles\\contact.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.scss",
+      "PackagePath": "staticwebassets\\styles\\contact.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css",
+      "PackagePath": "staticwebassets\\styles\\donationInfo.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css.map",
+      "PackagePath": "staticwebassets\\styles\\donationInfo.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.scss",
+      "PackagePath": "staticwebassets\\styles\\donationInfo.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\footer.css",
+      "PackagePath": "staticwebassets\\styles\\footer.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css",
+      "PackagePath": "staticwebassets\\styles\\giftForm.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css.map",
+      "PackagePath": "staticwebassets\\styles\\giftForm.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.scss",
+      "PackagePath": "staticwebassets\\styles\\giftForm.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css",
+      "PackagePath": "staticwebassets\\styles\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css.map",
+      "PackagePath": "staticwebassets\\styles\\home.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.scss",
+      "PackagePath": "staticwebassets\\styles\\home.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css",
+      "PackagePath": "staticwebassets\\styles\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css.map",
+      "PackagePath": "staticwebassets\\styles\\login.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.scss",
+      "PackagePath": "staticwebassets\\styles\\login.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css",
+      "PackagePath": "staticwebassets\\styles\\navbar.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css.map",
+      "PackagePath": "staticwebassets\\styles\\navbar.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.scss",
+      "PackagePath": "staticwebassets\\styles\\navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css",
+      "PackagePath": "staticwebassets\\styles\\payment.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css.map",
+      "PackagePath": "staticwebassets\\styles\\payment.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.scss",
+      "PackagePath": "staticwebassets\\styles\\payment.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css",
+      "PackagePath": "staticwebassets\\styles\\profile.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css.map",
+      "PackagePath": "staticwebassets\\styles\\profile.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.min.css",
+      "PackagePath": "staticwebassets\\styles\\profile.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.scss",
+      "PackagePath": "staticwebassets\\styles\\profile.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css",
+      "PackagePath": "staticwebassets\\styles\\programs.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css.map",
+      "PackagePath": "staticwebassets\\styles\\programs.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.scss",
+      "PackagePath": "staticwebassets\\styles\\programs.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css",
+      "PackagePath": "staticwebassets\\styles\\programsDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css.map",
+      "PackagePath": "staticwebassets\\styles\\programsDetails.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.scss",
+      "PackagePath": "staticwebassets\\styles\\programsDetails.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css",
+      "PackagePath": "staticwebassets\\styles\\reports.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css.map",
+      "PackagePath": "staticwebassets\\styles\\reports.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.scss",
+      "PackagePath": "staticwebassets\\styles\\reports.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css",
+      "PackagePath": "staticwebassets\\styles\\signUp.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css.map",
+      "PackagePath": "staticwebassets\\styles\\signUp.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.scss",
+      "PackagePath": "staticwebassets\\styles\\signUp.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\styles.css",
+      "PackagePath": "staticwebassets\\styles\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css",
+      "PackagePath": "staticwebassets\\styles\\successStories.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css.map",
+      "PackagePath": "staticwebassets\\styles\\successStories.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.min.css",
+      "PackagePath": "staticwebassets\\styles\\successStories.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.scss",
+      "PackagePath": "staticwebassets\\styles\\successStories.scss"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css",
+      "PackagePath": "staticwebassets\\styles\\variables.css"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css.map",
+      "PackagePath": "staticwebassets\\styles\\variables.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.scss",
+      "PackagePath": "staticwebassets\\styles\\variables.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sakhaa.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sakhaa.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Sakhaa.props",
+      "PackagePath": "build\\Sakhaa.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Sakhaa.props",
+      "PackagePath": "buildMultiTargeting\\Sakhaa.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Sakhaa.props",
+      "PackagePath": "buildTransitive\\Sakhaa.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

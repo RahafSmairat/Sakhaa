@@ -1,0 +1,48 @@
+@use "variables.scss" as vars;
+
+#reportsContainer {
+  direction: rtl;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 50px;
+  color: vars.$primaryColor;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: vars.$boxShadow;
+  border-radius: 30px;
+  padding: 5%;
+  background-color: vars.$bodyColor;
+  #reportsFilter {
+    display: flex;
+    flex-direction: row;
+    select {
+      border-radius: 30px;
+      margin-right: 3%;
+      width: 10%;
+      text-align: center;
+      border: 3px solid vars.$primaryColor;
+      &,option{
+        color: vars.$primaryColor;
+      }
+    }
+  }
+  #reportsFiles {
+    padding-top: 5%;
+    border-top: 3px solid vars.$secondaryColor;
+    i {
+      font-size: 1.5rem;
+      color: vars.$highlightsColor;
+      margin-left: 1%;
+    }
+    a {
+      text-decoration: none;
+      color: vars.$primaryColor;
+      &:hover {
+        color: vars.$highlightsColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}

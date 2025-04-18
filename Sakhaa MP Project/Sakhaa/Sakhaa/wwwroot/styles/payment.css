@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+.month, .year, .cvc {
+  width: 25% !important;
+  height: 50%;
+}
+
+#donationContainer i {
+  font-size: 1.5rem;
+  margin-right: 2%;
+  color: #DAA520;
+}/*# sourceMappingURL=payment.css.map */

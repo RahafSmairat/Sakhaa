@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "DonationPrograms";
+}
+
+@section HeaderTitle {
+    <h2 class="section">برامج سخاء</h2>
+}
+
+<div class="programsContainer">
+    <div class="card firstCard section">
+        <div class="firstContent">
+            <h3>برنامج الخير</h3>
+            <p>للمساهمة بالخير بسهولة</p>
+            <ul>
+                <li>تبرع وقتما شئت دون اشتراك.</li>
+                <li>تابع قصص النجاح المؤثرة.</li>
+                <li>تقرير سنوي بسيط يوضح أثر مساهمتك.</li>
+            </ul>
+            <div class="btnContainer">
+                <button class="donateBtn" onclick="window.location.href='/Donation/DonationApplicationForm'">تبرّع</button>
+                <button class="detailsBtn" onclick="window.location.href='/Donation/DonationProgramsDetails/#program1'">التفاصيل</button>
+            </div>
+        </div>
+        <img src="/images/pragrams.png">
+    </div>
+    <div class="card section">
+        <div class="content">
+            <img class="iconImg" src="/images/program1.png">
+            <h3>الساعي للخير</h3>
+            <p>للمساهمة بالخير بسهولة</p>
+            <ul>
+                <li>إشعارات بمشاريع جديدة تحتاج للدعم.</li>
+                <li>تخصيص تقرير مفصّل عن تأثير التبرعات شهريًا.</li>
+                <!-- <li>الأولوية في اختيار الحملات الأكثر تأثيرًا.</li> -->
+            </ul>
+            <p class="price">مبلغ التبرع: 5 د.أ</p>
+            <div class="btnContainer">
+                <button class="donateBtn" onclick="window.location.href='/Donation/DonationApplicationForm'">تبرّع</button>
+                <button class="detailsBtn" onclick="window.location.href='/Donation/DonationProgramsDetails/#program2'">التفاصيل</button>
+            </div>
+        </div>
+    </div>
+    <div class="card section">
+        <div class="content">
+            <img class="iconImg" src="/images/program2.png">
+            <h3>سفير الخير</h3>
+            <p>للمساهمة بالخير بسهولة</p>
+            <ul>
+                <li>تمتع بكل مزايا "الساعي للخير".</li>
+                <li>شارك بأنشطة تطوعية ملهمة.</li>
+                <li>استمتع بقصص نجاح إضافية ملهمة.</li>
+            </ul>
+            <p class="price">مبلغ التبرع: 10 د.أ</p>
+            <div class="btnContainer">
+                <button class="donateBtn" onclick="window.location.href='/Donation/DonationApplicationForm'">تبرّع</button>
+                <button class="detailsBtn" onclick="window.location.href='/Donation/DonationProgramsDetails/#program3'">التفاصيل</button>
+            </div>
+        </div>
+    </div>
+    <div class="card section">
+        <div class="content">
+            <img class="iconImg" src="/images/program3.png">
+            <h3>عطاء مستدام</h3>
+            <p>لشراكة تحمل أثرًا مستدامًا</p>
+            <ul>
+                <li>اسمك كشريك في دعم الخير.</li>
+                <li>إدراج شعارك على موقعنا.</li>
+                <li>تخصيص حملات تتماشى مع رؤيتك المجتمعية.</li>
+            </ul>
+            <p class="price">مبلغ التبرع: 20 د.أ</p>
+            <div class="btnContainer">
+                <button class="donateBtn" onclick="window.location.href='/Donation/DonationApplicationForm'">تبرّع</button>
+                <button class="detailsBtn" onclick="window.location.href='/Donation/DonationProgramsDetails/#program4'">التفاصيل</button>
+            </div>
+        </div>
+    </div>
+    <div class="card section">
+        <div class="content">
+            <img class="iconImg" src="/images/program4.png">
+            <h3>هدية الخير</h3>
+            <p>اجعل الخير هدية مميزة</p>
+            <ul>
+                <li>أهدِ اشتراكًا لأحبائك وشاركهم العطاء.</li>
+                <li>تلقي المُهدى إليه رسالة شكر شخصية باسمك.</li>
+                <li>تغطية 6-12 أشهر.</li>
+            </ul>
+            <p class="price">مبلغ التبرع: 25-50 د.أ</p>
+            <div class="btnContainer">
+                <button class="donateBtn" onclick="window.location.href='/Donation/DonationApplicationForm'">تبرّع</button>
+                <button class="detailsBtn" onclick="window.location.href='/Donation/DonationProgramsDetails/#program5'">التفاصيل</button>
+            </div>
+        </div>
+    </div>
+</div>
+

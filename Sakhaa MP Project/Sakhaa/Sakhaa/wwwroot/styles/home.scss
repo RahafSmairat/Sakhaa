@@ -1,0 +1,549 @@
+@use "variables.scss" as vars;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: vars.$bodyColor;
+  position: relative;
+}
+body::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/bodyBG1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.09; 
+  z-index: -1; 
+}
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#homeBody::before{
+  opacity: 0.09; 
+}
+main {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+h2 {
+  width: fit-content;
+  text-align: center !important;
+  position: relative;
+  font-weight: bold;
+  color: vars.$primaryColor;
+  &::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: vars.$secondaryColor;
+    height: 10px;
+    width: 100%;
+    content: '';
+    opacity: .5;
+    bottom: 7px;
+    z-index: -1;
+  }
+}
+
+.mainBtn {
+  width: 140px;
+  height: 50px;
+  background-color: vars.$secondaryColor;
+  color: vars.$bodyColor;
+  border-radius: 30px;
+  border: none;
+  font-size: vars.$buttonFontSize;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+#homeHeader {
+  width: 100%;
+  height: 90vh;
+  background-image: url("/images/hero.png");
+  background-size: cover;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-self: right;
+    align-items: center;
+    margin-top: 10%;
+    gap: 50px;
+    h1 {
+      font-weight: 700;
+      color: vars.$primaryColor;
+      text-align: center;
+      width: 80%;
+    }
+    #heroBtnsContainer {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      button {
+        width: 180px;
+        height: 50px;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: vars.$buttonFontSize;
+      }
+      #donateBtn {
+        color: vars.$bodyColor;
+        background-color: vars.$secondaryColor;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      #aboutBtn {
+        border: 3px solid vars.$secondaryColor;
+        background-color: transparent;
+        color: vars.$secondaryColor;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+#ourMission {
+  display: flex;
+  flex-direction: row;
+  margin: 5% 10% 5% 5%;
+  gap: 15%;
+  align-items: center;
+  .image-container {
+    position: relative;
+    display: inline-block; 
+    width: 40%; 
+    height: 280px;
+    .main-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px; 
+      object-fit: cover; 
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 200px; 
+      height: 200px;
+      border-radius: 50%; 
+      z-index: -1; 
+      top: -80px; 
+      left: -80px;
+      background-color: vars.$primaryColor;
+      opacity: .5;
+    }
+    &::after{
+      content: url('/images/circle1.png');
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    z-index: -1;
+    bottom: 50px; 
+    right: 50px;
+  }
+  }
+  
+  .content {
+    width: 60%;
+    text-align: right;
+    direction: rtl;
+    p {
+      color: vars.$primaryColor;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+  }
+}
+
+#statisticsCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .firstCard {
+    background: linear-gradient(#a31622c0, #a31622c0),
+      url("/images/statisticsImg3.jpeg");
+  }
+  .secondCard {
+    background: linear-gradient(#a31622c0, #a31622c0),
+      url("/images/statisticsImg2.jpeg");
+  }
+  .thirdCard {
+    background: linear-gradient(#a31622c0, #a31622c0),
+      url("/images/statisticsImg1.jpeg");
+  }
+  .card {
+    width: 20%;
+    height: 325px;
+    border-radius: 30px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .number{
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    p {
+      text-align: center;
+      font-size: vars.$larg;
+      font-weight: 600;
+      color: vars.$bodyColor;
+    }
+  }
+}
+
+#donateNow {
+  height: 360px;
+  background-color: vars.$primaryColor;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10% 0 5%;
+  .img {
+    background-image: url("/images/girlImg.png");
+    mix-blend-mode: luminosity;
+    opacity: 0.6;
+    flex: 1;
+    background-repeat: no-repeat;
+  }
+  .content {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    color: vars.$bodyColor;
+    p {
+      font-size: vars.$larg;
+      span {
+        font-size: 3rem;
+      }
+    }
+    button {
+      height: 50px;
+      width: 35%;
+      border-radius: 30px;
+      color: vars.$bodyColor;
+      background-color: transparent;
+      border: 3px solid vars.$secondaryColor;
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+#giftSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .content {
+    text-align: center;
+    justify-items: center;
+    #giftImg {
+      margin-bottom: 3%;
+    }
+    #giftInstructions {
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      width: 100%;
+      justify-content: space-evenly;
+      margin: 3% 0 3% 0;
+    }
+  }
+}
+
+// #newsCards{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   .row{
+//     gap: 30px;
+//     .card{
+//       background-color: vars.$highlightsColor;
+//       color: vars.$bodyColor;
+//       border: none;
+//       border-radius: 30px;
+//       height: 400px;
+//       .card-body{
+//         padding: 7%;
+//       }
+//       img{
+//         border-top-left-radius: 30px;
+//         border-top-right-radius: 30px;
+//       }
+//     }
+//   }
+//   button{
+//   
+//   background-color: transparent;
+//   color: vars.$highlightsColor;
+//   border-radius: 30px;
+//   border: 3px solid vars.$highlightsColor;
+//   font-size: vars.$buttonFontSize;
+//   font-weight: bold;
+//   transition: all 0.5s;
+//   &:hover {
+//     transform: scale(1.1);
+//   }
+//   }
+// }
+
+//////////////////////
+/// 
+// $primary: #042A4F;
+// $accent: #E65891;
+// $secondary: #ccc;
+// $bg-color: #f4f4f4;
+// $text-color: #2a2a2a;
+
+// * { box-sizing: border-box; }
+
+#successStoriesSection{
+  i{font-size: 32px;}
+  direction: rtl;
+}
+
+#newsCards{
+  margin-bottom: 5%;
+  justify-items: center;
+  .container {
+    max-width: 1280px;
+    margin: 3rem auto;
+    padding: 1rem;
+    line-height: vars.$line-height;
+    font-weight: 500;
+}
+
+// h1 {
+//     text-align: center;
+// }
+
+button {
+    font-size: 1rem;
+    padding: 0.35em 0.75em;
+    line-height: 1;
+    background-color: transparent;
+    border: 3px solid vars.$secondaryColor !important;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.1s;
+    outline: 0;
+    color: vars.$secondaryColor !important;
+    text-align: center;
+    
+    &:hover {
+        background-color: vars.$secondaryColor !important;
+        color: vars.$bodyColor !important;
+    }
+    
+    // .fa {
+    //     font-size: 0.75em;
+    //     margin-left: 0.5em;
+    // }
+    
+    // &.btn--primary {
+    //     border-color: $primary;
+    //     color: $primary;
+        
+    //     &:hover {
+    //         background-color: $primary;
+    //         color: #fff;
+    //     }
+    // }
+    
+    // &.btn--accent {
+    //     border-color: $accent;
+    //     color: $accent;
+        
+    //     &:hover {
+    //         background-color: $accent;
+    //         color: #fff;
+    //     }
+    // }
+}
+}
+
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+    
+    @media(max-width: 1140px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media(max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+$excerpt-height: 5rem * vars.$line-height;
+// title (fontSize + marginBottom) + excerpt + button (marginTop + 2 * paddingTopBottom + fontSize + borderWidth) + safe-space
+$content-height: (1.35rem + 1rem) + $excerpt-height + (1rem + 2 * 0.35rem + 1rem ) + 0.25rem + 0.1rem;
+// title (fontSize + marginBottom) + excerpt (2 lines)
+$content-height-collapsed: (1.35rem + 1rem) + (2rem * vars.$line-height);
+$content-overlap-collapsed: 3rem;
+$content-overlap: ($content-height - $content-height-collapsed) + $content-overlap-collapsed;
+
+.post {
+    
+    &__image {
+        width: 100%;
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
+        
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            width: 100%; height: 100%; 
+        }
+        
+        // image
+        &:before {
+            background-size: cover;
+            background-position: center center;
+            transform: scale(1);
+            filter: blur(0);
+            transition: 2s cubic-bezier(0, 0.6, 0.2, 1);
+            border-radius: 10px;
+        }
+        
+        // overlay
+        &:after {
+            // background-color: $primary;
+            
+            background: linear-gradient(30deg, vars.$primaryColor 0%, vars.$highlightsColor 100%);
+            background-size: 100% 300%;
+            background-position: bottom left;
+            opacity: 0.15;
+            transition: 2s cubic-bezier(0, 0.6, 0.2, 1);
+        }
+        
+        &--1:before { background-image: url('/images/homeAbout.jpeg'); }
+        &--2:before { background-image: url('/images/statisticsImg1.jpeg'); }
+        &--3:before { background-image: url('/images/statisticsImg2.jpeg'); }
+        &--4:before { background-image: url('/images/statisticsImg3.jpeg'); }
+        &--5:before { background-image: url('/images/3-help.jpg'); }
+        &--6:before { background-image: url('/images/Charity.jpg'); }
+    }
+    
+    &__content {
+        margin: -1 * $content-overlap-collapsed 1.5rem 0;
+        padding: 1.5rem;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.15);
+        transition: margin 0.2s ease-in-out;
+        position: relative;
+        z-index: 1;
+        user-select: none;
+    }
+    
+    &__inside {
+        overflow: hidden;
+        height: $content-height-collapsed;
+        transition: height 0.2s ease-in-out;
+    }
+    
+    &__title {
+        font-size: 1.35rem;
+        line-height: 1;
+        margin: 0 0 1rem;
+        // font-weight: 300;
+        color: vars.$primaryColor;
+        text-align: right;
+    }
+    
+    &__excerpt {
+        overflow: hidden;
+        margin: 0;
+        max-height: $excerpt-height;
+        position: relative;
+        text-align: right;
+        color: vars.$primaryColor;
+        font-weight: 400;
+    }
+    
+    &__button {
+        margin-top: 1rem;
+    }
+    
+    
+}
+
+/* ====== HOVER ====== */
+
+.post:hover {
+    .post {
+        &__content {
+            margin-top: -1 * $content-overlap;
+        }
+        
+        &__inside {
+            height: $content-height;
+        }
+        
+        &__image {
+            &:after { opacity: 0.5; }
+            
+            &:before {
+                transform: scale(1.1);
+                filter: blur(10px);
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 426px) {
+  #giftSection {
+    .circle {
+      display: none;
+    }
+  }
+  .post {
+    &__content {
+        margin-top: -1 * $content-overlap;
+    }
+    
+    &__inside {
+        height: $content-height;
+    }
+    
+}
+}

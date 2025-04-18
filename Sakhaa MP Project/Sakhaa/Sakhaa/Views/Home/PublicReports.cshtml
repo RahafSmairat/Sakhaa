@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "PublicReports";
+}
+@section HeaderTitle {
+    <h2 class="section">التقارير السنوية</h2>
+}
+
+@model List<PublicReport>
+
+@{
+    var years = ViewBag.Years as List<int>;
+    int? selectedYear = ViewBag.SelectedYear as int?;
+}
+
+<main id="reportsContainer" class="section">
+    <div id="reportsFilter">
+        <h3>عرض التقارير لعام</h3>
+        <form method="get" asp-action="PublicReports">
+            <select name="year" onchange="this.form.submit()">
+
+                <option value="" selected>- عرض جميع التقارير -</option>
+
+                @foreach (var year in years)
+                {
+                    @if (selectedYear == year)
+                    {
+                        <option value="@year" selected>@year</option>
+                    }
+                    else
+                    {
+                        <option value="@year">@year</option>
+                    }                     }
+            </select>
+        </form>
+    </div>
+
+    <div id="reportsFiles">
+        <div class="reportsContainer" style="display:flex; flex-direction:column; gap:10px">
+            @if (Model.Count == 0)
+            {
+                <p>لا توجد تقارير لهذا العام</p>
+            }
+            else
+            {
+                @foreach (var report in Model)
+                {
+                    <div class="reportItem">
+                        <a href="@Url.Content("~/publicReports/" + report.ReportFileName)" target="_blank">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            تحميل التقرير السنوي لعام @report.ReportYear
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</main>

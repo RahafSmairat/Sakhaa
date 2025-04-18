@@ -1,0 +1,97 @@
+@use "variables.scss" as vars;
+
+.successStories {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    padding: 20px;
+    direction: rtl;
+    margin: 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        width: 100%;
+        // border-radius: 0px;
+        // border: none;
+        // box-shadow: vars.$lightBoxShadow;
+        border-top: 2px solid vars.$primaryColor;
+        border-bottom: 2px solid vars.$primaryColor;
+        border-left: none;
+        border-right: none;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0;
+        transition: transform 0.3s ease;
+        height: 350px;
+        background-color: vars.$bodyColor;
+        color: vars.$primaryColor;
+
+        &:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        &:hover .card-content h3 {
+            color: vars.$secondaryColor;
+        }
+    }
+
+    .card-content {
+        padding: 50px;
+        flex: 1;
+        align-self: center;
+    }
+
+    .card-content h3 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+
+    .card-image img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50%;
+        position: relative;
+        top: -20px;
+        box-shadow: vars.$boxShadow;
+        transition: all .5s;
+    }
+
+    .successStories .card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            flex-direction: column;
+            align-items: center;
+            height: unset;
+        }
+
+        .card .card-image {
+            margin-bottom: 20px;
+        }
+
+        .card .card-content {
+            text-align: center;
+        }
+    }
+}

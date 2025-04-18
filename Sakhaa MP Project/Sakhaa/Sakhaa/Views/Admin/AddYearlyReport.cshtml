@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "AddYearlyReport";
+}
+<form asp-action="AddYearlyReport" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="reportYear">السنة:</label>
+        <input type="number" name="ReportYear" id="reportYear" required />
+    </div>
+
+    <div>
+        <label for="reportFile">تحميل التقرير:</label>
+        <input type="file" name="ReportFile" id="reportFile" accept=".pdf" required />
+    </div>
+
+    <button type="submit">تحميل التقرير</button>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

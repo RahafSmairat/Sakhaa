@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/styles/profile.css",
+    "inputFile": "wwwroot/styles/profile.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/successStories.css",
+    "inputFile": "wwwroot/styles/successStories.scss"
+  }
+]

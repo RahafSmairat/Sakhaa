@@ -1,0 +1,165 @@
+@use "variables.scss" as vars;
+
+.programsContainer {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 90px; 
+  padding: 10px;
+  direction: rtl;
+  width: 60%;
+  margin: 5%;
+
+  .card {
+    background-color: vars.$bodyColor;
+    // padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: vars.$boxShadow;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    align-items: center;
+    border: none;
+    color: vars.$primaryColor !important;
+    .content{
+        position: relative;
+        top: -70px;
+    }
+    .iconImg{
+        width: 30%;
+        position: relative;
+        // top: -70px;
+        right: -170px;
+    }
+    ul{
+        margin: 10% 0 10% 0;
+        li{
+            font-weight: 250;
+            text-align: right;
+        }
+    }
+    .price{
+        width: 90%;
+        background-color: vars.$highlighter;
+        color: vars.$bodyColor;
+        justify-self: center;
+        padding: 5px;
+        border-radius: 10px;
+        margin-bottom: 10%;
+    }
+    .detailsBtn{
+        color: vars.$secondaryColor !important;
+    }
+
+    &:nth-child(1) {
+      grid-column: span 4; 
+      grid-row: span 1;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 2; 
+      padding: 10%;
+      height: 500px;
+    }
+    &:nth-child(4),
+    &:nth-child(5) {
+      grid-column: span 2;
+      padding: 10%;
+      height: 500px;
+    }
+
+    .btnContainer{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        button{
+            width: 50%;
+            height: 50px;
+            background-color: vars.$secondaryColor;
+            color: vars.$bodyColor;
+            border-radius: 30px;
+            border: none;
+            font-size: vars.$buttonFontSize;
+            transition: all 0.5s;
+        }
+        .detailsBtn{
+            background-color: transparent;
+            border: 3px solid vars.$secondaryColor;
+        }
+    }
+  }
+
+  .firstCard {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    justify-content: space-between;
+    background-color: vars.$primaryColor;
+    color: vars.$bodyColor !important;
+
+    .firstContent{
+        flex: 1;
+        padding: 5%;
+    }
+    img{
+        flex: 1;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        width: 100%;
+        mix-blend-mode: luminosity;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .programsContainer {
+    grid-template-columns: repeat(2, 1fr); 
+    width: 80%;
+    .card{
+        .content{
+            position: unset;
+            .iconImg{
+                position: unset;
+            }
+        }
+        height: auto !important;
+    }
+    .firstCard{
+        flex-direction: column-reverse;
+        img{
+            height: 50%;
+            border-bottom-left-radius: unset;
+            border-top-right-radius: 30px;
+        }
+    }
+    .card:nth-child(1) {
+      grid-column: span 2; 
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .programsContainer {
+    grid-template-columns: 1fr; 
+    width: 90%;
+
+    .content{
+        position: unset;
+        .iconImg{
+            position: unset;
+        }
+    }
+    
+    .firstCard{
+        flex-direction: column-reverse;
+        img{
+            border-bottom-left-radius: unset;
+            border-top-right-radius: 30px;
+        }
+    }
+    .card:nth-child(1) {
+      grid-column: span 2;
+    }
+  }
+}

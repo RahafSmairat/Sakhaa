@@ -1,0 +1,87 @@
+@use "variables.scss" as vars;
+
+#ContactContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: auto;
+  justify-self: center;
+  border: 1px solid vars.$primaryColor;
+  border-radius: 30px;
+  box-shadow: vars.$boxShadow;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: vars.$bodyColor;
+  #contactInfo {
+    flex: 1;
+    background-color: vars.$primaryColor;
+    height: inherit;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: vars.$bodyColor;
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      iframe {
+        border-radius: 30px !important;
+      }
+      div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        p{padding-top: 5px;}
+      }
+    }
+  }
+  form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 5%;
+
+    input {
+      width: 80%;
+      height: 55px;
+      border-radius: 30px;
+      border: 3px solid transparent;
+      direction: rtl;
+      padding-right: 5%;
+      box-shadow: vars.$lightBoxShadow;
+    }
+    input:focus, textarea:focus{
+      outline: none;
+      border: 3px solid vars.$secondaryColor;
+      // transform: scale(1.03);
+    }
+    textarea {
+      border-radius: 30px;
+      border: 3px solid transparent;
+      direction: rtl;
+      padding: 2%;
+      width: 80%;
+      box-shadow: vars.$lightBoxShadow;
+    }
+    button {
+      width: 170px;
+      height: 50px;
+      margin-top: 3%;
+      background-color: vars.$secondaryColor;
+      color: vars.$bodyColor;
+      border-radius: 30px;
+      border: none;
+      font-size: vars.$buttonFontSize;
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

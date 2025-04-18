@@ -1,0 +1,385 @@
+@use "variables.scss" as vars;
+
+.profileContainer {
+    // padding: 5%;
+    background-color: vars.$bodyColor;
+    border-radius: 30px;
+    box-shadow: vars.$boxShadow;
+    height: auto;
+    color: vars.$primaryColor;
+
+    .profileNav {
+        background-color: vars.$primaryColor;
+        height: auto;
+        padding: 5%;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .profileForm {
+        color: vars.$primaryColor;
+
+        label {
+            margin-bottom: 2%;
+            font-weight: 700;
+        }
+
+        input {
+            width: 60%;
+            height: 5px;
+            border-radius: 30px;
+            border: 3px solid transparent;
+            box-shadow: vars.$lightBoxShadow;
+            direction: rtl;
+            padding: 2%;
+            margin-bottom: 3%;
+
+            &:focus {
+                outline: none;
+                border: 3px solid vars.$secondaryColor;
+            }
+
+            &:disabled {
+                background-color: #40571222;
+            }
+        }
+
+        .editBtn {
+            margin-right: 5%;
+            border: none;
+            background-color: transparent;
+            text-decoration: underline;
+            color: vars.$primaryColor;
+
+            &:hover {
+                color: vars.$secondaryColor;
+            }
+        }
+
+        h5 {
+            font-weight: 700;
+            margin-bottom: 3%;
+        }
+
+        .saveBtn {
+            width: 150px;
+            height: 50px;
+            background-color: transparent;
+            color: vars.$secondaryColor;
+            border-radius: 30px;
+            border: 3px solid vars.$secondaryColor;
+            font-size: vars.$buttonFontSize;
+            // transition: all 0.5s;
+            &:hover {
+                background-color: vars.$secondaryColor;
+                color: vars.$bodyColor;
+            }
+        }
+    }
+    // select{
+    //     width: 20%;
+    //     border: none;
+    //     background-color: vars.$primaryColor;
+    //     border-radius: 10px;
+    //     text-align: center;
+    //     padding-top: .3%;
+    //     padding-bottom: .3%;
+    //     color: vars.$bodyColor;
+    //     font-weight: 300;
+    //     margin-left: 2%;
+    //     option{
+    //         &:hover{
+    //         background: vars.$secondaryColor;
+    //         }
+    //     }
+    // }
+    ////////////////////////////////////////////////////////////////
+    ///
+    .filterContainer {
+        padding: 0;
+        color: vars.$bodyColor;
+
+        .scroll {
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            // justify-content: center;
+        }
+
+        .nav-item.active {
+            // color: #fff;
+            // box-shadow: -1px 0 #727c87, 1px 0 #727c87;
+            background-color: vars.$secondaryColor;
+        }
+
+        .submenu {
+            height: 0;
+            opacity: 0;
+        }
+
+        .submenu.active {
+            height: auto;
+            opacity: 1;
+        }
+        /**
+       * Helper
+       */
+        .bg-dark-blue {
+            background-color: #152637;
+        }
+
+        .bg-green {
+            background-color: vars.$primaryColor;
+
+            .nav-item {
+                &:hover {
+                    background-color: #4f6721;
+                }
+            }
+        }
+
+        .bg-dark-grey {
+            background-color: vars.$secondaryColor;
+        }
+
+        .radius {
+            border-radius: 10px;
+        }
+
+        .radius-top {
+            border-radius: 3px 3px 0 0;
+        }
+
+        .radius-bottom {
+            border-radius: 0 0 3px 3px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .vam,
+        .nav-item {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+
+        .example-two .nav {
+            width: 72.5%;
+        }
+        //   .example-three .nav-item.active,
+        //   .example-three .submenu .nav-item {
+        //     color: #fff;
+        //     box-shadow: -1px 0 #555f6a, 1px 0 #555f6a;
+        //     background-color: #555f6a; }
+        /**
+       * Visual style
+       */
+
+        .nav-item {
+            cursor: pointer;
+            padding: 13px 16px 12px;
+            padding-left: 3%;
+        }
+
+        .nav-item {
+            padding-left: 5%;
+            padding-right: 5%;
+            // border-right: 1px solid rgb(255, 255, 255);
+        }
+
+        .bg-grey .nav-item {
+            color: #fff;
+        }
+
+        .submenu {
+            border-radius: 0 0 3px 3px;
+
+            .nav-item {
+                &:hover {
+                    background-color: #c19d42;
+                }
+            }
+        }
+
+        header,
+        nav {
+            font-size: 0;
+        }
+
+        header {
+            overflow: hidden;
+        }
+
+
+        .nav-item {
+            font-size: 14px;
+        }
+
+        .title {
+            margin: 24px 0 6px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: #999;
+        }
+        /**
+       * Setup
+       */
+
+
+        a {
+            color: #64cce3;
+            text-decoration: none;
+        }
+
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        // Demo purposes only, proceed with caution on Windows!
+        .scroll::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+//////////////////////////////
+.tab-content {
+    direction: rtl;
+    align-items: center;
+}
+
+.tabs .nav-pills .nav-item {
+    margin-bottom: 50px;
+}
+
+.tabs .nav-pills .nav-item .nav-link {
+    border-radius: 4px;
+    color: vars.$bodyColor;
+    font-weight: bold;
+    border: 3px solid vars.$secondaryColor;
+    border-radius: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.tabs .nav-pills .nav-item .nav-link span {
+    color: #053001;
+    font-size: 30px;
+}
+
+.tabs .nav-pills .nav-item .nav-link.active {
+    color: #fff;
+    background: vars.$secondaryColor;
+}
+
+.tabs .nav-pills .nav-item .nav-link.active span {
+    color: #fff;
+}
+// .tabs .tab-content{
+//     padding:10%;
+// }
+
+#about-1 {
+    margin: 10%;
+}
+
+#about-3 {
+    margin-top: 10%;
+    width: 90%;
+}
+
+.tabs .tab-content .img { /*images-size for this section 1000 x 667 */
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.tabs .tab-content h3 {
+    font-weight: bold;
+}
+
+.tabs .tab-content h3 a {
+    color: #000;
+}
+
+@media (max-width: 426px) {
+    .tabs {
+        flex-direction: column-reverse;
+
+        .nav-pills {
+            .nav-item {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+.historyTable {
+    text-align: center;
+    direction: rtl;
+    width: 100% !important;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background-color: vars.$secondaryColor;
+        color: vars.$primaryColor;
+    }
+
+    tr:hover {
+        background-color: rgba(255, 193, 7, 0.2);
+        transition: 0.3s;
+    }
+}
+
+#reportsFiles {
+    padding-top: 5%;
+
+    i {
+        font-size: 1.5rem;
+        color: vars.$highlightsColor;
+        margin-left: 1%;
+    }
+
+    a {
+        text-decoration: none;
+        color: vars.$highlightsColor;
+
+        &:hover {
+            color: vars.$highlightsColor;
+            text-decoration: underline;
+        }
+    }
+}
+
+.cancelBtn {
+    margin-right: 5%;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: vars.$primaryColor;
+}
+
+.cancelBtn:hover {
+    color: vars.$secondaryColor;
+}

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+.programsContainer {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 90px;
+  padding: 10px;
+  direction: rtl;
+  width: 60%;
+  margin: 5%;
+}
+.programsContainer .card {
+  background-color: #FAFAFA;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #405712;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  align-items: center;
+  border: none;
+  color: #405712 !important;
+}
+.programsContainer .card .content {
+  position: relative;
+  top: -70px;
+}
+.programsContainer .card .iconImg {
+  width: 30%;
+  position: relative;
+  right: -170px;
+}
+.programsContainer .card ul {
+  margin: 10% 0 10% 0;
+}
+.programsContainer .card ul li {
+  font-weight: 250;
+  text-align: right;
+}
+.programsContainer .card .price {
+  width: 90%;
+  background-color: rgba(163, 22, 34, 0.7019607843);
+  color: #FAFAFA;
+  justify-self: center;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+.programsContainer .card .detailsBtn {
+  color: #DAA520 !important;
+}
+.programsContainer .card:nth-child(1) {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+.programsContainer .card:nth-child(2), .programsContainer .card:nth-child(3) {
+  grid-column: span 2;
+  padding: 10%;
+  height: 500px;
+}
+.programsContainer .card:nth-child(4), .programsContainer .card:nth-child(5) {
+  grid-column: span 2;
+  padding: 10%;
+  height: 500px;
+}
+.programsContainer .card .btnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.programsContainer .card .btnContainer button {
+  width: 50%;
+  height: 50px;
+  background-color: #DAA520;
+  color: #FAFAFA;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+.programsContainer .card .btnContainer .detailsBtn {
+  background-color: transparent;
+  border: 3px solid #DAA520;
+}
+.programsContainer .firstCard {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  justify-content: space-between;
+  background-color: #405712;
+  color: #FAFAFA !important;
+}
+.programsContainer .firstCard .firstContent {
+  flex: 1;
+  padding: 5%;
+}
+.programsContainer .firstCard img {
+  flex: 1;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 100%;
+  mix-blend-mode: luminosity;
+}
+
+@media (max-width: 768px) {
+  .programsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+  }
+  .programsContainer .card {
+    height: auto !important;
+  }
+  .programsContainer .card .content {
+    position: unset;
+  }
+  .programsContainer .card .content .iconImg {
+    position: unset;
+  }
+  .programsContainer .firstCard {
+    flex-direction: column-reverse;
+  }
+  .programsContainer .firstCard img {
+    height: 50%;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 30px;
+  }
+  .programsContainer .card:nth-child(1) {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 480px) {
+  .programsContainer {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  .programsContainer .content {
+    position: unset;
+  }
+  .programsContainer .content .iconImg {
+    position: unset;
+  }
+  .programsContainer .firstCard {
+    flex-direction: column-reverse;
+  }
+  .programsContainer .firstCard img {
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 30px;
+  }
+  .programsContainer .card:nth-child(1) {
+    grid-column: span 2;
+  }
+}/*# sourceMappingURL=programs.css.map */

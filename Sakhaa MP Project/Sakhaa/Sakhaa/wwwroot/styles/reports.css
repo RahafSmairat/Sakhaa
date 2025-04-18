@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+#reportsContainer {
+  direction: rtl;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 50px;
+  color: #405712;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0 0 10px #405712;
+  border-radius: 30px;
+  padding: 5%;
+  background-color: #FAFAFA;
+}
+#reportsContainer #reportsFilter {
+  display: flex;
+  flex-direction: row;
+}
+#reportsContainer #reportsFilter select {
+  border-radius: 30px;
+  margin-right: 3%;
+  width: 10%;
+  text-align: center;
+  border: 3px solid #405712;
+}
+#reportsContainer #reportsFilter select, #reportsContainer #reportsFilter select option {
+  color: #405712;
+}
+#reportsContainer #reportsFiles {
+  padding-top: 5%;
+  border-top: 3px solid #DAA520;
+}
+#reportsContainer #reportsFiles i {
+  font-size: 1.5rem;
+  color: #A31621;
+  margin-left: 1%;
+}
+#reportsContainer #reportsFiles a {
+  text-decoration: none;
+  color: #405712;
+}
+#reportsContainer #reportsFiles a:hover {
+  color: #A31621;
+  text-decoration: underline;
+}/*# sourceMappingURL=reports.css.map */

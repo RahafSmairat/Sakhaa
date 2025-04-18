@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+#donationContainer {
+  direction: rtl;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  gap: 0;
+  color: #405712;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0 0 10px #405712;
+  border-radius: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #FAFAFA;
+}
+#donationContainer form {
+  flex: 2;
+  margin: 5%;
+}
+#donationContainer form label {
+  margin-bottom: 3%;
+  font-weight: 700;
+}
+#donationContainer form .formRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5%;
+}
+#donationContainer form .inputCol {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-bottom: 3%;
+}
+#donationContainer form input:not(#check), #donationContainer form select {
+  height: 55px;
+  border-radius: 30px;
+  border: 1px solid #405712;
+  direction: rtl;
+  padding-right: 5%;
+  box-shadow: 0 0 5px #405712;
+}
+#donationContainer form input:not(#check):focus, #donationContainer form select:focus {
+  outline: none;
+  border: 3px solid #DAA520;
+  transform: scale(1.03);
+}
+#donationContainer form button {
+  margin-top: 4%;
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  color: #DAA520;
+  border-radius: 30px;
+  border: 3px solid #DAA520;
+  font-size: 20px;
+}
+#donationContainer form button:hover {
+  background-color: #DAA520;
+  color: #FAFAFA;
+}
+#donationContainer #details {
+  flex: 1;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #405712;
+  color: #FAFAFA;
+  padding: 2%;
+  border-radius: 30px;
+}
+#donationContainer #details #total {
+  border-top: 1px solid #FAFAFA;
+  padding-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}/*# sourceMappingURL=donationInfo.css.map */

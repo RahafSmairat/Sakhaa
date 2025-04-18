@@ -1,0 +1,77 @@
+@use "variables.scss" as vars;
+
+#logInHeader {
+  height: 50vh;
+  background-color: vars.$heroFooterBg;
+  padding: 15px;
+}
+
+#signUpContainer {
+  width: 50vw;
+  height: auto;
+  padding: 80px;
+  background-color: vars.$primaryColor;
+  justify-self: center;
+  border-radius: 30px;
+  position: relative;
+  z-index: 2;
+  top: -150px;
+  box-shadow: vars.$boxShadow;
+  direction: rtl;
+  margin-top: 5%;
+  h2 {
+    color: vars.$bodyColor;
+    justify-self: center;
+    direction: rtl;
+    margin-bottom: 10%;
+    &::before{
+      content: none;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .required{
+      color: red;
+    }
+    label{
+    color: vars.$bodyColor;
+    align-self: start;
+    padding-right: 15%;
+    }
+    input,select {
+      width: 80%;
+      height: 55px;
+      border-radius: 30px;
+      border: none;
+      direction: rtl;
+      padding-right: 5%;
+    }
+
+    input:focus,select:focus{
+      outline: none;
+      border: 3px solid vars.$secondaryColor;
+    }
+
+    p{
+    color: vars.$bodyColor;
+    }
+    button{
+        width: 170px;
+        height: 50px;
+        margin-top: 5%;
+        background-color: vars.$secondaryColor;
+        color: vars.$bodyColor;
+        border-radius: 30px;
+        border: none;
+        font-size: vars.$buttonFontSize;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+    }
+  }
+}

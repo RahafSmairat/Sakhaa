@@ -1,0 +1,110 @@
+@use "variables.scss" as vars;
+
+        #regForm {
+            background-color: #ffffff;
+            margin: 100px auto;
+            width: 70%;
+            min-width: 300px;
+            direction: rtl;
+
+            width: 90vw;
+            justify-self: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            color: vars.$primaryColor;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            background-color: vars.$bodyColor;
+            padding: 70px;
+            border-radius: 30px;
+            box-shadow: vars.$boxShadow;
+
+            button{
+              width: 15%;
+              height: 50px;
+              background-color: vars.$secondaryColor;
+              color: vars.$bodyColor;
+              border-radius: 30px;
+              border: none;
+              font-size: vars.$buttonFontSize;
+              transition: all 0.5s;
+            }
+          input:not(#check),select {
+            width: 100%;
+            height: 55px;
+            border-radius: 30px;
+            border: 3px solid transparent;
+            direction: rtl;
+            padding-right: 2%;
+            box-shadow: vars.$lightBoxShadow;
+            &:focus{
+                outline: none;
+                border: 3px solid vars.$secondaryColor;
+                // transform: scale(1.01);
+            }
+          }
+          textarea {
+            border-radius: 30px;
+            border: 3px solid transparent;
+            direction: rtl;
+            padding: 2%;
+            width: 80%;
+            box-shadow: vars.$lightBoxShadow;
+          }
+
+          textarea:focus{
+            outline: none;
+            border: 3px solid vars.$secondaryColor;
+          }
+
+          input.invalid {
+            background-color: vars.$highlighter;
+            &::placeholder{
+                color: vars.$bodyColor;
+
+            }
+          }
+          
+          .tab {
+            display: none;
+            div{
+              width: 40%;
+            }
+            // p{
+            //   width: 40%;
+            // }
+            h5{
+              color: vars.$highlightsColor;
+              font-weight: bold;
+              margin-bottom: 3%;
+            }
+          }
+          
+          .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+          }
+          
+          .step.active {
+            opacity: 1;
+          }
+          
+          .step.finish {
+            background-color: #04AA6D;
+          }
+          }
+          
+        //   input {
+        //     padding: 10px;
+        //     width: 100%;
+        //     font-size: 17px;
+        //     font-family: Raleway;
+        //     border: 1px solid #aaaaaa;
+        //   }

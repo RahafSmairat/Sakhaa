@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "DonationApplicationForm";
+}
+
+@section HeaderTitle {
+    <h2 class="section">معلومات التبرع</h2>
+}
+
+<main id="donationContainer">
+    <form action="payment.html">
+        <!-- First Row-->
+        <div class="formRow">
+            <span class="inputCol">
+                <label for="input1">الاسم الأول</label>
+                <input type="text" id="input1" placeholder="الاسم الأول">
+            </span>
+            <span class="inputCol">
+                <label for="input2">الاسم الأخير</label>
+                <input type="text" id="input2" placeholder="الاسم الأخير">
+            </span>
+        </div>
+
+        <!-- Second Row-->
+        <div class="formRow">
+            <div class="inputCol">
+                <label for="dropdown1">الدولة</label>
+                <select id="dropdown1">
+                    <option value="" disabled selected>اختر الدولة</option>
+                    <option value="option1">الأردن</option>
+                </select>
+            </div>
+            <div class="inputCol">
+                <label for="dropdown2">المدينة</label>
+                <select id="dropdown2">
+                    <option value="" disabled selected>اختر المدينة</option>
+                    <option value="optionA">اربد</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="inputCol" style="width: 85%;">
+            <label for="singleInput">العنوان</label>
+            <input type="text" id="singleInput" placeholder="ادخل العنوان كاملاً (اسم الشارع، رقم المبنى...)">
+        </div>
+
+        <div>
+            <label for="check">
+                <input type="checkbox" id="check">
+                التبرع كفاعل خير
+            </label>
+        </div>
+
+        <div>
+            <button type="submit">الانتقال إلى الدفع</button>
+        </div>
+    </form>
+    <div id="details">
+        <p>معلومات التبرع</p>
+        <div id="total">
+            <p>الإجمالي</p>
+            <p>0 د.أ</p>
+        </div>
+    </div>
+</main>
+

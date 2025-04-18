@@ -1,0 +1,268 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+}
+
+@section HeaderTitle {
+    <h2 class="section">حسابي</h2>
+}
+
+@section Scripts {
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function enableEdit(id) {
+        const inputField = document.getElementById(id);
+        inputField.disabled = false;
+        inputField.focus();
+        }
+
+
+        (function (window, document, undefined) {
+        'use strict';
+
+        ////////////////////////////////////
+        var hasSubmenu = document.querySelectorAll('[data-id]');
+        var active = 'active';
+        var i = 0;
+
+        function showSubmenu (event) {
+        var self = this;
+
+        var submenu = document.getElementById(self.dataset.id);
+
+        event.preventDefault();
+
+
+        var otherSubmenu = Array.prototype.filter.call(
+        submenu.parentNode.children,
+        function(child) {
+        if ( child !== submenu ) {
+        removeChildClass(child);
+        }
+        });
+
+        var otherItem = Array.prototype.filter.call(
+        self.parentNode.children,
+        function(child) {
+        if ( child !== self ) {
+        removeChildClass(child);
+        }
+        });
+
+        self.classList.toggle(active);
+        submenu.classList.toggle(active);
+        }
+
+        function removeChildClass(el) {
+        if ( el.classList.contains(active) ) {
+        el.classList.remove(active);
+        }
+        }
+
+        for ( i = 0; i < hasSubmenu.length; i++ ) {
+        hasSubmenu[i].addEventListener('click', showSubmenu);
+        }
+        })(window, document);
+    </script>
+}
+
+
+@model Sakhaa.Models.ProfileViewModel
+
+<section class="mt-5 mb-5">
+    <div class="container profileContainer">
+        <div class="row tabs mt-4">
+            <!----->
+            <div class="col-md-8 left">
+                <div class="tab-content">
+                    <div class="tab-pane container p-0 active" id="about-1">
+                        <!-- <div class="img"style="background-image: url(https://i.postimg.cc/cJQ2hp1Q/about-1.jpg);"></div> -->
+                        <form asp-action="UpdateProfile" method="post" class="profileForm">
+
+                            @if (TempData["Error"] != null)
+                            {
+                                <div class="alert alert-danger alert-dismissible fade show w-50" role="alert">
+                                    @TempData["Error"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                                </div>
+                            }
+
+                            @if (TempData["Success"] != null)
+                            {
+                                <div class="alert alert-success alert-dismissible fade show w-50" role="alert">
+                                    @TempData["Success"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                                </div>
+                            }
+                            <label for="name">الاسم:</label><br>
+                            <input type="text" id="name" name="FullName" value="@Model.userInfo.FirstName @Model.userInfo.LastName" disabled required>
+                            <button type="button" onclick="enableEdit('name')" class="editBtn">تعديل</button>
+                            <br><br>
+
+                            <label for="email">البريد الإلكتروني</label><br>
+                            <input type="email" id="email" name="Email" value="@Model.userInfo.Email" disabled required>
+                            <br><br>
+
+                            <label for="mobile">رقم الهاتف</label><br>
+                            <input type="tel" id="mobile" name="PhoneNumber" value="@Model.userInfo.PhoneNumber" disabled required>
+                            <button type="button" onclick="enableEdit('mobile')" class="editBtn">تعديل</button>
+                            <br><br>
+
+                            <h5>تغيير كلمة السر</h5>
+                            <label for="current-password">كلمة السر الحالية</label><br>
+                            <input type="password" id="currentPassword" name="CurrentPassword" placeholder="كلمة السر الحالية">
+                            <br><br>
+
+                            <label for="password">كلمة السر الجديدة</label><br>
+                            <input type="password" id="password" name="Password" placeholder="كلمة السر">
+                            <br><br>
+
+                            <label for="confirm-password">تأكيد كلمة السر</label><br>
+                            <input type="password" id="confirm-password" name="ConfirmPassword" placeholder="تأكيد كلمة السر">
+                            <br><br>
+
+                            <button type="submit" class="saveBtn">حفظ التغييرات</button>
+                        </form>
+
+                    </div>
+                    <!----->
+                    <div class="tab-pane container p-0" id="about-2">
+                        <div class="historyTable">
+                            @if (Model.PreviousDonations != null && Model.PreviousDonations.Any())
+                            {
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>نوع التبرع</th>
+                                            <th>قيمة التبرع</th>
+                                            <th>تاريخ بداية الاشتراك</th>
+                                            <th>تاريخ انتهاء الاشتراك</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var donation in Model.PreviousDonations)
+                                        {
+                                            <tr>
+                                                <td>@donation.Program.Name</td>
+                                                <td>@donation.Amount.ToString() د.أ</td>
+                                                <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                <td>@donation.DonationEndDate?.ToString("yyyy-MM-dd")</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <p>لم تقم بأية تبرعات بعد.</p>
+                            }
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="tab-pane container p-0" id="about-3">
+                        <!-- <div class="img"style="background-image: url(https://i.postimg.cc/MpfhMch3/about-3.jpg);"></div> -->
+                        <h5>عرض حسب</h5>
+                        <div class="container example-three filterContainer">
+                            <header class="radius">
+                                <nav class="nav scroll bg-green">
+                                    <span class="nav-item" data-id="blog-3" aria-controls="blog-3">التاريخ</span>
+                                    <span class="nav-item" data-id="portfolio-3" aria-controls="portfolio-3">نوع الاشتراك</span>
+                                    <span class="nav-item" data-id="amount-3" aria-controls="amount-3">الحجم المالي</span>
+                                    <span class="nav-item" data-id="impact-3" aria-controls="impact-3">الأثر الإجتماعي</span>
+                                </nav>
+                                <div class="bg-dark-grey submenu scroll" id="blog-3">
+                                    <span class="nav-item">آخر شهر</span>
+                                    <span class="nav-item">آخر عام</span>
+                                    <span class="nav-item">الكل</span>
+                                </div>
+                                <div class="bg-dark-grey submenu scroll" id="portfolio-3">
+                                    <span class="nav-item">الاشتراك الأول</span>
+                                    <span class="nav-item">الاشتراك الثاني</span>
+                                    <span class="nav-item">الاشتراك الثالث</span>
+                                </div>
+
+                                <div class="bg-dark-grey submenu scroll" id="amount-3">
+                                    <span class="nav-item">أكثر من</span>
+                                    <span class="nav-item">أقل من</span>
+                                </div>
+
+                                <div class="bg-dark-grey submenu scroll" id="impact-3">
+                                    <span class="nav-item">عدد المستفيدين</span>
+                                    <span class="nav-item">نسبة المساهمة</span>
+                                </div>
+                            </header>
+                        </div>
+
+                        <div id="reportsFiles">
+                            <a href="#">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                تحميل التقرير السنوي لعام - 2025
+                            </a>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="tab-pane container p-0" id="about-4" style="margin:unset">
+                        <div class="historyTable">
+                            @if (Model.CurrentDonations != null && Model.CurrentDonations.Any())
+                            {
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>نوع التبرع</th>
+                                            <th>قيمة التبرع</th>
+                                            <th>تاريخ الاشتراك</th>
+                                            <th>إلغاء الاشتراك</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var donation in Model.CurrentDonations)
+                                        {
+                                            <tr>
+                                                <td>@donation.Program.Name</td>
+                                                <td>@donation.Amount.ToString() د.أ</td>
+                                                <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                <td>
+                                                    <button type="button" class="cancelBtn">إلغاء</button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <p>لا يوجد اشتراكات سارية.</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 profileNav">
+                <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
+                    <li class="nav-item text-left">
+                        <a class="nav-link active py-3" data-toggle="tab" href="#about-1">معلومات الحساب</a>
+                    </li>
+                    <li class="nav-item text-left">
+                        <a class="nav-link py-3" data-toggle="tab" href="#about-2">سجل التبرعات</a>
+                    </li>
+                    <li class="nav-item text-left">
+                        <a class="nav-link py-3" data-toggle="tab" href="#about-3">التقارير والإحصائيات</a>
+                    </li>
+                    <li class="nav-item text-left">
+                        <a class="nav-link py-3" data-toggle="tab" href="#about-4">الإشتراكات الحالية</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

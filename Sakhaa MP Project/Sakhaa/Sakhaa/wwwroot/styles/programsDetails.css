@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+#programsDetails {
+  direction: rtl;
+  width: 90%;
+  justify-self: center;
+  background-color: #FAFAFA;
+  box-shadow: 0 0 10px #405712;
+  border-radius: 30px;
+  margin-bottom: 5%;
+  gap: 0;
+  color: #405712;
+}
+#programsDetails h3, #programsDetails ul {
+  margin-bottom: 3%;
+}
+#programsDetails h3 {
+  padding-left: 1%;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-left: 5px solid #DAA520;
+}
+#programsDetails .program {
+  padding: 5%;
+}
+#programsDetails .program:nth-child(2n) {
+  background-color: rgba(163, 22, 34, 0.7019607843);
+  color: #FAFAFA;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100px;
+  background-color: #405712;
+}
+.imgContainer .img {
+  width: 100%;
+  height: 100px;
+  background-image: url("/images/img_v_2-min.jpg");
+  mix-blend-mode: luminosity;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}/*# sourceMappingURL=programsDetails.css.map */

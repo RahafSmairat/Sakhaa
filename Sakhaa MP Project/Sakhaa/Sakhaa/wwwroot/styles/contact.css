@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+#ContactContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: auto;
+  justify-self: center;
+  border: 1px solid #405712;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #405712;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #FAFAFA;
+}
+#ContactContainer #contactInfo {
+  flex: 1;
+  background-color: #405712;
+  height: inherit;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FAFAFA;
+}
+#ContactContainer #contactInfo .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#ContactContainer #contactInfo .content iframe {
+  border-radius: 30px !important;
+}
+#ContactContainer #contactInfo .content div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#ContactContainer #contactInfo .content div p {
+  padding-top: 5px;
+}
+#ContactContainer form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 5%;
+}
+#ContactContainer form input {
+  width: 80%;
+  height: 55px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  direction: rtl;
+  padding-right: 5%;
+  box-shadow: 0 0 5px #405712;
+}
+#ContactContainer form input:focus, #ContactContainer form textarea:focus {
+  outline: none;
+  border: 3px solid #DAA520;
+}
+#ContactContainer form textarea {
+  border-radius: 30px;
+  border: 3px solid transparent;
+  direction: rtl;
+  padding: 2%;
+  width: 80%;
+  box-shadow: 0 0 5px #405712;
+}
+#ContactContainer form button {
+  width: 170px;
+  height: 50px;
+  margin-top: 3%;
+  background-color: #DAA520;
+  color: #FAFAFA;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+#ContactContainer form button:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=contact.css.map */

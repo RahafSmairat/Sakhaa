@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "PaymentForm";
+}
+
+@section HeaderTitle {
+    <h2 class="section">معلومات الدفع</h2>
+}
+<main id="donationContainer">
+    <form>
+
+        <div class="inputCol" style="width: 85%;">
+            <label for="singleInput">رقم البطاقة <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i></label>
+            <input type="text" id="singleInput" placeholder="">
+        </div>
+
+        <div class="inputCol" style="width: 85%;">
+            <label for="singleInput">اسم حامل البطاقة <span style="font-weight: 350;">(مطابق للاسم الموجود على البطاقة)</span></label>
+            <input type="text" id="singleInput" placeholder="">
+        </div>
+        <label>تاريخ انتهاء صلاحية البطاقة</label>
+        <div class="formRow">
+            <div class="inputCol month">
+                <select id="month">
+                    <option value="" disabled selected>الشهر</option>
+                    <option value="option1">1</option>
+                    <option value="option1">2</option>
+                    <option value="option1">3</option>
+                    <option value="option1">4</option>
+                    <option value="option1">5</option>
+                    <option value="option1">6</option>
+                    <option value="option1">7</option>
+                    <option value="option1">8</option>
+                    <option value="option1">9</option>
+                    <option value="option1">10</option>
+                    <option value="option1">11</option>
+                    <option value="option1">12</option>
+                </select>
+            </div>
+            <div class="inputCol year">
+                <select id="year">
+                    <option value="" disabled selected>السنة</option>
+                    <option value="optionA">2025</option>
+                    <option value="optionA">2026</option>
+                    <option value="optionA">2027</option>
+                    <option value="optionA">2028</option>
+                </select>
+            </div>
+            <div class="inputCol cvc">
+                <!-- <label for="cvc">الرمز السري</label> -->
+                <input type="text" id="cvc" placeholder="الرمز السري">
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="sweet-alert-trigger">الدفع وإتمام العملية</button>
+        </div>
+    </form>
+    <div id="details">
+        <p>معلومات التبرع</p>
+        <div id="total">
+            <p>الإجمالي</p>
+            <p>0 د.أ</p>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  width: 70%;
+  min-width: 300px;
+  direction: rtl;
+  width: 90vw;
+  justify-self: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: #405712;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #FAFAFA;
+  padding: 70px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #405712;
+}
+#regForm button {
+  width: 15%;
+  height: 50px;
+  background-color: #DAA520;
+  color: #FAFAFA;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+#regForm input:not(#check), #regForm select {
+  width: 100%;
+  height: 55px;
+  border-radius: 30px;
+  border: 3px solid transparent;
+  direction: rtl;
+  padding-right: 2%;
+  box-shadow: 0 0 5px #405712;
+}
+#regForm input:not(#check):focus, #regForm select:focus {
+  outline: none;
+  border: 3px solid #DAA520;
+}
+#regForm textarea {
+  border-radius: 30px;
+  border: 3px solid transparent;
+  direction: rtl;
+  padding: 2%;
+  width: 80%;
+  box-shadow: 0 0 5px #405712;
+}
+#regForm textarea:focus {
+  outline: none;
+  border: 3px solid #DAA520;
+}
+#regForm input.invalid {
+  background-color: rgba(163, 22, 34, 0.7019607843);
+}
+#regForm input.invalid::-moz-placeholder {
+  color: #FAFAFA;
+}
+#regForm input.invalid::placeholder {
+  color: #FAFAFA;
+}
+#regForm .tab {
+  display: none;
+}
+#regForm .tab div {
+  width: 40%;
+}
+#regForm .tab h5 {
+  color: #A31621;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+#regForm .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+#regForm .step.active {
+  opacity: 1;
+}
+#regForm .step.finish {
+  background-color: #04AA6D;
+}/*# sourceMappingURL=giftForm.css.map */

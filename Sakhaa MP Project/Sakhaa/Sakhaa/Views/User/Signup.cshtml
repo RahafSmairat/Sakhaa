@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<div id="signUpContainer" class="section">
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="direction: rtl;">
+            @ViewBag.Error
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <h2>إنشاء حساب</h2>
+    <form asp-action="Signup" method="post">
+        <input type="text" placeholder="الاسم الأول" name="FirstName">
+        <input type="text" placeholder="الاسم الأخير" name="LastName">
+        <input type="email" placeholder="البريد الإلكتروني" name="Email">
+        <input type="text" placeholder="رقم الهاتف" name="PhoneNumber">
+        <select name="Country">
+            <option disabled selected value="">الدولة</option>
+            <option>الأردن</option>
+        </select>
+        <input type="password" placeholder="كلمة السر" name="Password">
+        <input type="password" placeholder="تأكيد كلمة السر" name="ConfirmPassword">
+        <button type="submit">تسجيل</button>
+    </form>
+</div>
+

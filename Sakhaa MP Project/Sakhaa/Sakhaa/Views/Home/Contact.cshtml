@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "تواصل معنا";
+}
+
+@section HeaderTitle {
+    <h2 class="section">تواصل معنا</h2>
+}
+
+<div id="ContactContainer" class="section">
+    <div id="contactInfo">
+        <div class="content">
+            <h3>معلومات التواصل</h3>
+            <div>
+                <i class="bi bi-telephone"></i>
+                <p>رقم الهاتف: +962-00000000</p>
+            </div>
+            <div>
+                <i class="bi bi-envelope"></i>
+                <p>البريد الإلكتروني: name@example.com</p>
+            </div>
+            <div>
+                <i class="bi bi-geo-alt"></i>
+                <p>الموقع: الأردن، اربد</p>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.009560388824!2d35.847093875112236!3d32.55259009542249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c7715f2c2e7ab%3A0x51755840c8ddbefd!2sOrange%20Digital%20Village%20Irbid!5e0!3m2!1sen!2sjo!4v1737626421165!5m2!1sen!2sjo"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <form asp-action="SendMessage" method="post">
+        <input type="text" name="FullName" placeholder="الاسم" required>
+        <input type="email" name="Email" placeholder="البريد الإلكتروني" required>
+        <input type="text" name="Subject" placeholder="عنوان الرسالة" required>
+        <textarea name="Message" rows="10" cols="30" placeholder="نص الرسالة..." required></textarea>
+        <button type="submit">ارسال</button>
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+
+        }
+    </form>
+</div>
