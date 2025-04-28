@@ -6,5 +6,13 @@
   {
     "outputFile": "wwwroot/styles/successStories.css",
     "inputFile": "wwwroot/styles/successStories.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/admin.css",
+    "inputFile": "wwwroot/styles/admin.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/reports.css",
+    "inputFile": "wwwroot/styles/reports.scss"
   }
 ]

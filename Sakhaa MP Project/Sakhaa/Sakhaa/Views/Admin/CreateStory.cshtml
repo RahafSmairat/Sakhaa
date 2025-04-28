@@ -1,0 +1,64 @@
+@model Sakhaa.Models.SuccessStory
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <a href="/Admin/SuccessStories" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-arrow-right me-1"></i> العودة إلى القائمة
+        </a>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-light py-3">
+        <h5 class="mb-0">إضافة قصة نجاح جديدة</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="CreateStory" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">العنوان</label>
+                        <input asp-for="Title" class="form-control" required />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="ImagePath" class="form-label">اسم الصورة</label>
+                        <input asp-for="ImagePath" class="form-control" placeholder="اسم الصورة (اختياري)" />
+                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label class="form-label">تحميل صورة (اختياري)</label>
+                        <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                        <small class="text-muted">يمكنك إدخال اسم الصورة أو تحميل صورة جديدة</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Content" class="form-label">المحتوى</label>
+                <textarea asp-for="Content" class="form-control" rows="10" required></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-save me-1"></i> حفظ
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // You could include a rich text editor for the Content field here
+        // For example, using TinyMCE or CKEditor
+    </script>
+} 

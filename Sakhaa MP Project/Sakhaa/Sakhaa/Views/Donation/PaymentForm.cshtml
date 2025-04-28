@@ -1,4 +1,98 @@
-﻿
+﻿@* @{ *@
+@*     ViewData["Title"] = "PaymentForm"; *@
+@* } *@
+
+@* @section HeaderTitle { *@
+@*     <h2 class="section">معلومات الدفع</h2> *@
+@* } *@
+@* <main id="donationContainer"> *@
+@*     <form action="/Donation/ProcessPayment" method="post"> *@
+@*         <div class="inputCol" style="width: 85%;"> *@
+@*             <label for="cardNumber">رقم البطاقة <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i></label> *@
+@*             <input type="text" id="cardNumber" name="cardNumber" placeholder="xxxx xxxx xxxx xxxx" pattern="[0-9\s]{13,19}" required> *@
+@*         </div> *@
+
+@*         <div class="inputCol" style="width: 85%;"> *@
+@*             <label for="cardHolder">اسم حامل البطاقة <span style="font-weight: 350;">(مطابق للاسم الموجود على البطاقة)</span></label> *@
+@*             <input type="text" id="cardHolder" name="cardHolder" placeholder="الاسم كما يظهر على البطاقة" required> *@
+@*         </div> *@
+@*         <label>تاريخ انتهاء صلاحية البطاقة</label> *@
+@*         <div class="formRow"> *@
+@*             <div class="inputCol month"> *@
+@*                 <select id="expiryMonth" name="expiryMonth" required> *@
+@*                     <option value="" disabled selected>الشهر</option> *@
+@*                     <option value="1">1</option> *@
+@*                     <option value="2">2</option> *@
+@*                     <option value="3">3</option> *@
+@*                     <option value="4">4</option> *@
+@*                     <option value="5">5</option> *@
+@*                     <option value="6">6</option> *@
+@*                     <option value="7">7</option> *@
+@*                     <option value="8">8</option> *@
+@*                     <option value="9">9</option> *@
+@*                     <option value="10">10</option> *@
+@*                     <option value="11">11</option> *@
+@*                     <option value="12">12</option> *@
+@*                 </select> *@
+@*             </div> *@
+@*             <div class="inputCol year"> *@
+@*                 <select id="expiryYear" name="expiryYear" required> *@
+@*                     <option value="" disabled selected>السنة</option> *@
+@*                     <option value="2025">2025</option> *@
+@*                     <option value="2026">2026</option> *@
+@*                     <option value="2027">2027</option> *@
+@*                     <option value="2028">2028</option> *@
+@*                 </select> *@
+@*             </div> *@
+@*             <div class="inputCol cvc"> *@
+@*                 <input type="text" id="cvc" name="cvc" placeholder="الرمز السري" pattern="[0-9]{3,4}" required> *@
+@*             </div> *@
+@*         </div> *@
+
+@*         <div> *@
+@*             <button type="submit" class="sweet-alert-trigger">الدفع وإتمام العملية</button> *@
+@*         </div> *@
+@*     </form> *@
+@*     <div id="details"> *@
+@*         <p>معلومات التبرع</p> *@
+@*         <div id="programDetails"> *@
+@*             <p>البرنامج: @(ViewBag.Program?.Name ?? "برنامج التبرع")</p> *@
+@*         </div> *@
+@*         <div id="total"> *@
+@*             <p>الإجمالي</p> *@
+@*             <p>@(ViewBag.Program?.MinimumDonationAmount ?? 0) د.أ</p> *@
+@*         </div> *@
+@*     </div> *@
+@* </main> *@
+
+@* <script> *@
+@*     document.addEventListener('DOMContentLoaded', function () { *@
+@*         const form = document.querySelector('form'); *@
+@*         form.addEventListener('submit', function (event) { *@
+@*             // Basic form validation *@
+@*             const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, ''); *@
+@*             if (cardNumber.length < 13 || cardNumber.length > 19) { *@
+@*                 alert('الرجاء إدخال رقم بطاقة صحيح'); *@
+@*                 event.preventDefault(); *@
+@*                 return; *@
+@*             } *@
+
+@*             const cvc = document.getElementById('cvc').value; *@
+@*             if (cvc.length < 3 || cvc.length > 4) { *@
+@*                 alert('الرجاء إدخال رمز أمان صحيح'); *@
+@*                 event.preventDefault(); *@
+@*                 return; *@
+@*             } *@
+
+@*             // In a real application, we would add more validation and card processing here *@
+
+@*             // For demo purposes, we'll just submit the form *@
+@*             // In production, you would integrate with a payment gateway API *@
+@*         }); *@
+@*     }); *@
+@* </script> *@
+
+
 @{
     ViewData["Title"] = "PaymentForm";
 }
@@ -6,61 +100,288 @@
 @section HeaderTitle {
     <h2 class="section">معلومات الدفع</h2>
 }
-<main id="donationContainer">
-    <form>
 
-        <div class="inputCol" style="width: 85%;">
-            <label for="singleInput">رقم البطاقة <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i></label>
-            <input type="text" id="singleInput" placeholder="">
-        </div>
+<div class="container py-4" style="direction:rtl">
+    <div class="payment-form-container">
+        <form action="/Donation/ProcessPayment" method="post" class="payment-form">
+            <div class="form-group full-width">
+                <label for="cardNumber">رقم البطاقة <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i></label>
+                <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="xxxx xxxx xxxx xxxx" pattern="[0-9\s]{13,19}" required>
+            </div>
 
-        <div class="inputCol" style="width: 85%;">
-            <label for="singleInput">اسم حامل البطاقة <span style="font-weight: 350;">(مطابق للاسم الموجود على البطاقة)</span></label>
-            <input type="text" id="singleInput" placeholder="">
-        </div>
-        <label>تاريخ انتهاء صلاحية البطاقة</label>
-        <div class="formRow">
-            <div class="inputCol month">
-                <select id="month">
-                    <option value="" disabled selected>الشهر</option>
-                    <option value="option1">1</option>
-                    <option value="option1">2</option>
-                    <option value="option1">3</option>
-                    <option value="option1">4</option>
-                    <option value="option1">5</option>
-                    <option value="option1">6</option>
-                    <option value="option1">7</option>
-                    <option value="option1">8</option>
-                    <option value="option1">9</option>
-                    <option value="option1">10</option>
-                    <option value="option1">11</option>
-                    <option value="option1">12</option>
-                </select>
+            <div class="form-group full-width">
+                <label for="cardHolder">اسم حامل البطاقة <span class="light-text">(مطابق للاسم الموجود على البطاقة)</span></label>
+                <input type="text" id="cardHolder" name="cardHolder" class="form-control" placeholder="الاسم كما يظهر على البطاقة" required>
             </div>
-            <div class="inputCol year">
-                <select id="year">
-                    <option value="" disabled selected>السنة</option>
-                    <option value="optionA">2025</option>
-                    <option value="optionA">2026</option>
-                    <option value="optionA">2027</option>
-                    <option value="optionA">2028</option>
-                </select>
-            </div>
-            <div class="inputCol cvc">
-                <!-- <label for="cvc">الرمز السري</label> -->
-                <input type="text" id="cvc" placeholder="الرمز السري">
-            </div>
-        </div>
 
-        <div>
-            <button type="submit" class="sweet-alert-trigger">الدفع وإتمام العملية</button>
-        </div>
-    </form>
-    <div id="details">
-        <p>معلومات التبرع</p>
-        <div id="total">
-            <p>الإجمالي</p>
-            <p>0 د.أ</p>
+            <div class="card-expiry-section">
+                <label class="expiry-label">تاريخ انتهاء صلاحية البطاقة</label>
+                <div class="form-row">
+                    <div class="form-group month">
+                        <select id="expiryMonth" name="expiryMonth" class="form-control" required>
+                            <option value="" disabled selected>الشهر</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="form-group year">
+                        <select id="expiryYear" name="expiryYear" class="form-control" required>
+                            <option value="" disabled selected>السنة</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                        </select>
+                    </div>
+                    <div class="form-group cvc">
+                        <input type="text" id="cvc" name="cvc" class="form-control" placeholder="الرمز السري" pattern="[0-9]{3,4}" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary sweet-alert-trigger">الدفع وإتمام العملية</button>
+            </div>
+        </form>
+
+        <div class="payment-summary">
+            <h3>معلومات التبرع</h3>
+            <div class="program-details">
+                @if (ViewBag.IsProjectDonation == true)
+                {
+                    <div class="detail-item">
+                        <span class="label">المشروع:</span>
+                        <span class="value">@(ViewBag.Project?.Title ?? "مشروع")</span>
+                    </div>
+                    <div class="detail-item total">
+                        <span class="label">مبلغ التبرع:</span>
+                        <span class="value">@(ViewBag.Amount) د.أ</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="detail-item">
+                        <span class="label">البرنامج:</span>
+                        <span class="value">@(ViewBag.Program?.Name ?? "برنامج التبرع")</span>
+                    </div>
+                    <div class="detail-item total">
+                        <span class="label">الإجمالي:</span>
+                        <span class="value">@(ViewBag.Program?.MinimumDonationAmount ?? 0) د.أ</span>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</main>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            // Basic form validation
+            const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+            if (cardNumber.length < 13 || cardNumber.length > 19) {
+                alert('الرجاء إدخال رقم بطاقة صحيح');
+                event.preventDefault();
+                return;
+            }
+
+            const cvc = document.getElementById('cvc').value;
+            if (cvc.length < 3 || cvc.length > 4) {
+                alert('الرجاء إدخال رمز أمان صحيح');
+                event.preventDefault();
+                return;
+            }
+        });
+    });
+</script>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .payment-form-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        background-color: #fff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        border-radius: 30px;
+        padding: 2rem;
+        border: 1px solid #f0f0f0;
+    }
+
+    @@media (min-width: 992px) {
+        .payment-form-container {
+            flex-direction: row;
+        }
+
+        .payment-form {
+            flex: 2;
+        }
+
+        .payment-summary {
+            flex: 1;
+        }
+    }
+
+    .payment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @@media (min-width: 768px) {
+        .form-row {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+        .form-group.full-width {
+            width: 100%;
+        }
+
+        .form-group.month, .form-group.year {
+            flex: 1;
+        }
+
+        .form-group.cvc {
+            flex: 1;
+        }
+
+        .form-group label, .expiry-label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+    .light-text {
+        font-weight: 350;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 30px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #405712;
+            box-shadow: 0 0 0 2px rgba(64, 87, 18, 0.2);
+            outline: none;
+        }
+
+    .card-expiry-section {
+        margin-top: 0.5rem;
+    }
+
+    .expiry-label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-actions {
+        margin-top: 1.5rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: #405712;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 1rem;
+    }
+
+        .btn-primary:hover {
+            background-color: #DAA520;
+        }
+
+    .payment-summary {
+        /* background-color: #f8f9fa; */
+        padding: 1.5rem;
+        border-radius: 10px;
+        height: fit-content;
+        border: 1px solid #405712;
+    }
+
+        .payment-summary h3 {
+            color: #405712;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+    .program-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .detail-item .label {
+            color: #666;
+        }
+
+        .detail-item .value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .detail-item.total {
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+            .detail-item.total .label,
+            .detail-item.total .value {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #405712;
+            }
+
+    i.fa-brands {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+        color: #DAA520;
+    }
+</style>

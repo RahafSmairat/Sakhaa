@@ -35,6 +35,8 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<Payment> Payments { get; set; }
 
+    public virtual DbSet<Project> Projects { get; set; }
+
     public virtual DbSet<PublicReport> PublicReports { get; set; }
 
     public virtual DbSet<Subscription> Subscriptions { get; set; }
@@ -53,21 +55,10 @@ public partial class MyDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Benefici__3214EC0769DBCEFE");
 
-            entity.Property(e => e.AidVerificationDocument)
+            entity.Property(e => e.FullName).HasMaxLength(255);
+            entity.Property(e => e.Status)
                 .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.FamilyBookUrl)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.FullName)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.InsuranceStatusDocument)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.PhoneNumber)
-                .HasMaxLength(20)
-                .IsUnicode(false);
+                .HasColumnName("status");
         });
 
         modelBuilder.Entity<BeneficiaryFeedback>(entity =>
@@ -118,8 +109,11 @@ public partial class MyDbContext : DbContext
 
             entity.HasOne(d => d.Program).WithMany(p => p.Donations)
                 .HasForeignKey(d => d.ProgramId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Donations__Progr__3E52440B");
+
+            entity.HasOne(d => d.Project).WithMany(p => p.Donations)
+                .HasForeignKey(d => d.ProjectId)
+                .HasConstraintName("FK_Donations_Projects");
 
             entity.HasOne(d => d.User).WithMany(p => p.Donations)
                 .HasForeignKey(d => d.UserId)
@@ -131,6 +125,10 @@ public partial class MyDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Donation__3214EC07BCFF7755");
 
+            entity.Property(e => e.ImagePath).IsUnicode(false);
+            entity.Property(e => e.IsSubscibtion)
+                .HasDefaultValue(true)
+                .HasColumnName("isSubscibtion");
             entity.Property(e => e.MinimumDonationAmount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.Name).HasMaxLength(100);
         });
@@ -194,12 +192,9 @@ public partial class MyDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__NewsEven__3214EC070A6ED02A");
 
-            entity.Property(e => e.Content).HasColumnType("text");
             entity.Property(e => e.CreatedAt).HasColumnType("datetime");
             entity.Property(e => e.EventDate).HasColumnType("datetime");
-            entity.Property(e => e.Title)
-                .HasMaxLength(255)
-                .IsUnicode(false);
+            entity.Property(e => e.Title).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Payment>(entity =>
@@ -236,6 +231,22 @@ public partial class MyDbContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Payments__UserId__59FA5E80");
+        });
+
+        modelBuilder.Entity<Project>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Projects__3214EC078F16CFC5");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.CurrentAmount)
+                .HasDefaultValue(0.00m)
+                .HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.ImageUrl).HasMaxLength(255);
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.TargetAmount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Title).HasMaxLength(100);
         });
 
         modelBuilder.Entity<PublicReport>(entity =>

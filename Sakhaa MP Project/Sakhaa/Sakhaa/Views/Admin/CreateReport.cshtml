@@ -1,0 +1,53 @@
+@model Sakhaa.Models.PublicReport
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "إضافة تقرير جديد";
+}
+
+<div class="admin-form">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4">
+        <h5 class="mb-0">إضافة تقرير عام جديد</h5>
+        <a href="/Admin/Reports" class="btn btn-sm btn-outline-secondary">
+            <i class="fa-solid fa-arrow-right me-1"></i> العودة
+        </a>
+    </div>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger mb-4">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <form asp-action="CreateReport" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label for="ReportFileName" class="form-label">اسم التقرير</label>
+                    <input type="text" class="form-control" id="ReportFileName" name="ReportFileName" required>
+                    <span asp-validation-for="ReportFileName" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ReportYear" class="form-label">سنة التقرير</label>
+                    <input type="number" class="form-control" id="ReportYear" name="ReportYear" min="2000" max="2100" 
+                           required value="@DateTime.Now.Year">
+                    <span asp-validation-for="ReportYear" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ReportFile" class="form-label">ملف التقرير (PDF)</label>
+                    <input type="file" class="form-control" id="ReportFile" name="ReportFile" accept=".pdf" required>
+                    <div class="form-text mt-2">يرجى رفع ملف بصيغة PDF فقط.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-end mt-4">
+            <a href="/Admin/Reports" class="btn btn-outline-secondary me-2">إلغاء</a>
+            <button type="submit" class="btn btn-primary">إضافة التقرير</button>
+        </div>
+    </form>
+</div> 

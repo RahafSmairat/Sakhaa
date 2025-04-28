@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<NewsEvent>
+@{
     ViewData["Title"] = "الرئيسية";
     Layout = null;
     var userEmail = Context.Session.GetString("UserEmail");
@@ -51,7 +52,9 @@
                             <a class="nav-link" asp-controller="Home" asp-action="About">من نحن</a>
                             <a class="nav-link" asp-controller="Home" asp-action="SuccessStories">قصص النجاح</a>
                             <a class="nav-link" asp-controller="Home" asp-action="PublicReports">التقارير السنوية</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="BeneficiaryApplication">طلب استفادة</a>
                             <a class="nav-link" asp-controller="Donation" asp-action="DonationPrograms">برامجنا</a>
+                            <a class="nav-link" asp-controller="Projects" asp-action="Index">مشاريعنا</a>
                             <a class="nav-link" asp-controller="Home" asp-action="Index">الرئيسية</a>
                         </div>
 
@@ -224,114 +227,56 @@
         <section id="newsCards" class="section">
             <h2>آخر الأخبار</h2>
             <div class="container">
-
                 <div class="posts">
+                    @foreach (var newsEvent in Model)
+                    {
+                        <div class="post">
+                            @if (!string.IsNullOrEmpty(newsEvent.Image))
+                            {
+                                <div class="post__image" style="background-image: url('/images/@newsEvent.Image'); background-size:cover"></div>
+                            }
+                            else
+                            {
+                                <div class="post__image post__image--@(new Random().Next(1, 7))"></div>
+                            }
+                            <div class="post__content">
+                                <div class="post__inside">
+                                    <h3 class="post__title" style="line-height:30px">@newsEvent.Title</h3>
+                                    <p class="post__excerpt" style="direction:rtl">
+                                        @{
+                                            // Simplify the excerpt logic to ensure consistent display
+                                            string contentExcerpt = "";
+                                            if (!string.IsNullOrEmpty(newsEvent.Content))
+                                            {
+                                                // Get only first 100 characters or first line, whichever is shorter
+                                                var firstLineEnd = newsEvent.Content.IndexOf('\n');
+                                                if (firstLineEnd > 0 && firstLineEnd < 100)
+                                                {
+                                                    contentExcerpt = newsEvent.Content.Substring(0, firstLineEnd);
+                                                }
+                                                else
+                                                {
+                                                    var maxLength = Math.Min(100, newsEvent.Content.Length);
+                                                    contentExcerpt = newsEvent.Content.Substring(0, maxLength);
+                                                    if (newsEvent.Content.Length > 100)
+                                                    {
+                                                        contentExcerpt += "...";
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        @contentExcerpt
+                                    </p>
+                                    <button class="btn--accent post__button">
+                                        <a href="@Url.Action("NewsDetails", "Home", new { id = newsEvent.Id })">
+                                            المزيد
+                                        </a>
+                                    </button>
 
-                    <div class="post">
-                        <div class="post__image post__image--1"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    من الملاحظ أن النصوص المُستخدمة في التطبيقات والمواقع الإلكترونية تحتوي عادة على
-                                    أفكار مرجعية تكون ذات معنى مؤقت. ولذا فمن الضروري اعتماد النماذج العشوائية لاختبار
-                                    تصميم المحتوى والتأكد من عدم التأثير على الجمالية من خلال استخدام نصوص موثوقة
-                                    وأصيلة.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="post__image post__image--2"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    من الممكن أن يكون التبديل بين النصوص الخاصة باللغة العربية والنصوص الغربية أمرًا
-                                    مربكًا عند تصميم مواقع شاملة. ولكن، باستخدام النصوص العربية العشوائية يمكن خلق تجانس
-                                    سلس بين النصوص ضمن التصميم العام من دون الحاجة إلى إدخال المحتوى الكامل في البداية.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="post__image post__image--3"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    إن هذه النصوص العشوائية تمثل مثالًا جيدًا لاستخدام النصوص في تصاميم المواقع.
-                                    فتُستخدم بشكل أساسي لغرض ملء المساحات وعرض التخطيطات المختلفة حتى يتم إدخال النصوص
-                                    الأصلية فيما بعد. قد يُستخدم هذا النص لتجربة تصميم النوافذ أو القوائم الجانبية في
-                                    الصفحات.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="post__image post__image--4"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    تعتبر التجارب الأولى في التصميمات البرمجية أمرًا حيويًا لاختبار تنسيق النصوص وحجمها
-                                    في الواجهات. قد تساعد هذه النصوص أيضًا في تحديد المسافات البينية بين العناصر والتأكد
-                                    من توازن الشكل العام للموقع. إن التنوع في الأحرف والمحتوى يؤدي إلى إمكانية تقديم
-                                    رؤية أفضل للمشروع.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="post__image post__image--5"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    إن استخدام نصوص عشوائية خلال مرحلة التطوير يساهم في اختبار تصميم الويب بشكل عملي
-                                    وواقعي. من خلال إدراج هذه النصوص المؤقتة، يمكن للمهندسين والمطورين التركيز على تنسيق
-                                    العناصر البصرية مثل الخطوط، والعناوين، والمسافات بين النصوص داخل الموقع.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="post__image post__image--6"></div>
-                        <div class="post__content">
-                            <div class="post__inside">
-                                <h3 class="post__title">عنوان الخبر</h3>
-                                <p class="post__excerpt">
-                                    من الملاحظ أن النصوص المُستخدمة في التطبيقات والمواقع الإلكترونية تحتوي عادة على
-                                    أفكار مرجعية تكون ذات معنى مؤقت. ولذا فمن الضروري اعتماد النماذج العشوائية لاختبار
-                                    تصميم المحتوى والتأكد من عدم التأثير على الجمالية من خلال استخدام نصوص موثوقة
-                                    وأصيلة.
-                                </p>
-                                <button class="btn--accent post__button">
-                                    المزيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </section>

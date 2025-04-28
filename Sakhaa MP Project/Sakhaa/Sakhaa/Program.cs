@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Sakhaa.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,21 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 builder.Services.AddSession();
 
 var app = builder.Build();
+
+// Create necessary directories
+try
+{
+    string beneficiariesDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "beneficiaries");
+    if (!Directory.Exists(beneficiariesDir))
+    {
+        Directory.CreateDirectory(beneficiariesDir);
+    }
+    Console.WriteLine("Created beneficiaries directory: " + beneficiariesDir);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error creating directories: " + ex.Message);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -28,7 +46,12 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+//app.MapControllerRoute(
+//    name: "areas",
+//    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

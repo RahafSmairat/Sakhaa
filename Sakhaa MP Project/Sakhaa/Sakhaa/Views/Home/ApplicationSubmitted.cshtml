@@ -1,0 +1,112 @@
+@{
+    ViewData["Title"] = "تم تقديم الطلب";
+}
+
+@section HeaderTitle {
+    <h2 class="section">تم تقديم الطلب بنجاح</h2>
+}
+
+<div class="container py-5" style="direction:rtl">
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3>تم استلام طلب الاستفادة بنجاح</h3>
+        <p>شكراً لتقديم طلب الاستفادة. سيتم مراجعة طلبكم من قبل فريقنا والتواصل معكم في أقرب وقت ممكن.</p>
+        <div class="info-section">
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>يستغرق وقت المراجعة عادة من 7 إلى 14 يوم عمل</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>سيتم التواصل معكم على رقم الهاتف المقدم في الطلب</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>يمكنكم التواصل معنا عبر صفحة <a href="/Home/Contact">تواصل معنا</a> في حال وجود أي استفسارات</span>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="/" class="btn-primary">العودة للصفحة الرئيسية</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .success-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 3rem;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .success-icon {
+        font-size: 5rem;
+        color: #405712;
+        margin-bottom: 1.5rem;
+    }
+
+    .success-container h3 {
+        color: #405712;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .success-container p {
+        color: #555;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .info-section {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: right;
+        margin-bottom: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        gap: 0.75rem;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-item i {
+        color: #405712;
+        margin-top: 0.2rem;
+    }
+
+    .action-buttons {
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: #405712;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #DAA520;
+        color: white;
+        text-decoration: none;
+    }
+</style> 

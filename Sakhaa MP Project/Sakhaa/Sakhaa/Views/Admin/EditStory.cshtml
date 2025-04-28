@@ -1,0 +1,80 @@
+@model Sakhaa.Models.SuccessStory
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <a href="/Admin/SuccessStories" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-arrow-right me-1"></i> العودة إلى القائمة
+        </a>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-light py-3">
+        <h5 class="mb-0">تعديل قصة النجاح</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="EditStory" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedAt" />
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">العنوان</label>
+                        <input asp-for="Title" class="form-control" required />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="ImagePath" class="form-label">اسم الصورة</label>
+                        <input asp-for="ImagePath" class="form-control" placeholder="اسم الصورة" />
+                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                    </div>
+                    
+                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">الصورة الحالية</label>
+                            <div>
+                                <img src="/images/@Model.ImagePath" alt="@Model.Title" class="img-thumbnail" style="max-height: 150px;" />
+                            </div>
+                        </div>
+                    }
+                    
+                    <div class="form-group mb-3">
+                        <label class="form-label">تحميل صورة جديدة (اختياري)</label>
+                        <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                        <small class="text-muted">اترك هذا الحقل فارغًا للاحتفاظ بالصورة الحالية</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Content" class="form-label">المحتوى</label>
+                <textarea asp-for="Content" class="form-control" rows="10" required></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            
+            <div class="d-flex">
+                <button type="submit" class="btn btn-primary me-2">
+                    <i class="fa-solid fa-save me-1"></i> حفظ التغييرات
+                </button>
+                <a href="/Admin/SuccessStories" class="btn btn-outline-secondary">إلغاء</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // You could include a rich text editor for the Content field here
+        // For example, using TinyMCE or CKEditor
+    </script>
+} 

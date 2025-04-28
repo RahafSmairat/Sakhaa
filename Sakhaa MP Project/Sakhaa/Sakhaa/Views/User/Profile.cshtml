@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "الملف الشخصي";
 }
 
 @section HeaderTitle {
@@ -7,262 +7,551 @@
 }
 
 @section Scripts {
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         function enableEdit(id) {
-        const inputField = document.getElementById(id);
-        inputField.disabled = false;
-        inputField.focus();
+            const inputField = document.getElementById(id);
+            inputField.disabled = false;
+            inputField.focus();
+            document.getElementById(id + '-edit-btn').classList.add('d-none');
+            document.getElementById(id + '-save-indicator').classList.remove('d-none');
         }
 
+        $(document).ready(function() {
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
 
-        (function (window, document, undefined) {
-        'use strict';
+            // Filter functionality for reports
+            $('.filter-option').click(function() {
+                const filterType = $(this).data('filter-type');
+                const filterValue = $(this).data('filter-value');
 
-        ////////////////////////////////////
-        var hasSubmenu = document.querySelectorAll('[data-id]');
-        var active = 'active';
-        var i = 0;
+                // Here you would implement the actual filtering logic
+                console.log(`Filter type: ${filterType}, value: ${filterValue}`);
 
-        function showSubmenu (event) {
-        var self = this;
+                // Update active state
+                $(`.filter-option[data-filter-type="${filterType}"]`).removeClass('active');
+                $(this).addClass('active');
+            });
 
-        var submenu = document.getElementById(self.dataset.id);
+            // Alert auto-dismiss
+            setTimeout(function() {
+                $('.alert').alert('close');
+            }, 5000);
 
-        event.preventDefault();
+            // Handle cancel subscription confirmation with SweetAlert2
+            $('.cancel-subscription-btn').click(function() {
+                const donationId = $(this).data('donation-id');
 
-
-        var otherSubmenu = Array.prototype.filter.call(
-        submenu.parentNode.children,
-        function(child) {
-        if ( child !== submenu ) {
-        removeChildClass(child);
-        }
+                Swal.fire({
+                    title: 'تأكيد إلغاء الاشتراك',
+                    text: 'هل أنت متأكد من رغبتك في إلغاء هذا الاشتراك؟',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#405712',
+                    cancelButtonColor: '#A31621',
+                    confirmButtonText: 'نعم، إلغاء الاشتراك',
+                    cancelButtonText: 'إلغاء',
+                    position: 'center',
+                    customClass: {
+                        popup: 'swal-rtl'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Send AJAX request to cancel the donation
+                        $.ajax({
+                            url: '/User/CancelDonation',
+                            type: 'POST',
+                            data: { id: donationId },
+                            success: function(response) {
+                                if (response.success) {
+                                    Swal.fire({
+                                        title: 'تم إلغاء الاشتراك',
+                                        text: 'تم إلغاء اشتراكك بنجاح',
+                                        icon: 'success',
+                                                            customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                        confirmButtonColor: '#405712'
+                                    }).then(() => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        title: 'خطأ',
+                                        text: response.message || 'حدث خطأ أثناء إلغاء الاشتراك',
+                                        icon: 'error',
+                                                            customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                        confirmButtonColor: '#405712'
+                                    });
+                                }
+                            },
+                            error: function() {
+                                Swal.fire({
+                                    title: 'خطأ',
+                                    text: 'حدث خطأ أثناء الاتصال بالخادم',
+                                    icon: 'error',
+                                                        customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                    confirmButtonColor: '#405712'
+                                });
+                            }
+                        });
+                    }
+                });
+            });
         });
-
-        var otherItem = Array.prototype.filter.call(
-        self.parentNode.children,
-        function(child) {
-        if ( child !== self ) {
-        removeChildClass(child);
-        }
-        });
-
-        self.classList.toggle(active);
-        submenu.classList.toggle(active);
-        }
-
-        function removeChildClass(el) {
-        if ( el.classList.contains(active) ) {
-        el.classList.remove(active);
-        }
-        }
-
-        for ( i = 0; i < hasSubmenu.length; i++ ) {
-        hasSubmenu[i].addEventListener('click', showSubmenu);
-        }
-        })(window, document);
     </script>
 }
 
-
 @model Sakhaa.Models.ProfileViewModel
 
-<section class="mt-5 mb-5">
-    <div class="container profileContainer">
-        <div class="row tabs mt-4">
-            <!----->
-            <div class="col-md-8 left">
+<style>
+    /* Profile container */
+    .profile-container {
+        min-height: 100vh;
+    }
+
+    /* Add CSS for the project badge */
+    .program-badge.project {
+        background-color: #DAA520;
+        color: white;
+    }
+</style>
+
+<div class="profile-container" style="direction:rtl">
+    <div class="container py-4">
+        <!-- Alerts -->
+        <div class="row mb-4">
+            <div class="col-12">
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-circle-exclamation me-2"></i>
+                        @TempData["Error"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                    </div>
+                }
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                        @TempData["Success"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Sidebar - Profile Navigation -->
+            <div class="col-md-3 mb-4">
+                <div class="profile-sidebar">
+                    <div class="user-info text-center mb-4">
+                        @* <div class="avatar-container"> *@
+                        @*     <div class="avatar"> *@
+                        @*         <i class="fa-solid fa-user"></i> *@
+                        @*     </div> *@
+                        @* </div> *@
+                        <h4 class="mt-3">@Model.userInfo.FirstName @Model.userInfo.LastName</h4>
+                        <p>@Model.userInfo.Email</p>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <ul class="nav flex-column p-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="profile-tab" data-bs-toggle="pill" href="#profile-content">
+                                    <i class="fa-solid fa-user-pen"></i> الملف الشخصي
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="history-tab" data-bs-toggle="pill" href="#history-content">
+                                    <i class="fa-solid fa-clock-rotate-left"></i> سجل التبرعات
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="subscriptions-tab" data-bs-toggle="pill" href="#subscriptions-content">
+                                    <i class="fa-solid fa-repeat"></i> الاشتراكات الحالية
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="reports-tab" data-bs-toggle="pill" href="#reports-content">
+                                    <i class="fa-solid fa-chart-line"></i> التقارير والإحصائيات
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9">
                 <div class="tab-content">
-                    <div class="tab-pane container p-0 active" id="about-1">
-                        <!-- <div class="img"style="background-image: url(https://i.postimg.cc/cJQ2hp1Q/about-1.jpg);"></div> -->
-                        <form asp-action="UpdateProfile" method="post" class="profileForm">
+                    <!-- Profile Information -->
+                    <div class="tab-pane fade show active" id="profile-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>معلومات الحساب</h3>
+                                <p class="text-muted">يمكنك تحديث معلوماتك الشخصية هنا</p>
+                            </div>
 
-                            @if (TempData["Error"] != null)
-                            {
-                                <div class="alert alert-danger alert-dismissible fade show w-50" role="alert">
-                                    @TempData["Error"]
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
-                                </div>
-                            }
+                            <div class="card-body">
+                                <form asp-action="UpdateProfile" method="post" class="profile-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="name">الاسم الكامل</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="name" name="FullName"
+                                                           value="@Model.userInfo.FirstName @Model.userInfo.LastName" disabled required>
+                                                    <button type="button" id="name-edit-btn" class="btn btn-edit"
+                                                            onclick="enableEdit('name')" data-bs-toggle="tooltip" title="تعديل">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </button>
+                                                </div>
+                                                <small id="name-save-indicator" class="text-success d-none">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                    سيتم حفظ التغييرات عند النقر على زر الحفظ
+                                                </small>
+                                            </div>
+                                        </div>
 
-                            @if (TempData["Success"] != null)
-                            {
-                                <div class="alert alert-success alert-dismissible fade show w-50" role="alert">
-                                    @TempData["Success"]
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
-                                </div>
-                            }
-                            <label for="name">الاسم:</label><br>
-                            <input type="text" id="name" name="FullName" value="@Model.userInfo.FirstName @Model.userInfo.LastName" disabled required>
-                            <button type="button" onclick="enableEdit('name')" class="editBtn">تعديل</button>
-                            <br><br>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="email">البريد الإلكتروني</label>
+                                                <input type="email" class="form-control" id="email" name="Email"
+                                                       value="@Model.userInfo.Email" disabled required>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <label for="email">البريد الإلكتروني</label><br>
-                            <input type="email" id="email" name="Email" value="@Model.userInfo.Email" disabled required>
-                            <br><br>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="mobile">رقم الهاتف</label>
+                                                <div class="input-group">
+                                                    <input type="tel" class="form-control" id="mobile" name="PhoneNumber"
+                                                           value="@Model.userInfo.PhoneNumber" disabled required>
+                                                    <button type="button" id="mobile-edit-btn" class="btn btn-edit"
+                                                            onclick="enableEdit('mobile')" data-bs-toggle="tooltip" title="تعديل">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </button>
+                                                </div>
+                                                <small id="mobile-save-indicator" class="text-success d-none">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                    سيتم حفظ التغييرات عند النقر على زر الحفظ
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <label for="mobile">رقم الهاتف</label><br>
-                            <input type="tel" id="mobile" name="PhoneNumber" value="@Model.userInfo.PhoneNumber" disabled required>
-                            <button type="button" onclick="enableEdit('mobile')" class="editBtn">تعديل</button>
-                            <br><br>
+                                    <hr class="my-4">
 
-                            <h5>تغيير كلمة السر</h5>
-                            <label for="current-password">كلمة السر الحالية</label><br>
-                            <input type="password" id="currentPassword" name="CurrentPassword" placeholder="كلمة السر الحالية">
-                            <br><br>
+                                    <h4 class="mb-3">تغيير كلمة المرور</h4>
 
-                            <label for="password">كلمة السر الجديدة</label><br>
-                            <input type="password" id="password" name="Password" placeholder="كلمة السر">
-                            <br><br>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="currentPassword">كلمة المرور الحالية</label>
+                                                <input type="password" class="form-control" id="currentPassword"
+                                                       name="CurrentPassword" placeholder="أدخل كلمة المرور الحالية">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <label for="confirm-password">تأكيد كلمة السر</label><br>
-                            <input type="password" id="confirm-password" name="ConfirmPassword" placeholder="تأكيد كلمة السر">
-                            <br><br>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="password">كلمة المرور الجديدة</label>
+                                                <input type="password" class="form-control" id="password"
+                                                       name="Password" placeholder="أدخل كلمة المرور الجديدة">
+                                            </div>
+                                        </div>
 
-                            <button type="submit" class="saveBtn">حفظ التغييرات</button>
-                        </form>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="confirm-password">تأكيد كلمة المرور</label>
+                                                <input type="password" class="form-control" id="confirm-password"
+                                                       name="ConfirmPassword" placeholder="أعد إدخال كلمة المرور الجديدة">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    </div>
-                    <!----->
-                    <div class="tab-pane container p-0" id="about-2">
-                        <div class="historyTable">
-                            @if (Model.PreviousDonations != null && Model.PreviousDonations.Any())
-                            {
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>نوع التبرع</th>
-                                            <th>قيمة التبرع</th>
-                                            <th>تاريخ بداية الاشتراك</th>
-                                            <th>تاريخ انتهاء الاشتراك</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var donation in Model.PreviousDonations)
-                                        {
-                                            <tr>
-                                                <td>@donation.Program.Name</td>
-                                                <td>@donation.Amount.ToString() د.أ</td>
-                                                <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
-                                                <td>@donation.DonationEndDate?.ToString("yyyy-MM-dd")</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                            }
-                            else
-                            {
-                                <p>لم تقم بأية تبرعات بعد.</p>
-                            }
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa-solid fa-floppy-disk"></i> حفظ التغييرات
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <!----->
-                    <div class="tab-pane container p-0" id="about-3">
-                        <!-- <div class="img"style="background-image: url(https://i.postimg.cc/MpfhMch3/about-3.jpg);"></div> -->
-                        <h5>عرض حسب</h5>
-                        <div class="container example-three filterContainer">
-                            <header class="radius">
-                                <nav class="nav scroll bg-green">
-                                    <span class="nav-item" data-id="blog-3" aria-controls="blog-3">التاريخ</span>
-                                    <span class="nav-item" data-id="portfolio-3" aria-controls="portfolio-3">نوع الاشتراك</span>
-                                    <span class="nav-item" data-id="amount-3" aria-controls="amount-3">الحجم المالي</span>
-                                    <span class="nav-item" data-id="impact-3" aria-controls="impact-3">الأثر الإجتماعي</span>
-                                </nav>
-                                <div class="bg-dark-grey submenu scroll" id="blog-3">
-                                    <span class="nav-item">آخر شهر</span>
-                                    <span class="nav-item">آخر عام</span>
-                                    <span class="nav-item">الكل</span>
-                                </div>
-                                <div class="bg-dark-grey submenu scroll" id="portfolio-3">
-                                    <span class="nav-item">الاشتراك الأول</span>
-                                    <span class="nav-item">الاشتراك الثاني</span>
-                                    <span class="nav-item">الاشتراك الثالث</span>
-                                </div>
 
-                                <div class="bg-dark-grey submenu scroll" id="amount-3">
-                                    <span class="nav-item">أكثر من</span>
-                                    <span class="nav-item">أقل من</span>
+                    <!-- Donation History -->
+                    <div class="tab-pane fade" id="history-content">
+                        <div class="content-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3>سجل التبرعات</h3>
+                                    <p class="text-muted">سجل جميع تبرعاتك السابقة</p>
                                 </div>
+                            </div>
 
-                                <div class="bg-dark-grey submenu scroll" id="impact-3">
-                                    <span class="nav-item">عدد المستفيدين</span>
-                                    <span class="nav-item">نسبة المساهمة</span>
-                                </div>
-                            </header>
-                        </div>
-
-                        <div id="reportsFiles">
-                            <a href="#">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                تحميل التقرير السنوي لعام - 2025
-                            </a>
+                            <div class="card-body">
+                                @if (Model.PreviousDonations != null && Model.PreviousDonations.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table donations-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>نوع التبرع</th>
+                                                    <th>قيمة التبرع</th>
+                                                    <th>تاريخ بداية الاشتراك</th>
+                                                    <th>تاريخ انتهاء الاشتراك</th>
+                                                    <th>الحالة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var donation in Model.PreviousDonations)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @if (donation.ProjectId.HasValue && donation.Project != null)
+                                                            {
+                                                                <span class="program-badge project">مشروع @donation.Project.Title</span>
+                                                            }
+                                                            else if (donation.Program != null)
+                                                            {
+                                                                <span class="program-badge">@donation.Program.Name</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="program-badge">تبرع</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <strong>@donation.Amount.ToString("0.00")</strong> <span class="currency">د.أ</span>
+                                                        </td>
+                                                        <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>@donation.DonationEndDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>
+                                                            <span class="status-badge completed">مكتمل</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <i class="fa-solid fa-hand-holding-heart"></i>
+                                        </div>
+                                        <h4>لم تقم بأية تبرعات بعد</h4>
+                                        <p>ابدأ رحلة العطاء وساهم في دعم مشاريعنا الخيرية</p>
+                                        <a href="/Donation/DonationPrograms" class="btn btn-primary">تصفح برامج التبرع</a>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
-                    <!----->
-                    <div class="tab-pane container p-0" id="about-4" style="margin:unset">
-                        <div class="historyTable">
-                            @if (Model.CurrentDonations != null && Model.CurrentDonations.Any())
-                            {
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>نوع التبرع</th>
-                                            <th>قيمة التبرع</th>
-                                            <th>تاريخ الاشتراك</th>
-                                            <th>إلغاء الاشتراك</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var donation in Model.CurrentDonations)
-                                        {
-                                            <tr>
-                                                <td>@donation.Program.Name</td>
-                                                <td>@donation.Amount.ToString() د.أ</td>
-                                                <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
-                                                <td>
-                                                    <button type="button" class="cancelBtn">إلغاء</button>
-                                                </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                            }
-                            else
-                            {
-                                <p>لا يوجد اشتراكات سارية.</p>
-                            }
+
+                    <!-- Current Subscriptions -->
+                    <div class="tab-pane fade" id="subscriptions-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>الاشتراكات الحالية</h3>
+                                <p class="text-muted">اشتراكاتك النشطة حالياً</p>
+                            </div>
+
+                            <div class="card-body">
+                                @if (Model.CurrentDonations != null && Model.CurrentDonations.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table donations-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>نوع التبرع</th>
+                                                    <th>قيمة التبرع</th>
+                                                    <th>تاريخ الاشتراك</th>
+                                                    <th>المدة المتبقية</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var donation in Model.CurrentDonations)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @if (donation.ProjectId.HasValue && donation.Project != null)
+                                                            {
+                                                                <span class="program-badge project">@donation.Project.Title</span>
+                                                            }
+                                                            else if (donation.Program != null)
+                                                            {
+                                                                <span class="program-badge">@donation.Program.Name</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="program-badge">تبرع</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <strong>@donation.Amount.ToString("0.00")</strong> <span class="currency">د.أ</span>
+                                                        </td>
+                                                        <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>@(donation.ProjectId.HasValue ? "لمرة واحدة" : "مستمر")</td>
+                                                        <td>
+                                                            @if (!donation.ProjectId.HasValue)
+                                                            {
+                                                                <button type="button" class="btn btn-danger btn-sm cancel-subscription-btn"
+                                                                        data-donation-id="@donation.Id">
+                                                                    <i class="fa-solid fa-ban"></i> إلغاء الاشتراك
+                                                                </button>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="status-badge completed">مكتمل</span>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <i class="fa-solid fa-calendar-xmark"></i>
+                                        </div>
+                                        <h4>لا يوجد اشتراكات نشطة</h4>
+                                        <p>ليس لديك اشتراكات نشطة حالياً</p>
+                                        <a href="/Donation/DonationPrograms" class="btn btn-primary">تصفح برامج التبرع</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reports & Statistics -->
+                    <div class="tab-pane fade" id="reports-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>التقارير والإحصائيات</h3>
+                                <p class="text-muted">إحصائيات وتقارير تبرعاتك</p>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="filter-section mb-4">
+                                    <h5 class="filter-title">تصفية حسب</h5>
+
+                                    <div class="filter-group">
+                                        <h6 class="filter-group-title">الفترة الزمنية</h6>
+                                        <div class="filter-options">
+                                            <button class="filter-option active" data-filter-type="period" data-filter-value="month">
+                                                آخر شهر
+                                            </button>
+                                            <button class="filter-option" data-filter-type="period" data-filter-value="year">
+                                                آخر عام
+                                            </button>
+                                            <button class="filter-option" data-filter-type="period" data-filter-value="all">
+                                                الكل
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-group">
+                                        <h6 class="filter-group-title">نوع الاشتراك</h6>
+                                        <div class="filter-options">
+                                            <button class="filter-option" data-filter-type="type" data-filter-value="all">
+                                                جميع الأنواع
+                                            </button>
+                                            <button class="filter-option" data-filter-type="type" data-filter-value="monthly">
+                                                الاشتراك الشهري
+                                            </button>
+                                            <button class="filter-option" data-filter-type="type" data-filter-value="onetime">
+                                                التبرع لمرة واحدة
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reports-section">
+                                    <div class="row g-4">
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h4 class="stat-value">@Model.PreviousDonations.Sum(d => d.Amount).ToString("0.00") د.أ</h4>
+                                                    <p class="stat-label">إجمالي التبرعات</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fa-solid fa-clipboard-list"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h4 class="stat-value">@Model.PreviousDonations.Count()</h4>
+                                                    <p class="stat-label">عدد التبرعات</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h4 class="stat-value">@Model.CurrentDonations.Count()</h4>
+                                                    <p class="stat-label">الاشتراكات النشطة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reports-downloads mt-5">
+                                    <h5 class="mb-3">تقارير قابلة للتحميل</h5>
+                                    <div class="report-file">
+                                        <div class="report-icon">
+                                            <i class="fa-solid fa-file-pdf"></i>
+                                        </div>
+                                        <div class="report-info">
+                                            <h5 class="report-name">التقرير السنوي - 2025</h5>
+                                            <p class="report-description">ملخص شامل لجميع التبرعات والأنشطة لعام 2025</p>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-primary download-btn">
+                                            <i class="fa-solid fa-download"></i> تحميل
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 profileNav">
-                <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
-                    <li class="nav-item text-left">
-                        <a class="nav-link active py-3" data-toggle="tab" href="#about-1">معلومات الحساب</a>
-                    </li>
-                    <li class="nav-item text-left">
-                        <a class="nav-link py-3" data-toggle="tab" href="#about-2">سجل التبرعات</a>
-                    </li>
-                    <li class="nav-item text-left">
-                        <a class="nav-link py-3" data-toggle="tab" href="#about-3">التقارير والإحصائيات</a>
-                    </li>
-                    <li class="nav-item text-left">
-                        <a class="nav-link py-3" data-toggle="tab" href="#about-4">الإشتراكات الحالية</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
-</section>
+</div>
+
+

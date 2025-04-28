@@ -1,0 +1,244 @@
+@model BeneficiaryApplication
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="content-container">
+    <div class="mb-4 d-flex justify-content-between align-items-center border-bottom pb-2">
+        <h5 class="mb-0">تفاصيل طلب الاستفادة</h5>
+        <div>
+            <a href="@Url.Action("Beneficiaries", "Admin")" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-arrow-right"></i> العودة للقائمة
+            </a>
+            <a href="@Url.Action("DownloadBeneficiaryAsPdf", "Admin", new { id = Model.Id })" class="btn btn-outline-info" target="_blank">
+                <i class="fa-solid fa-file-pdf"></i> تصدير PDF
+            </a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h6 class="mb-0">المعلومات الشخصية</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">الاسم الكامل:</div>
+                        <div class="col-md-9">@Model.FullName</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">رقم الهاتف:</div>
+                        <div class="col-md-9">@Model.PhoneNumber</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">حالة الطلب:</div>
+                        <div class="col-md-9">
+                            @if (string.IsNullOrEmpty(Model.Status) || Model.Status == "Pending")
+                            {
+                                <span class="badge bg-warning">قيد المراجعة</span>
+                            }
+                            else if (Model.Status == "Approved")
+                            {
+                                <span class="badge bg-success">تمت الموافقة</span>
+                            }
+                            else if (Model.Status == "Rejected")
+                            {
+                                <span class="badge bg-danger">مرفوض</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@Model.Status</span>
+                            }
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Notes))
+                    {
+                        <div class="row mb-3">
+                            <div class="col-md-3 fw-bold">ملاحظات:</div>
+                            <div class="col-md-9">@Model.Notes</div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0">الوثائق المرفقة</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">دفتر العائلة:</div>
+                        <div class="col-md-9">
+                            @if (!string.IsNullOrEmpty(Model.FamilyBookUrl))
+                            {
+                                <a href="/documents/beneficiaries/@Model.FamilyBookUrl" class="btn btn-sm btn-outline-primary" target="_blank">
+                                    <i class="fa-solid fa-file"></i> عرض الملف
+                                </a>
+                                <a href="/documents/beneficiaries/@Model.FamilyBookUrl" class="btn btn-sm btn-outline-secondary" download>
+                                    <i class="fa-solid fa-download"></i> تحميل
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="text-muted">لم يتم إرفاق الملف</span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">وثيقة إثبات الحاجة:</div>
+                        <div class="col-md-9">
+                            @if (!string.IsNullOrEmpty(Model.AidVerificationDocument))
+                            {
+                                <a href="/documents/beneficiaries/@Model.AidVerificationDocument" class="btn btn-sm btn-outline-primary" target="_blank">
+                                    <i class="fa-solid fa-file"></i> عرض الملف
+                                </a>
+                                <a href="/documents/beneficiaries/@Model.AidVerificationDocument" class="btn btn-sm btn-outline-secondary" download>
+                                    <i class="fa-solid fa-download"></i> تحميل
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="text-muted">لم يتم إرفاق الملف</span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">وثيقة الوضع التأميني:</div>
+                        <div class="col-md-9">
+                            @if (!string.IsNullOrEmpty(Model.InsuranceStatusDocument))
+                            {
+                                <a href="/documents/beneficiaries/@Model.InsuranceStatusDocument" class="btn btn-sm btn-outline-primary" target="_blank">
+                                    <i class="fa-solid fa-file"></i> عرض الملف
+                                </a>
+                                <a href="/documents/beneficiaries/@Model.InsuranceStatusDocument" class="btn btn-sm btn-outline-secondary" download>
+                                    <i class="fa-solid fa-download"></i> تحميل
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="text-muted">لم يتم إرفاق الملف</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h6 class="mb-0">تحديث حالة الطلب</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdateBeneficiaryStatus" asp-route-id="@Model.Id" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">الحالة الحالية:</label>
+                            <div>
+                                @if (string.IsNullOrEmpty(Model.Status) || Model.Status == "Pending")
+                                {
+                                    <span class="badge bg-warning">قيد المراجعة</span>
+                                }
+                                else if (Model.Status == "Approved")
+                                {
+                                    <span class="badge bg-success">تمت الموافقة</span>
+                                }
+                                else if (Model.Status == "Rejected")
+                                {
+                                    <span class="badge bg-danger">مرفوض</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@Model.Status</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">تحديث الحالة:</label>
+                            <select class="form-select" id="status" name="status">
+                                <option value="Pending" selected="@(Model.Status == "Pending")">قيد المراجعة</option>
+                                <option value="Approved" selected="@(Model.Status == "Approved")">موافقة</option>
+                                <option value="Rejected" selected="@(Model.Status == "Rejected")">رفض</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notes" class="form-label">ملاحظات:</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="3">@Model.Notes</textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">تحديث الحالة</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0">إجراءات</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("DownloadBeneficiaryAsPdf", "Admin", new { id = Model.Id })" class="btn btn-outline-info" target="_blank">
+                            <i class="fa-solid fa-file-pdf"></i> تصدير PDF
+                        </a>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <i class="fa-solid fa-trash"></i> حذف الطلب
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">تأكيد الحذف</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                هل أنت متأكد من رغبتك في حذف طلب الاستفادة المقدم من <strong>@Model.FullName</strong>؟
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <form asp-action="DeleteBeneficiaryApplication" asp-route-id="@Model.Id" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-danger">حذف</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .info-section {
+        background-color: #f8f9fa;
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+    
+    .section-title {
+        margin-bottom: 1.25rem;
+        color: #405712;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 0.5rem;
+    }
+    
+    .info-label {
+        font-weight: 600;
+    }
+    
+    .status-card, .action-card {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .status-card .card-header, .action-card .card-header {
+        background-color: #405712;
+        color: white;
+    }
+</style> 

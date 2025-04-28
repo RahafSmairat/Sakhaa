@@ -1,7 +1,26 @@
+wwwroot\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf
+wwwroot\documents\beneficiaries\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf
+wwwroot\documents\beneficiaries\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf
+wwwroot\documents\beneficiaries\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf
+wwwroot\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf
+wwwroot\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf
+wwwroot\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf
+wwwroot\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf
+wwwroot\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf
 wwwroot\favicon.ico
+wwwroot\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg
 wwwroot\images\3-help.jpg
+wwwroot\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg
 wwwroot\images\bodyBG.png
 wwwroot\images\bodyBG1.png
+wwwroot\images\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg
+wwwroot\images\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg
 wwwroot\images\Charity.jpg
 wwwroot\images\circle1.png
 wwwroot\images\deal (1).png
@@ -24,9 +43,19 @@ wwwroot\images\leftCircle.png
 wwwroot\images\logo.png
 wwwroot\images\love-letter.png
 wwwroot\images\money.png
+wwwroot\images\news\news_638812908952968622.jpg
+wwwroot\images\news\news_638812926223390968.jpg
+wwwroot\images\news\news_638812926401261562.jpg
+wwwroot\images\news\news_638812926544421351.jpg
+wwwroot\images\news\news_638812926907847900.jpg
+wwwroot\images\news\news_638812927228841485.jpg
 wwwroot\images\pragrams.png
+wwwroot\images\program_638812993373130868.png
+wwwroot\images\program_638812994270576387.png
+wwwroot\images\program_638812995451188517.png
+wwwroot\images\program_638812996022859181.png
+wwwroot\images\program_638812996905375387.png
 wwwroot\images\program1.png
-wwwroot\images\program2.png
 wwwroot\images\program3.png
 wwwroot\images\program4.png
 wwwroot\images\rightCircle.png
@@ -34,9 +63,11 @@ wwwroot\images\self-love (1).png
 wwwroot\images\statisticsImg1.jpeg
 wwwroot\images\statisticsImg2.jpeg
 wwwroot\images\statisticsImg3.jpeg
+wwwroot\images\stories\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg
 wwwroot\images\successStories.png
 wwwroot\images\sustainable 1.png
 wwwroot\javaScript\about.js
+wwwroot\javaScript\admin.js
 wwwroot\javaScript\giftForm.js
 wwwroot\javaScript\home.js
 wwwroot\javaScript\navAndFooterFetch.js
@@ -103,6 +134,9 @@ wwwroot\publicReports\Angular Part#2.pdf
 wwwroot\styles\about.css
 wwwroot\styles\about.css.map
 wwwroot\styles\about.scss
+wwwroot\styles\admin.css
+wwwroot\styles\admin.min.css
+wwwroot\styles\admin.scss
 wwwroot\styles\contact.css
 wwwroot\styles\contact.css.map
 wwwroot\styles\contact.scss
@@ -137,6 +171,7 @@ wwwroot\styles\programsDetails.css.map
 wwwroot\styles\programsDetails.scss
 wwwroot\styles\reports.css
 wwwroot\styles\reports.css.map
+wwwroot\styles\reports.min.css
 wwwroot\styles\reports.scss
 wwwroot\styles\signUp.css
 wwwroot\styles\signUp.css.map

@@ -1,0 +1,383 @@
+﻿@{
+    ViewData["Title"] = "DonationProgramDetails";
+}
+
+@model Sakhaa.Models.DonationProgram
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">الرئيسية</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "DonationPrograms")">برامج التبرع</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="program-detail-card">
+                <div class="program-header">
+                    <h2 class="program-title">@Model.Name</h2>
+                    <div class="program-icon">
+                        <img src="/images/@Model.ImagePath" alt="@Model.Name" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="program-body">
+                    <div class="program-description">
+                        <h4>عن البرنامج</h4>
+                        <p>@Model.Description</p>
+                    </div>
+
+                    <div class="program-features mt-5">
+                        <h4>مميزات البرنامج</h4>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-hand-holding-heart"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>مساعدة حقيقية</h5>
+                                        <p>تبرعك يصل مباشرة للمستفيدين ويحدث فرقاً حقيقياً في حياتهم</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>تقارير دورية</h5>
+                                        <p>نرسل لك تقارير عن أثر تبرعك ومدى تحقيق الأهداف</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>آمن وموثوق</h5>
+                                        <p>نضمن وصول تبرعاتك إلى مستحقيها بكل أمانة وشفافية</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h5>جزء من المجتمع</h5>
+                                        <p>انضم لمجتمع من المتبرعين الذين يشاركون نفس الهدف النبيل</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="donation-sidebar">
+                <div class="donation-info">
+                    <div class="info-item">
+                        <span class="info-label">الحد الأدنى للتبرع</span>
+                        <span class="info-value">@Model.MinimumDonationAmount د.أ</span>
+                    </div>
+                    <div class="info-divider"></div>
+                    <div class="info-item">
+                        <span class="info-label">عدد المتبرعين</span>
+                        <span class="info-value">@(Model.Donations?.Count ?? 0)</span>
+                    </div>
+                    <div class="info-divider"></div>
+                    <div class="impact-message">
+                        <i class="fas fa-lightbulb text-warning"></i>
+                        <p>بتبرعك اليوم، ستساهم في تغيير حياة العديد من المحتاجين للأفضل</p>
+                    </div>
+                </div>
+
+                <div class="donation-cta">
+                    <a href="@Url.Action("Donate", "DonationPrograms", new { id = Model.Id })" class="btn btn-primary btn-lg btn-block mb-3">
+                        <i class="fas fa-heart me-2"></i> تبرع الآن
+                    </a>
+                    <p class="text-center donation-security">
+                        <i class="fas fa-lock me-1"></i>
+                        جميع المعاملات آمنة ومشفرة
+                    </p>
+                </div>
+
+                <div class="donation-share mt-4">
+                    <p class="share-title">شارك البرنامج</p>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="share-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="share-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="share-btn telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .program-detail-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .program-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .program-title {
+        color: #405712;
+        font-weight: bold;
+        margin: 0;
+        flex: 1;
+    }
+
+    .program-icon {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+    }
+
+        .program-icon img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    .program-description p {
+        color: #555;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .program-features h4,
+    .program-description h4 {
+        color: #405712;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-right: 1rem;
+    }
+
+        .program-features h4:before,
+        .program-description h4:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 20px;
+            background-color: #405712;
+            border-radius: 2px;
+        }
+
+    .feature-item {
+        display: flex;
+        padding: 1.5rem;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        height: 100%;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        color: #405712;
+        margin-left: 1rem;
+    }
+
+    .feature-content h5 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .feature-content p {
+        color: #666;
+        margin: 0;
+    }
+
+    .donation-sidebar {
+        position: sticky;
+        top: 2rem;
+    }
+
+    .donation-info {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+    }
+
+    .info-label {
+        color: #666;
+    }
+
+    .info-value {
+        color: #405712;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .info-divider {
+        height: 1px;
+        background-color: #f0f0f0;
+        margin: 0.5rem 0;
+    }
+
+    .impact-message {
+        display: flex;
+        background-color: #fef8e8;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+
+        .impact-message i {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+        }
+
+        .impact-message p {
+            color: #6c6c6c;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+    .donation-cta {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+    }
+
+    .btn-primary {
+        background-color: #405712;
+        border-color: #405712;
+    }
+
+        .btn-primary:hover {
+            background-color: #2c5d3c;
+            border-color: #2c5d3c;
+        }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .donation-security {
+        color: #888;
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+    }
+
+    .donation-share {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+    }
+
+    .share-title {
+        color: #444;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .share-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .share-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+    .facebook {
+        background-color: #3b5998;
+    }
+
+    .twitter {
+        background-color: #1da1f2;
+    }
+
+    .whatsapp {
+        background-color: #25d366;
+    }
+
+    .telegram {
+        background-color: #0088cc;
+    }
+
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+    }
+
+    .breadcrumb-item a {
+        color: #405712;
+    }
+
+    .breadcrumb-item.active {
+        color: #666;
+    }
+</style>
+

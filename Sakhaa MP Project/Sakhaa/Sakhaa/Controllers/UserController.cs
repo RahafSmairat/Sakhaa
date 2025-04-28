@@ -32,9 +32,12 @@ namespace Sakhaa.Controllers
                 HttpContext.Session.SetString("UserName", user.FirstName);
 
                 if (user.Email.ToLower() == "admin@gmail.com")
+                {
                     HttpContext.Session.SetString("IsAdmin", "true");
+                    return RedirectToAction("Dashboard", "Admin");
+                }
 
-                return RedirectToAction("Profile");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.Error = "خطأ في كلمة المرور أو البريد الإلكتروني.";
@@ -105,14 +108,13 @@ namespace Sakhaa.Controllers
             if (user == null) return NotFound();
 
             //Donation History
-
             if (string.IsNullOrEmpty(userEmail))
             {
                 return RedirectToAction("Login", "Account");
             }
 
             var previousDonations = _context.Donations.Where(d => d.UserId == user.Id && d.DonationEndDate != null)
-                .Include(d => d.Program)
+                .Include(d => d.Program).Include(p => p.Project)
                 .ToList();
 
             //Current Donations
@@ -184,6 +186,35 @@ namespace Sakhaa.Controllers
 
             TempData["Success"] = "تم حفظ التعديلات بنجاح";
             return RedirectToAction("Profile");
+        }
+
+        [HttpPost]
+        public IActionResult CancelDonation(int id)
+        {
+            string userEmail = HttpContext.Session.GetString("UserEmail");
+            if (string.IsNullOrEmpty(userEmail))
+                return Json(new { success = false, message = "غير مسجل دخول" });
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == userEmail);
+            if (user == null)
+                return Json(new { success = false, message = "المستخدم غير موجود" });
+
+            var donation = _context.Donations.FirstOrDefault(d => d.Id == id && d.UserId == user.Id);
+            if (donation == null)
+                return Json(new { success = false, message = "التبرع غير موجود" });
+
+            // Set end date to today
+            donation.DonationEndDate = DateTime.Now;
+
+            try
+            {
+                _context.SaveChanges();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "حدث خطأ أثناء إلغاء الاشتراك: " + ex.Message });
+            }
         }
 
     }

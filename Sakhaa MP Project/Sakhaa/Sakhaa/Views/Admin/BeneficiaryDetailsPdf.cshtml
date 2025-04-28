@@ -1,0 +1,161 @@
+@model BeneficiaryApplication
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب استفادة - @Model.FullName</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #405712;
+        }
+        .header img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            color: #405712;
+            margin: 10px 0;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .info-section h3 {
+            color: #405712;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .info-label {
+            font-weight: bold;
+            width: 200px;
+        }
+        .info-value {
+            flex: 1;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-approved {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-rejected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="~/images/logo.png" alt="شعار سخاء">
+            <h2>طلب استفادة</h2>
+            <p>طلب رقم: @Model.Id</p>
+        </div>
+
+        <div class="info-section">
+            <h3>المعلومات الشخصية</h3>
+            <div class="info-row">
+                <div class="info-label">الاسم الكامل:</div>
+                <div class="info-value">@Model.FullName</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">رقم الهاتف:</div>
+                <div class="info-value">@Model.PhoneNumber</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">حالة الطلب:</div>
+                <div class="info-value">
+                    @if (string.IsNullOrEmpty(Model.Status) || Model.Status == "Pending")
+                    {
+                        <span class="status status-pending">قيد المراجعة</span>
+                    }
+                    else if (Model.Status == "Approved")
+                    {
+                        <span class="status status-approved">تمت الموافقة</span>
+                    }
+                    else if (Model.Status == "Rejected")
+                    {
+                        <span class="status status-rejected">مرفوض</span>
+                    }
+                    else
+                    {
+                        <span class="status">@Model.Status</span>
+                    }
+                </div>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.Notes))
+            {
+                <div class="info-row">
+                    <div class="info-label">ملاحظات:</div>
+                    <div class="info-value">@Model.Notes</div>
+                </div>
+            }
+        </div>
+
+        <div class="info-section">
+            <h3>المستندات المرفقة</h3>
+            <div class="info-row">
+                <div class="info-label">دفتر العائلة:</div>
+                <div class="info-value">@(string.IsNullOrEmpty(Model.FamilyBookUrl) ? "غير مرفق" : Model.FamilyBookUrl)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">وثيقة إثبات الحاجة:</div>
+                <div class="info-value">@(string.IsNullOrEmpty(Model.AidVerificationDocument) ? "غير مرفق" : Model.AidVerificationDocument)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">وثيقة الوضع التأميني:</div>
+                <div class="info-value">@(string.IsNullOrEmpty(Model.InsuranceStatusDocument) ? "غير مرفق" : Model.InsuranceStatusDocument)</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>تم إصدار هذا التقرير بتاريخ: @DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")</p>
+            <p>جميع الحقوق محفوظة لمؤسسة سخاء &copy; @DateTime.Now.Year</p>
+        </div>
+    </div>
+</body>
+</html> 

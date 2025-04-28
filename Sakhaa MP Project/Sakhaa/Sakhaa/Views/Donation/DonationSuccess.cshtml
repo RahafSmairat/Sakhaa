@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "تم التبرع بنجاح";
+}
+
+@section HeaderTitle {
+    <h2 class="section">شكراً لتبرعك</h2>
+}
+
+<main class="success-container">
+    <div class="success-message" style="direction:rtl">
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3>تم التبرع بنجاح</h3>
+        <p>شكراً لدعمك. تبرعك سيساعد في إحداث فرق حقيقي.</p>
+        <div class="actions">
+            <a href="/Donation/DonationPrograms" class="btn-primary">العودة إلى برامج التبرع</a>
+        </div>
+    </div>
+</main>
+
+<style>
+    .success-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        margin-top:0 !important;
+    }
+
+    .success-message {
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .success-icon {
+        font-size: 64px;
+        color: #405712;
+        margin-bottom: 20px;
+    }
+
+    .success-message h3 {
+        font-size: 24px;
+        margin-bottom: 16px;
+        color: #333;
+    }
+
+    .success-message p {
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    .actions {
+        margin-top: 32px;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: #DAA520;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #c8941c;
+        }
+</style> 

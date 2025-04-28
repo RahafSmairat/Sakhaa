@@ -1,5 +1,275 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rfbs2k0mkf</Fingerprint>
+      <Integrity>GUVa+4v5LgOwSqAiPj3XwwX1ONlV9B1ian3XiYueckM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>dvhkyekdg9</Fingerprint>
+      <Integrity>h476+TEOta6Br3waqHHSGwr+r4DSHSxRoam9w1LJD98=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5h9ae89c75</Fingerprint>
+      <Integrity>ecygis0Ydx5C6M7MkbADWwUHS7vjAgno3WtAB5zyuLA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hf858ahasa</Fingerprint>
+      <Integrity>E0aCXxp3egD5tNPYl3VkTFrQ/9VE4RSDHZALGFNfE1M=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rfbs2k0mkf</Fingerprint>
+      <Integrity>GUVa+4v5LgOwSqAiPj3XwwX1ONlV9B1ian3XiYueckM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rfbs2k0mkf</Fingerprint>
+      <Integrity>GUVa+4v5LgOwSqAiPj3XwwX1ONlV9B1ian3XiYueckM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/beneficiaries/f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3ei4r8q4bl</Fingerprint>
+      <Integrity>5Q60YZKV9i79vT/7JpBAIzJSAXabNJ+4Pzf1dD1mSIs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/aad2347f-a799-449d-b35e-ee732d4317ad.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9p64s9n7mb</Fingerprint>
+      <Integrity>7YrwSnD7n7Ad/aIvSelE3SldFzs081S/2FRo6qsjuiE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9p64s9n7mb</Fingerprint>
+      <Integrity>7YrwSnD7n7Ad/aIvSelE3SldFzs081S/2FRo6qsjuiE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xwmwk55daq</Fingerprint>
+      <Integrity>/2vs9GEQKVfT6TKuHGPah/5a1ufzKg6cXCVOW1iDomQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -18,6 +288,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ibjre087vg</Fingerprint>
+      <Integrity>cleK6aAr/MiLaFqeJKN7scTzHYu0h5MV+lA5q5OU8Wg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\3-help.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -35,6 +323,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\3-help.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vco28tt338</Fingerprint>
+      <Integrity>zxMm442PDswEX3Rmbgri0m3maKcqKXKSzGbyfzd9RgQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bodyBG.png'))">
       <SourceType>Package</SourceType>
@@ -71,6 +377,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bodyBG1.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vco28tt338</Fingerprint>
+      <Integrity>zxMm442PDswEX3Rmbgri0m3maKcqKXKSzGbyfzd9RgQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>um0hiqy3gg</Fingerprint>
+      <Integrity>iggHmPCyhUe4RCzkjvlLMEYJ1uYpqizxnFBVt8pnKLM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Charity.jpg'))">
       <SourceType>Package</SourceType>
@@ -468,6 +810,114 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\money.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812908952968622.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812908952968622.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7vli4nuilz</Fingerprint>
+      <Integrity>M98NSyeL4do+OBbzkxgF41t3zpblYREHzX0D9Qs5uUw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812908952968622.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926223390968.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812926223390968.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s664tehrzk</Fingerprint>
+      <Integrity>VP0CK6tamF96C1ndJmsYlE7IrxZKgM2bmdUjoOiWFvs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926223390968.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926401261562.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812926401261562.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vkb6o3r7ll</Fingerprint>
+      <Integrity>4QvhZ1iCkXuufLGe0CzQqgU1S2BceQT+QqIiIlzWnZE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926401261562.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926544421351.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812926544421351.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2i2rwgzrk7</Fingerprint>
+      <Integrity>apWBAEc1eEUNCP3yeLbifjMZGMpY8BYDATAQpPSU/jY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926544421351.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926907847900.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812926907847900.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2ckhahqhum</Fingerprint>
+      <Integrity>znBOfGGSAFGm+E3MC2uRVMhzHFUYwZE7IQSoUa5pymE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812926907847900.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812927228841485.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/news/news_638812927228841485.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xg1jyhkjhj</Fingerprint>
+      <Integrity>MdQiEJ5MaZZ5C4iSRVzNXobhdKkhTwJ2Yabhnsg7uw4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\news\news_638812927228841485.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\pragrams.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -504,24 +954,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program1.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program2.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Sakhaa</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Sakhaa</BasePath>
-      <RelativePath>images/program2.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nujya4tdzc</Fingerprint>
-      <Integrity>AX2rN0mv8b/jZ6G7yZxtPt5pITVoeOh4BoAG2bY5eQk=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program2.png'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program3.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -557,6 +989,96 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program4.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812993373130868.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/program_638812993373130868.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5yzzxfvyke</Fingerprint>
+      <Integrity>vW0aI7vuX+dTM6WUsEsLd9UHKGdz3pqDp31rp4WJYLo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812993373130868.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812994270576387.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/program_638812994270576387.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ol94dw2fa4</Fingerprint>
+      <Integrity>nJZyaJc1NOdyjwazZsgHN69N493yFFBVlnlc6Y9DHLM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812994270576387.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812995451188517.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/program_638812995451188517.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nujya4tdzc</Fingerprint>
+      <Integrity>AX2rN0mv8b/jZ6G7yZxtPt5pITVoeOh4BoAG2bY5eQk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812995451188517.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812996022859181.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/program_638812996022859181.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nh5jkfkzhw</Fingerprint>
+      <Integrity>dS3xrrveZk3Er4VkppnH7vSw040IAnEeIJ0yGHTegXU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812996022859181.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812996905375387.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/program_638812996905375387.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zo89jhh5kq</Fingerprint>
+      <Integrity>vUQa5kJo4bfV6ZMzF1NDcypM12/CBekWgs+FJ0GpPqI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\program_638812996905375387.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\rightCircle.png'))">
       <SourceType>Package</SourceType>
@@ -648,6 +1170,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\statisticsImg3.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\stories\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>images/stories/5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5og7m0luxc</Fingerprint>
+      <Integrity>2wle8l1Kwwz2SMCEIZ/vgn872dmay6QO+g8nATt+Il0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\stories\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\successStories.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -701,6 +1241,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\javaScript\about.js'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\javaScript\admin.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>javaScript/admin.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>onzo70e5it</Fingerprint>
+      <Integrity>fK7qwMJY/T/plaY4rnUzPy9Y1+nEBz3Rp00qJfiq29c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\javaScript\admin.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\javaScript\giftForm.js'))">
       <SourceType>Package</SourceType>
@@ -1908,6 +2466,60 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\about.css.map'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>styles/admin.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>o8qx32g83r</Fingerprint>
+      <Integrity>GC7c06OMVUpUl+vC2nLrLJTby3JLojFUAt9puV84i8A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.scss'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>styles/admin.scss</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>g5jkluse7z</Fingerprint>
+      <Integrity>DLUneWN02fKecwJOzcJxVXph124btYa967XgsL+b2QU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.scss'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.min.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>styles/admin.min.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hh23pv0mb0</Fingerprint>
+      <Integrity>VURhb1eRHQ0bPKDWepuciW6E2pzsNKKSVMfrVELJACU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\admin.min.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\contact.css'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -2316,8 +2928,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>d1cj37fshz</Fingerprint>
-      <Integrity>T+18RFzciXrKoLNE2NVMgceqCkLZvo8yHwtQlfZQUgI=</Integrity>
+      <Fingerprint>e2xi58kwsq</Fingerprint>
+      <Integrity>GgMEIxQzRCKU1D5qL2G9JJLvK36B0zzLNnJeAdxrAxQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\profile.css'))</OriginalItemSpec>
@@ -2334,8 +2946,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e1jj9gitz3</Fingerprint>
-      <Integrity>IjBqZc0n9j8bWb8BVs6KsYvd5RzVwv40zBx3PD41E6M=</Integrity>
+      <Fingerprint>208tino4ta</Fingerprint>
+      <Integrity>wlvO1jyPQEB2x59Ezni81VMK9zazvsQ26gdiUrV8ED4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\profile.scss'))</OriginalItemSpec>
@@ -2370,8 +2982,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>pnhhgk1ujq</Fingerprint>
-      <Integrity>peOQxciuYute+o0WHlQ4x6UVd1/Kg3juYNSy+YuiaLM=</Integrity>
+      <Fingerprint>i2zk7chj15</Fingerprint>
+      <Integrity>itXVm1vug75lflv7Be/gHTgvMO+1yvRFpRztKkoLkiY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\profile.min.css'))</OriginalItemSpec>
@@ -2496,8 +3108,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>4bciet8p2h</Fingerprint>
-      <Integrity>0DC7PP4U+J5yIXFtWpCxlh7y/jbPBKEpuQqsSww1Yok=</Integrity>
+      <Fingerprint>jv9157ulgz</Fingerprint>
+      <Integrity>wVYpKDjvsmS0JEhfDJ64HNxwxxV9a67pCROJTMmd4DI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\reports.css'))</OriginalItemSpec>
@@ -2514,8 +3126,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mkez5rvg9e</Fingerprint>
-      <Integrity>hpWgv990+A1Ik2S92JcdYJEWUKbr1SK6sWWdR4V6Bbc=</Integrity>
+      <Fingerprint>u4euv3fjei</Fingerprint>
+      <Integrity>8kE5qfv70rm2ECqXuP6WR9h64qRc8aK67pgrEZ0Uq/0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\reports.scss'))</OriginalItemSpec>
@@ -2537,6 +3149,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\reports.css.map'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\reports.min.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>styles/reports.min.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>z3n51llpsi</Fingerprint>
+      <Integrity>P6mBy+ARg0V6Z3hjovBE3kRMQkatfKIuWzDA5FRhmwA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\reports.min.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\signUp.css'))">
       <SourceType>Package</SourceType>

@@ -1,16 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7FA31AAB-CB39-4384-AEEC-93292F9DEC84}|Sakhaa\\Sakhaa.csproj|c:\\users\\orange\\desktop\\sakhaa mp project\\sakhaa\\sakhaa\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FA31AAB-CB39-4384-AEEC-93292F9DEC84}|Sakhaa\\Sakhaa.csproj|solutionrelative:sakhaa\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FA31AAB-CB39-4384-AEEC-93292F9DEC84}|Sakhaa\\Sakhaa.csproj|c:\\users\\orange\\desktop\\sakhaa mp project\\sakhaa\\sakhaa\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FA31AAB-CB39-4384-AEEC-93292F9DEC84}|Sakhaa\\Sakhaa.csproj|solutionrelative:sakhaa\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,37 +9,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Sakhaa\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Sakhaa\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T20:53:46.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Views\\User\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Sakhaa\\Views\\User\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\Orange\\Desktop\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Views\\User\\Profile.cshtml",
-              "RelativeToolTip": "Sakhaa\\Views\\User\\Profile.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOkAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T20:59:38.392Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

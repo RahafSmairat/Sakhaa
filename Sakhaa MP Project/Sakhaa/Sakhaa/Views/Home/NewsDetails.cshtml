@@ -1,0 +1,184 @@
+@model Sakhaa.Models.NewsEvent
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+@section HeaderTitle {
+    <h2 class="section">الأخبار والفعاليات</h2>
+}
+
+<div class="container py-5" style="direction: rtl;">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="news-details-card">
+                <!-- Back button -->
+                <div class="mb-4">
+                    <a href="javascript:history.back()" class="btn-back">
+                        <i class="fa-solid fa-arrow-right ms-2"></i> العودة
+                    </a>
+                </div>
+                
+                <!-- News title -->
+                <h1 class="news-title mb-3">@Model.Title</h1>
+                
+                <!-- Date and metadata -->
+                <div class="news-meta mb-4">
+                    <span class="news-date">
+                        <i class="fa-solid fa-calendar-day ms-2"></i>
+                        @Model.EventDate.ToString("yyyy-MM-dd")
+                    </span>
+                    @if (Model.CreatedAt.HasValue)
+                    {
+                        <span class="news-published ms-4">
+                            <i class="fa-solid fa-clock ms-2"></i>
+                            تم النشر: @Model.CreatedAt.Value.ToString("yyyy-MM-dd")
+                        </span>
+                    }
+                </div>
+                
+                <!-- News image -->
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <div class="news-image-container mb-4">
+                        <img src="~/images/@Model.Image" alt="@Model.Title" class="news-image" />
+                    </div>
+                }
+                
+                <!-- News content -->
+                <div class="news-content mb-5">
+                    @foreach (var paragraph in (Model.Content ?? "").Split("\n"))
+                    {
+                        if (!string.IsNullOrWhiteSpace(paragraph))
+                        {
+                            <p>@paragraph</p>
+                        }
+                    }
+                </div>
+                
+                <!-- Share buttons -->
+                <div class="news-share">
+                    <span class="share-label">مشاركة:</span>
+                    @{
+                        var pageUrl = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}";
+                        var encodedUrl = Uri.EscapeDataString(pageUrl);
+                        var encodedTitle = Uri.EscapeDataString(Model.Title);
+                        var facebookShareUrl = $"https://www.facebook.com/sharer/sharer.php?u={encodedUrl}";
+                        var twitterShareUrl = $"https://twitter.com/intent/tweet?text={encodedTitle}&url={encodedUrl}";
+                        var whatsappShareUrl = $"https://api.whatsapp.com/send?text={encodedTitle} {encodedUrl}";
+                    }
+                    <a href="@facebookShareUrl" target="_blank" rel="noopener noreferrer" class="share-button" title="مشاركة على فيسبوك">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="@twitterShareUrl" target="_blank" rel="noopener noreferrer" class="share-button" title="مشاركة على تويتر">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="@whatsappShareUrl" target="_blank" rel="noopener noreferrer" class="share-button" title="مشاركة على واتساب">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* News details styling */
+    .news-details-card {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn-back {
+        color: #405712;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: color 0.3s;
+    }
+    
+    .btn-back:hover {
+        color: #DAA520;
+    }
+    
+    .news-title {
+        color: #405712;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    
+    .news-meta {
+        color: #777;
+        font-size: 0.95rem;
+    }
+    
+    .news-image-container {
+        overflow: hidden;
+        border-radius: 8px;
+        max-height: 500px;
+    }
+    
+    .news-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .news-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+    
+    .news-content p {
+        margin-bottom: 1.5rem;
+    }
+    
+    .news-share {
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+        display: flex;
+        align-items: center;
+    }
+    
+    .share-label {
+        margin-left: 15px;
+        font-weight: 600;
+        color: #555;
+    }
+    
+    .share-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #405712;
+        margin-left: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .share-button:hover {
+        background-color: #DAA520;
+        color: white;
+    }
+    
+    @@media (max-width: 768px) {
+        .news-details-card {
+            padding: 1.5rem;
+        }
+        
+        .news-title {
+            font-size: 1.6rem;
+        }
+        
+        .news-meta {
+            flex-direction: column;
+        }
+    }
+</style> 

@@ -13,6 +13,10 @@ public partial class DonationProgram
 
     public decimal? MinimumDonationAmount { get; set; }
 
+    public string? ImagePath { get; set; }
+
+    public bool? IsSubscibtion { get; set; }
+
     public virtual ICollection<Donation> Donations { get; set; } = new List<Donation>();
 
     public virtual ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();

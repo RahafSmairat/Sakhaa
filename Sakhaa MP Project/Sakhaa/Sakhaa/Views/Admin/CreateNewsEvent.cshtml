@@ -1,0 +1,49 @@
+﻿@model Sakhaa.Models.NewsEvent
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "إضافة خبر جديد";
+}
+
+<div class="admin-form">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4">
+        <h5 class="mb-0">إضافة خبر أو فعالية جديدة</h5>
+        <a href="/Admin/NewsEvents" class="btn btn-sm btn-outline-secondary">
+            <i class="fa-solid fa-arrow-right me-1"></i> العودة
+        </a>
+    </div>
+
+    <form asp-action="CreateNewsEvent" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">عنوان الخبر</label>
+                    <input asp-for="Title" class="form-control" required>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Content" class="form-label">محتوى الخبر</label>
+                    <textarea asp-for="Content" class="form-control" rows="10" required dir="rtl"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ImageFile" class="form-label">صورة الخبر</label>
+                    <input id="ImageFile" name="ImageFile" type="file" class="form-control" accept="image/*">
+                    <small class="form-text text-muted">اختر صورة بتنسيق مناسب (JPG, PNG). الحد الأقصى للحجم 2MB.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EventDate" class="form-label">تاريخ الفعالية</label>
+                    <input asp-for="EventDate" type="date" class="form-control" required>
+                    <span asp-validation-for="EventDate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end mt-4">
+            <a href="/Admin/NewsEvents" class="btn btn-outline-secondary me-2">إلغاء</a>
+            <button type="submit" class="btn btn-primary">إضافة الخبر</button>
+        </div>
+    </form>
+</div>
