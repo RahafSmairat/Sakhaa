@@ -1,0 +1,101 @@
+@model Sakhaa.Models.Order
+
+<div class="order-details-modal" style="direction: rtl;">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h5 class="mb-3">معلومات الطلب</h5>
+            <p><strong>رقم الطلب:</strong> #@Model.Id</p>
+            <p><strong>تاريخ الطلب:</strong> @Model.OrderDate?.ToString("yyyy/MM/dd HH:mm")</p>
+            <p><strong>حالة الطلب:</strong> <span class="badge @(Model.OrderStatus?.ToLower() == "completed" ? "bg-success" : Model.OrderStatus?.ToLower() == "cancelled" ? "bg-danger" : "bg-warning")">@Model.OrderStatus</span></p>
+            <p><strong>المبلغ الإجمالي:</strong> @Model.TotalAmount?.ToString("F2") دينار</p>
+        </div>
+        <div class="col-md-6">
+            <h5 class="mb-3">معلومات الشحن</h5>
+            @if (Model.Address != null)
+            {
+                <p><strong>عنوان الشحن:</strong> @Model.Address.Title</p>
+                <p><strong>الشارع:</strong> @Model.Address.Street</p>
+                <p><strong>المدينة:</strong> @Model.Address.City</p>
+                <p><strong>البلد:</strong> @Model.Address.Country</p>
+                <p><strong>رقم الهاتف:</strong> @Model.Address.PhoneNumber</p>
+            }
+            else
+            {
+                <p class="text-muted">لا توجد معلومات شحن متاحة</p>
+            }
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h5 class="mb-3">معلومات الدفع</h5>
+            @if (Model.PaymentMethod != null)
+            {
+                <p><strong>طريقة الدفع:</strong> بطاقة ائتمان</p>
+                <p><strong>اسم حامل البطاقة:</strong> @Model.PaymentMethod.CardHolderName</p>
+                <p><strong>رقم البطاقة:</strong> **** **** **** @Model.PaymentMethod.CardNumber?.Substring(Math.Max(0, Model.PaymentMethod.CardNumber.Length - 4))</p>
+            }
+            else
+            {
+                <p class="text-muted">لا توجد معلومات دفع متاحة</p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h5 class="mb-3">المنتجات</h5>
+            @if (Model.OrderItems != null && Model.OrderItems.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>المنتج</th>
+                                <th>الوصف</th>
+                                <th>الكمية</th>
+                                <th>السعر</th>
+                                <th>المجموع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderItems)
+                            {
+                                <tr>
+                                    <td>
+                                        @if (item.Product != null)
+                                        {
+                                            @if (!string.IsNullOrEmpty(item.Product.ProductImage))
+                                            {
+                                                <img src="/uploads/products/@item.Product.ProductImage" alt="@item.Product.ProductName" style="width: 50px; height: 50px; object-fit: cover;" />
+                                            }
+                                            <span class="ms-2">@item.Product.ProductName</span>
+                                        }
+                                        else
+                                        {
+                                            <span>منتج غير متوفر</span>
+                                        }
+                                    </td>
+                                    <td>@(item.Product?.ProductDescription ?? "-")</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.UnitPrice?.ToString("F2") دينار</td>
+                                    <td>@((item.UnitPrice * item.Quantity)?.ToString("F2")) دينار</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-end"><strong>المجموع:</strong></td>
+                                <td>@Model.TotalAmount?.ToString("F2") دينار</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info">لا توجد منتجات في هذا الطلب</div>
+            }
+        </div>
+    </div>
+</div> 

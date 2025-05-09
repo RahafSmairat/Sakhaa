@@ -1,0 +1,1248 @@
+﻿@{
+    ViewData["Title"] = "الملف الشخصي";
+}
+
+@section HeaderTitle {
+    <h2 class="section">حسابي</h2>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function enableEdit(id) {
+            const inputField = document.getElementById(id);
+            inputField.disabled = false;
+            inputField.focus();
+            document.getElementById(id + '-edit-btn').classList.add('d-none');
+            document.getElementById(id + '-save-indicator').classList.remove('d-none');
+        }
+
+        $(document).ready(function() {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            $('.filter-option').click(function() {
+                const filterType = $(this).data('filter-type');
+                const filterValue = $(this).data('filter-value');
+
+                console.log(`Filter type: ${filterType}, value: ${filterValue}`);
+
+                $(`.filter-option[data-filter-type="${filterType}"]`).removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Alert auto-dismiss
+            setTimeout(function() {
+                $('.alert').alert('close');
+            }, 5000);
+
+            $('.cancel-subscription-btn').click(function() {
+                const donationId = $(this).data('donation-id');
+
+                Swal.fire({
+                    title: 'تأكيد إلغاء الاشتراك',
+                    text: 'هل أنت متأكد من رغبتك في إلغاء هذا الاشتراك؟',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#405712',
+                    cancelButtonColor: '#A31621',
+                    confirmButtonText: 'نعم، إلغاء الاشتراك',
+                    cancelButtonText: 'إلغاء',
+                    position: 'center',
+                    customClass: {
+                        popup: 'swal-rtl'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/User/CancelDonation',
+                            type: 'POST',
+                            data: { id: donationId },
+                            success: function(response) {
+                                if (response.success) {
+                                    Swal.fire({
+                                        title: 'تم إلغاء الاشتراك',
+                                        text: 'تم إلغاء اشتراكك بنجاح',
+                                        icon: 'success',
+                                                            customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                        confirmButtonColor: '#405712'
+                                    }).then(() => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        title: 'خطأ',
+                                        text: response.message || 'حدث خطأ أثناء إلغاء الاشتراك',
+                                        icon: 'error',
+                                                            customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                        confirmButtonColor: '#405712'
+                                    });
+                                }
+                            },
+                            error: function() {
+                                Swal.fire({
+                                    title: 'خطأ',
+                                    text: 'حدث خطأ أثناء الاتصال بالخادم',
+                                    icon: 'error',
+                                                        customClass: {
+                        popup: 'swal-rtl'
+                    },
+                                    confirmButtonColor: '#405712'
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
+            $('#editAddressModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var addressId = button.data('address-id');
+                var title = button.data('address-title');
+                var street = button.data('address-street');
+                var city = button.data('address-city');
+                var country = button.data('address-country');
+                var phone = button.data('address-phone');
+
+                var modal = $(this);
+                modal.find('#editAddressId').val(addressId);
+                modal.find('#editTitle').val(title);
+                modal.find('#editStreet').val(street);
+                modal.find('#editCity').val(city);
+                modal.find('#editCountry').val(country);
+                modal.find('#editPhoneNumber').val(phone);
+            });
+
+            $('#editPaymentMethodModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var paymentId = button.data('payment-id');
+                var cardHolder = button.data('payment-cardholder');
+                var cardNumber = button.data('payment-cardnumber');
+                var expiry = button.data('payment-expiry');
+
+                var modal = $(this);
+                modal.find('#editPaymentMethodId').val(paymentId);
+                modal.find('#editCardHolderName').val(cardHolder);
+                modal.find('#editCardNumber').val(cardNumber);
+                modal.find('#editExpiryDate').val(expiry);
+            });
+
+            $('#viewOrderDetailsModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var orderId = button.data('order-id');
+
+                $.ajax({
+                    url: '/User/GetOrderDetails',
+                    type: 'GET',
+                    data: { orderId: orderId },
+                    success: function(response) {
+                        $('#orderDetailsContent').html(response);
+                    },
+                    error: function() {
+                        $('#orderDetailsContent').html('<div class="alert alert-danger">حدث خطأ أثناء تحميل تفاصيل الطلب.</div>');
+                    }
+                });
+            });
+
+            $('form[action^="/User/"]').not('form[action="/User/CancelDonation"]').each(function() {
+                var form = $(this);
+                var formAction = form.attr('action');
+
+                if (formAction.includes('Address') || formAction.includes('PaymentMethod')) {
+                    return;
+                }
+
+                form.on('submit', function(e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: formAction,
+                        type: 'POST',
+                        data: form.serialize(),
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire({
+                                    title: 'تم بنجاح',
+                                    text: response.message || 'تمت العملية بنجاح',
+                                    icon: 'success',
+                                    customClass: {
+                                        popup: 'swal-rtl'
+                                    },
+                                    confirmButtonColor: '#405712'
+                                }).then(() => {
+                                    window.location.reload();
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'خطأ',
+                                    text: response.message || 'حدث خطأ أثناء تنفيذ العملية',
+                                    icon: 'error',
+                                    customClass: {
+                                        popup: 'swal-rtl'
+                                    },
+                                    confirmButtonColor: '#405712'
+                                });
+                            }
+                        },
+                        error: function() {
+                            Swal.fire({
+                                title: 'خطأ',
+                                text: 'حدث خطأ أثناء الاتصال بالخادم',
+                                icon: 'error',
+                                customClass: {
+                                    popup: 'swal-rtl'
+                                },
+                                confirmButtonColor: '#405712'
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}
+
+@model Sakhaa.Models.ProfileViewModel
+
+<style>
+    .profile-container {
+        min-height: 100vh;
+    }
+
+    .program-badge.project {
+        background-color: #DAA520;
+        color: white;
+    }
+
+    .profile-addresses .address-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+        .profile-addresses .address-card.default {
+            border-color: #405712;
+        }
+
+    .profile-addresses .default-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #405712;
+        color: white;
+        font-size: 12px;
+        padding: 3px 8px;
+        border-radius: 4px;
+    }
+
+    .profile-addresses .address-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .profile-payments .payment-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+        .profile-payments .payment-card.default {
+            border-color: #405712;
+        }
+
+    .profile-payments .default-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #405712;
+        color: white;
+        font-size: 12px;
+        padding: 3px 8px;
+        border-radius: 4px;
+    }
+
+    .profile-payments .card-icon {
+        font-size: 24px;
+        margin-left: 10px;
+        color: #405712;
+    }
+
+    .profile-payments .payment-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .profile-orders .order-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .profile-orders .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-orders .order-status {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+        .profile-orders .order-status.pending {
+            background-color: #FFF3CD;
+            color: #856404;
+        }
+
+        .profile-orders .order-status.completed {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+
+        .profile-orders .order-status.cancelled {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+
+    .profile-orders .order-items {
+        margin-top: 10px;
+    }
+
+    .form-section {
+        margin-bottom: 20px;
+    }
+
+    .action-btn {
+        margin: 0 5px;
+    }
+
+    .btn-add {
+        background-color: #405712;
+        color: white;
+    }
+
+        .btn-add:hover {
+            background-color: #334610;
+            color: white;
+        }
+
+    .btn-order-details {
+        color: #405712;
+    }
+
+        .btn-order-details:hover {
+            color: #DAA520;
+        }
+
+    .close-order-details {
+        background-color: #405712;
+        color: white;
+    }
+
+        .close-order-details:hover {
+            background-color: #DAA520;
+            color: white;
+        }
+</style>
+
+<div class="profile-container" style="direction:rtl">
+    <div class="container py-4">
+        <!-- Alerts -->
+        <div class="row mb-4">
+            <div class="col-12">
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-circle-exclamation me-2"></i>
+                        @TempData["Error"]
+                        @* <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button> *@
+                    </div>
+                }
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                        @TempData["Success"]
+                        @* <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button> *@
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Sidebar - Profile Navigation -->
+            <div class="col-md-3 mb-4">
+                <div class="profile-sidebar">
+                    <div class="user-info text-center mb-4">
+                        @* <div class="avatar-container"> *@
+                        @*     <div class="avatar"> *@
+                        @*         <i class="fa-solid fa-user"></i> *@
+                        @*     </div> *@
+                        @* </div> *@
+                        <h4 class="mt-3">@Model.userInfo.FirstName @Model.userInfo.LastName</h4>
+                        <p>@Model.userInfo.Email</p>
+                    </div>
+
+                    <nav class="profile-nav">
+                        <ul class="nav flex-column p-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="profile-tab" data-bs-toggle="pill" href="#profile-content">
+                                    <i class="fa-solid fa-user-pen"></i> الملف الشخصي
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="history-tab" data-bs-toggle="pill" href="#history-content">
+                                    <i class="fa-solid fa-clock-rotate-left"></i> سجل التبرعات
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="subscriptions-tab" data-bs-toggle="pill" href="#subscriptions-content">
+                                    <i class="fa-solid fa-repeat"></i> الاشتراكات الحالية
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="reports-tab" data-bs-toggle="pill" href="#reports-content">
+                                    <i class="fa-solid fa-chart-line"></i> التقارير والإحصائيات
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="addresses-tab" data-bs-toggle="pill" href="#addresses-content">
+                                    <i class="fa-solid fa-location-dot"></i> العناوين
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="payment-methods-tab" data-bs-toggle="pill" href="#payment-methods-content">
+                                    <i class="fa-solid fa-credit-card"></i> وسائل الدفع
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="orders-tab" data-bs-toggle="pill" href="#orders-content">
+                                    <i class="fa-solid fa-shopping-bag"></i> سجل الطلبات
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <!-- Profile Information -->
+                    <div class="tab-pane fade show active" id="profile-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>معلومات الحساب</h3>
+                                <p class="text-muted">يمكنك تحديث معلوماتك الشخصية هنا</p>
+                            </div>
+
+                            <div class="card-body">
+                                <form asp-action="UpdateProfile" method="post" class="profile-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="name">الاسم الكامل</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="name" name="FullName"
+                                                           value="@Model.userInfo.FirstName @Model.userInfo.LastName" disabled required>
+                                                    <button type="button" id="name-edit-btn" class="btn btn-edit"
+                                                            onclick="enableEdit('name')" data-bs-toggle="tooltip" title="تعديل">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </button>
+                                                </div>
+                                                <small id="name-save-indicator" class="text-success d-none">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                    سيتم حفظ التغييرات عند النقر على زر الحفظ
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="email">البريد الإلكتروني</label>
+                                                <input type="email" class="form-control" id="email" name="Email"
+                                                       value="@Model.userInfo.Email" disabled required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="mobile">رقم الهاتف</label>
+                                                <div class="input-group">
+                                                    <input type="tel" class="form-control" id="mobile" name="PhoneNumber"
+                                                           value="@Model.userInfo.PhoneNumber" disabled required>
+                                                    <button type="button" id="mobile-edit-btn" class="btn btn-edit"
+                                                            onclick="enableEdit('mobile')" data-bs-toggle="tooltip" title="تعديل">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </button>
+                                                </div>
+                                                <small id="mobile-save-indicator" class="text-success d-none">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                    سيتم حفظ التغييرات عند النقر على زر الحفظ
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h4 class="mb-3">تغيير كلمة المرور</h4>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="currentPassword">كلمة المرور الحالية</label>
+                                                <input type="password" class="form-control" id="currentPassword"
+                                                       name="CurrentPassword" placeholder="أدخل كلمة المرور الحالية">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="password">كلمة المرور الجديدة</label>
+                                                <input type="password" class="form-control" id="password"
+                                                       name="Password" placeholder="أدخل كلمة المرور الجديدة">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="confirm-password">تأكيد كلمة المرور</label>
+                                                <input type="password" class="form-control" id="confirm-password"
+                                                       name="ConfirmPassword" placeholder="أعد إدخال كلمة المرور الجديدة">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa-solid fa-floppy-disk"></i> حفظ التغييرات
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation History -->
+                    <div class="tab-pane fade" id="history-content">
+                        <div class="content-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3>سجل التبرعات</h3>
+                                    <p class="text-muted">سجل جميع تبرعاتك السابقة</p>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                @if (Model.PreviousDonations != null && Model.PreviousDonations.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table donations-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>نوع التبرع</th>
+                                                    <th>قيمة التبرع</th>
+                                                    <th>تاريخ بداية الاشتراك</th>
+                                                    <th>تاريخ انتهاء الاشتراك</th>
+                                                    <th>الحالة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var donation in Model.PreviousDonations)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @if (donation.ProjectId.HasValue && donation.Project != null)
+                                                            {
+                                                                <span class="program-badge project">مشروع @donation.Project.Title</span>
+                                                            }
+                                                            else if (donation.Program != null)
+                                                            {
+                                                                <span class="program-badge">@donation.Program.Name</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="program-badge">تبرع</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <strong>@donation.Amount.ToString("0.00")</strong> <span class="currency">دينار</span>
+                                                        </td>
+                                                        <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>@donation.DonationEndDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>
+                                                            <span class="status-badge completed">مكتمل</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <i class="fa-solid fa-hand-holding-heart"></i>
+                                        </div>
+                                        <h4>لم تقم بأية تبرعات بعد</h4>
+                                        <p>ابدأ رحلة العطاء وساهم في دعم مشاريعنا الخيرية</p>
+                                        <a href="/Donation/DonationPrograms" class="btn btn-primary">تصفح برامج التبرع</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Subscriptions -->
+                    <div class="tab-pane fade" id="subscriptions-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>الاشتراكات الحالية</h3>
+                                <p class="text-muted">اشتراكاتك النشطة حالياً</p>
+                            </div>
+
+                            <div class="card-body">
+                                @if (Model.CurrentDonations != null && Model.CurrentDonations.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table donations-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>نوع التبرع</th>
+                                                    <th>قيمة التبرع</th>
+                                                    <th>تاريخ الاشتراك</th>
+                                                    <th>المدة المتبقية</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var donation in Model.CurrentDonations)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @if (donation.ProjectId.HasValue && donation.Project != null)
+                                                            {
+                                                                <span class="program-badge project">@donation.Project.Title</span>
+                                                            }
+                                                            else if (donation.Program != null)
+                                                            {
+                                                                <span class="program-badge">@donation.Program.Name</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="program-badge">تبرع</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            <strong>@donation.Amount.ToString("0.00")</strong> <span class="currency">دينار</span>
+                                                        </td>
+                                                        <td>@donation.DonationStartDate?.ToString("yyyy-MM-dd")</td>
+                                                        <td>@(donation.ProjectId.HasValue ? "لمرة واحدة" : "مستمر")</td>
+                                                        <td>
+                                                            @if (!donation.ProjectId.HasValue)
+                                                            {
+                                                                <button type="button" class="btn btn-danger btn-sm cancel-subscription-btn"
+                                                                        data-donation-id="@donation.Id">
+                                                                    <i class="fa-solid fa-ban"></i> إلغاء الاشتراك
+                                                                </button>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="status-badge completed">مكتمل</span>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <i class="fa-solid fa-calendar-xmark"></i>
+                                        </div>
+                                        <h4>لا يوجد اشتراكات نشطة</h4>
+                                        <p>ليس لديك اشتراكات نشطة حالياً</p>
+                                        <a href="/Donation/DonationPrograms" class="btn btn-primary">تصفح برامج التبرع</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reports & Statistics -->
+                    <div class="tab-pane fade" id="reports-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>التقارير والإحصائيات</h3>
+                                <p class="text-muted">تتبع تأثير تبرعاتك وانظر إلى الإحصائيات الخاصة بك</p>
+                            </div>
+
+                            <div class="card-body">
+                                <!-- Filters Bar -->
+                                <div class="reports-tab-filters mb-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="reports-tab-filter-group">
+                                                <label class="reports-tab-filter-label">تصفية حسب النوع:</label>
+                                                <div class="reports-tab-btn-group" role="group" aria-label="Filter by type">
+                                                    <button type="button" class="reports-tab-filter-option active" data-filter-type="type" data-filter-value="all">الكل</button>
+                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="type" data-filter-value="monthly">شهري</button>
+                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="type" data-filter-value="quarterly">ربع سنوي</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="reports-tab-filter-group">
+                                                <label class="reports-tab-filter-label">تصفية حسب السنة:</label>
+                                                <div class="reports-tab-btn-group" role="group" aria-label="Filter by year">
+                                                    <button type="button" class="reports-tab-filter-option active" data-filter-type="year" data-filter-value="all">الكل</button>
+                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="year" data-filter-value="2023">2023</button>
+                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="year" data-filter-value="2022">2022</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Statistics Cards -->
+                                <div class="reports-tab-statistics mb-4">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">إجمالي التبرعات</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Sum(d => d.Amount) + Model.CurrentDonations.Sum(d => d.Amount)) دينار</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">عدد التبرعات</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Count + Model.CurrentDonations.Count)</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-chart-simple"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">البرامج المدعومة</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Select(d => d.ProgramId).Distinct().Count() + Model.CurrentDonations.Select(d => d.ProgramId).Distinct().Count())</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-seedling"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reports Table -->
+                                <div class="reports-tab-table">
+                                    <h4 class="reports-tab-title mb-3">تقارير التبرعات</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>رقم التقرير</th>
+                                                    <th>نوع التقرير</th>
+                                                    <th>تاريخ التقرير</th>
+                                                    <th>البرنامج</th>
+                                                    <th>المبلغ</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="6" class="text-center">لا توجد تقارير متاحة</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses -->
+                    <div class="tab-pane fade" id="addresses-content">
+                        <div class="content-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3>عناويني</h3>
+                                    <p class="text-muted">إدارة عناوين الشحن الخاصة بك</p>
+                                </div>
+                                <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+                                    <i class="fa-solid fa-plus"></i> إضافة عنوان جديد
+                                </button>
+                            </div>
+
+                            <div class="card-body profile-addresses">
+                                @if (Model.userInfo.Addresses != null && Model.userInfo.Addresses.Any())
+                                {
+                                    <div class="row">
+                                        @foreach (var address in Model.userInfo.Addresses)
+                                        {
+                                            <div class="col-md-6 mb-3">
+                                                <div class="address-card @(address.IsDefault == true ? "default" : "")">
+                                                    @if (address.IsDefault == true)
+                                                    {
+                                                        <span class="default-badge">العنوان الافتراضي</span>
+                                                    }
+                                                    <h5>@address.Title</h5>
+                                                    <p><strong>العنوان:</strong> @address.Street</p>
+                                                    <p><strong>المدينة:</strong> @address.City</p>
+                                                    <p><strong>البلد:</strong> @address.Country</p>
+                                                    <p><strong>رقم الهاتف:</strong> @address.PhoneNumber</p>
+
+                                                    <div class="address-actions">
+                                                        @if (address.IsDefault != true)
+                                                        {
+                                                            <form method="post" action="/User/SetDefaultAddress" class="d-inline">
+                                                                <input type="hidden" name="addressId" value="@address.AddressId" />
+                                                                <button type="submit" class="btn btn-sm btn-outline-success action-btn">
+                                                                    تعيين كافتراضي
+                                                                </button>
+                                                            </form>
+                                                        }
+                                                        <button type="button" class="btn btn-sm btn-outline-primary action-btn"
+                                                                data-bs-toggle="modal" data-bs-target="#editAddressModal"
+                                                                data-address-id="@address.AddressId"
+                                                                data-address-title="@address.Title"
+                                                                data-address-street="@address.Street"
+                                                                data-address-city="@address.City"
+                                                                data-address-country="@address.Country"
+                                                                data-address-phone="@address.PhoneNumber">
+                                                            <i class="fa-solid fa-edit"></i> تعديل
+                                                        </button>
+                                                        <form method="post" action="/User/DeleteAddress" class="d-inline" onsubmit="return confirm('هل أنت متأكد من حذف هذا العنوان؟');">
+                                                            <input type="hidden" name="addressId" value="@address.AddressId" />
+                                                            <button type="submit" class="btn btn-sm btn-outline-danger action-btn">
+                                                                <i class="fa-solid fa-trash"></i> حذف
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-info text-center">
+                                        <i class="fa-solid fa-info-circle me-2"></i>
+                                        لا توجد عناوين مسجلة. يرجى إضافة عنوان جديد.
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="tab-pane fade" id="payment-methods-content">
+                        <div class="content-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3>وسائل الدفع</h3>
+                                    <p class="text-muted">إدارة بطاقات الدفع الخاصة بك</p>
+                                </div>
+                                <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethodModal">
+                                    <i class="fa-solid fa-plus"></i> إضافة وسيلة دفع جديدة
+                                </button>
+                            </div>
+
+                            <div class="card-body profile-payments">
+                                @if (Model.userInfo.PaymentMethods != null && Model.userInfo.PaymentMethods.Any())
+                                {
+                                    <div class="row">
+                                        @foreach (var paymentMethod in Model.userInfo.PaymentMethods)
+                                        {
+                                            <div class="col-md-6 mb-3">
+                                                <div class="payment-card @(paymentMethod.IsDefault == true ? "default" : "")">
+                                                    @if (paymentMethod.IsDefault == true)
+                                                    {
+                                                        <span class="default-badge">وسيلة الدفع الافتراضية</span>
+                                                    }
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <i class="fa-solid fa-credit-card card-icon"></i>
+                                                        <h5 class="mb-0">@paymentMethod.CardHolderName</h5>
+                                                    </div>
+                                                    <p><strong>رقم البطاقة:</strong> **** **** **** @paymentMethod.CardNumber?.Substring(Math.Max(0, paymentMethod.CardNumber.Length - 4))</p>
+                                                    <p><strong>تاريخ الانتهاء:</strong> @paymentMethod.ExpiryDate</p>
+
+                                                    <div class="payment-actions">
+                                                        @if (paymentMethod.IsDefault != true)
+                                                        {
+                                                            <form method="post" action="/User/SetDefaultPaymentMethod" class="d-inline">
+                                                                <input type="hidden" name="paymentMethodId" value="@paymentMethod.Id" />
+                                                                <button type="submit" class="btn btn-sm btn-outline-success action-btn">
+                                                                    تعيين كافتراضية
+                                                                </button>
+                                                            </form>
+                                                        }
+                                                        <button type="button" class="btn btn-sm btn-outline-primary action-btn"
+                                                                data-bs-toggle="modal" data-bs-target="#editPaymentMethodModal"
+                                                                data-payment-id="@paymentMethod.Id"
+                                                                data-payment-cardholder="@paymentMethod.CardHolderName"
+                                                                data-payment-cardnumber="@paymentMethod.CardNumber"
+                                                                data-payment-expiry="@paymentMethod.ExpiryDate">
+                                                            <i class="fa-solid fa-edit"></i> تعديل
+                                                        </button>
+                                                        <form method="post" action="/User/DeletePaymentMethod" class="d-inline" onsubmit="return confirm('هل أنت متأكد من حذف وسيلة الدفع هذه؟');">
+                                                            <input type="hidden" name="paymentMethodId" value="@paymentMethod.Id" />
+                                                            <button type="submit" class="btn btn-sm btn-outline-danger action-btn">
+                                                                <i class="fa-solid fa-trash"></i> حذف
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-info text-center">
+                                        <i class="fa-solid fa-info-circle me-2"></i>
+                                        لا توجد وسائل دفع مسجلة. يرجى إضافة وسيلة دفع جديدة.
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders History -->
+                    <div class="tab-pane fade" id="orders-content">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>سجل الطلبات</h3>
+                                <p class="text-muted">عرض سجل مشترياتك من المتجر</p>
+                            </div>
+
+                            <div class="card-body profile-orders">
+                                @if (Model.userInfo.Orders != null && Model.userInfo.Orders.Any())
+                                {
+                                    @foreach (var order in Model.userInfo.Orders)
+                                    {
+                                        <div class="order-card">
+                                            <div class="order-header">
+                                                <div>
+                                                    <h5>طلب رقم #@order.Id</h5>
+                                                    <p class="text-muted">@order.OrderDate?.ToString("yyyy/MM/dd")</p>
+                                                </div>
+                                                <div>
+                                                    @{
+                                                        string statusClass = "pending";
+                                                        if (order.OrderStatus?.ToLower() == "completed")
+                                                        {
+                                                            statusClass = "completed";
+                                                        }
+                                                        else if (order.OrderStatus?.ToLower() == "cancelled")
+                                                        {
+                                                            statusClass = "cancelled";
+                                                        }
+                                                    }
+                                                    <span class="order-status @statusClass">@order.OrderStatus</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="order-info">
+                                                <p><strong>المبلغ الإجمالي:</strong> @order.TotalAmount?.ToString("F2") دينار</p>
+
+                                                @if (order.Address != null)
+                                                {
+                                                    <p><strong>عنوان الشحن:</strong> @order.Address.Street، @order.Address.City، @order.Address.Country</p>
+                                                }
+
+                                                @if (order.PaymentMethod != null)
+                                                {
+                                                    <p><strong>طريقة الدفع:</strong> بطاقة تنتهي بـ @order.PaymentMethod.CardNumber?.Substring(Math.Max(0, order.PaymentMethod.CardNumber.Length - 4))</p>
+                                                }
+                                            </div>
+
+                                            <div class="order-items">
+                                                <h6>المنتجات:</h6>
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>المنتج</th>
+                                                                <th>الكمية</th>
+                                                                <th>السعر</th>
+                                                                <th>المجموع</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @if (order.OrderItems != null && order.OrderItems.Any())
+                                                            {
+                                                                @foreach (var item in order.OrderItems)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@(item.Product?.ProductName ?? "منتج غير معروف")</td>
+                                                                        <td>@item.Quantity</td>
+                                                                        <td>@item.UnitPrice?.ToString("F2") دينار</td>
+                                                                        <td>@((item.UnitPrice * item.Quantity)?.ToString("F2")) دينار</td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                <tr>
+                                                                    <td colspan="4" class="text-center">لا توجد منتجات متاحة</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-3 text-end">
+                                                <button type="button" class="btn btn-sm btn-order-details"
+                                                        data-bs-toggle="modal" data-bs-target="#viewOrderDetailsModal"
+                                                        data-order-id="@order.Id">
+                                                    عرض التفاصيل الكاملة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="alert alert-info text-center">
+                                        <i class="fa-solid fa-info-circle me-2"></i>
+                                        لا توجد طلبات سابقة. تسوق الآن من المتجر!
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Address Modal -->
+<div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAddressModalLabel">إضافة عنوان جديد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+            </div>
+            <form method="post" action="/User/AddAddress">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">عنوان العنوان</label>
+                        <input type="text" class="form-control" id="title" name="Title" required>
+                        <small class="form-text text-muted">مثال: المنزل، العمل، إلخ.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="street" class="form-label">الشارع</label>
+                        <input type="text" class="form-control" id="street" name="Street" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">المدينة</label>
+                        <input type="text" class="form-control" id="city" name="City" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">البلد</label>
+                        <input type="text" class="form-control" id="country" name="Country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="phoneNumber" name="PhoneNumber" required>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="isDefault" name="IsDefault">
+                        <label class="form-check-label" for="isDefault">
+                            تعيين كعنوان افتراضي
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="submit" class="btn btn-add">إضافة العنوان</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Address Modal -->
+<div class="modal fade" id="editAddressModal" tabindex="-1" aria-labelledby="editAddressModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editAddressModalLabel">تعديل العنوان</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+            </div>
+            <form method="post" action="/User/UpdateAddress">
+                <input type="hidden" id="editAddressId" name="AddressId">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="editTitle" class="form-label">عنوان العنوان</label>
+                        <input type="text" class="form-control" id="editTitle" name="Title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editStreet" class="form-label">الشارع</label>
+                        <input type="text" class="form-control" id="editStreet" name="Street" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCity" class="form-label">المدينة</label>
+                        <input type="text" class="form-control" id="editCity" name="City" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCountry" class="form-label">البلد</label>
+                        <input type="text" class="form-control" id="editCountry" name="Country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPhoneNumber" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="editPhoneNumber" name="PhoneNumber" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add Payment Method Modal -->
+<div class="modal fade" id="addPaymentMethodModal" tabindex="-1" aria-labelledby="addPaymentMethodModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPaymentMethodModalLabel">إضافة وسيلة دفع جديدة</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+            </div>
+            <form method="post" action="/User/AddPaymentMethod">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="cardHolderName" class="form-label">اسم حامل البطاقة</label>
+                        <input type="text" class="form-control" id="cardHolderName" name="CardHolderName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cardNumber" class="form-label">رقم البطاقة</label>
+                        <input type="text" class="form-control" id="cardNumber" name="CardNumber" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="expiryDate" class="form-label">تاريخ الانتهاء (MM/YY)</label>
+                            <input type="text" class="form-control" id="expiryDate" name="ExpiryDate" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col">
+                            <label for="cvv" class="form-label">رمز الحماية (CVV)</label>
+                            <input type="text" class="form-control" id="cvv" name="Cvv" required>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="paymentIsDefault" name="IsDefault">
+                        <label class="form-check-label" for="paymentIsDefault">
+                            تعيين كوسيلة دفع افتراضية
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="submit" class="btn btn-add">إضافة وسيلة الدفع</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Payment Method Modal -->
+<div class="modal fade" id="editPaymentMethodModal" tabindex="-1" aria-labelledby="editPaymentMethodModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPaymentMethodModalLabel">تعديل وسيلة الدفع</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+            </div>
+            <form method="post" action="/User/UpdatePaymentMethod">
+                <input type="hidden" id="editPaymentMethodId" name="PaymentMethodId">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="editCardHolderName" class="form-label">اسم حامل البطاقة</label>
+                        <input type="text" class="form-control" id="editCardHolderName" name="CardHolderName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCardNumber" class="form-label">رقم البطاقة</label>
+                        <input type="text" class="form-control" id="editCardNumber" name="CardNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editExpiryDate" class="form-label">تاريخ الانتهاء (MM/YY)</label>
+                        <input type="text" class="form-control" id="editExpiryDate" name="ExpiryDate" placeholder="MM/YY" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Order Details Modal -->
+<div class="modal fade" id="viewOrderDetailsModal" tabindex="-1" aria-labelledby="viewOrderDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="justify-content: flex-end !important">
+                <h5 class="modal-title" id="viewOrderDetailsModalLabel">تفاصيل الطلب</h5>
+                @* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button> *@
+            </div>
+            <div class="modal-body" id="orderDetailsContent">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">جاري التحميل...</span>
+                    </div>
+                    <p>جاري تحميل التفاصيل...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn close-order-details" data-bs-dismiss="modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,141 @@
+@model IEnumerable<Sakhaa.Models.Category>
+@{
+    ViewData["Title"] = "إدارة التصنيفات";
+    ViewData["ActivePage"] = "Categories";
+    Layout = "_Admin2Layout";
+}
+
+<style>
+    #categoriesTable {
+        width: 100% !important;
+    }
+    
+    #categoriesTable th {
+        font-weight: 600;
+        white-space: nowrap;
+        text-align: right;
+    }
+    
+    #categoriesTable td {
+        vertical-align: middle;
+        text-align: right;
+    }
+    
+    #categoriesTable td:last-child,
+    #categoriesTable th:last-child,
+    #categoriesTable td:nth-child(4),
+    #categoriesTable th:nth-child(4) {
+        text-align: center;
+    }
+    
+    .description-text {
+        max-width: 300px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">إدارة التصنيفات</h1>
+    <a href="/Admin2/CreateCategory" class="btn btn-primary">
+        <i class="fas fa-plus-circle me-1"></i> إضافة تصنيف
+    </a>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="categoriesTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="50">الرقم</th>
+                        <th>الاسم</th>
+                        <th>الوصف</th>
+                        <th width="80">المنتجات</th>
+                        <th width="100">العمليات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model)
+                    {
+                        <tr>
+                            <td>@category.Id</td>
+                            <td>@category.Name</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(category.Description))
+                                {
+                                    <div class="description-text" title="@category.Description">
+                                        @category.Description
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                @if (category.Products != null)
+                                {
+                                    <span class="badge bg-info">@category.Products.Count</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">0</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/Admin2/EditCategory/@category.Id" class="btn btn-icon btn-outline-primary" title="تعديل">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-icon btn-outline-danger" title="حذف" onclick="checkCategoryBeforeDelete(@category.Id)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $('#categoriesTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.7/i18n/ar.json"
+                },
+                "ordering": false,
+                "columnDefs": [
+                    { "orderable": false, "targets": "_all" }
+                ]
+            });
+        });
+    </script>
+} 

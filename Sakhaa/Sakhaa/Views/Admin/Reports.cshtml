@@ -1,0 +1,95 @@
+@model List<Sakhaa.Models.PublicReport>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "إدارة التقارير العامة";
+}
+
+<div class="admin-section">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4">
+        <h5>التقارير العامة</h5>
+        <a href="/Admin/CreateReport" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-plus me-1"></i> إضافة تقرير جديد
+        </a>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>اسم التقرير</th>
+                        <th>السنة</th>
+                        <th>تاريخ الإضافة</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ReportFileName</td>
+                            <td>@item.ReportYear</td>
+                            <td>@(item.CreatedAt?.ToString("yyyy-MM-dd") ?? "-")</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="@Url.Content("~/documents/reports/" + item.FilePath)" class="btn btn-sm btn-success" target="_blank">
+                                        <i class="fa-solid fa-eye"></i> عرض
+                                    </a>
+
+                                    <a href="/Admin/EditReport/@item.Id" class="btn btn-sm btn-info">
+                                        <i class="fa-solid fa-pen-to-square"></i> تعديل
+                                    </a>
+                                    <button type="button" class="btn btn-sm btn-danger" 
+                                            onclick="confirmDelete(@item.Id, '@item.ReportFileName')">
+                                        <i class="fa-solid fa-trash"></i> حذف
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <i class="fa-solid fa-info-circle me-2"></i> لا توجد تقارير حتى الآن.
+        </div>
+    }
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">تأكيد الحذف</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                هل أنت متأكد من رغبتك في حذف التقرير: <span id="deleteItemName" class="fw-bold"></span>؟
+            </div>
+            <div class="modal-footer">
+                <form id="deleteForm" asp-action="DeleteReport" method="post">
+                    <input type="hidden" id="deleteItemId" name="id" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="submit" class="btn btn-danger">حذف</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id, name) {
+            document.getElementById('deleteItemId').value = id;
+            document.getElementById('deleteItemName').textContent = name;
+            
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            deleteModal.show();
+        }
+    </script>
+} 

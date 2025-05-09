@@ -1,0 +1,73 @@
+@use "variables.scss" as vars;
+
+#logInHeader {
+  height: 40vh !important;
+  background-color: vars.$heroFooterBg;
+  padding: 15px;
+  h2 {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    justify-self: center;
+  }
+}
+
+#loginContainer {
+  width: 50vw;
+  height: 550px;
+  padding: 80px;
+  background-color: vars.$primaryColor;
+  justify-self: center;
+  border-radius: 30px;
+  position: relative;
+  z-index: 2;
+  top: -150px;
+  box-shadow: vars.$boxShadow;
+  margin-top: 5%;
+  h2 {
+    color: vars.$bodyColor;
+    justify-self: center;
+    direction: rtl;
+    margin-bottom: 10%;
+    &::before{
+      content: none;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    input {
+      width: 80%;
+      height: 55px;
+      border-radius: 30px;
+      border: none;
+      direction: rtl;
+      padding-right: 5%;
+      &:focus{
+        outline: none;
+        border: 3px solid vars.$secondaryColor;
+      }
+    }
+    a{
+    color: vars.$bodyColor;
+    }
+    //a:hover{
+    //  text-decoration: underline;
+    //}
+    button{
+        width: 170px;
+        height: 50px;
+        background-color: vars.$secondaryColor;
+        color: vars.$bodyColor;
+        border-radius: 30px;
+        border: none;
+        font-size: vars.$buttonFontSize;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+    }
+  }
+}

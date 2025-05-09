@@ -1,0 +1,203 @@
+@model List<Sakhaa.Models.Donation>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="table-container">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+        <h5 class="mb-0">إدارة التبرعات</h5>
+        <div class="d-flex">
+            <div class="input-group me-2" style="width: 200px;">
+                <select class="form-select" id="filterProgram">
+                    <option value="">جميع البرامج</option>
+                    @foreach (var program in ViewBag.Programs ?? new List<Sakhaa.Models.DonationProgram>())
+                    {
+                        <option value="@program.Name">@program.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="بحث...">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-hover admin-table" id="donationsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>المتبرع</th>
+                    <th>البرنامج</th>
+                    <th>المبلغ</th>
+                    <th>تاريخ التبرع</th>
+                    <th>تاريخ الانتهاء</th>
+                    @* <th>النوع</th> *@
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var donation in Model)
+                    {
+                        <tr>
+                            <td>@donation.Id</td>
+                            <td>@(donation.User != null ? $"{donation.User.FirstName} {donation.User.LastName}" : "-")</td>
+                            <td>@(donation.Program != null ? donation.Program.Name : "-")</td>
+                            <td>@donation.Amount دينار</td>
+                            <td>@(donation.DonationStartDate?.ToString("yyyy-MM-dd") ?? "-")</td>
+                            <td>@(donation.DonationEndDate?.ToString("yyyy-MM-dd") ?? "مستمر")</td>
+                            @* <td> *@
+                            @*     @if (donation.IsRecurring) *@
+                            @*     { *@
+                            @*         <span class="badge bg-success">اشتراك شهري</span> *@
+                            @*     } *@
+                            @*     else *@
+                            @*     { *@
+                            @*         <span class="badge bg-primary">لمرة واحدة</span> *@
+                            @*     } *@
+                            @* </td> *@
+                            <td>
+                                <a href="/Admin/DonationDetails/@donation.Id" class="btn btn-sm btn-outline-primary">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary ms-1" data-bs-toggle="modal" data-bs-target="#reportModal" data-id="@donation.Id" data-name="@(donation.User != null ? $"{donation.User.FirstName} {donation.User.LastName}" : "-")">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="text-center">لا توجد تبرعات</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-4">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">السابق</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">التالي</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Add Report Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">إضافة تقرير لتبرع</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="reportForm" action="/Admin/AddDonationReport" method="post">
+                    <input type="hidden" id="donationId" name="DonationId" value="">
+                    
+                    <div class="mb-3">
+                        <label for="reportType" class="form-label">نوع التقرير</label>
+                        <select class="form-select" id="reportType" name="ReportType" required>
+                            <option value="">اختر نوع التقرير</option>
+                            <option value="أثر التبرع">أثر التبرع</option>
+                            <option value="تقرير مالي">تقرير مالي</option>
+                            <option value="تقرير إحصائي">تقرير إحصائي</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="reportDate" class="form-label">تاريخ التقرير</label>
+                        <input type="date" class="form-control" id="reportDate" name="ReportDate" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">المبلغ المستخدم (دينار)</label>
+                        <input type="number" class="form-control" id="amount" name="Amount" required min="1" step="0.01">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="impactDescription" class="form-label">وصف الأثر</label>
+                        <textarea class="form-control" id="impactDescription" name="ImpactDescription" rows="4" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('reportForm').submit()">إضافة التقرير</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            filterTable();
+        });
+        
+        
+        document.getElementById('filterProgram').addEventListener('change', function() {
+            filterTable();
+        });
+        
+        function filterTable() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const programFilter = document.getElementById('filterProgram').value;
+            const table = document.getElementById('donationsTable');
+            const rows = table.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                let foundSearch = false;
+                let foundProgram = programFilter === '';
+                const cells = row.querySelectorAll('td');
+                
+                
+                cells.forEach(cell => {
+                    if (cell.textContent.toLowerCase().indexOf(searchText) > -1) {
+                        foundSearch = true;
+                    }
+                });
+                
+                
+                if (programFilter !== '' && cells[2].textContent === programFilter) {
+                    foundProgram = true;
+                }
+                
+                row.style.display = (foundSearch && foundProgram) ? '' : 'none';
+            });
+        }
+        
+        
+        const reportModal = document.getElementById('reportModal');
+        reportModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const name = button.getAttribute('data-name');
+            
+            const donationId = reportModal.querySelector('#donationId');
+            const modalTitle = reportModal.querySelector('.modal-title');
+            
+            donationId.value = id;
+            modalTitle.textContent = `إضافة تقرير لتبرع ${name}`;
+            
+            
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('reportDate').value = today;
+        });
+    </script>
+}

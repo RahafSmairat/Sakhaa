@@ -1,0 +1,229 @@
+@model IEnumerable<Sakhaa.Models.Sponsor>
+@{
+    ViewData["Title"] = "إدارة الرعاة";
+    ViewData["ActivePage"] = "Sponsors";
+    Layout = "_Admin2Layout";
+}
+
+<style>
+    #sponsorsTable {
+        width: 100% !important;
+    }
+    
+    #sponsorsTable th {
+        font-weight: 600;
+        white-space: nowrap;
+        text-align: right;
+    }
+    
+    #sponsorsTable td {
+        vertical-align: middle;
+        text-align: right;
+    }
+    
+    #sponsorsTable td:last-child,
+    #sponsorsTable th:last-child,
+    #sponsorsTable td:nth-child(5),
+    #sponsorsTable th:nth-child(5) {
+        text-align: center;
+    }
+    
+    .sponsor-logo-img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+    
+    .sponsor-logo-placeholder {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+    
+    .website-link {
+        max-width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">إدارة الرعاة</h1>
+    <a href="/Admin2/CreateSponsor" class="btn btn-primary">
+        <i class="fas fa-plus-circle me-1"></i> إضافة راعي
+    </a>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="sponsorsTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="50">الرقم</th>
+                        <th width="60">الشعار</th>
+                        <th>الاسم</th>
+                        <th>الموقع الإلكتروني</th>
+                        <th width="80">المنتجات</th>
+                        <th width="100">العمليات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sponsor in Model)
+                    {
+                        <tr>
+                            <td>@sponsor.SponsorId</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(sponsor.LogoPath))
+                                {
+                                    <img src="@Url.Content(sponsor.LogoPath)" class="sponsor-logo-img" alt="@sponsor.Name">
+                                }
+                                else
+                                {
+                                    <div class="sponsor-logo-placeholder">
+                                        <i class="fas fa-building text-muted"></i>
+                                    </div>
+                                }
+                            </td>
+                            <td>@sponsor.Name</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(sponsor.Website))
+                                {
+                                    <a href="@sponsor.Website" target="_blank" class="text-primary website-link" title="@sponsor.Website">
+                                        <i class="fas fa-external-link-alt me-1"></i>@sponsor.Website
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                @if (sponsor.Products != null)
+                                {
+                                    <span class="badge bg-info">@sponsor.Products.Count</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">0</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/Admin2/EditSponsor/@sponsor.SponsorId" class="btn btn-icon btn-outline-primary" title="تعديل">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-icon btn-outline-danger" title="حذف" onclick="checkSponsorBeforeDelete(@sponsor.SponsorId)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $('#sponsorsTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.7/i18n/ar.json"
+                },
+                "ordering": false,
+                "columnDefs": [
+                    { "orderable": false, "targets": "_all" }
+                ]
+            });
+        });
+        
+        function checkSponsorBeforeDelete(sponsorId) {
+            Swal.fire({
+                title: 'تأكيد',
+                text: 'هل أنت متأكد من حذف هذا الراعي؟',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'نعم، احذف',
+                cancelButtonText: 'إلغاء',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                customClass: {
+                    popup: 'swal-rtl',
+                    title: 'swal-title-rtl',
+                    confirmButton: 'swal-button',
+                    cancelButton: 'swal-button'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteSponsor(sponsorId);
+                }
+            });
+        }
+        
+        function deleteSponsor(sponsorId) {
+            $.ajax({
+                url: '/Admin2/DeleteSponsor',
+                type: 'POST',
+                data: { id: sponsorId },
+                success: function(result) {
+                    if (result.success) {
+                        Swal.fire({
+                            title: 'تم!',
+                            text: result.message,
+                            icon: 'success',
+                            confirmButtonText: 'حسناً',
+                            confirmButtonColor: '#0d6efd'
+                        }).then(function() {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'خطأ!',
+                            text: result.message,
+                            icon: 'error',
+                            confirmButtonText: 'حسناً'
+                        });
+                    }
+                },
+                error: function() {
+                    Swal.fire({
+                        title: 'خطأ!',
+                        text: 'حدث خطأ أثناء حذف الراعي',
+                        icon: 'error',
+                        confirmButtonText: 'حسناً'
+                    });
+                }
+            });
+        }
+    </script>
+} 

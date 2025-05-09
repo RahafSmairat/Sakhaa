@@ -1,0 +1,60 @@
+@model Sakhaa.Models.DonationProgram
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "إضافة برنامج تبرع جديد";
+}
+
+<div class="admin-form">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4">
+        <h5 class="mb-0">إضافة برنامج تبرع جديد</h5>
+        <a href="/Admin/DonationPrograms" class="btn btn-sm btn-outline-secondary">
+            <i class="fa-solid fa-arrow-right me-1"></i> العودة
+        </a>
+    </div>
+
+    <form asp-action="CreateProgram" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="Name" class="form-label">اسم البرنامج</label>
+            <input type="text" class="form-control" id="Name" name="Name" asp-for="Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Description" class="form-label">وصف البرنامج</label>
+            <textarea class="form-control" id="Description" name="Description" asp-for="Description" rows="4" required></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="MinimumDonationAmount" class="form-label">الحد الأدنى للتبرع (دينار)</label>
+            <input type="number" class="form-control" id="MinimumDonationAmount" name="MinimumDonationAmount" asp-for="MinimumDonationAmount" required min="1" step="0.01">
+            <span asp-validation-for="MinimumDonationAmount" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ProgramImage" class="form-label">صورة البرنامج</label>
+            <input type="file" class="form-control" id="ProgramImage" name="ProgramImage" accept="image/*" required>
+            <div class="form-text">يرجى اختيار صورة بحجم مناسب (الحد الأقصى 2 ميجابايت)</div>
+        </div>
+
+        <div class="d-flex justify-content-end mt-4">
+            <a href="/Admin/DonationPrograms" class="btn btn-outline-secondary me-2">إلغاء</a>
+            <button type="submit" class="btn btn-primary">إضافة البرنامج</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+    </script>
+} 

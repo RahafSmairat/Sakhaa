@@ -1,0 +1,151 @@
+@model IEnumerable<Sakhaa.Models.Order>
+@{
+    ViewData["Title"] = "إدارة الطلبات";
+    ViewData["ActivePage"] = "Orders";
+    Layout = "_Admin2Layout";
+}
+
+<style>
+    #ordersTable {
+        width: 100% !important;
+    }
+    
+    #ordersTable th {
+        font-weight: 600;
+        white-space: nowrap;
+        text-align: right;
+    }
+    
+    #ordersTable td {
+        vertical-align: middle;
+        text-align: right;
+    }
+    
+    #ordersTable td:last-child,
+    #ordersTable th:last-child,
+    #ordersTable td:nth-child(4),
+    #ordersTable th:nth-child(4) {
+        text-align: center;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+    
+    .order-id {
+        font-weight: 600;
+        color: #495057;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">إدارة الطلبات</h1>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="ordersTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="80">رقم الطلب</th>
+                        <th>العميل</th>
+                        <th width="120">تاريخ الطلب</th>
+                        <th width="100">الحالة</th>
+                        <th width="80">العمليات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td class="order-id">#@order.Id</td>
+                            <td>
+                                @if (order.User != null)
+                                {
+                                    @(order.User.FirstName + " " + order.User.LastName)
+                                }
+                                else
+                                {
+                                    <span class="text-muted">غير معروف</span>
+                                }
+                            </td>
+                            <td>
+                                @if (order.OrderDate != null)
+                                {
+                                    @string.Format("{0:yyyy/MM/dd}", order.OrderDate)
+                                }
+                                else
+                                {
+                                    <span>غير محدد</span>
+                                }
+                            </td>
+                            <td>
+                                @switch (order.OrderStatus)
+                                {
+                                    case "Pending":
+                                        <span class="badge bg-warning">قيد الانتظار</span>
+                                        break;
+                                    case "Processing":
+                                        <span class="badge bg-primary">قيد المعالجة</span>
+                                        break;
+                                    case "Shipped":
+                                        <span class="badge bg-info">تم الشحن</span>
+                                        break;
+                                    case "Delivered":
+                                        <span class="badge bg-success">تم التسليم</span>
+                                        break;
+                                    case "Cancelled":
+                                        <span class="badge bg-danger">ملغي</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">غير معروف</span>
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/Admin2/OrderDetails/@order.Id" class="btn btn-icon btn-outline-primary" title="عرض التفاصيل">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $('#ordersTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.7/i18n/ar.json"
+                },
+                "ordering": false,
+                "columnDefs": [
+                    { "orderable": false, "targets": "_all" }
+                ]
+            });
+        });
+    </script>
+} 

@@ -1,0 +1,248 @@
+@model Sakhaa.Models.Order
+@{
+    ViewData["Title"] = $"تفاصيل الطلب #{Model.Id}";
+    ViewData["ActivePage"] = "Orders";
+    Layout = "_Admin2Layout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">تفاصيل الطلب #@Model.Id</h1>
+    <a href="/Admin2/Orders" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-right me-1"></i> العودة للطلبات
+    </a>
+</div>
+
+<div class="row">
+    <!-- Order Information -->
+    <div class="col-lg-6 mb-4">
+        <div class="card border-0 shadow h-100">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">معلومات الطلب</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">رقم الطلب:</dt>
+                    <dd class="col-sm-8">#@Model.Id</dd>
+                    
+                    <dt class="col-sm-4">تاريخ الطلب:</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.OrderDate != null)
+                        {
+                            @string.Format("{0:yyyy/MM/dd HH:mm}", Model.OrderDate)
+                        }
+                        else
+                        {
+                            <span>غير محدد</span>
+                        }
+                    </dd>
+                    
+                    <dt class="col-sm-4">حالة الطلب:</dt>
+                    <dd class="col-sm-8">
+                        @switch (Model.OrderStatus)
+                        {
+                            case "Pending":
+                                <span class="badge bg-warning">قيد الانتظار</span>
+                                break;
+                            case "Processing":
+                                <span class="badge bg-primary">قيد المعالجة</span>
+                                break;
+                            case "Shipped":
+                                <span class="badge bg-info">تم الشحن</span>
+                                break;
+                            case "Delivered":
+                                <span class="badge bg-success">تم التسليم</span>
+                                break;
+                            case "Cancelled":
+                                <span class="badge bg-danger">ملغي</span>
+                                break;
+                            default:
+                                <span class="badge bg-secondary">غير معروف</span>
+                                break;
+                        }
+                    </dd>
+                </dl>
+                
+                <hr>
+                
+                <div class="d-flex justify-content-center gap-2 mt-4">
+                    <button type="button" class="btn btn-sm btn-warning" onclick="updateOrderStatus(@Model.Id, 'Pending')">
+                        <i class="fas fa-clock"></i> قيد الانتظار
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="updateOrderStatus(@Model.Id, 'Processing')">
+                        <i class="fas fa-cog"></i> قيد المعالجة
+                    </button>
+                    <button type="button" class="btn btn-sm btn-info" onclick="updateOrderStatus(@Model.Id, 'Shipped')">
+                        <i class="fas fa-shipping-fast"></i> تم الشحن
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success" onclick="updateOrderStatus(@Model.Id, 'Delivered')">
+                        <i class="fas fa-check-circle"></i> تم التسليم
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="updateOrderStatus(@Model.Id, 'Cancelled')">
+                        <i class="fas fa-times-circle"></i> ملغي
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Customer Information -->
+    <div class="col-lg-6 mb-4">
+        <div class="card border-0 shadow h-100">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">معلومات العميل</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.User != null)
+                {
+                    <dl class="row">
+                        <dt class="col-sm-4">الاسم:</dt>
+                        <dd class="col-sm-8">@Model.User.FirstName @Model.User.LastName</dd>
+                        
+                        <dt class="col-sm-4">البريد الإلكتروني:</dt>
+                        <dd class="col-sm-8">@Model.User.Email</dd>
+                        
+                        <dt class="col-sm-4">رقم الهاتف:</dt>
+                        <dd class="col-sm-8">
+                            @(string.IsNullOrEmpty(Model.User.PhoneNumber) ? "غير متوفر" : Model.User.PhoneNumber)
+                        </dd>
+                        
+                        <dt class="col-sm-4">الدولة:</dt>
+                        <dd class="col-sm-8">
+                            @(string.IsNullOrEmpty(Model.User.Country) ? "غير متوفر" : Model.User.Country)
+                        </dd>
+                    </dl>
+                }
+                else
+                {
+                    <div class="alert alert-warning mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        معلومات المستخدم غير متوفرة
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Order Items -->
+<div class="card border-0 shadow mb-4">
+    <div class="card-header bg-white">
+        <h5 class="card-title mb-0">المنتجات</h5>
+    </div>
+    <div class="card-body">
+        @if (Model.OrderItems != null && Model.OrderItems.Count > 0)
+        {
+            <div class="table-responsive">
+                <table class="table table-borderless align-middle">
+                    <thead>
+                        <tr class="table-light">
+                            <th style="width: 80px;"></th>
+                            <th>المنتج</th>
+                            <th>الكمية</th>
+                            <th>السعر</th>
+                            <th>الإجمالي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            decimal orderTotal = 0;
+                        }
+                        
+                        @foreach (var item in Model.OrderItems)
+                        {
+                            decimal itemTotal = item.UnitPrice.GetValueOrDefault() * item.Quantity.GetValueOrDefault();
+                            orderTotal += itemTotal;
+                            
+                            <tr>
+                                <td>
+                                    @if (item.Product != null && !string.IsNullOrEmpty(item.Product.ProductImage))
+                                    {
+                                        <img src="@Url.Content(item.Product.ProductImage)" class="rounded" width="60" height="60" style="object-fit: cover;" alt="@item.Product.ProductName">
+                                    }
+                                    else
+                                    {
+                                        <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                            <i class="fas fa-image text-muted"></i>
+                                        </div>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Product != null)
+                                    {
+                                        <h6 class="mb-0">@item.Product.ProductName</h6>
+                                    }
+                                    else
+                                    {
+                                        <h6 class="mb-0 text-muted">منتج غير متوفر</h6>
+                                    }
+                                </td>
+                                <td>@item.Quantity</td>
+                                <td>@item.UnitPrice.GetValueOrDefault().ToString("F2") د.أ</td>
+                                <td>@itemTotal.ToString("F2") د.أ</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-start">
+                                <strong>المجموع:</strong>
+                            </td>
+                            <td class="text-start">
+                                <strong>@orderTotal.ToString("F2") د.أ</strong>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-4">
+                <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
+                <p class="mb-0">لا توجد منتجات في هذا الطلب</p>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateOrderStatus(orderId, status) {
+            $.ajax({
+                url: '/Admin2/UpdateOrderStatus',
+                type: 'POST',
+                data: {
+                    orderId: orderId,
+                    status: status
+                },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: 'تم!',
+                            text: response.message,
+                            icon: 'success',
+                            confirmButtonText: 'حسناً'
+                        }).then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'خطأ!',
+                            text: response.message,
+                            icon: 'error',
+                            confirmButtonText: 'حسناً'
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        title: 'خطأ!',
+                        text: 'حدث خطأ أثناء تحديث حالة الطلب',
+                        icon: 'error',
+                        confirmButtonText: 'حسناً'
+                    });
+                }
+            });
+        }
+    </script>
+} 

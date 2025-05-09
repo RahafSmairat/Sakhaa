@@ -1,0 +1,577 @@
+@model Sakhaa.Controllers.CartController.CheckoutViewModel
+@{
+    ViewData["Title"] = "إتمام الطلب";
+    Layout = "_HomeLayout";
+}
+
+@section HeaderTitle {
+    <h2 class="section">إتمام الطلب</h2>
+}
+
+<style>
+    .checkout-container {
+        padding: 40px 0;
+        direction: rtl;
+    }
+    
+    .checkout-header {
+        margin-bottom: 30px;
+    }
+    
+    .checkout-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #405712;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .checkout-icon {
+        color: #DAA520;
+    }
+    
+    .checkout-section {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .checkout-section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .checkout-section-title i {
+        color: #DAA520;
+    }
+    
+    .address-card, .payment-card {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+    }
+    
+    .address-card:hover, .payment-card:hover {
+        border-color: #DAA520;
+        
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .address-card.selected, .payment-card.selected {
+        border-color: #405712;
+        background-color: #f8f9fa;
+    }
+    
+    .address-card.selected::after, .payment-card.selected::after {
+        content: '\f00c';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        color: #405712;
+        font-size: 16px;
+    }
+    
+    .address-card h5, .payment-card h5 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .address-details, .payment-details {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+    
+    .address-details span, .payment-details span {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .card-icon {
+        font-size: 20px;
+        color: #6c757d;
+        margin-right: 10px;
+    }
+    
+    .add-new-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #405712;
+        background-color: #f8f9fa;
+        border: 1px dashed #ced4da;
+        border-radius: 8px;
+        padding: 15px;
+        width: 100%;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: 500;
+    }
+    
+    .add-new-btn:hover {
+        background-color: #e9ecef;
+        border-color: #DAA520;
+    }
+    
+    .cart-summary {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        position: sticky;
+        top: 20px;
+    }
+    
+    .cart-summary-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .cart-summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+    
+    .cart-summary-label {
+        color: #6c757d;
+    }
+    
+    .cart-summary-value {
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .cart-total {
+        font-size: 20px;
+        font-weight: 700;
+        color: #405712;
+    }
+    
+    .order-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .order-item:last-child {
+        border-bottom: none;
+    }
+    
+    .order-item-img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-left: 15px;
+    }
+    
+    .order-item-details {
+        flex-grow: 1;
+    }
+    
+    .order-item-name {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    
+    .order-item-price {
+        font-size: 13px;
+        color: #6c757d;
+    }
+    
+    .order-item-quantity {
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: 13px;
+        color: #495057;
+        margin-right: 15px;
+    }
+    
+    .place-order-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #405712;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    
+    .place-order-btn:hover {
+        background-color: #DAA520;
+        
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .back-to-cart {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        color: #405712;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+    
+    .back-to-cart:hover {
+        color: #DAA520;
+        text-decoration: none;
+    }
+    
+    .modal-style {
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .modal-footer {
+        justify-content: flex-start;
+    }
+    
+    @@media (max-width: 991.98px) {
+        .cart-summary {
+            position: static;
+            margin-top: 30px;
+        }
+    }
+</style>
+
+<div class="container checkout-container">
+    <div class="checkout-header">
+        <h1 class="checkout-title">
+            <i class="fas fa-shopping-bag checkout-icon"></i>
+            إتمام الطلب
+        </h1>
+        <a href="@Url.Action("Index", "Cart")" class="back-to-cart">
+            <i class="fas fa-arrow-right"></i>
+            العودة إلى السلة
+        </a>
+    </div>
+
+    <form id="checkoutForm" method="post" action="@Url.Action("Checkout", "Cart")">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Shipping Address Section -->
+                <div class="checkout-section">
+                    <h3 class="checkout-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        عنوان الشحن
+                    </h3>
+                    
+                    <div class="row">
+                        @if (Model.UserAddresses != null && Model.UserAddresses.Any())
+                        {
+                            foreach (var address in Model.UserAddresses)
+                            {
+                                <div class="col-md-6 mb-3">
+                                    <div class="address-card @((address.IsDefault ?? false) ? "selected" : "")" data-address-id="@address.AddressId">
+                                        <h5>@address.Title</h5>
+                                        <div class="address-details">
+                                            <span>@address.Street، @address.City</span>
+                                            <span>@address.Country</span>
+                                            <span>@address.PhoneNumber</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        
+                        <div class="col-md-6 mb-3">
+                            <button type="button" class="add-new-btn" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+                                <i class="fas fa-plus"></i>
+                                إضافة عنوان جديد
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" name="addressId" id="selectedAddressId" value="@(Model.UserAddresses.FirstOrDefault(a => (a.IsDefault ?? false))?.AddressId ?? Model.UserAddresses.FirstOrDefault()?.AddressId ?? 0)" />
+                </div>
+                
+                <!-- Payment Method Section -->
+                <div class="checkout-section">
+                    <h3 class="checkout-section-title">
+                        <i class="fas fa-credit-card"></i>
+                        طريقة الدفع
+                    </h3>
+                    
+                    <div class="row">
+                        @if (Model.PaymentMethods != null && Model.PaymentMethods.Any())
+                        {
+                            foreach (var paymentMethod in Model.PaymentMethods)
+                            {
+                                <div class="col-md-6 mb-3">
+                                    <div class="payment-card @((paymentMethod.IsDefault ?? false) ? "selected" : "")" data-payment-id="@paymentMethod.Id">
+                                        <h5>
+                                            <i class="fab fa-cc-visa card-icon"></i>
+                                            @paymentMethod.CardHolderName
+                                        </h5>
+                                        <div class="payment-details">
+                                            <span>**** **** **** @paymentMethod.CardNumber.Substring(Math.Max(0, paymentMethod.CardNumber.Length - 4))</span>
+                                            <span>تنتهي الصلاحية: @paymentMethod.ExpiryDate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        
+                        <div class="col-md-6 mb-3">
+                            <button type="button" class="add-new-btn" data-bs-toggle="modal" data-bs-target="#addPaymentModal">
+                                <i class="fas fa-plus"></i>
+                                إضافة طريقة دفع جديدة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" name="paymentMethodId" id="selectedPaymentMethodId" value="@(Model.PaymentMethods.FirstOrDefault(p => (p.IsDefault ?? false))?.Id ?? Model.PaymentMethods.FirstOrDefault()?.Id ?? 0)" />
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Order Summary Section -->
+                <div class="cart-summary">
+                    <h3 class="cart-summary-title">ملخص الطلب</h3>
+                    
+                    <div class="order-items">
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <div class="order-item">
+                                @if (!string.IsNullOrEmpty(item.ProductImage))
+                                {
+                                    <img src="@Url.Content(item.ProductImage)" class="order-item-img" alt="@item.ProductName">
+                                }
+                                else
+                                {
+                                    <div class="order-item-img d-flex align-items-center justify-content-center bg-light">
+                                        <i class="fas fa-image text-muted"></i>
+                                    </div>
+                                }
+                                <div class="order-item-details">
+                                    <div class="order-item-name">@item.ProductName</div>
+                                    <div class="order-item-price">@item.Price.ToString("0.00") د.أ</div>
+                                </div>
+                                <div class="order-item-quantity">
+                                    @item.Quantity قطعة
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    
+                    <div class="cart-summary-row mt-4 pt-3 border-top">
+                        <span class="cart-summary-label">المبلغ الإجمالي</span>
+                        <span class="cart-summary-value">@Model.TotalAmount.ToString("0.00") د.أ</span>
+                    </div>
+                    
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">الشحن</span>
+                        <span class="cart-summary-value">مجاني</span>
+                    </div>
+                    
+                    <div class="cart-summary-row mt-4 pt-3 border-top">
+                        <span class="cart-summary-label">المجموع</span>
+                        <span class="cart-total">@Model.TotalAmount.ToString("0.00") د.أ</span>
+                    </div>
+                    
+                    <button type="submit" class="place-order-btn">
+                        تأكيد الطلب
+                        @* <i class="fas fa-check ms-2"></i> *@
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Add Address Modal -->
+<div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-style">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAddressModalLabel">إضافة عنوان جديد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addAddressForm" action="@Url.Action("AddAddress", "User")" method="post">
+                    <div class="mb-3">
+                        <label for="addressTitle" class="form-label">عنوان العنوان</label>
+                        <input type="text" class="form-control" id="addressTitle" name="Title" placeholder="مثال: المنزل، العمل" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addressStreet" class="form-label">الشارع</label>
+                        <input type="text" class="form-control" id="addressStreet" name="Street" placeholder="اسم الشارع ورقم المبنى" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="addressCity" class="form-label">المدينة</label>
+                            <input type="text" class="form-control" id="addressCity" name="City" required>
+                        </div>
+                        <div class="col">
+                            <label for="addressCountry" class="form-label">الدولة</label>
+                            <input type="text" class="form-control" id="addressCountry" name="Country" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addressPhone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="addressPhone" name="PhoneNumber" placeholder="رقم هاتف للتواصل" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="addressDefault" name="IsDefault">
+                        <label class="form-check-label" for="addressDefault">
+                            تعيين كعنوان افتراضي
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" id="saveAddressBtn">حفظ العنوان</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Payment Method Modal -->
+<div class="modal fade" id="addPaymentModal" tabindex="-1" aria-labelledby="addPaymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-style">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPaymentModalLabel">إضافة طريقة دفع جديدة</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addPaymentForm" action="@Url.Action("AddPaymentMethod", "User")" method="post">
+                    <div class="mb-3">
+                        <label for="cardHolderName" class="form-label">اسم حامل البطاقة</label>
+                        <input type="text" class="form-control" id="cardHolderName" name="CardHolderName" placeholder="الاسم كما يظهر على البطاقة" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cardNumber" class="form-label">رقم البطاقة</label>
+                        <input type="text" class="form-control" id="cardNumber" name="CardNumber" placeholder="أدخل رقم البطاقة" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="cardExpiry" class="form-label">تاريخ الانتهاء</label>
+                            <input type="text" class="form-control" id="cardExpiry" name="ExpiryDate" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col">
+                            <label for="cardCvv" class="form-label">رمز الأمان CVV</label>
+                            <input type="text" class="form-control" id="cardCvv" name="Cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="paymentDefault" name="IsDefault">
+                        <label class="form-check-label" for="paymentDefault">
+                            تعيين كطريقة دفع افتراضية
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" id="savePaymentBtn">حفظ طريقة الدفع</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            
+            $('.address-card').click(function() {
+                $('.address-card').removeClass('selected');
+                $(this).addClass('selected');
+                $('#selectedAddressId').val($(this).data('address-id'));
+            });
+            
+            
+            $('.payment-card').click(function() {
+                $('.payment-card').removeClass('selected');
+                $(this).addClass('selected');
+                $('#selectedPaymentMethodId').val($(this).data('payment-id'));
+            });
+            
+            
+            $('#saveAddressBtn').click(function() {
+                const form = $('#addAddressForm');
+                
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: form.serialize(),
+                    success: function(response) {
+                        
+                        location.reload();
+                    },
+                    error: function() {
+                        alert('حدث خطأ أثناء إضافة العنوان');
+                    }
+                });
+            });
+            
+            
+            $('#savePaymentBtn').click(function() {
+                const form = $('#addPaymentForm');
+                
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: form.serialize(),
+                    success: function(response) {
+                        
+                        location.reload();
+                    },
+                    error: function() {
+                        alert('حدث خطأ أثناء إضافة طريقة الدفع');
+                    }
+                });
+            });
+            
+            
+            $('#checkoutForm').submit(function(e) {
+                const addressId = $('#selectedAddressId').val();
+                const paymentMethodId = $('#selectedPaymentMethodId').val();
+                
+                if (addressId == '0' || paymentMethodId == '0') {
+                    e.preventDefault();
+                    alert('الرجاء اختيار عنوان الشحن وطريقة الدفع');
+                    return false;
+                }
+                
+                return true;
+            });
+        });
+    </script>
+} 

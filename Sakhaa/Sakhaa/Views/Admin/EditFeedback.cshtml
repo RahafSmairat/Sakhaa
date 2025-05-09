@@ -1,0 +1,43 @@
+@model Sakhaa.Models.BeneficiaryFeedback
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-light py-3">
+        <h5 class="mb-0">تعديل تعليق المستفيد</h5>
+    </div>
+    <div class="card-body">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+        
+        <form action="/Admin/EditFeedback/@Model.Id" method="post">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="BeneficiaryName" class="form-label">اسم المستفيد <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="BeneficiaryName" name="BeneficiaryName" 
+                           value="@(Model.BeneficiaryName ?? "")" required>
+                </div>
+                
+                <div class="col-md-12 mb-3">
+                    <label for="Feedback" class="form-label">التعليق <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="Feedback" name="Feedback" rows="5" required>@(Model.Feedback ?? "")</textarea>
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-end mt-3">
+                <a href="/Admin/BeneficiaryFeedbacks" class="btn btn-outline-secondary me-2">إلغاء</a>
+                <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+            </div>
+        </form>
+    </div>
+</div> 

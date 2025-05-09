@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "SuccessStories";
+}
+
+@section HeaderTitle {
+    <h2 class="section">قصص نجاح بفضل سخائكم</h2>
+}
+
+@model IEnumerable<Sakhaa.Models.SuccessStory>
+
+<div class="successStories">
+    @foreach (var story in Model)
+    {
+        <div class="card mb-4 d-flex">
+            <div class="card-image left">
+                <img src="/images/@story.ImagePath" alt="@story.Title"/>
+            </div>
+            <div class="card-content">
+                <h3>@story.Title</h3>
+                <p>@story.Content</p>
+            </div>
+        </div>
+    }
+</div>

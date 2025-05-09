@@ -1,0 +1,487 @@
+@model Sakhaa.Models.Product
+@{
+    ViewData["Title"] = Model.ProductName;
+    Layout = "_HomeLayout";
+}
+
+<style>
+    .product-detail-container {
+        padding: 40px 0;
+    }
+    
+    .product-img-container {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background-color: #f8f9fa;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .product-info {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .product-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .product-meta {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #666;
+    }
+    
+    .product-meta span {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+    
+    .product-price {
+        font-size: 32px;
+        font-weight: 700;
+        color: #28a745;
+        margin-bottom: 20px;
+    }
+    
+    .product-description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #444;
+        margin-bottom: 30px;
+    }
+    
+    .details-add-cart-btn {
+        display: flex;
+        width: 100%;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        background-color: #405712;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .details-add-cart-btn:hover {
+        background-color: #DAA520;
+        transform: translateY(-3px);
+        color: white;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    }
+    
+    .details-add-cart-btn:disabled {
+        background-color: #adb5bd;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+    
+    .sponsored-card {
+        border: 1px solid #e7f0fd;
+        background-color: #f0f7ff;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 25px;
+    }
+    
+    .sponsored-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0d6efd;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .sponsor-logo {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+    
+    .related-products {
+        margin-top: 60px;
+    }
+    
+    .related-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        position: relative;
+        padding-right: 15px;
+    }
+    
+    .related-title::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 24px;
+        background-color: #0d6efd;
+        border-radius: 2px;
+    }
+    
+    .back-link {
+        color: #555;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+        color: #0d6efd;
+    }
+    
+    .related-product-card {
+        transition: box-shadow 0.3s;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .related-product-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .related-product-img {
+        height: 160px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .related-product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    
+    .related-product-card:hover .related-product-img img {
+        transform: scale(1.05);
+    }
+    
+    .related-product-body {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .related-product-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 16px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .related-product-price {
+        font-weight: 700;
+        color: #28a745;
+        margin-top: auto;
+    }
+    
+    
+    .me-1 {
+        margin-right: 0 !important;
+        margin-left: 0.25rem !important;
+    }
+</style>
+
+<div class="container product-detail-container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <a href="/Shop" class="back-link">
+                <i class="fas fa-arrow-right"></i> العودة للمتجر
+            </a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="product-img-container">
+                @if (!string.IsNullOrEmpty(Model.ProductImage))
+                {
+                    <img src="@Url.Content(Model.ProductImage)" class="product-img" alt="@Model.ProductName">
+                }
+                else
+                {
+                    <div class="text-center">
+                        <i class="fas fa-image fa-5x text-muted"></i>
+                    </div>
+                }
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="product-info">
+                <h1 class="product-title">@Model.ProductName</h1>
+                
+                <div class="product-meta">
+                    @if (Model.Category != null)
+                    {
+                        <span><i class="fas fa-tag me-1"></i> @Model.Category.Name</span>
+                    }
+                </div>
+                
+                <div class="product-price">
+                    @Model.Price.Value.ToString("0.00") د.أ
+                </div>
+                
+                <div class="product-description">
+                    @if (!string.IsNullOrEmpty(Model.ProductDescription))
+                    {
+                        @Html.Raw(Model.ProductDescription)
+                    }
+                    else
+                    {
+                        <p>لا يوجد وصف متاح لهذا المنتج.</p>
+                    }
+                </div>
+                
+                <button id="addToCartBtn" class="details-add-cart-btn" data-product-id="@Model.Id">
+                    <i class="fas fa-cart-plus"></i>
+                    إضافة إلى السلة
+                </button>
+                
+                @if (Model.SponsorId.HasValue && Model.Sponsor != null)
+                {
+                    <div class="sponsored-card">
+                        <div class="sponsored-title">
+                            <i class="fas fa-star text-warning"></i>
+                            منتج مدعوم برعاية
+                            @if (!string.IsNullOrEmpty(Model.Sponsor.LogoPath))
+                            {
+                                <img src="@Url.Content(Model.Sponsor.LogoPath)" class="sponsor-logo" alt="@Model.Sponsor.Name">
+                            }
+                            <span>@Model.Sponsor.Name</span>
+                        </div>
+                        
+                        @if (!string.IsNullOrEmpty(Model.Sponsor.Website))
+                        {
+                            <div>
+                                <a href="@Model.Sponsor.Website" target="_blank" class="text-primary">
+                                    <i class="fas fa-external-link-alt me-1"></i> زيارة موقع الراعي
+                                </a>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+    @if (ViewBag.RelatedProducts != null && ((List<Sakhaa.Models.Product>)ViewBag.RelatedProducts).Count > 0)
+    {
+        <div class="row related-products">
+            <div class="col-12">
+                <h3 class="related-title">منتجات ذات صلة</h3>
+            </div>
+            
+            <div class="row row-cols-2 row-cols-md-4 g-3">
+                @foreach (var relatedProduct in (List<Sakhaa.Models.Product>)ViewBag.RelatedProducts)
+                {
+                    <div class="col">
+                        <a href="/Shop/Details/@relatedProduct.Id" class="text-decoration-none">
+                            <div class="related-product-card">
+                                <div class="related-product-img">
+                                    @if (!string.IsNullOrEmpty(relatedProduct.ProductImage))
+                                    {
+                                        <img src="@Url.Content(relatedProduct.ProductImage)" alt="@relatedProduct.ProductName">
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center p-4">
+                                            <i class="fas fa-image fa-3x text-muted"></i>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="related-product-body">
+                                    <h5 class="related-product-title">@relatedProduct.ProductName</h5>
+                                    <div class="related-product-price">@relatedProduct.Price.Value.ToString("0.00") د.أ</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="quickViewModalLabel">@Model.ProductName</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        @if (!string.IsNullOrEmpty(Model.ProductImage))
+                        {
+                            <img src="@Url.Content(Model.ProductImage)" class="img-fluid rounded" alt="@Model.ProductName">
+                        }
+                        else
+                        {
+                            <div class="text-center p-5 bg-light rounded">
+                                <i class="fas fa-image fa-4x text-muted"></i>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <h4>@Model.ProductName</h4>
+                        <div class="text-success fw-bold fs-4 mb-2">@Model.Price.Value.ToString("0.00") د.أ</div>
+                        
+                        @if (!string.IsNullOrEmpty(Model.ProductDescription))
+                        {
+                            <p>@Html.Raw(Model.ProductDescription)</p>
+                        }
+                        else
+                        {
+                            <p>لا يوجد وصف متاح لهذا المنتج.</p>
+                        }
+                        
+                        @if (Model.Category != null)
+                        {
+                            <div class="mt-3">
+                                <strong>التصنيف:</strong> @Model.Category.Name
+                            </div>
+                        }
+                        
+                        @if (Model.SponsorId.HasValue && Model.Sponsor != null)
+                        {
+                            <div class="mt-2">
+                                <strong>الراعي:</strong> @Model.Sponsor.Name
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            
+            $('.quick-view-btn').click(function() {
+                $('#quickViewModal').modal('show');
+            });
+            
+            
+            $('#addToCartBtn').click(function() {
+                const productId = $(this).data('product-id');
+                const button = $(this);
+                
+                
+                button.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> جاري الإضافة...');
+                
+                $.ajax({
+                    url: '/Cart/AddToCart',
+                    type: 'POST',
+                    data: { productId: productId, quantity: 1 },
+                    success: function(response) {
+                        if (response.success) {
+                            
+                            button.prop('disabled', false).html('<i class="fas fa-check"></i> تمت الإضافة!');
+                            
+                            
+                            setTimeout(function() {
+                                button.html('<i class="fas fa-cart-plus"></i> إضافة إلى السلة');
+                            }, 2000);
+                            
+                            
+                            if ($('#cart-count').length) {
+                                $('#cart-count').text(response.cartCount);
+                            }
+                            
+                            
+                            if ($.fn.toast) {
+                                $('.toast').toast('hide');
+                                
+                                $('body').append(`
+                                    <div class="toast" style="position: fixed; top: 20px; left: 20px; z-index: 1051;">
+                                        <div class="toast-header bg-success text-white">
+                                            <strong class="me-auto">تمت الإضافة بنجاح</strong>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            تمت إضافة المنتج إلى سلة التسوق
+                                            <div class="mt-2">
+                                                <a href="/Cart" class="btn btn-sm btn-primary">عرض السلة</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `);
+                                
+                                $('.toast').toast('show');
+                            }
+                        } else {
+                            
+                            button.prop('disabled', false).html('<i class="fas fa-exclamation-circle"></i> فشلت الإضافة');
+                            
+                            
+                            setTimeout(function() {
+                                button.html('<i class="fas fa-cart-plus"></i> إضافة إلى السلة');
+                            }, 2000);
+                            
+                            alert(response.message || 'حدث خطأ أثناء إضافة المنتج إلى السلة');
+                        }
+                    },
+                    error: function() {
+                        
+                        button.prop('disabled', false).html('<i class="fas fa-exclamation-circle"></i> فشلت الإضافة');
+                        
+                        
+                        setTimeout(function() {
+                            button.html('<i class="fas fa-cart-plus"></i> إضافة إلى السلة');
+                        }, 2000);
+                        
+                        alert('حدث خطأ أثناء الاتصال بالخادم');
+                    }
+                });
+            });
+        });
+    </script>
+} 

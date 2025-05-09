@@ -1,0 +1,210 @@
+@model IEnumerable<Sakhaa.Models.Product>
+@{
+    ViewData["Title"] = "إدارة المنتجات";
+    ViewData["ActivePage"] = "Products";
+    Layout = "_Admin2Layout";
+}
+
+<style>
+    #productsTable {
+        width: 100% !important;
+    }
+    
+    #productsTable th {
+        font-weight: 600;
+        white-space: nowrap;
+        text-align: right;
+    }
+    
+    #productsTable td {
+        vertical-align: middle;
+        text-align: right;
+    }
+    
+    #productsTable td:last-child,
+    #productsTable th:last-child {
+        text-align: center;
+    }
+    
+    .product-image {
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    
+    .product-image-placeholder {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+    }
+    
+    .sponsor-badge {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .sponsor-logo {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">إدارة المنتجات</h1>
+    <a href="/Admin2/CreateProduct" class="btn btn-primary">
+        <i class="fas fa-plus-circle me-1"></i> إضافة منتج
+    </a>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="productsTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="50">الصورة</th>
+                        <th>الاسم</th>
+                        <th>السعر</th>
+                        <th>التصنيف</th>
+                        <th>الراعي</th>
+                        <th width="80">الحالة</th>
+                        <th width="100">العمليات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td>
+                                @if (!string.IsNullOrEmpty(product.ProductImage))
+                                {
+                                    <img src="@Url.Content(product.ProductImage)" class="product-image" alt="@product.ProductName">
+                                }
+                                else
+                                {
+                                    <div class="product-image-placeholder">
+                                        <i class="fas fa-image text-muted"></i>
+                                    </div>
+                                }
+                            </td>
+                            <td>@product.ProductName</td>
+                            <td>@product.Price د.أ</td>
+                            <td>
+                                @if (product.Category != null)
+                                {
+                                    @product.Category.Name
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                @if (product.Sponsor != null)
+                                {
+                                    <div class="sponsor-badge">
+                                        @if (!string.IsNullOrEmpty(product.Sponsor.LogoPath))
+                                        {
+                                            <img src="@Url.Content(product.Sponsor.LogoPath)" class="sponsor-logo" alt="@product.Sponsor.Name">
+                                        }
+                                        <span>@product.Sponsor.Name</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                @if (product.IsAvailable == true)
+                                {
+                                    <span class="badge bg-success">متاح</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">غير متاح</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/Admin2/EditProduct/@product.Id" class="btn btn-icon btn-outline-primary" title="تعديل">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    
+                                    @if (product.IsAvailable == true)
+                                    {
+                                        <button type="button" class="btn btn-icon btn-outline-danger" title="إلغاء التفعيل" onclick="toggleProductAvailability(@product.Id, this)">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-icon btn-outline-success" title="تفعيل" onclick="toggleProductAvailability(@product.Id, this)">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $('#productsTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.7/i18n/ar.json"
+                },
+                "ordering": false,
+                "columnDefs": [
+                    { "orderable": false, "targets": "_all" }
+                ]
+            });
+            
+            $('button[onclick*="toggleProductAvailability"]').on('click', function(e) {
+                e.preventDefault();
+                
+                var onclickAttr = $(this).attr('onclick');
+                var match = onclickAttr.match(/toggleProductAvailability\((\d+)/);
+                if (match && match[1]) {
+                    var productId = match[1];
+                    console.log('Toggle button clicked for product ID:', productId);
+                    
+                    toggleProductAvailability(productId, this);
+                }
+            });
+        });
+    </script>
+} 

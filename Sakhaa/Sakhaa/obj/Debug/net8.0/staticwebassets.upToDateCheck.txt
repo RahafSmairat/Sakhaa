@@ -1,0 +1,204 @@
+wwwroot\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf
+wwwroot\documents\beneficiaries\50617244-c975-472d-860e-160c43ceadaf_Rahaf Alsmairat - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf
+wwwroot\documents\beneficiaries\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf
+wwwroot\documents\beneficiaries\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsmairat - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf
+wwwroot\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf
+wwwroot\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf
+wwwroot\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf
+wwwroot\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf
+wwwroot\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf
+wwwroot\favicon.ico
+wwwroot\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg
+wwwroot\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg
+wwwroot\images\bodyBG.png
+wwwroot\images\bodyBG1.png
+wwwroot\images\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg
+wwwroot\images\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg
+wwwroot\images\Charity.jpg
+wwwroot\images\circle1.png
+wwwroot\images\deal (1).png
+wwwroot\images\generous 1.png
+wwwroot\images\gift.png
+wwwroot\images\gift-box.png
+wwwroot\images\girlImg.png
+wwwroot\images\Group 82.png
+wwwroot\images\hero.png
+wwwroot\images\hero_1.jpg
+wwwroot\images\homeAbout.jpeg
+wwwroot\images\img_v_1-min.jpg
+wwwroot\images\img_v_2-min.jpg
+wwwroot\images\img_v_4-min.jpg
+wwwroot\images\img_v_5-min.jpg
+wwwroot\images\img_v_6-min.jpg
+wwwroot\images\img_v_7-min.jpg
+wwwroot\images\img_v_8-min.jpg
+wwwroot\images\leftCircle.png
+wwwroot\images\logo.png
+wwwroot\images\love-letter.png
+wwwroot\images\money.png
+wwwroot\images\news\news_638812908952968622.jpg
+wwwroot\images\news\news_638812926223390968.jpg
+wwwroot\images\news\news_638812926401261562.jpg
+wwwroot\images\news\news_638812926544421351.jpg
+wwwroot\images\news\news_638812926907847900.jpg
+wwwroot\images\news\news_638812927228841485.jpg
+wwwroot\images\pragrams.png
+wwwroot\images\program_638812993373130868.png
+wwwroot\images\program_638812994270576387.png
+wwwroot\images\program_638812995451188517.png
+wwwroot\images\program_638812996022859181.png
+wwwroot\images\program_638812996905375387.png
+wwwroot\images\program1.png
+wwwroot\images\program3.png
+wwwroot\images\program4.png
+wwwroot\images\project_638821470968328545.jpg
+wwwroot\images\project_638821471229489525.jpg
+wwwroot\images\project_638821472058942662.jpg
+wwwroot\images\project_638821480858452327.jpg
+wwwroot\images\project_638821508835745124.jpg
+wwwroot\images\project_638821510073553058.jpg
+wwwroot\images\rightCircle.png
+wwwroot\images\self-love (1).png
+wwwroot\images\statisticsImg1.jpeg
+wwwroot\images\statisticsImg2.jpeg
+wwwroot\images\statisticsImg3.jpeg
+wwwroot\images\stories\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg
+wwwroot\images\successStories.png
+wwwroot\images\sustainable 1.png
+wwwroot\javaScript\about.js
+wwwroot\javaScript\admin.js
+wwwroot\javaScript\giftForm.js
+wwwroot\javaScript\home.js
+wwwroot\javaScript\navAndFooterFetch.js
+wwwroot\javaScript\payment.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\publicReports\Angular Part#2 (1).pdf
+wwwroot\publicReports\Angular Part#2.pdf
+wwwroot\styles\about.css
+wwwroot\styles\about.css.map
+wwwroot\styles\about.scss
+wwwroot\styles\admin.css
+wwwroot\styles\admin.min.css
+wwwroot\styles\admin.scss
+wwwroot\styles\contact.css
+wwwroot\styles\contact.css.map
+wwwroot\styles\contact.scss
+wwwroot\styles\donationInfo.css
+wwwroot\styles\donationInfo.css.map
+wwwroot\styles\donationInfo.scss
+wwwroot\styles\footer.css
+wwwroot\styles\giftForm.css
+wwwroot\styles\giftForm.css.map
+wwwroot\styles\giftForm.scss
+wwwroot\styles\home.css
+wwwroot\styles\home.css.map
+wwwroot\styles\home.scss
+wwwroot\styles\login.css
+wwwroot\styles\login.css.map
+wwwroot\styles\login.scss
+wwwroot\styles\navbar.css
+wwwroot\styles\navbar.css.map
+wwwroot\styles\navbar.scss
+wwwroot\styles\payment.css
+wwwroot\styles\payment.css.map
+wwwroot\styles\payment.scss
+wwwroot\styles\profile.css
+wwwroot\styles\profile.css.map
+wwwroot\styles\profile.min.css
+wwwroot\styles\profile.scss
+wwwroot\styles\programs.css
+wwwroot\styles\programs.css.map
+wwwroot\styles\programs.scss
+wwwroot\styles\programsDetails.css
+wwwroot\styles\programsDetails.css.map
+wwwroot\styles\programsDetails.scss
+wwwroot\styles\reports.css
+wwwroot\styles\reports.css.map
+wwwroot\styles\reports.min.css
+wwwroot\styles\reports.scss
+wwwroot\styles\shop-rtl.css
+wwwroot\styles\signUp.css
+wwwroot\styles\signUp.css.map
+wwwroot\styles\signUp.scss
+wwwroot\styles\styles.css
+wwwroot\styles\successStories.css
+wwwroot\styles\successStories.css.map
+wwwroot\styles\successStories.min.css
+wwwroot\styles\successStories.scss
+wwwroot\styles\variables.css
+wwwroot\styles\variables.css.map
+wwwroot\styles\variables.scss
+wwwroot\uploads\products\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg
+wwwroot\uploads\products\4639ee32-3f96-4cc3-97e2-609b9b80e618_pexels-rdne-6647119.jpg
+wwwroot\uploads\products\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg
+wwwroot\uploads\products\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg
+wwwroot\uploads\products\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg
+wwwroot\uploads\products\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg
+wwwroot\uploads\products\d1e3dde9-4acd-4258-b1a9-f975640b96ae_pexels-kampus-8931674.jpg
+wwwroot\uploads\products\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg
+wwwroot\uploads\sponsors\8cebb86e-f8d2-47c6-b348-e96e1fe1655f_Almarai_Corporate_Logo.svg.png

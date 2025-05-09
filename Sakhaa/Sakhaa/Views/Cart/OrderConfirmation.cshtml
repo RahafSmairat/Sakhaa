@@ -1,0 +1,356 @@
+@model Sakhaa.Models.Order
+@{
+    ViewData["Title"] = "تأكيد الطلب";
+    Layout = "_HomeLayout";
+}
+
+@section HeaderTitle {
+    <h2 class="section">تأكيد الطلب</h2>
+}
+
+<style>
+    .confirmation-container {
+        padding: 40px 0;
+        direction: rtl;
+    }
+    
+    .confirmation-header {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .confirmation-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #405712;
+        margin-bottom: 15px;
+    }
+    
+    .confirmation-subtitle {
+        font-size: 18px;
+        color: #6c757d;
+        margin-bottom: 30px;
+    }
+    
+    .confirmation-icon {
+        font-size: 60px;
+        color: #28a745;
+        margin-bottom: 20px;
+    }
+    
+    .order-number {
+        font-weight: 700;
+        color: #405712;
+    }
+    
+    .confirmation-section {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .confirmation-section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .confirmation-section-title i {
+        color: #DAA520;
+    }
+    
+    .order-info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+    
+    .order-info-label {
+        color: #6c757d;
+        font-weight: 500;
+    }
+    
+    .order-info-value {
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .address-details, .payment-details {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+    
+    .address-details span, .payment-details span {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .address-details strong, .payment-details strong {
+        color: #333;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    .card-icon {
+        font-size: 20px;
+        color: #6c757d;
+        margin-right: 10px;
+    }
+    
+    .order-items-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    
+    .order-items-table th {
+        background-color: #f8f9fa;
+        color: #495057;
+        font-weight: 600;
+        padding: 12px;
+        border-bottom: 2px solid #e9ecef;
+        text-align: right;
+    }
+    
+    .order-items-table td {
+        padding: 12px;
+        border-bottom: 1px solid #e9ecef;
+        vertical-align: middle;
+    }
+    
+    .order-items-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .product-cell {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .product-img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    
+    .product-name {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    .product-quantity {
+        text-align: center;
+        font-weight: 600;
+    }
+    
+    .product-price {
+        font-weight: 600;
+        color: #28a745;
+    }
+    
+    .continue-shopping-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #405712;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 20px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    
+    .continue-shopping-btn:hover {
+        background-color: #DAA520;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .order-total {
+        font-size: 20px;
+        font-weight: 700;
+        color: #405712;
+    }
+    
+    .order-status {
+        display: inline-block;
+        padding: 5px 12px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container confirmation-container">
+    <div class="confirmation-header">
+        <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1 class="confirmation-title">تم تأكيد طلبك بنجاح</h1>
+        <p class="confirmation-subtitle">
+            رقم الطلب: <span class="order-number">#@Model.Id</span>
+        </p>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Order Details Section -->
+            <div class="confirmation-section">
+                <h3 class="confirmation-section-title">
+                    <i class="fas fa-info-circle"></i>
+                    تفاصيل الطلب
+                </h3>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">رقم الطلب:</span>
+                    <span class="order-info-value">#@Model.Id</span>
+                </div>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">تاريخ الطلب:</span>
+                    <span class="order-info-value">@Model.OrderDate.Value.ToString("yyyy-MM-dd hh:mm tt")</span>
+                </div>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">حالة الطلب:</span>
+                    <span class="order-status">@Model.OrderStatus</span>
+                </div>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">إجمالي الطلب:</span>
+                    <span class="order-total">@Model.TotalAmount.Value.ToString("0.00") د.أ</span>
+                </div>
+            </div>
+            
+            <!-- Shipping Address Section -->
+            <div class="confirmation-section">
+                <h3 class="confirmation-section-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    عنوان الشحن
+                </h3>
+                
+                <div class="address-details">
+                    <strong>@Model.Address.Title</strong>
+                    <span>@Model.Address.Street، @Model.Address.City</span>
+                    <span>@Model.Address.Country</span>
+                    <span>@Model.Address.PhoneNumber</span>
+                </div>
+            </div>
+            
+            <!-- Payment Method Section -->
+            <div class="confirmation-section">
+                <h3 class="confirmation-section-title">
+                    <i class="fas fa-credit-card"></i>
+                    طريقة الدفع
+                </h3>
+                
+                <div class="payment-details">
+                    <strong>
+                        <i class="fab fa-cc-visa card-icon"></i>
+                        @Model.PaymentMethod.CardHolderName
+                    </strong>
+                    <span>**** **** **** @Model.PaymentMethod.CardNumber.Substring(Math.Max(0, Model.PaymentMethod.CardNumber.Length - 4))</span>
+                    <span>تنتهي الصلاحية: @Model.PaymentMethod.ExpiryDate</span>
+                </div>
+            </div>
+            
+            <!-- Order Items Section -->
+            <div class="confirmation-section">
+                <h3 class="confirmation-section-title">
+                    <i class="fas fa-shopping-bag"></i>
+                    المنتجات المطلوبة
+                </h3>
+                
+                <div class="table-responsive">
+                    <table class="order-items-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>السعر</th>
+                                <th>الكمية</th>
+                                <th>المجموع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderItems)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            @if (!string.IsNullOrEmpty(item.Product.ProductImage))
+                                            {
+                                                <img src="@Url.Content(item.Product.ProductImage)" class="product-img" alt="@item.Product.ProductName">
+                                            }
+                                            else
+                                            {
+                                                <div class="product-img d-flex align-items-center justify-content-center bg-light">
+                                                    <i class="fas fa-image text-muted"></i>
+                                                </div>
+                                            }
+                                            <span class="product-name">@item.Product.ProductName</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="product-price">@item.UnitPrice.Value.ToString("0.00") د.أ</span>
+                                    </td>
+                                    <td>
+                                        <span class="product-quantity">@item.Quantity</span>
+                                    </td>
+                                    <td>
+                                        <span class="product-price">@((item.UnitPrice.Value * item.Quantity.Value).ToString("0.00")) د.أ</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <!-- Order Summary Section -->
+            <div class="confirmation-section">
+                <h3 class="confirmation-section-title">ملخص الطلب</h3>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">المبلغ الإجمالي</span>
+                    <span class="order-info-value">@Model.TotalAmount.Value.ToString("0.00") د.أ</span>
+                </div>
+                
+                <div class="order-info-row">
+                    <span class="order-info-label">الشحن</span>
+                    <span class="order-info-value">مجاني</span>
+                </div>
+                
+                <div class="order-info-row mt-4 pt-3 border-top">
+                    <span class="order-info-label">المجموع</span>
+                    <span class="order-total">@Model.TotalAmount.Value.ToString("0.00") د.أ</span>
+                </div>
+                
+                <a href="@Url.Action("Index", "Shop")" class="continue-shopping-btn">
+                    متابعة التسوق
+                    @* <i class="fas fa-shopping-cart ms-2"></i> *@
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 

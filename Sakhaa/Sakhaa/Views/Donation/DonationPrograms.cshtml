@@ -1,0 +1,234 @@
+﻿@model List<Sakhaa.Models.DonationProgram>
+@{
+    ViewData["Title"] = "برامج التبرع";
+}
+
+@section HeaderTitle {
+    <h2 class="section">برامج سخاء</h2>
+}
+
+<div class="container py-5" style="direction:rtl">
+    <p style="color:#405712;font-weight: 600; border-right: 5px solid #DAA520; padding-right: 2%; margin-bottom:2rem">
+        نوفّر في "سخاء" مجموعة من البرامج والاشتراكات التي تتيح لك المساهمة في الخير بطريقة منتظمة ومستدامة.
+        من خلال الاشتراك الشهري أو الانضمام لأحد برامجنا المتنوعة، تكون شريكًا دائمًا في دعم الأسر المحتاجة وتحقيق التغيير الحقيقي في حياتهم.
+    </p>
+    <div class="row g-4 justify-content-center">
+        @if (Model != null && Model.Any())
+        {
+            bool isFirst = true;
+            foreach (var program in Model)
+            {
+                if (isFirst)
+                {
+                    <div class="col-md-10">
+                        <div class="donation-card h-100 first-card">
+                            @if (program.IsSubscibtion == true)
+                            {
+                                <span class="subscription-badge">اشتراك شهري</span>
+                            }
+                            <div class="card-icon">
+                                <img src="/images/@program.ImagePath" alt="@program.Name" class="img-fluid">
+                            </div>
+                            <h3 class="card-title">
+                                @program.Name
+                            </h3>
+                            <p class="card-description">
+                                @(program.Description?.Length > 200
+                                    ? program.Description.Substring(0, 200) + "..."
+                                    : program.Description)
+                            </p>
+                            <div class="card-price">
+                                <span>الحد الأدنى للتبرع:</span>
+                                <strong>@program.MinimumDonationAmount د.أ</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button onclick="window.location.href='/Donation/InitiateDonation?programId=@program.Id'" class="btn btn-primary">تبرع الآن</button>
+                                <button onclick="window.location.href='/Donation/DonationProgramDetails?id=@program.Id'" class="btn btn-outline-primary">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+                    isFirst = false;
+                }
+                else
+                {
+                    <div class="col-md-5">
+                        <div class="donation-card h-100 other-card">
+                            @if (program.IsSubscibtion == true)
+                            {
+                                <span class="subscription-badge">اشتراك شهري</span>
+                            }
+                            <div class="card-icon">
+                                <img src="/images/@program.ImagePath" alt="@program.Name" class="img-fluid">
+                            </div>
+                            <h3 class="card-title">
+                                @program.Name
+                            </h3>
+                            <p class="card-description">
+                                @(program.Description?.Length > 150
+                                    ? program.Description.Substring(0, 150) + "..."
+                                    : program.Description)
+                            </p>
+                            <div class="card-price">
+                                <span>الحد الأدنى للتبرع:</span>
+                                <strong>@program.MinimumDonationAmount د.أ</strong>
+                            </div>
+                            <div class="card-actions">
+                                <button onclick="window.location.href='/Donation/InitiateDonation?programId=@program.Id'" class="btn btn-primary">تبرع الآن</button>
+                                <button onclick="window.location.href='/Donation/DonationProgramDetails?id=@program.Id'" class="btn btn-outline-primary">التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <div class="empty-state">
+                    <img src="/images/empty-state.png" alt="لا توجد برامج" class="img-fluid mb-3" style="max-height: 200px;">
+                    <h4>لا توجد برامج تبرع حالياً</h4>
+                    <p>يرجى العودة لاحقاً</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #405712;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        color: #777;
+        margin-bottom: 2rem;
+    }
+
+    .donation-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+        .donation-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+    .first-card {
+        border: 2px solid #405712;
+        padding: 2.5rem;
+    }
+    
+    .first-card .card-title {
+        font-size: 1.8rem;
+    }
+    
+    .first-card .card-description {
+        font-size: 1.1rem;
+    }
+    
+    .other-card {
+        border: none;
+    }
+
+    .card-icon {
+        margin-bottom: 1.5rem;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .card-icon img {
+            max-height: 80px;
+        }
+
+    .card-title {
+        color: #405712;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .subscription-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #DAA520;
+        color: white;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        border-radius: 30px;
+        font-weight: normal;
+        z-index: 1;
+    }
+
+    .card-description {
+        color: #555;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-price {
+        background-color: #DAA52020;
+        padding: 0.75rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+
+        .card-price span {
+            color: #666;
+        }
+
+        .card-price strong {
+            color: #405712;
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+        }
+
+    .card-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+        .card-actions .btn {
+            flex: 1;
+            border-radius: 30px;
+            padding: 0.6rem 1rem;
+        }
+
+    .btn-primary {
+        background-color: #405712;
+        border-color: #405712;
+    }
+
+        .btn-primary:hover {
+            background-color: #DAA520;
+            border-color: #DAA520;
+        }
+
+    .btn-outline-primary {
+        color: #405712;
+        border: 1px solid #405712;
+    }
+
+        .btn-outline-primary:hover, .btn-outline-primary:active {
+            color: #DAA520 !important;
+            border: 1px solid #DAA520 !important;
+            background-color: white !important;
+        }
+
+    .empty-state {
+        padding: 3rem;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+    }
+</style> 
