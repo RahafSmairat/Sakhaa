@@ -1,0 +1,527 @@
+@model Sakhaa.Models.GiftDonation
+
+@{
+    ViewData["Title"] = "تم التبرع بنجاح";
+    var occasion = ViewBag.SelectedOccasion;
+    var textColor = ViewBag.SelectedColor;
+    var decoration = ViewBag.SelectedDecoration;
+    var amount = Model.Amount; // Get amount from model
+}
+
+@section HeaderTitle {
+    <h2 class="section">تم إتمام التبرع بنجاح</h2>
+}
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<div class="success-container section">
+    <div class="success-message">
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3>تم إتمام التبرع بنجاح!</h3>
+        <p>شكراً لكرمك ومساهمتك. تم إرسال بطاقة الإهداء إلى <strong>@Model.ReceiverEmail</strong></p>
+        <p>رقم التبرع الخاص بك: <strong>#@Model.Id-@DateTime.Now.ToString("yyyyMMdd")</strong></p>
+        <p>مبلغ التبرع: <strong>@amount د.أ</strong></p>
+    </div>
+    
+    <div class="gift-card-container">
+        <h3>بطاقة الإهداء</h3>
+
+        <div class="gift-card-preview">
+            @if (!string.IsNullOrEmpty(Model.GiftCardUrl))
+            {
+                <!-- Display the saved gift card image -->
+                <img src="@Model.GiftCardUrl" alt="بطاقة الإهداء" class="gift-card-image" />
+            }
+            else
+            {
+                <!-- Display the dynamically generated gift card -->
+                <div id="giftCardElement" class="gift-card" style="color: @textColor;">
+                    @if (!string.IsNullOrEmpty(decoration) && decoration != "none")
+                    {
+                        <!-- Build the decoration URL safely -->
+                        string decorationUrl = "/images/gift/decoration-" + decoration + ".png";
+                        <div class="card-background-decoration" style="background-image: url('@decorationUrl');"></div>
+                    }
+                    <div class="card-occasion-image">
+                        <img src="/images/gift/@(occasion).jpg" alt="مناسبة الإهداء">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>بطاقة إهداء من @Model.GiverName إلى @Model.ReceiverName</h3>
+                        </div>
+                        <div class="card-message">
+                            @Model.PersonalMessage
+                        </div>
+                        @if (Model.ShowAmount)
+                        {
+                            <div class="card-amount">
+                                مبلغ التبرع: <span>@amount د.أ</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div class="action-buttons">
+            <button class="action-btn" id="shareBtn">
+                <i class="fa-solid fa-share-nodes"></i> مشاركة
+            </button>
+            <button class="action-btn" id="downloadBtn" data-id="@Model.Id">
+                <i class="fa-solid fa-download"></i> تنزيل البطاقة
+            </button>
+            <a href="/" class="action-btn">
+                <i class="fa-solid fa-home"></i> العودة للرئيسية
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="shareModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>مشاركة بطاقة الإهداء</h3>
+        <div class="share-options">
+            <a href="#" class="share-option" id="shareWhatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>واتساب</span>
+            </a>
+            <a href="#" class="share-option" id="shareEmail">
+                <i class="fa-solid fa-envelope"></i>
+                <span>البريد الإلكتروني</span>
+            </a>
+            <a href="#" class="share-option" id="shareTwitter">
+                <i class="fa-brands fa-twitter"></i>
+                <span>تويتر</span>
+            </a>
+            <a href="#" class="share-option" id="shareFacebook">
+                <i class="fa-brands fa-facebook"></i>
+                <span>فيسبوك</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .success-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px;
+        background-color: #FAFAFA;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(64, 87, 18, 0.3);
+        text-align: center;
+    }
+    
+    @@media (min-width: 992px) {
+        .success-container {
+            flex-direction: row;
+        }
+        
+        .success-message {
+            flex: 1;
+        }
+        
+        .gift-card-container {
+            flex: 2;
+        }
+    }
+    
+    .success-message {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(64, 87, 18, 0.1);
+        margin-bottom: 20px;
+    }
+    
+    .success-icon {
+        font-size: 5rem;
+        color: #4CAF50;
+        margin-bottom: 20px;
+    }
+    
+    .success-message h3 {
+        color: #405712;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .success-message p {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .gift-card-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(64, 87, 18, 0.1);
+    }
+    
+    .gift-card-container h3 {
+        color: #A31621;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #DAA520;
+        padding-bottom: 10px;
+    }
+    
+    .gift-card-preview {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .gift-card {
+        width: 100%;
+        max-width: 400px;
+        background-color: white;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(64, 87, 18, 0.3);
+        position: relative;
+    }
+    
+    .gift-card-image {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(64, 87, 18, 0.3);
+        object-fit: contain;
+    }
+    
+    .card-background-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.5;
+        border-radius: 30px;
+        pointer-events: none;
+    }
+    
+    .card-occasion-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-occasion-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .card-content {
+        padding: 20px;
+        direction: rtl;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-header {
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    
+    .card-header h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+        border: none;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .card-message {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        min-height: 100px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 30px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .card-amount {
+        text-align: center;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 30px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        background-color: #DAA520;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Cairo', sans-serif;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+    
+    .action-btn:hover {
+        background-color: #405712;
+        color: white;
+    }
+    
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 15px;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .share-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .share-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 10px;
+        width: 100px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .share-option:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-5px);
+    }
+    
+    .share-option i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .share-option span {
+        font-size: 0.9rem;
+    }
+    
+    #shareWhatsapp {
+        background-color: #25D366;
+        color: white;
+    }
+    
+    #shareEmail {
+        background-color: #DB4437;
+        color: white;
+    }
+    
+    #shareTwitter {
+        background-color: #1DA1F2;
+        color: white;
+    }
+    
+    #shareFacebook {
+        background-color: #4267B2;
+        color: white;
+    }
+    
+    @@media (max-width: 768px) {
+        .action-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .action-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Gift success page loaded");
+        
+        // Safely get decoration from a data attribute instead of directly
+        var decorationValue = "@Html.Raw(decoration)";
+        console.log("Decoration selected: " + decorationValue);
+        
+        // Check if decoration image exists
+        if (decorationValue && decorationValue !== 'none') {
+            var decorationUrl = '/images/gift/decoration-' + decorationValue + '.png';
+            console.log("Decoration URL: " + decorationUrl);
+            
+            const decorationImg = new Image();
+            decorationImg.onload = function() {
+                console.log("Decoration image loaded successfully: " + decorationUrl);
+            };
+            decorationImg.onerror = function() {
+                console.error("Failed to load decoration image: " + decorationUrl);
+            };
+            decorationImg.src = decorationUrl;
+        }
+        
+        // Share modal
+        const modal = document.getElementById("shareModal");
+        const shareBtn = document.getElementById("shareBtn");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        
+        if (shareBtn) {
+            shareBtn.addEventListener("click", function() {
+                modal.style.display = "block";
+            });
+        }
+        
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+        }
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+        
+        // Download gift card using html2canvas
+        const downloadBtn = document.getElementById("downloadBtn");
+        if (downloadBtn) {
+            downloadBtn.addEventListener("click", function() {
+                let element;
+                if (document.querySelector('.gift-card-image')) {
+                    // If we have a saved image, use that
+                    element = document.querySelector('.gift-card-image');
+                    downloadImage(element.src);
+                } else {
+                    // Otherwise capture the dynamic card
+                    element = document.getElementById('giftCardElement');
+                    html2canvas(element, {
+                        scale: 2, // Higher quality
+                        useCORS: true, // Allow cross-origin images
+                        backgroundColor: null // Transparent background
+                    }).then(canvas => {
+                        const imageURL = canvas.toDataURL('image/png');
+                        downloadImage(imageURL);
+                    });
+                }
+            });
+        }
+        
+        function downloadImage(url) {
+            const link = document.createElement('a');
+            link.href = url;
+            // Get the ID safely from the data attribute
+            const modelId = "@Model.Id";
+            link.download = 'gift-card-' + modelId + '.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Share buttons
+        const shareWhatsapp = document.getElementById("shareWhatsapp");
+        if (shareWhatsapp) {
+            shareWhatsapp.addEventListener("click", function(e) {
+                e.preventDefault();
+                const message = "شكراً لتبرعك! هذه بطاقة الإهداء الخاصة بك من جمعية سخاء.";
+                const url = "https://wa.me/?text=" + encodeURIComponent(message + " " + window.location.href);
+                window.open(url, '_blank');
+            });
+        }
+        
+        const shareEmail = document.getElementById("shareEmail");
+        if (shareEmail) {
+            shareEmail.addEventListener("click", function(e) {
+                e.preventDefault();
+                const subject = "بطاقة إهداء التبرع من جمعية سخاء";
+                const body = "شكراً لتبرعك! هذه بطاقة الإهداء الخاصة بك من جمعية سخاء.";
+                const mailtoUrl = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body + " " + window.location.href);
+                window.location.href = mailtoUrl;
+            });
+        }
+        
+        const shareTwitter = document.getElementById("shareTwitter");
+        if (shareTwitter) {
+            shareTwitter.addEventListener("click", function(e) {
+                e.preventDefault();
+                const message = "شكراً لتبرعك! هذه بطاقة الإهداء الخاصة بك من جمعية سخاء.";
+                const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(message + " " + window.location.href);
+                window.open(url, '_blank');
+            });
+        }
+        
+        const shareFacebook = document.getElementById("shareFacebook");
+        if (shareFacebook) {
+            shareFacebook.addEventListener("click", function(e) {
+                e.preventDefault();
+                const url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+                window.open(url, '_blank');
+            });
+        }
+    });
+</script> 

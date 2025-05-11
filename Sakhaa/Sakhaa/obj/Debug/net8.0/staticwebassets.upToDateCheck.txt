@@ -28,6 +28,13 @@ wwwroot\images\circle1.png
 wwwroot\images\deal (1).png
 wwwroot\images\generous 1.png
 wwwroot\images\gift.png
+wwwroot\images\gift\birthday.jpg
+wwwroot\images\gift\decoration-flowers.png
+wwwroot\images\gift\decoration-geometric.png
+wwwroot\images\gift\decoration-hearts.png
+wwwroot\images\gift\general.jpg
+wwwroot\images\gift\graduation.jpg
+wwwroot\images\gift\wedding.jpg
 wwwroot\images\gift-box.png
 wwwroot\images\girlImg.png
 wwwroot\images\Group 82.png
@@ -76,6 +83,7 @@ wwwroot\images\successStories.png
 wwwroot\images\sustainable 1.png
 wwwroot\javaScript\about.js
 wwwroot\javaScript\admin.js
+wwwroot\javaScript\customGiftForm.js
 wwwroot\javaScript\giftForm.js
 wwwroot\javaScript\home.js
 wwwroot\javaScript\navAndFooterFetch.js
@@ -148,6 +156,7 @@ wwwroot\styles\admin.scss
 wwwroot\styles\contact.css
 wwwroot\styles\contact.css.map
 wwwroot\styles\contact.scss
+wwwroot\styles\customGiftForm.css
 wwwroot\styles\donationInfo.css
 wwwroot\styles\donationInfo.css.map
 wwwroot\styles\donationInfo.scss

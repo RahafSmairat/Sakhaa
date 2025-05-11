@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\Sakhaa.csproj": {}
+    "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Sakhaa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\Sakhaa.csproj": {
+    "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Sakhaa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\Sakhaa.csproj",
+        "projectUniqueName": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Sakhaa.csproj",
         "projectName": "Sakhaa",
-        "projectPath": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\Sakhaa.csproj",
+        "projectPath": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\Sakhaa.csproj",
         "packagesPath": "C:\\Users\\Orange\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\obj\\",
+        "outputPath": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

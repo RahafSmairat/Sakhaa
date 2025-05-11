@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+
+:root {
+    --primary-color: #405712;
+    --secondary-color: #A31621;
+    --accent-color: #DAA520;
+    --light-color: #FAFAFA;
+    --dark-color: #333333;
+    --shadow: 0 0 10px rgba(64, 87, 18, 0.3);
+    --border-radius: 30px;
+    --transition: all 0.3s ease;
+}
+
+#giftDonationForm {
+    background-color: var(--light-color);
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    direction: rtl;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Tab style */
+.tab {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.tab:first-of-type {
+    display: flex;
+}
+
+.form-section-title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.form-section-title h3 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+.form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-column h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    background-color: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Donation details section */
+.donation-details {
+    justify-content: space-between;
+}
+
+.donation-details .form-group {
+    flex: 1;
+    max-width: 300px;
+}
+
+/* Options section */
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-option {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.form-option h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.radio-option {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input {
+    margin-left: 10px;
+}
+
+/* Message area */
+.message-area {
+    width: 100%;
+}
+
+.message-area textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    padding: 15px;
+}
+
+.char-counter {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+
+/* Gift card customization */
+.gift-customizer {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+@media (max-width: 992px) {
+    .gift-customizer {
+        flex-direction: column;
+    }
+}
+
+.customization-options {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.occasion-selector,
+.decoration-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.occasion-option,
+.decoration-option {
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.occasion-option.selected,
+.decoration-option.selected {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.occasion-option img,
+.decoration-option img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) - 5px);
+    margin-bottom: 5px;
+}
+
+.occasion-option span,
+.decoration-option span {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.color-selector {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: var(--transition);
+}
+
+.color-option.selected {
+    transform: scale(1.2);
+    border-color: var(--accent-color);
+}
+
+/* Gift card preview */
+.gift-card-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.gift-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.card-occasion-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-occasion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: 20px;
+    direction: rtl;
+    position: relative;
+    z-index: 1;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.decoration-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.15;
+    border-radius: var(--border-radius);
+}
+
+.card-background-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.50;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+.card-message {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 100px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.card-amount {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    direction: ltr;
+}
+
+.form-navigation button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Cairo', sans-serif;
+}
+
+.form-navigation button:hover {
+    background-color: var(--primary-color);
+}
+
+#prevBtn {
+    display: none;
+}
+
+/* Step indicators */
+.step-indicators {
+    text-align: center;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.step.active {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+.step.finish {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+/* Donation amount section */
+.donation-amount-section {
+    margin-bottom: 30px;
+}
+
+.amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.amount-option {
+    flex: 1;
+    min-width: 100px;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount-option:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+.amount-option.selected {
+    border-color: var(--accent-color);
+    background-color: rgba(218, 165, 32, 0.1);
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
+.amount-option .amount-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+.amount-option .amount-currency {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-top: 5px;
+}
+
+.amount-option.custom {
+    background-color: rgba(64, 87, 18, 0.05);
+}
+
+.custom-amount-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent-color);
+    margin-top: 10px;
+}
+
+.custom-amount-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-amount-input input {
+    flex: 1;
+}
+
+.custom-amount-input span {
+    font-weight: 600;
+    color: var(--primary-color);
+}

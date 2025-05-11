@@ -19,8 +19,6 @@ public partial class GiftDonation
 
     public string? ReceiverPhone { get; set; }
 
-    public string? DonationType { get; set; }
-
     public decimal Amount { get; set; }
 
     public bool ShowAmount { get; set; }
@@ -29,5 +27,13 @@ public partial class GiftDonation
 
     public DateTime? CreatedAt { get; set; }
 
+    public int? UserId { get; set; }
+
+    public string? GiftCardUrl { get; set; }
+
+    public virtual GiftCardCustomization? GiftCardCustomization { get; set; }
+
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
+    public virtual User? User { get; set; }
 }

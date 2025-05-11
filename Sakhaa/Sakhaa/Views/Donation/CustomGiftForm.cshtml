@@ -1,0 +1,247 @@
+@{
+    ViewData["Title"] = "بطاقة إهداء";
+}
+
+@section HeaderTitle {
+    <h2 class="section">بطاقة إهداء التبرع</h2>
+}
+
+<!-- Add html2canvas library -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<form id="giftDonationForm" asp-controller="Donation" asp-action="ProcessGiftDonation" method="post" class="section">
+    <!-- Hidden field to store gift card image data -->
+    <input type="hidden" id="giftCardImage" name="giftCardImage" />
+    
+    <div class="tab">
+        <div class="form-section-title">
+            <h3><i class="fa-solid fa-gift"></i> معلومات المتبرّع والمهدى إليه</h3>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <h4><i class="fa-solid fa-user"></i> معلومات المتبرّع</h4>
+                <div class="form-group">
+                    <label for="giverName">الاسم الكامل</label>
+                    <input type="text" id="giverName" name="giverName" placeholder="الاسم الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="giverPhone">رقم الهاتف</label>
+                    <input type="tel" id="giverPhone" name="giverPhone" placeholder="رقم الهاتف" required>
+                </div>
+                <div class="form-group">
+                    <label for="giverEmail">البريد الإلكتروني</label>
+                    <input type="email" id="giverEmail" name="giverEmail" placeholder="البريد الإلكتروني" required>
+                </div>
+            </div>
+            <div class="form-column">
+                <h4><i class="fa-solid fa-user-friends"></i> معلومات المهدى إليه</h4>
+                <div class="form-group">
+                    <label for="receiverName">الاسم الكامل</label>
+                    <input type="text" id="receiverName" name="receiverName" placeholder="الاسم الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiverPhone">رقم الهاتف</label>
+                    <input type="tel" id="receiverPhone" name="receiverPhone" placeholder="رقم الهاتف" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiverEmail">البريد الإلكتروني</label>
+                    <input type="email" id="receiverEmail" name="receiverEmail" placeholder="البريد الإلكتروني" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab">
+        <div class="form-section-title">
+            <h3><i class="fa-solid fa-hand-holding-heart"></i> مبلغ التبرع</h3>
+        </div>
+        <div class="donation-amount-section">
+            <div class="amount-options">
+                <div class="amount-option" data-amount="50">
+                    <span class="amount-value">50</span>
+                    <span class="amount-currency">د.أ</span>
+                </div>
+                <div class="amount-option" data-amount="100">
+                    <span class="amount-value">100</span>
+                    <span class="amount-currency">د.أ</span>
+                </div>
+                <div class="amount-option" data-amount="200">
+                    <span class="amount-value">200</span>
+                    <span class="amount-currency">د.أ</span>
+                </div>
+                <div class="amount-option custom" data-amount="custom">
+                    <span class="amount-value">مبلغ آخر</span>
+                </div>
+            </div>
+            <div class="custom-amount-container hidden">
+                <label for="customAmount">أدخل المبلغ المطلوب:</label>
+                <div class="custom-amount-input">
+                    <input type="number" id="customAmount" name="customAmountInput" min="10" placeholder="أدخل المبلغ">
+                    <span>د.أ</span>
+                </div>
+            </div>
+            <input type="hidden" id="selectedAmount" name="amount" value="50">
+        </div>
+
+        <div class="form-option">
+            <h4><i class="fa-solid fa-eye"></i> هل ترغب في إظهار قيمة التبرع المالية للمستلم؟</h4>
+            <div class="radio-option">
+                <input type="radio" id="showAmountYes" name="showAmount" value="true" checked>
+                <label for="showAmountYes">نعم، أود أن يرى المستلم تفاصيل التبرع</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="showAmountNo" name="showAmount" value="false">
+                <label for="showAmountNo">لا، أفضّل عدم إظهار التفاصيل المالية للمستلم</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab">
+        <div class="form-section-title">
+            <h3><i class="fa-solid fa-envelope-open-text"></i> رسالة الإهداء</h3>
+        </div>
+        <div class="form-group message-area">
+            <label for="personalMessage">أضف رسالة شخصية للمهدى إليه</label>
+            <textarea id="personalMessage" name="personalMessage" rows="5" maxlength="300" placeholder="اكتب رسالتك هنا..."></textarea>
+            <div class="char-counter"><span id="charCount">0</span> / 300</div>
+        </div>
+    </div>
+
+    <div class="tab">
+        <div class="form-section-title">
+            <h3><i class="fa-solid fa-palette"></i> تخصيص بطاقة الإهداء</h3>
+        </div>
+
+        <div class="gift-customizer">
+            <div class="customization-options">
+
+                <div class="form-group">
+                    <label>اختر لون الخط</label>
+                    <div class="color-selector">
+                        <div class="color-option" data-color="#000000" style="background-color: #000000;"></div>
+                        <div class="color-option" data-color="#ffffff" style="background-color: #ffffff;"></div>
+                        <div class="color-option" data-color="#A31621" style="background-color: #A31621;"></div>
+                        <div class="color-option" data-color="#405712" style="background-color: #405712;"></div>
+                        <div class="color-option" data-color="#DAA520" style="background-color: #DAA520;"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>اختر مناسبة الإهداء</label>
+                    <div class="occasion-selector">
+                        <div class="occasion-option" data-occasion="general">
+                            <img src="/images/gift/general.jpg" alt="عام" style="margin-top: 5%;">
+                            <span>عام</span>
+                        </div>
+                        <div class="occasion-option" data-occasion="birthday">
+                            <img src="/images/gift/birthday.jpg" alt="عيد ميلاد" style="margin-top: 5%;">
+                            <span>عيد ميلاد</span>
+                        </div>
+                        <div class="occasion-option" data-occasion="wedding">
+                            <img src="/images/gift/wedding.jpg" alt="زواج" style="margin-top: 5%;">
+                            <span>زواج</span>
+                        </div>
+                        <div class="occasion-option" data-occasion="graduation">
+                            <img src="/images/gift/graduation.jpg" alt="تخرج" style="margin-top: 5%;">
+                            <span>تخرج</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>اختر زخرفة</label>
+                    <div class="decoration-selector">
+                        <div class="decoration-option" data-decoration="none">
+                            <img src="/images/gift/decoration-none.png" alt="بدون">
+                            <span>بدون</span>
+                        </div>
+                        <div class="decoration-option" data-decoration="flowers">
+                            <img src="/images/gift/decoration-flowers.png" alt="زهور">
+                            <span>زهور</span>
+                        </div>
+                        <div class="decoration-option" data-decoration="geometric">
+                            <img src="/images/gift/decoration-geometric.png" alt="هندسي">
+                            <span>هندسي</span>
+                        </div>
+                        <div class="decoration-option" data-decoration="hearts">
+                            <img src="/images/gift/decoration-hearts.png" alt="قلوب">
+                            <span>قلوب</span>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="selectedOccasion" name="selectedOccasion" value="general">
+                <input type="hidden" id="selectedColor" name="selectedColor" value="#000000">
+                <input type="hidden" id="selectedDecoration" name="selectedDecoration" value="none">
+            </div>
+
+            <div class="gift-card-preview">
+                <div id="giftCardPreview" class="gift-card">
+                    <!-- The decoration will be added here by JavaScript -->
+                    <div class="card-occasion-image">
+                        <img id="occasionImage" src="/images/gift/general.jpg" alt="مناسبة الإهداء">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 id="giftCardHeader">بطاقة إهداء من <span id="previewFrom">...</span> إلى <span id="previewTo">...</span></h3>
+                        </div>
+                        <div class="card-message" id="previewMessage">
+                            رسالتك ستظهر هنا...
+                        </div>
+                        <div class="card-amount" id="previewAmount">
+                            مبلغ التبرع: <span>50 د.أ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-navigation">
+        <button type="button" id="prevBtn">السابق</button>
+        <div class="step-indicators">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+        <button type="button" id="nextBtn">التالي</button>
+    </div>
+</form>
+
+<script src="/javaScript/customGiftForm.js"></script>
+<link rel="stylesheet" href="/styles/customGiftForm.css"> 
+
+<script>
+    // Add code to capture the gift card as an image before form submission
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('giftDonationForm');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            try {
+                // Capture the gift card preview as an image
+                const giftCardElement = document.getElementById('giftCardPreview');
+                const canvas = await html2canvas(giftCardElement, {
+                    scale: 2, // Higher quality
+                    useCORS: true, // Allow cross-origin images
+                    backgroundColor: null // Transparent background
+                });
+                
+                // Convert canvas to base64 image data
+                const imageData = canvas.toDataURL('image/png');
+                
+                // Store the image data in the hidden input
+                document.getElementById('giftCardImage').value = imageData;
+                
+                // Submit the form
+                form.submit();
+            } catch (error) {
+                console.error('Error capturing gift card image:', error);
+                // Submit the form anyway even if image capture fails
+                form.submit();
+            }
+        });
+    });
+</script> 

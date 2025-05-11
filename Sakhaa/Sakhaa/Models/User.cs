@@ -29,6 +29,8 @@ public partial class User
 
     public virtual ICollection<Donation> Donations { get; set; } = new List<Donation>();
 
+    public virtual ICollection<GiftDonation> GiftDonations { get; set; } = new List<GiftDonation>();
+
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     public virtual ICollection<PaymentMethod> PaymentMethods { get; set; } = new List<PaymentMethod>();

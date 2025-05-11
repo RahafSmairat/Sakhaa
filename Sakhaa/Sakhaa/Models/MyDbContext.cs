@@ -37,6 +37,8 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<DonationReport> DonationReports { get; set; }
 
+    public virtual DbSet<GiftCardCustomization> GiftCardCustomizations { get; set; }
+
     public virtual DbSet<GiftDonation> GiftDonations { get; set; }
 
     public virtual DbSet<NewsEvent> NewsEvents { get; set; }
@@ -230,19 +232,41 @@ public partial class MyDbContext : DbContext
                 .HasConstraintName("FK__DonationR__UserI__44FF419A");
         });
 
+        modelBuilder.Entity<GiftCardCustomization>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__GiftCard__3214EC078CB34984");
+
+            entity.HasIndex(e => e.GiftDonationId, "UQ__GiftCard__A2B58B707DA489E0").IsUnique();
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.DecorationImageUrl).HasMaxLength(100);
+            entity.Property(e => e.OccasionImageUrl).HasMaxLength(200);
+            entity.Property(e => e.TextColor).HasMaxLength(20);
+
+            entity.HasOne(d => d.GiftDonation).WithOne(p => p.GiftCardCustomization)
+                .HasForeignKey<GiftCardCustomization>(d => d.GiftDonationId)
+                .HasConstraintName("FK__GiftCardC__GiftD__3F115E1A");
+        });
+
         modelBuilder.Entity<GiftDonation>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__GiftDona__3214EC07E6043509");
 
             entity.Property(e => e.Amount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.CreatedAt).HasColumnType("datetime");
-            entity.Property(e => e.DonationType).HasMaxLength(255);
+            entity.Property(e => e.GiftCardUrl).HasColumnName("GiftCardURL");
             entity.Property(e => e.GiverEmail).HasMaxLength(100);
             entity.Property(e => e.GiverName).HasMaxLength(255);
             entity.Property(e => e.GiverPhone).HasMaxLength(20);
             entity.Property(e => e.ReceiverEmail).HasMaxLength(100);
             entity.Property(e => e.ReceiverName).HasMaxLength(255);
             entity.Property(e => e.ReceiverPhone).HasMaxLength(20);
+
+            entity.HasOne(d => d.User).WithMany(p => p.GiftDonations)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_GiftDonations_Users");
         });
 
         modelBuilder.Entity<NewsEvent>(entity =>

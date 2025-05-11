@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "PaymentForm";
 }
 
@@ -55,6 +54,11 @@
                 </div>
             </div>
 
+            @if (ViewBag.IsGiftDonation == true)
+            {
+                <input type="hidden" name="isGiftDonation" value="true" />
+            }
+
             <div class="form-actions">
                 <button type="submit" class="btn-primary sweet-alert-trigger">الدفع وإتمام العملية</button>
             </div>
@@ -63,7 +67,26 @@
         <div class="payment-summary">
             <h3>معلومات التبرع</h3>
             <div class="program-details">
-                @if (ViewBag.IsProjectDonation == true)
+                @if (ViewBag.IsGiftDonation == true)
+                {
+                    <div class="detail-item">
+                        <span class="label">نوع التبرع:</span>
+                        <span class="value">بطاقة إهداء</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">من:</span>
+                        <span class="value">@ViewBag.GiftDonation.GiverName</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">إلى:</span>
+                        <span class="value">@ViewBag.GiftDonation.ReceiverName</span>
+                    </div>
+                    <div class="detail-item total">
+                        <span class="label">مبلغ التبرع:</span>
+                        <span class="value">@ViewBag.Amount د.أ</span>
+                    </div>
+                }
+                else if (ViewBag.IsProjectDonation == true)
                 {
                     <div class="detail-item">
                         <span class="label">المشروع:</span>
