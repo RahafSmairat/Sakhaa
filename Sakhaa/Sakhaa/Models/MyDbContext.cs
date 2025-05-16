@@ -211,12 +211,9 @@ public partial class MyDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Donation__3214EC07F632BCD2");
 
-            entity.Property(e => e.Amount).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.ImpactDescription).HasColumnType("text");
+            entity.Property(e => e.FilePath).HasMaxLength(100);
             entity.Property(e => e.ReportDate).HasColumnType("datetime");
-            entity.Property(e => e.ReportType)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.ReportName).HasMaxLength(100);
 
             entity.HasOne(d => d.Donation).WithMany(p => p.DonationReports)
                 .HasForeignKey(d => d.DonationId)

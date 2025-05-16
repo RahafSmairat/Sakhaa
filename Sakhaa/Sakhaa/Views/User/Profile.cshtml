@@ -207,6 +207,59 @@
                     });
                 });
             });
+
+            // Reports filtering
+            $(document).ready(function() {
+                // Filter reports function
+                function filterReports() {
+                    const programFilter = $('#reportProgramFilter').val();
+                    const amountFilter = $('#reportAmountFilter').val();
+                    const dateFilter = $('#reportDateFilter').val();
+                    
+                    let visibleCount = 0;
+                    
+                    $('.report-item').each(function() {
+                        const $item = $(this);
+                        const donationName = $item.data('donation-name');
+                        const donationAmount = $item.data('donation-amount').toString();
+                        const reportDate = $item.data('report-date');
+                        
+                        let showItem = true;
+                        
+                        if (programFilter && donationName !== programFilter) {
+                            showItem = false;
+                        }
+                        
+                        if (amountFilter && donationAmount !== amountFilter) {
+                            showItem = false;
+                        }
+                        
+                        if (dateFilter && reportDate !== dateFilter) {
+                            showItem = false;
+                        }
+                        
+                        if (showItem) {
+                            $item.show();
+                            visibleCount++;
+                        } else {
+                            $item.hide();
+                        }
+                    });
+                    
+                    // Show/hide "no reports" message
+                    if (visibleCount === 0) {
+                        $('#noReportsMessage').removeClass('d-none');
+                    } else {
+                        $('#noReportsMessage').addClass('d-none');
+                    }
+                }
+                
+                // Event listeners for filters
+                $('#reportProgramFilter, #reportAmountFilter, #reportDateFilter').on('change', filterReports);
+                
+                // Initial filtering
+                filterReports();
+            });
         });
     </script>
 }
@@ -361,6 +414,90 @@
             background-color: #DAA520;
             color: white;
         }
+        
+    /* Report specifics */
+    .donation-amount {
+        font-weight: 600;
+        color: #405712;
+    }
+    
+    .report-date {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+    
+    .report-meta {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
+    .list-group .report-item {
+        border-bottom: 1px solid #40571250;
+        border-top:none;
+        border-right:none;
+        border-left:none;
+        border-radius: 0;
+        margin-bottom: 15px;
+        box-shadow: none !important;
+        padding: 3%;
+    }
+    
+    
+    /* Override statistics card styles */
+    .reports-tab-stat-card {
+        transition: none !important;
+    }
+    
+    .reports-tab-stat-card:hover {
+        transform: none !important;
+        border: 1px solid #DAA520 !important;
+        box-shadow:none !important;
+    }
+    
+    .reports-tab-stat-card::before {
+        background: #405712 !important;
+        width: 4px !important;
+    }
+    
+    .reports-tab-stat-icon {
+        background: #405712 !important;
+    }
+    
+    .reports-tab-title::before {
+        background: #405712 !important;
+    }
+    
+    .reports-tab-filter-label::before {
+        background: #405712 !important;
+    }
+    
+    .reports-tab-filter-option.active {
+        background: #405712 !important;
+    }
+    .reports-tab-stat-card::before{
+        content:none;
+    }
+
+    .report-review-btn{
+        border-radius:30px;
+        border: none;
+        background-color:transparent;
+        color: #DAA520;
+    }
+
+    .report-review-btn:hover {
+        border-radius: 30px;
+        border: none;
+        background-color: #DAA520;
+        color:#FAFAFA;
+    }
+
+        .report-review-btn:active {
+        border-radius: 30px;
+        border: none;
+        background-color: #DAA520;
+        color:#FAFAFA;
+    }
 </style>
 
 <div class="profile-container" style="direction:rtl">
@@ -419,8 +556,13 @@
                                     <i class="fa-solid fa-repeat"></i> الاشتراكات الحالية
                                 </a>
                             </li>
+                            @* <li class="nav-item"> *@
+                            @*     <a class="nav-link" id="reports-tab" data-bs-toggle="pill" href="#reports-content"> *@
+                            @*         <i class="fa-solid fa-chart-line"></i> التقارير والإحصائيات *@
+                            @*     </a> *@
+                            @* </li> *@
                             <li class="nav-item">
-                                <a class="nav-link" id="reports-tab" data-bs-toggle="pill" href="#reports-content">
+                                <a class="nav-link" id="donation-reports-tab" data-bs-toggle="pill" href="#profile-reports">
                                     <i class="fa-solid fa-chart-line"></i> التقارير والإحصائيات
                                 </a>
                             </li>
@@ -697,107 +839,6 @@
                         </div>
                     </div>
 
-                    <!-- Reports & Statistics -->
-                    <div class="tab-pane fade" id="reports-content">
-                        <div class="content-card">
-                            <div class="card-header">
-                                <h3>التقارير والإحصائيات</h3>
-                                <p class="text-muted">تتبع تأثير تبرعاتك وانظر إلى الإحصائيات الخاصة بك</p>
-                            </div>
-
-                            <div class="card-body">
-                                <!-- Filters Bar -->
-                                <div class="reports-tab-filters mb-4">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="reports-tab-filter-group">
-                                                <label class="reports-tab-filter-label">تصفية حسب النوع:</label>
-                                                <div class="reports-tab-btn-group" role="group" aria-label="Filter by type">
-                                                    <button type="button" class="reports-tab-filter-option active" data-filter-type="type" data-filter-value="all">الكل</button>
-                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="type" data-filter-value="monthly">شهري</button>
-                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="type" data-filter-value="quarterly">ربع سنوي</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="reports-tab-filter-group">
-                                                <label class="reports-tab-filter-label">تصفية حسب السنة:</label>
-                                                <div class="reports-tab-btn-group" role="group" aria-label="Filter by year">
-                                                    <button type="button" class="reports-tab-filter-option active" data-filter-type="year" data-filter-value="all">الكل</button>
-                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="year" data-filter-value="2023">2023</button>
-                                                    <button type="button" class="reports-tab-filter-option" data-filter-type="year" data-filter-value="2022">2022</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Statistics Cards -->
-                                <div class="reports-tab-statistics mb-4">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="reports-tab-stat-card">
-                                                <div class="reports-tab-stat-content">
-                                                    <h4 class="reports-tab-stat-title">إجمالي التبرعات</h4>
-                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Sum(d => d.Amount) + Model.CurrentDonations.Sum(d => d.Amount)) دينار</p>
-                                                </div>
-                                                <div class="reports-tab-stat-icon">
-                                                    <i class="fa-solid fa-hand-holding-heart"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="reports-tab-stat-card">
-                                                <div class="reports-tab-stat-content">
-                                                    <h4 class="reports-tab-stat-title">عدد التبرعات</h4>
-                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Count + Model.CurrentDonations.Count)</p>
-                                                </div>
-                                                <div class="reports-tab-stat-icon">
-                                                    <i class="fa-solid fa-chart-simple"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="reports-tab-stat-card">
-                                                <div class="reports-tab-stat-content">
-                                                    <h4 class="reports-tab-stat-title">البرامج المدعومة</h4>
-                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Select(d => d.ProgramId).Distinct().Count() + Model.CurrentDonations.Select(d => d.ProgramId).Distinct().Count())</p>
-                                                </div>
-                                                <div class="reports-tab-stat-icon">
-                                                    <i class="fa-solid fa-seedling"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reports Table -->
-                                <div class="reports-tab-table">
-                                    <h4 class="reports-tab-title mb-3">تقارير التبرعات</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>رقم التقرير</th>
-                                                    <th>نوع التقرير</th>
-                                                    <th>تاريخ التقرير</th>
-                                                    <th>البرنامج</th>
-                                                    <th>المبلغ</th>
-                                                    <th>الإجراءات</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="6" class="text-center">لا توجد تقارير متاحة</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Addresses -->
                     <div class="tab-pane fade" id="addresses-content">
                         <div class="content-card">
@@ -1045,6 +1086,159 @@
                                     <div class="alert alert-info text-center">
                                         <i class="fa-solid fa-info-circle me-2"></i>
                                         لا توجد طلبات سابقة. تسوق الآن من المتجر!
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add a new pane for Reports in the tab content -->
+                    <div class="tab-pane fade" id="profile-reports">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>التقارير والإحصائيات</h3>
+                                <p class="text-muted">عرض التقارير المتعلقة بتبرعاتك</p>
+                            </div>
+                            <div class="card-body">
+                                <!-- Statistics Cards -->
+                                <div class="reports-tab-statistics mb-4">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">إجمالي التقارير</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.DonationReports?.Count() ?? 0)</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-file-pdf"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">إجمالي التبرعات</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Sum(d => d.Amount) + Model.CurrentDonations.Sum(d => d.Amount)) دينار</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="reports-tab-stat-card">
+                                                <div class="reports-tab-stat-content">
+                                                    <h4 class="reports-tab-stat-title">عدد التبرعات</h4>
+                                                    <p class="reports-tab-stat-value">@(Model.PreviousDonations.Count + Model.CurrentDonations.Count)</p>
+                                                </div>
+                                                <div class="reports-tab-stat-icon">
+                                                    <i class="fa-solid fa-chart-simple"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <!-- Filters section -->
+                                <div class="reports-tab-filters">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h5 class="reports-tab-filter-label">تصفية التقارير</h5>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-2">
+                                                    <label class="form-label">اسم التبرع</label>
+                                                    <select id="reportProgramFilter" class="form-select">
+                                                        <option value="">جميع التبرعات</option>
+                                                        @foreach (var program in Model.DonationReports?.Select(r => r.Donation?.Program?.Name).Distinct().Where(n => n != null) ?? Enumerable.Empty<string>())
+                                                        {
+                                                            <option value="@program">@program</option>
+                                                        }
+                                                        @foreach (var project in Model.DonationReports?.Select(r => r.Donation?.Project?.Title).Distinct().Where(t => t != null) ?? Enumerable.Empty<string>())
+                                                        {
+                                                            <option value="@project">@project</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <label class="form-label">المبلغ</label>
+                                                    <select id="reportAmountFilter" class="form-select">
+                                                        <option value="">جميع المبالغ</option>
+                                                        @foreach (var amount in Model.DonationReports?.Select(r => r.Donation?.Amount).Distinct().Where(a => a != null).OrderBy(a => a) ?? Enumerable.Empty<decimal?>())
+                                                        {
+                                                            <option value="@amount">@amount دينار</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <label class="form-label">تاريخ التقرير</label>
+                                                    <input type="month" id="reportDateFilter" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reports list -->
+                                @if (Model.DonationReports != null && Model.DonationReports.Any())
+                                {
+                                    <div class="reports-tab-table">
+                                        <h4 class="reports-tab-title mb-3">تقارير التبرعات</h4>
+                                        <div class="list-group">
+                                            @foreach (var report in Model.DonationReports)
+                                            {
+                                                <div class="list-group-item report-item"
+                                                     data-report-date="@(report.ReportDate?.ToString("yyyy-MM") ?? "")"
+                                                     data-donation-name="@(report.Donation?.Program?.Name ?? report.Donation?.Project?.Title ?? "")"
+                                                     data-donation-amount="@(report.Donation?.Amount ?? 0)">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <h5 class="mb-1">@report.ReportName</h5>
+                                                        <span class="report-date">@report.ReportDate?.ToString("yyyy-MM-dd")</span>
+                                                    </div>
+                                                    <p class="report-description mb-1">@report.ReportDescription</p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                                        <div class="report-meta">
+                                                            <span class="me-2">التبرع:</span>
+                                                            @if (report.Donation?.Program != null)
+                                                            {
+                                                                <span class="program-badge">@report.Donation.Program.Name</span>
+                                                            }
+                                                            else if (report.Donation?.Project != null)
+                                                            {
+                                                                <span class="program-badge project">@report.Donation.Project.Title</span>
+                                                            }
+                                                            <span class="mx-2">-</span>
+                                                            <span class="donation-amount">@(report.Donation?.Amount ?? 0) دينار</span>
+                                                        </div>
+                                                        @if (!string.IsNullOrEmpty(report.FilePath))
+                                                        {
+                                                            <a href="/documents/reports/@report.FilePath" target="_blank" class="btn btn-sm report-review-btn">
+                                                                <i class="fa-solid fa-file-pdf"></i>
+                                                                عرض الملف
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge bg-secondary">لا يوجد ملف</span>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                        
+                                        <div id="noReportsMessage" class="alert alert-info text-center mt-3 d-none">
+                                            لا توجد تقارير مطابقة للمعايير المختارة
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="empty-state">
+                                        <div class="empty-icon">
+                                            <i class="fa-solid fa-file-circle-exclamation"></i>
+                                        </div>
+                                        <h4>لا توجد تقارير للتبرعات متاحة حالياً</h4>
+                                        <p>التقارير ستظهر هنا بعد أن تقوم بالتبرع وإنشاء تقارير</p>
+                                        <a href="/Donation/DonationPrograms" class="btn btn-primary">تصفح برامج التبرع</a>
                                     </div>
                                 }
                             </div>

@@ -270,6 +270,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\56fe1f3c-a516-4c68-ae9a-a5fea40c1af8_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/56fe1f3c-a516-4c68-ae9a-a5fea40c1af8_Rahaf Alsmairat - Full Stack Web Developer (2).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s81ri5b5k6</Fingerprint>
+      <Integrity>9ErRTxs33VqKxVsJvTuEMEMNh9qvgJZKKhyRp7fAxhk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\56fe1f3c-a516-4c68-ae9a-a5fea40c1af8_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\a78fe5fd-dc1b-4561-82dc-c72a4b19d4dc_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/a78fe5fd-dc1b-4561-82dc-c72a4b19d4dc_Rahaf Alsmairat - Full Stack Web Developer (2).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s81ri5b5k6</Fingerprint>
+      <Integrity>9ErRTxs33VqKxVsJvTuEMEMNh9qvgJZKKhyRp7fAxhk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\a78fe5fd-dc1b-4561-82dc-c72a4b19d4dc_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -323,6 +359,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\c0701280-6501-481b-b5b5-3531ce83ffa1_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/c0701280-6501-481b-b5b5-3531ce83ffa1_Rahaf Alsmairat - Full Stack Web Developer (2).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s81ri5b5k6</Fingerprint>
+      <Integrity>9ErRTxs33VqKxVsJvTuEMEMNh9qvgJZKKhyRp7fAxhk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\c0701280-6501-481b-b5b5-3531ce83ffa1_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\cda60684-c27f-4e87-9f8f-c274a9afe543_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>documents/reports/cda60684-c27f-4e87-9f8f-c274a9afe543_Rahaf Alsmairat - Full Stack Web Developer (2).pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s81ri5b5k6</Fingerprint>
+      <Integrity>9ErRTxs33VqKxVsJvTuEMEMNh9qvgJZKKhyRp7fAxhk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\documents\reports\cda60684-c27f-4e87-9f8f-c274a9afe543_Rahaf Alsmairat - Full Stack Web Developer (2).pdf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))">
       <SourceType>Package</SourceType>
@@ -3234,8 +3306,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>lqxxyemb6v</Fingerprint>
-      <Integrity>DaPetMZsWCEMAR1ruMzK4IPHjIoKi7hnV39UEWL/2Fg=</Integrity>
+      <Fingerprint>bosfztnt18</Fingerprint>
+      <Integrity>FXqmbuNMFp3rZCf+g8RXUpAly+Syl6dpDfUAtUehpL4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\profile.css'))</OriginalItemSpec>
@@ -3690,6 +3762,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\styles\variables.css.map'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gs285vfun1</Fingerprint>
+      <Integrity>4M4Xa+3Pem2sHAJzxLOw1naGbGM/9DqMD5Im+7yS5h0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -3708,23 +3798,41 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4639ee32-3f96-4cc3-97e2-609b9b80e618_pexels-rdne-6647119.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Sakhaa</BasePath>
-      <RelativePath>uploads/products/4639ee32-3f96-4cc3-97e2-609b9b80e618_pexels-rdne-6647119.jpg</RelativePath>
+      <RelativePath>uploads/products/4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hy96y97h5p</Fingerprint>
-      <Integrity>F7KfV9BAnNnOwzMCZaFLkmnLumq9YxX+g7am7yJJELM=</Integrity>
+      <Fingerprint>2ov65mnytv</Fingerprint>
+      <Integrity>Lu24exJE9Y7EwLIwQ3l1RZkADxYAc9b0cYbQyiEK0yY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4639ee32-3f96-4cc3-97e2-609b9b80e618_pexels-rdne-6647119.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vz8f505q9y</Fingerprint>
+      <Integrity>tS8GyrztgEz5x0WwZM/fvyM3KWYLcq+5v1dPAllSBe4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg'))">
       <SourceType>Package</SourceType>
@@ -3762,6 +3870,78 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut &amp; Shea Butter Natural Soap - Organic Coconut &amp; Shea Butter.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut &amp; Shea Butter Natural Soap - Organic Coconut &amp; Shea Butter.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gl6qpuvhmm</Fingerprint>
+      <Integrity>5MRljsuKyd5zZ1R8WSVfqjYbjT0Er420HiGWvNUyXU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut &amp; Shea Butter Natural Soap - Organic Coconut &amp; Shea Butter.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c1ignqtmsa</Fingerprint>
+      <Integrity>sNG/svQbmFmm5MQL6cWP42ugFRyPPYu0An2pmb6smFs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2g4119ngzf</Fingerprint>
+      <Integrity>Pl7YFxjF166toRlArJCJmarTP/WKpLbqkkWWOzmsdWg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4ccgow0nhy</Fingerprint>
+      <Integrity>dPo3vYqmF34hgzW/SmDZmaqfqPYjGyyMZ+hJaQkzkhs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
@@ -3779,6 +3959,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/b368901e-9d60-421f-94df-471870964c52_spring candles.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w3tio2xuva</Fingerprint>
+      <Integrity>3FOtPtZjCvd/15Tr3pmYDddoEJZ0GauGcKIZT1q/KRc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg'))">
       <SourceType>Package</SourceType>
@@ -3798,23 +3996,59 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\d1e3dde9-4acd-4258-b1a9-f975640b96ae_pexels-kampus-8931674.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Sakhaa</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Sakhaa</BasePath>
-      <RelativePath>uploads/products/d1e3dde9-4acd-4258-b1a9-f975640b96ae_pexels-kampus-8931674.jpg</RelativePath>
+      <RelativePath>uploads/products/baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2i2rwgzrk7</Fingerprint>
-      <Integrity>apWBAEc1eEUNCP3yeLbifjMZGMpY8BYDATAQpPSU/jY=</Integrity>
+      <Fingerprint>z1yfsdf18m</Fingerprint>
+      <Integrity>J3oTIpvS2EI+e1o6IzFUVa6ql4zxJ59nnp3NDKn3gtM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\d1e3dde9-4acd-4258-b1a9-f975640b96ae_pexels-kampus-8931674.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qr4xddxsp9</Fingerprint>
+      <Integrity>mtgDuvvm96y1Xtvi+3tC4SDL/4kGqixetWtjokhsYXg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/products/e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zavbx959mu</Fingerprint>
+      <Integrity>O4j/oPLBtoBsqJmHg4+H+0VBmY7s0ni78eWzfakuZo8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg'))">
       <SourceType>Package</SourceType>
@@ -3851,6 +4085,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sponsors\8cebb86e-f8d2-47c6-b348-e96e1fe1655f_Almarai_Corporate_Logo.svg.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sponsors\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sakhaa</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sakhaa</BasePath>
+      <RelativePath>uploads/sponsors/bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xdcsm1ed2s</Fingerprint>
+      <Integrity>SzjPZ0WookGbSPI3zLCVJtmCYzRJ0sGlnWkbSXB0eoA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sponsors\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

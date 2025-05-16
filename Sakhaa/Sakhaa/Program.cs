@@ -40,6 +40,8 @@ app.UseRouting();
 app.UseSession();
 
 app.UseAuthorization();
+app.UseStaticFiles();
+
 
 // Create necessary directories if they don't exist
 try

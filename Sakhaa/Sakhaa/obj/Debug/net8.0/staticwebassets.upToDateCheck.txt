@@ -13,9 +13,13 @@ wwwroot\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-M
 wwwroot\documents\beneficiaries\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf
+wwwroot\documents\reports\56fe1f3c-a516-4c68-ae9a-a5fea40c1af8_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
+wwwroot\documents\reports\a78fe5fd-dc1b-4561-82dc-c72a4b19d4dc_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
 wwwroot\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf
 wwwroot\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf
 wwwroot\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf
+wwwroot\documents\reports\c0701280-6501-481b-b5b5-3531ce83ffa1_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
+wwwroot\documents\reports\cda60684-c27f-4e87-9f8f-c274a9afe543_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
 wwwroot\favicon.ico
 wwwroot\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg
 wwwroot\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg
@@ -202,12 +206,22 @@ wwwroot\styles\successStories.scss
 wwwroot\styles\variables.css
 wwwroot\styles\variables.css.map
 wwwroot\styles\variables.scss
+wwwroot\uploads\products\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg
 wwwroot\uploads\products\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg
-wwwroot\uploads\products\4639ee32-3f96-4cc3-97e2-609b9b80e618_pexels-rdne-6647119.jpg
+wwwroot\uploads\products\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg
+wwwroot\uploads\products\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg
 wwwroot\uploads\products\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg
 wwwroot\uploads\products\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg
+wwwroot\uploads\products\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut & Shea Butter Natural Soap - Organic Coconut & Shea Butter.jpg
+wwwroot\uploads\products\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg
+wwwroot\uploads\products\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg
+wwwroot\uploads\products\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg
 wwwroot\uploads\products\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg
+wwwroot\uploads\products\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg
 wwwroot\uploads\products\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg
-wwwroot\uploads\products\d1e3dde9-4acd-4258-b1a9-f975640b96ae_pexels-kampus-8931674.jpg
+wwwroot\uploads\products\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg
+wwwroot\uploads\products\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg
+wwwroot\uploads\products\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg
 wwwroot\uploads\products\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg
 wwwroot\uploads\sponsors\8cebb86e-f8d2-47c6-b348-e96e1fe1655f_Almarai_Corporate_Logo.svg.png
+wwwroot\uploads\sponsors\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png

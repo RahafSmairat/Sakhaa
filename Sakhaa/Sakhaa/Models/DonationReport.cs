@@ -15,11 +15,11 @@ public partial class DonationReport
 
     public DateTime? ReportDate { get; set; }
 
-    public string? ReportType { get; set; }
+    public string? ReportName { get; set; }
 
-    public decimal? Amount { get; set; }
+    public string? ReportDescription { get; set; }
 
-    public string? ImpactDescription { get; set; }
+    public string? FilePath { get; set; }
 
     public virtual Donation? Donation { get; set; }
 

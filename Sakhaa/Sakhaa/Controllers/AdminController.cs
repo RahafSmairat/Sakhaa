@@ -299,6 +299,121 @@ namespace Sakhaa.Controllers
             return View(donation);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddDonationReport(int donationId, string reportType, DateTime reportDate, decimal amount, string impactDescription, IFormFile reportFile)
+        {
+            var checkResult = CheckAdminAccess();
+            if (checkResult != null) return checkResult;
+
+            // Get the donation and verify it exists
+            var donation = _context.Donations
+                .Include(d => d.User)
+                .FirstOrDefault(d => d.Id == donationId);
+
+            if (donation == null)
+            {
+                return NotFound();
+            }
+
+            // Create new report
+            var report = new DonationReport
+            {
+                DonationId = donationId,
+                UserId = donation.UserId,
+                ReportDate = reportDate,
+                ReportName = reportType,
+                ReportDescription = impactDescription
+            };
+
+            // Handle file upload if provided
+            if (reportFile != null && reportFile.Length > 0)
+            {
+                // Create directory if it doesn't exist
+                string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Generate unique filename
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                // Save file
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await reportFile.CopyToAsync(fileStream);
+                }
+
+                // Save file path to report
+                report.FilePath = uniqueFileName;
+            }
+
+            // Add report to context and save
+            _context.DonationReports.Add(report);
+            await _context.SaveChangesAsync();
+
+            // Redirect to donation details
+            return RedirectToAction("DonationDetails", new { id = donationId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddDonationReportSimple(int donationId, string reportType, string impactDescription, IFormFile reportFile)
+        {
+            var checkResult = CheckAdminAccess();
+            if (checkResult != null) return checkResult;
+
+            // Get the donation and verify it exists
+            var donation = _context.Donations
+                .Include(d => d.User)
+                .FirstOrDefault(d => d.Id == donationId);
+
+            if (donation == null)
+            {
+                return NotFound();
+            }
+
+            // Create new report
+            var report = new DonationReport
+            {
+                DonationId = donationId,
+                UserId = donation.UserId,
+                ReportDate = DateTime.Now,  // Use current date
+                ReportName = reportType,    // Used as report name
+                ReportDescription = impactDescription
+            };
+
+            // Handle file upload if provided
+            if (reportFile != null && reportFile.Length > 0)
+            {
+                // Create directory if it doesn't exist
+                string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Generate unique filename
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                // Save file
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await reportFile.CopyToAsync(fileStream);
+                }
+
+                // Save file path to report
+                report.FilePath = uniqueFileName;
+            }
+
+            // Add report to context and save
+            _context.DonationReports.Add(report);
+            await _context.SaveChangesAsync();
+
+            // Redirect to donation details
+            return RedirectToAction("DonationDetails", new { id = donationId });
+        }
         
         public IActionResult Beneficiaries()
         {
@@ -1386,6 +1501,90 @@ namespace Sakhaa.Controllers
             _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction("Projects");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteDonationReport(int id, int donationId)
+        {
+            var checkResult = CheckAdminAccess();
+            if (checkResult != null) return checkResult;
+
+            var report = await _context.DonationReports.FindAsync(id);
+            if (report == null)
+            {
+                return NotFound();
+            }
+
+            // Delete the file if it exists
+            if (!string.IsNullOrEmpty(report.FilePath))
+            {
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports", report.FilePath);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+            }
+
+            _context.DonationReports.Remove(report);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("DonationDetails", new { id = donationId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditDonationReport(int id, int donationId, string reportName, string reportDescription, IFormFile reportFile)
+        {
+            var checkResult = CheckAdminAccess();
+            if (checkResult != null) return checkResult;
+
+            var report = await _context.DonationReports.FindAsync(id);
+            if (report == null)
+            {
+                return NotFound();
+            }
+
+            // Update report properties
+            report.ReportName = reportName;
+            report.ReportDescription = reportDescription;
+
+            // Handle file upload if provided
+            if (reportFile != null && reportFile.Length > 0)
+            {
+                // Delete old file if it exists
+                if (!string.IsNullOrEmpty(report.FilePath))
+                {
+                    string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports", report.FilePath);
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                    }
+                }
+
+                // Create directory if it doesn't exist
+                string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Generate unique filename
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                // Save file
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await reportFile.CopyToAsync(fileStream);
+                }
+
+                // Save file path to report
+                report.FilePath = uniqueFileName;
+            }
+
+            _context.Update(report);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("DonationDetails", new { id = donationId });
         }
     }
 }

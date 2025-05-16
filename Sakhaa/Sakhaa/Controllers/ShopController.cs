@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Sakhaa.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Sakhaa.Controllers
 {
@@ -57,9 +58,12 @@ namespace Sakhaa.Controllers
             ViewBag.SearchTerm = searchTerm;
 
             
-            var products = await productsQuery.OrderByDescending(p => p.SponsorId.HasValue).ThenBy(p => p.ProductName).ToListAsync();
+            var products = await productsQuery.ToListAsync();
             
-            return View(products);
+            Random random = new Random();
+            var randomizedProducts = products.OrderBy(p => random.Next()).ToList();
+            
+            return View(randomizedProducts);
         }
 
         

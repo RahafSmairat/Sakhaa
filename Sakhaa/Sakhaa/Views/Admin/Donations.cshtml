@@ -106,32 +106,23 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="reportForm" action="/Admin/AddDonationReport" method="post">
+                <form id="reportForm" action="/Admin/AddDonationReportSimple" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="donationId" name="DonationId" value="">
                     
                     <div class="mb-3">
-                        <label for="reportType" class="form-label">نوع التقرير</label>
-                        <select class="form-select" id="reportType" name="ReportType" required>
-                            <option value="">اختر نوع التقرير</option>
-                            <option value="أثر التبرع">أثر التبرع</option>
-                            <option value="تقرير مالي">تقرير مالي</option>
-                            <option value="تقرير إحصائي">تقرير إحصائي</option>
-                        </select>
+                        <label for="reportName" class="form-label">اسم التقرير</label>
+                        <input type="text" class="form-control" id="reportName" name="ReportType" required>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="reportDate" class="form-label">تاريخ التقرير</label>
-                        <input type="date" class="form-control" id="reportDate" name="ReportDate" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="amount" class="form-label">المبلغ المستخدم (دينار)</label>
-                        <input type="number" class="form-control" id="amount" name="Amount" required min="1" step="0.01">
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="impactDescription" class="form-label">وصف الأثر</label>
+                        <label for="impactDescription" class="form-label">وصف التقرير</label>
                         <textarea class="form-control" id="impactDescription" name="ImpactDescription" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="reportFile" class="form-label">ملف التقرير (PDF)</label>
+                        <input type="file" class="form-control" id="reportFile" name="ReportFile" accept=".pdf">
+                        <div class="form-text">يرجى إرفاق تقرير بصيغة PDF (اختياري)</div>
                     </div>
                 </form>
             </div>
@@ -194,10 +185,6 @@
             
             donationId.value = id;
             modalTitle.textContent = `إضافة تقرير لتبرع ${name}`;
-            
-            
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('reportDate').value = today;
         });
     </script>
 }

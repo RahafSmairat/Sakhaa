@@ -145,12 +145,23 @@ namespace Sakhaa.Controllers
             var currentDonations = _context.Donations.Where(d => d.UserId == user.Id && d.DonationEndDate == null)
                 .Include(d => d.Program)
                 .ToList();
+                
+            // Get all donation reports for the user
+            var donationReports = _context.DonationReports
+                .Where(r => r.UserId == user.Id)
+                .Include(r => r.Donation)
+                .ThenInclude(d => d.Program)
+                .Include(r => r.Donation)
+                .ThenInclude(d => d.Project)
+                .OrderByDescending(r => r.ReportDate)
+                .ToList();
 
             var vm = new ProfileViewModel
             {
                 userInfo = user,
                 PreviousDonations = previousDonations,
-                CurrentDonations = currentDonations
+                CurrentDonations = currentDonations,
+                DonationReports = donationReports
             };
             return View(vm);
         }

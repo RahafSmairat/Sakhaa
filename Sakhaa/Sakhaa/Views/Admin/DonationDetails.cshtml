@@ -1,0 +1,344 @@
+@model Sakhaa.Models.Donation
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">تفاصيل التبرع</h5>
+                    <a href="/Admin/Donations" class="btn btn-sm btn-outline-secondary">
+                        <i class="fa-solid fa-arrow-right ms-1"></i>
+                        عودة إلى قائمة التبرعات
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">رقم التبرع</label>
+                                <p class="fw-bold">@Model.Id</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">المبلغ</label>
+                                <p class="fw-bold">@Model.Amount دينار</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">تاريخ التبرع</label>
+                                <p class="fw-bold">@(Model.DonationStartDate?.ToString("yyyy-MM-dd") ?? "-")</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">تاريخ الانتهاء</label>
+                                <p class="fw-bold">@(Model.DonationEndDate?.ToString("yyyy-MM-dd") ?? "مستمر")</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">المتبرع</label>
+                                <p class="fw-bold">
+                                    @if (Model.User != null)
+                                    {
+                                        <a href="/Admin/UserDetails/@Model.UserId">
+                                            @($"{Model.User.FirstName} {Model.User.LastName}")
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span>-</span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">البرنامج</label>
+                                <p class="fw-bold">
+                                    @if (Model.Program != null)
+                                    {
+                                        <span>@Model.Program.Name</span>
+                                    }
+                                    else if (Model.Project != null)
+                                    {
+                                        <a href="/Admin/EditProject/@Model.ProjectId">
+                                            @Model.Project.Title
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span>-</span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payments Section -->
+                    <div class="mb-4">
+                        <h6 class="border-bottom pb-2 mb-3">عمليات الدفع</h6>
+                        @if (Model.Payments != null && Model.Payments.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>المبلغ</th>
+                                            <th>تاريخ الدفع</th>
+                                            <th>طريقة الدفع</th>
+                                            <th>الحالة</th>
+                                            <th>رقم العملية</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var payment in Model.Payments)
+                                        {
+                                            <tr>
+                                                <td>@payment.Id</td>
+                                                <td>@payment.Amount دينار</td>
+                                                <td>@(payment.PaymentDate?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
+                                                <td>@payment.PaymentMethod</td>
+                                                <td>
+                                                    @if (payment.Status == "Success")
+                                                    {
+                                                        <span class="badge bg-success">ناجح</span>
+                                                    }
+                                                    else if (payment.Status == "Failed")
+                                                    {
+                                                        <span class="badge bg-danger">فاشل</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge bg-secondary">@payment.Status</span>
+                                                    }
+                                                </td>
+                                                <td>@payment.TransactionId</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="text-muted fst-italic">لا توجد معلومات دفع لهذا التبرع</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <!-- Reports Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">تقارير التبرع</h5>
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal" data-id="@Model.Id" data-name="@(Model.User != null ? $"{Model.User.FirstName} {Model.User.LastName}" : "-")">
+                        <i class="fa-solid fa-plus ms-1"></i>
+                        إضافة تقرير
+                    </button>
+                </div>
+                <div class="card-body">
+                    @if (Model.DonationReports != null && Model.DonationReports.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var report in Model.DonationReports)
+                            {
+                                <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">@report.ReportName</h6>
+                                        <div>
+                                            <small class="me-2">@report.ReportDate?.ToString("yyyy-MM-dd")</small>
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editReportModal" 
+                                                    data-id="@report.Id"
+                                                    data-donation-id="@Model.Id"
+                                                    data-name="@report.ReportName"
+                                                    data-description="@report.ReportDescription"
+                                                    data-has-file="@(!string.IsNullOrEmpty(report.FilePath))">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmDeleteReport(@report.Id, @Model.Id)">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mb-1">@report.ReportDescription</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        @if (!string.IsNullOrEmpty(report.FilePath))
+                                        {
+                                            <a href="/documents/reports/@report.FilePath" target="_blank" class="btn btn-sm btn-outline-primary">
+                                                <i class="fa-solid fa-file-pdf"></i>
+                                                عرض الملف
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <small class="text-muted">لا يوجد ملف مرفق</small>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-4">
+                            <i class="fa-solid fa-chart-pie text-muted" style="font-size: 3rem;"></i>
+                            <p class="mt-3 text-muted">لا توجد تقارير لهذا التبرع بعد</p>
+                            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#reportModal" data-id="@Model.Id" data-name="@(Model.User != null ? $"{Model.User.FirstName} {Model.User.LastName}" : "-")">
+                                <i class="fa-solid fa-plus ms-1"></i>
+                                إضافة تقرير جديد
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Report Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">إضافة تقرير لتبرع</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="reportForm" action="/Admin/AddDonationReportSimple" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="donationId" name="DonationId" value="@Model.Id">
+                    
+                    <div class="mb-3">
+                        <label for="reportName" class="form-label">اسم التقرير</label>
+                        <input type="text" class="form-control" id="reportName" name="ReportType" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="impactDescription" class="form-label">وصف التقرير</label>
+                        <textarea class="form-control" id="impactDescription" name="ImpactDescription" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="reportFile" class="form-label">ملف التقرير (PDF)</label>
+                        <input type="file" class="form-control" id="reportFile" name="ReportFile" accept=".pdf">
+                        <div class="form-text">يرجى إرفاق تقرير بصيغة PDF (اختياري)</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('reportForm').submit()">إضافة التقرير</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Report Modal -->
+<div class="modal fade" id="editReportModal" tabindex="-1" aria-labelledby="editReportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editReportModalLabel">تعديل التقرير</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editReportForm" action="/Admin/EditDonationReport" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="editReportId" name="id" value="">
+                    <input type="hidden" id="editDonationId" name="donationId" value="@Model.Id">
+                    
+                    <div class="mb-3">
+                        <label for="editReportName" class="form-label">اسم التقرير</label>
+                        <input type="text" class="form-control" id="editReportName" name="reportName" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="editReportDescription" class="form-label">وصف التقرير</label>
+                        <textarea class="form-control" id="editReportDescription" name="reportDescription" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="editReportFile" class="form-label">ملف التقرير (PDF)</label>
+                        <input type="file" class="form-control" id="editReportFile" name="reportFile" accept=".pdf">
+                        <div class="form-text" id="editFileText">يرجى إرفاق تقرير بصيغة PDF (اختياري)</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('editReportForm').submit()">حفظ التغييرات</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden form for delete -->
+<form id="deleteReportForm" action="/Admin/DeleteDonationReport" method="post" style="display: none;">
+    <input type="hidden" id="deleteReportId" name="id" value="">
+    <input type="hidden" id="deleteDonationId" name="donationId" value="">
+</form>
+
+@section Scripts {
+    <script>
+        // Initialize the add report modal
+        const reportModal = document.getElementById('reportModal');
+        reportModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const name = button.getAttribute('data-name');
+            
+            const donationId = reportModal.querySelector('#donationId');
+            const modalTitle = reportModal.querySelector('.modal-title');
+            
+            donationId.value = id;
+            modalTitle.textContent = `إضافة تقرير لتبرع ${name}`;
+        });
+        
+        // Initialize the edit report modal
+        const editReportModal = document.getElementById('editReportModal');
+        editReportModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute('data-id');
+            const donationId = button.getAttribute('data-donation-id');
+            const name = button.getAttribute('data-name');
+            const description = button.getAttribute('data-description');
+            const hasFile = button.getAttribute('data-has-file');
+            
+            document.getElementById('editReportId').value = id;
+            document.getElementById('editDonationId').value = donationId;
+            document.getElementById('editReportName').value = name;
+            document.getElementById('editReportDescription').value = description;
+            
+            // Update file info text
+            if (hasFile === 'True') {
+                document.getElementById('editFileText').innerHTML = 'هناك ملف مرفق حالياً. إذا أردت تغييره، قم بتحميل ملف جديد.';
+            } else {
+                document.getElementById('editFileText').innerHTML = 'لا يوجد ملف مرفق حالياً. يمكنك إضافة ملف PDF.';
+            }
+        });
+        
+        // Function to confirm and handle report deletion
+        function confirmDeleteReport(reportId, donationId) {
+            if (confirm('هل أنت متأكد من حذف هذا التقرير؟')) {
+                document.getElementById('deleteReportId').value = reportId;
+                document.getElementById('deleteDonationId').value = donationId;
+                document.getElementById('deleteReportForm').submit();
+            }
+        }
+    </script>
+} 
