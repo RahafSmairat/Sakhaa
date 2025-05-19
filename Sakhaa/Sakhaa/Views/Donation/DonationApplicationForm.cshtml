@@ -1,61 +1,4 @@
-﻿@* @{ *@
-@*     ViewData["Title"] = "DonationApplicationForm"; *@
-@* } *@
-
-@* @section HeaderTitle { *@
-@*     <h2 class="section">معلومات التبرع</h2> *@
-@* } *@
-
-@* <main id="donationContainer"> *@
-@*     <form action="/Donation/DonationApplicationForm" method="post"> *@
-@*         <div class="formRow"> *@
-@*             <div class="inputCol"> *@
-@*                 <label for="firstName">الاسم الأول</label> *@
-@*                 <input type="text" id="firstName" name="firstName" placeholder="عبدالله" value="@(ViewBag.User?.FirstName)" required> *@
-@*             </div> *@
-@*             <div class="inputCol"> *@
-@*                 <label for="lastName">الاسم الأخير</label> *@
-@*                 <input type="text" id="lastName" name="lastName" placeholder="العمري" value="@(ViewBag.User?.LastName)" required> *@
-@*             </div> *@
-@*         </div> *@
-@*         <div class="formRow"> *@
-@*             <div class="inputCol"> *@
-@*                 <label for="country">الدولة</label> *@
-@*                 <input type="text" id="country" name="country" placeholder="الأردن" value="@(ViewBag.User?.Country)" required> *@
-@*             </div> *@
-@*             <div class="inputCol"> *@
-@*                 <label for="city">المدينة</label> *@
-@*                 <input type="text" id="city" name="city" placeholder="عمان" required> *@
-@*             </div> *@
-@*         </div> *@
-@*         <div class="inputCol" style="width: 100%;"> *@
-@*             <label for="address">عنوان</label> *@
-@*             <input type="text" id="address" name="address" placeholder="حي الجامعة شارع السلام" required> *@
-@*         </div> *@
-@*         <div> *@
-@*             <div> *@
-@*                 <input type="checkbox" id="benefactor" name="isDonatingForBenefactor" value="true"> *@
-@*                 <label for="benefactor">التبرع بصفتي متبرع داعم</label> *@
-@*             </div> *@
-@*         </div> *@
-
-@*         <div> *@
-@*             <button type="submit">متابعة الى الدفع</button> *@
-@*         </div> *@
-@*     </form> *@
-@*     <div id="details"> *@
-@*         <p>معلومات التبرع</p> *@
-@*         <div id="programDetails"> *@
-@*             <p>البرنامج: @(ViewBag.Program?.Name ?? "برنامج التبرع")</p> *@
-@*         </div> *@
-@*         <div id="total"> *@
-@*             <p>الإجمالي</p> *@
-@*             <p>@(ViewBag.Program?.MinimumDonationAmount ?? 0) د.أ</p> *@
-@*         </div> *@
-@*     </div> *@
-@* </main> *@
-
-@{
+﻿@{
     ViewData["Title"] = "DonationApplicationForm";
 }
 
@@ -106,14 +49,28 @@
         <div class="donation-summary">
             <h3>معلومات التبرع</h3>
             <div class="program-details">
-                <div class="detail-item">
-                    <span class="label">البرنامج:</span>
-                    <span class="value">@(ViewBag.Program?.Name ?? "برنامج التبرع")</span>
-                </div>
-                <div class="detail-item total">
-                    <span class="label">الإجمالي:</span>
-                    <span class="value">@(ViewBag.Program?.MinimumDonationAmount ?? 0) د.أ</span>
-                </div>
+                @if (ViewBag.Project != null)
+                {
+                    <div class="detail-item">
+                        <span class="label">المشروع:</span>
+                        <span class="value">@ViewBag.Project.Title</span>
+                    </div>
+                    <div class="detail-item total">
+                        <span class="label">مبلغ التبرع:</span>
+                        <span class="value">@ViewBag.Amount د.أ</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="detail-item">
+                        <span class="label">البرنامج:</span>
+                        <span class="value">@(ViewBag.Program?.Name ?? "برنامج التبرع")</span>
+                    </div>
+                    <div class="detail-item total">
+                        <span class="label">الإجمالي:</span>
+                        <span class="value">@(ViewBag.Program?.MinimumDonationAmount ?? 0) د.أ</span>
+                    </div>
+                }
             </div>
         </div>
     </div>

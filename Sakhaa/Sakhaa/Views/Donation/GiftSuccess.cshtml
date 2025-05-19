@@ -14,20 +14,19 @@
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-<div class="success-container section">
-    <div class="success-message">
-        <div class="success-icon">
-            <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <h3>تم إتمام التبرع بنجاح!</h3>
-        <p>شكراً لكرمك ومساهمتك. تم إرسال بطاقة الإهداء إلى <strong>@Model.ReceiverEmail</strong></p>
-        <p>رقم التبرع الخاص بك: <strong>#@Model.Id-@DateTime.Now.ToString("yyyyMMdd")</strong></p>
-        <p>مبلغ التبرع: <strong>@amount د.أ</strong></p>
-    </div>
+<div class="success-container section" style="width:60%; justify-self:center; direction:rtl;">
     
     <div class="gift-card-container">
-        <h3>بطاقة الإهداء</h3>
-
+        @* <h3>بطاقة الإهداء</h3> *@
+        <div class="success-message">
+            @* <div class="success-icon"> *@
+            @*     <i class="fa-solid fa-circle-check"></i> *@
+            @* </div> *@
+            <h3>بطاقة الإهداء!</h3>
+            <p>شكراً لكرمك ومساهمتك. سيتم إرسال بطاقة الإهداء إلى <strong>@Model.ReceiverPhone</strong></p>
+            <p>رقم التبرع الخاص بك: <strong>#@Model.Id-@DateTime.Now.ToString("yyyyMMdd")</strong></p>
+            <p>مبلغ التبرع: <strong>@amount د.أ</strong></p>
+        </div>
         <div class="gift-card-preview">
             @if (!string.IsNullOrEmpty(Model.GiftCardUrl))
             {
@@ -45,10 +44,10 @@
                         <div class="card-background-decoration" style="background-image: url('@decorationUrl');"></div>
                     }
                     <div class="card-occasion-image">
-                        <img src="/images/gift/@(occasion).jpg" alt="مناسبة الإهداء">
+                        <img src="/images/gift/@(occasion).png" alt="مناسبة الإهداء">
                     </div>
                     <div class="card-content">
-                        <div class="card-header">
+                        <div class="card-header gif-card-header">
                             <h3>بطاقة إهداء من @Model.GiverName إلى @Model.ReceiverName</h3>
                         </div>
                         <div class="card-message">
@@ -93,7 +92,7 @@
                 <span>البريد الإلكتروني</span>
             </a>
             <a href="#" class="share-option" id="shareTwitter">
-                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-x-twitter"></i>
                 <span>تويتر</span>
             </a>
             <a href="#" class="share-option" id="shareFacebook">
@@ -110,16 +109,13 @@
         flex-direction: column;
         gap: 40px;
         padding: 30px;
-        background-color: #FAFAFA;
+        @* background-color: #FAFAFA; *@
         border-radius: 15px;
-        box-shadow: 0 0 10px rgba(64, 87, 18, 0.3);
+        @* box-shadow: 0 0 10px rgba(64, 87, 18, 0.3); *@
         text-align: center;
     }
     
     @@media (min-width: 992px) {
-        .success-container {
-            flex-direction: row;
-        }
         
         .success-message {
             flex: 1;
@@ -131,10 +127,10 @@
     }
     
     .success-message {
-        background-color: white;
+        @* background-color: white; *@
         padding: 30px;
         border-radius: 15px;
-        box-shadow: 0 0 10px rgba(64, 87, 18, 0.1);
+        @* box-shadow: 0 0 10px rgba(64, 87, 18, 0.1); *@
         margin-bottom: 20px;
     }
     
@@ -156,10 +152,11 @@
     }
     
     .gift-card-container {
-        background-color: white;
+        @* background-color: white; *@
         padding: 30px;
+        padding-top:0;
         border-radius: 15px;
-        box-shadow: 0 0 10px rgba(64, 87, 18, 0.1);
+        @* box-shadow: 0 0 10px rgba(64, 87, 18, 0.1); *@
     }
     
     .gift-card-container h3 {
@@ -204,7 +201,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        opacity: 0.5;
+        opacity: 0.8;
         border-radius: 30px;
         pointer-events: none;
     }
@@ -237,6 +234,10 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+    }
+
+    .gif-card-header:after{
+        content:none !important;
     }
     
     .card-header h3 {
@@ -357,7 +358,7 @@
     
     .share-option:hover {
         background-color: #e0e0e0;
-        transform: translateY(-5px);
+        @* transform: translateY(-5px); *@
     }
     
     .share-option i {
@@ -461,9 +462,9 @@
                     // Otherwise capture the dynamic card
                     element = document.getElementById('giftCardElement');
                     html2canvas(element, {
-                        scale: 2, // Higher quality
-                        useCORS: true, // Allow cross-origin images
-                        backgroundColor: null // Transparent background
+                        scale: 2, 
+                        useCORS: true, 
+                        backgroundColor: null 
                     }).then(canvas => {
                         const imageURL = canvas.toDataURL('image/png');
                         downloadImage(imageURL);

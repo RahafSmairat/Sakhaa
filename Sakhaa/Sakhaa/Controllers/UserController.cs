@@ -27,34 +27,57 @@ namespace Sakhaa.Controllers
         [HttpPost]
         public IActionResult Login(string Email, string Password)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Email == Email);
-            if (user != null && PasswordHelper.VerifyPassword(Password, user.Password))
+            if (string.IsNullOrWhiteSpace(Email))
             {
-                HttpContext.Session.SetString("UserEmail", user.Email);
-                HttpContext.Session.SetString("UserName", user.FirstName);
-                HttpContext.Session.SetString("UserId", user.Id.ToString());
-
-                if (user.Email.ToLower() == "admin@gmail.com")
-                {
-                    HttpContext.Session.SetString("IsAdmin", "true");
-                    return RedirectToAction("Dashboard", "Admin");
-                }
-                else if (user.Email.ToLower() == "admin2@gmail.com")
-                {
-                    HttpContext.Session.SetString("IsAdmin2", "true");
-                    return RedirectToAction("Dashboard", "Admin2");
-                }
-
-                
-                var cartController = new CartController(_context);
-                cartController.ControllerContext = ControllerContext;
-                cartController.MigrateCart(user.Id);
-
-                return RedirectToAction("Index", "Home");
+                ViewBag.Error = "الرجاء إدخال البريد الإلكتروني";
+                return View();
             }
 
-            ViewBag.Error = "خطأ في كلمة المرور أو البريد الإلكتروني.";
-            return View();
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                ViewBag.Error = "الرجاء إدخال كلمة السر";
+                return View();
+            }
+
+            if (!IsValidEmail(Email))
+            {
+                ViewBag.Error = "الرجاء إدخال بريد إلكتروني صحيح";
+                return View();
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == Email);
+            if (user == null)
+            {
+                ViewBag.Error = "خطأ في كلمة السر أو البريد الإلكتروني";
+                return View();
+            }
+
+            if (!PasswordHelper.VerifyPassword(Password, user.Password))
+            {
+                ViewBag.Error = "كلمة السر غير صحيحة";
+                return View();
+            }
+
+            HttpContext.Session.SetString("UserEmail", user.Email);
+            HttpContext.Session.SetString("UserName", user.FirstName);
+            HttpContext.Session.SetString("UserId", user.Id.ToString());
+
+            if (user.Email.ToLower() == "admin@gmail.com")
+            {
+                HttpContext.Session.SetString("IsAdmin", "true");
+                return RedirectToAction("Dashboard", "Admin");
+            }
+            else if (user.Email.ToLower() == "admin2@gmail.com")
+            {
+                HttpContext.Session.SetString("IsAdmin2", "true");
+                return RedirectToAction("Dashboard", "Admin2");
+            }
+
+            var cartController = new CartController(_context);
+            cartController.ControllerContext = ControllerContext;
+            cartController.MigrateCart(user.Id);
+
+            return RedirectToAction("Index", "Home");
         }
 
         
@@ -73,21 +96,75 @@ namespace Sakhaa.Controllers
         [HttpPost]
         public IActionResult Signup(string FirstName, string LastName, string Email, string PhoneNumber, string Country, string Password, string ConfirmPassword)
         {
-            if (String.IsNullOrEmpty(FirstName) || String.IsNullOrEmpty(LastName) || String.IsNullOrEmpty(PhoneNumber) ||
-                String.IsNullOrEmpty(Country) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
+            if (string.IsNullOrWhiteSpace(FirstName))
             {
-                ViewBag.Error = "الرجاء تعبئة جميع الحقول";
+                ViewBag.Error = "الرجاء إدخال الاسم الأول";
                 return View();
             }
+
+            if (string.IsNullOrWhiteSpace(LastName))
+            {
+                ViewBag.Error = "الرجاء إدخال الاسم الأخير";
+                return View();
+            }
+
+            if (string.IsNullOrWhiteSpace(Email))
+            {
+                ViewBag.Error = "الرجاء إدخال البريد الإلكتروني";
+                return View();
+            }
+
+            if (string.IsNullOrWhiteSpace(PhoneNumber))
+            {
+                ViewBag.Error = "الرجاء إدخال رقم الهاتف";
+                return View();
+            }
+
+            if (string.IsNullOrWhiteSpace(Country))
+            {
+                ViewBag.Error = "الرجاء اختيار الدولة";
+                return View();
+            }
+
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                ViewBag.Error = "الرجاء إدخال كلمة السر";
+                return View();
+            }
+
+            if (string.IsNullOrWhiteSpace(ConfirmPassword))
+            {
+                ViewBag.Error = "الرجاء تأكيد كلمة السر";
+                return View();
+            }
+
+            if (!IsValidEmail(Email))
+            {
+                ViewBag.Error = "الرجاء إدخال بريد إلكتروني صحيح";
+                return View();
+            }
+
+            if (!IsValidPhoneNumber(PhoneNumber))
+            {
+                ViewBag.Error = "الرجاء إدخال رقم هاتف صحيح";
+                return View();
+            }
+
+            if (Password.Length < 6)
+            {
+                ViewBag.Error = "كلمة السر يجب أن تكون 6 أحرف على الأقل";
+                return View();
+            }
+
             if (Password != ConfirmPassword)
             {
-                ViewBag.Error = "كلمة السر غير متطابقة.";
+                ViewBag.Error = "كلمة السر غير متطابقة";
                 return View();
             }
 
             if (_context.Users.Any(u => u.Email == Email))
             {
-                ViewBag.Error = "البريد الإلكتروني مستخدم بالفعل.";
+                ViewBag.Error = "البريد الإلكتروني مستخدم بالفعل";
                 return View();
             }
 
@@ -108,6 +185,24 @@ namespace Sakhaa.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Login");
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^[0-9\s\-\+]+$") && phoneNumber.Length >= 8;
         }
 
         
@@ -146,7 +241,6 @@ namespace Sakhaa.Controllers
                 .Include(d => d.Program)
                 .ToList();
                 
-            // Get all donation reports for the user
             var donationReports = _context.DonationReports
                 .Where(r => r.UserId == user.Id)
                 .Include(r => r.Donation)
@@ -172,11 +266,15 @@ namespace Sakhaa.Controllers
         {
             string userEmail = HttpContext.Session.GetString("UserEmail");
             if (string.IsNullOrEmpty(userEmail))
-                return RedirectToAction("Login");
+                return Request.Headers["X-Requested-With"] == "XMLHttpRequest" 
+                    ? Json(new { success = false, message = "يرجى تسجيل الدخول أولاً" })
+                    : RedirectToAction("Login");
 
             var user = _context.Users.FirstOrDefault(u => u.Email == userEmail);
             if (user == null)
-                return NotFound();
+                return Request.Headers["X-Requested-With"] == "XMLHttpRequest" 
+                    ? Json(new { success = false, message = "لم يتم العثور على المستخدم" })
+                    : NotFound();
 
             if (!string.IsNullOrWhiteSpace(FullName))
             {
@@ -197,6 +295,9 @@ namespace Sakhaa.Controllers
             {
                 if (string.IsNullOrWhiteSpace(CurrentPassword))
                 {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return Json(new { success = false, message = "يرجى إدخال كلمة السر الحالية أولاً." });
+                    
                     TempData["Error"] = "يرجى إدخال كلمة السر الحالية أولاً.";
                     return RedirectToAction("Profile");
                 }
@@ -204,12 +305,18 @@ namespace Sakhaa.Controllers
                 bool passwordMatches = PasswordHelper.VerifyPassword(CurrentPassword, user.Password);
                 if (!passwordMatches)
                 {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return Json(new { success = false, message = "كلمة السر الحالية غير صحيحة." });
+                    
                     TempData["Error"] = "كلمة السر الحالية غير صحيحة.";
                     return RedirectToAction("Profile");
                 }
 
                 if (Password != ConfirmPassword)
                 {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return Json(new { success = false, message = "كلمة السر الجديدة غير متطابقة." });
+                    
                     TempData["Error"] = "كلمة السر الجديدة غير متطابقة.";
                     return RedirectToAction("Profile");
                 }
@@ -219,6 +326,9 @@ namespace Sakhaa.Controllers
 
             _context.SaveChanges();
 
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return Json(new { success = true, message = "تم حفظ التعديلات بنجاح" });
+            
             TempData["Success"] = "تم حفظ التعديلات بنجاح";
             return RedirectToAction("Profile");
         }
@@ -343,24 +453,54 @@ namespace Sakhaa.Controllers
             {
                 string userEmail = HttpContext.Session.GetString("UserEmail");
                 if (string.IsNullOrEmpty(userEmail))
-                    return RedirectToAction("Login");
+                    return Request.Headers["X-Requested-With"] == "XMLHttpRequest"
+                        ? Json(new { success = false, message = "يرجى تسجيل الدخول أولاً" })
+                        : RedirectToAction("Login");
 
                 var user = _context.Users.FirstOrDefault(u => u.Email == userEmail);
                 if (user == null)
-                    return NotFound();
+                    return Request.Headers["X-Requested-With"] == "XMLHttpRequest"
+                        ? Json(new { success = false, message = "لم يتم العثور على المستخدم" })
+                        : NotFound();
 
                 var address = _context.Addresses.FirstOrDefault(a => a.AddressId == addressId && a.UserId == user.Id);
                 if (address == null)
-                    return NotFound();
+                    return Request.Headers["X-Requested-With"] == "XMLHttpRequest"
+                        ? Json(new { success = false, message = "لم يتم العثور على العنوان" })
+                        : NotFound();
+
+                var relatedOrders = _context.Orders.Where(o => o.AddressId == addressId);
+                foreach (var order in relatedOrders)
+                {
+                    order.AddressId = null;
+                }
+
+                if (address.IsDefault == true)
+                {
+                    var otherAddress = _context.Addresses
+                        .Where(a => a.UserId == user.Id && a.AddressId != addressId)
+                        .FirstOrDefault();
+                    
+                    if (otherAddress != null)
+                    {
+                        otherAddress.IsDefault = true;
+                    }
+                }
 
                 _context.Addresses.Remove(address);
                 _context.SaveChanges();
+
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return Json(new { success = true, message = "تم حذف العنوان بنجاح" });
 
                 TempData["Success"] = "تم حذف العنوان بنجاح";
                 return RedirectToAction("Profile");
             }
             catch (Exception ex)
             {
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return Json(new { success = false, message = "حدث خطأ أثناء حذف العنوان: " + ex.Message });
+
                 TempData["Error"] = "حدث خطأ أثناء حذف العنوان: " + ex.Message;
                 return RedirectToAction("Profile");
             }

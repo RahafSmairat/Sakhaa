@@ -25,53 +25,86 @@
 </head>
 <body>
     <header id="logInHeader">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid flex-row-reverse">
-                <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <div class="sakhaa-navbar-wrapper">
+            <nav class="sakhaa-navbar">
+                <!-- Logo -->
+                <div class="sakhaa-logo">
+                    <a href="/">
+                        <img src="/images/logo11.png" alt="سخاء">
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <button class="sakhaa-menu-toggle" id="menuToggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav w-100 d-flex">
 
-                        <div class="ms-auto first-group d-flex">
-                            <a class="nav-link" asp-controller="Home" asp-action="Contact">تواصل معنا</a>
-                            <a class="nav-link" asp-controller="Home" asp-action="About">من نحن</a>
-                            <a class="nav-link" asp-controller="Home" asp-action="SuccessStories">قصص النجاح</a>
-                            <a class="nav-link" asp-controller="Home" asp-action="PublicReports">التقارير السنوية</a>
-                            <a class="nav-link" asp-controller="Home" asp-action="BeneficiaryApplication">طلب استفادة</a>
-                            <a class="nav-link" asp-controller="Donation" asp-action="DonationPrograms">برامجنا</a>
-                            <a class="nav-link" asp-controller="Projects" asp-action="Index">مشاريعنا</a>
-                            <a class="nav-link" asp-controller="Shop" asp-action="Index">المتجر</a>
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">الرئيسية</a>
-                        </div>
+                <!-- Navigation Container -->
+                <div class="sakhaa-nav-container" id="navContainer">
+                    <!-- Main Navigation -->
+                    <ul class="sakhaa-nav">
+                        <li class="sakhaa-nav-item">
+                            <a href="/" class="sakhaa-nav-link">الرئيسية</a>
+                        </li>
+                        <li class="sakhaa-nav-item sakhaa-has-dropdown">
+                            <a href="#" class="sakhaa-nav-link">برامجنا</a>
+                            <ul class="sakhaa-dropdown">
+                                <li><a href="/Donation/DonationPrograms">برامج التبرع</a></li>
+                                <li><a href="/Donation/CustomGiftForm">بطاقات الإهداء</a></li>
+                            </ul>
+                        </li>
+                        <li class="sakhaa-nav-item">
+                            <a href="/Projects/Index" class="sakhaa-nav-link">مشاريعنا</a>
+                        </li>
+                        <li class="sakhaa-nav-item">
+                            <a href="/Shop/Index" class="sakhaa-nav-link">المتجر</a>
+                        </li>
+                        <li class="sakhaa-nav-item sakhaa-has-dropdown">
+                            <a href="#" class="sakhaa-nav-link">عن سخاء</a>
+                            <ul class="sakhaa-dropdown">
+                                <li><a href="/Home/About">من نحن</a></li>
+                                <li><a href="/Home/SuccessStories">قصص النجاح</a></li>
+                                <li><a href="/Home/PublicReports">التقارير السنوية</a></li>
+                            </ul>
+                        </li>
+                        <li class="sakhaa-nav-item">
+                            <a href="/Home/BeneficiaryApplication" class="sakhaa-nav-link">كن مستفيد</a>
+                        </li>
+                        <li class="sakhaa-nav-item">
+                            <a href="/Home/Contact" class="sakhaa-nav-link">تواصل معنا</a>
+                        </li>
+                    </ul>
 
-                        <div class="last-group d-flex">
-                            <a class="nav-link position-relative" asp-controller="Cart" asp-action="Index">
-                                <i class="fa-solid fa-shopping-cart"></i>
-                                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.7rem; margin-top: 6px;">
-                                    0
-                                </span>
-                            </a>
-                            
-                            @if (string.IsNullOrEmpty(userEmail))
-                            {
-                                <a class="nav-link" asp-controller="User" asp-action="Login">تسجيل الدخول</a>
-                                @* <a class="nav-link" asp-controller="User" asp-action="Signup">تسجيل</a> *@
-                            }
-                            else
-                            {
-                                <a class="nav-link" asp-controller="User" asp-action="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
-                                <a class="nav-link" asp-controller="User" asp-action="Profile"><i class="fa-solid fa-user"></i></a>
-                            }
-                        </div>
+                    <!-- User Actions -->
+                    <div class="sakhaa-user-actions">
+                        <a href="/Cart/Index" class="sakhaa-cart-link">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <span class="sakhaa-cart-count" id="cart-count">0</span>
+                        </a>
 
+                        @if (string.IsNullOrEmpty(userEmail))
+                        {
+                            <a href="/User/Login" class="sakhaa-login-btn">تسجيل الدخول</a>
+                        }
+                        else
+                        {
+                            <div class="sakhaa-user-dropdown">
+                                <button type="button" class="sakhaa-user-btn">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <ul class="sakhaa-dropdown">
+                                    <li><a href="/User/Profile"><i class="fa-solid fa-user-gear me-2 m-2"></i>الملف الشخصي</a></li>
+                                    <li><a href="/User/Logout"><i class="fa-solid fa-arrow-right-from-bracket me-2 m-2"></i>تسجيل الخروج</a></li>
+                                </ul>
+                            </div>
+                        }
                     </div>
                 </div>
-            </div>
-        </nav>
-        
+            </nav>
+        </div>
+
         @if (IsSectionDefined("HeaderTitle"))
         {
             @RenderSection("HeaderTitle", required: false)
@@ -83,89 +116,580 @@
     </div>
 
     <footer class="footer">
-        <div class="py-3 py-md-5 py-xl-8">
-            <div class="container overflow-hidden">
-
-                <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
-
-                    <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-2">
-                        <div class="footer-logo-wrapper text-center text-sm-start">
-                            <a href="#!">
-                                <img src="/images/logo.png" width="175" height="80">
-                            </a>
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info">
+                            <a href="/" class="footer-logo mb-3">
+                                <img src="/images/logo11.png" alt="سخاء" width="120">
+                            </a><br /><br />
+                            <p class="mb-3">مؤسسة سخاء الخيرية تسعى لتقديم المساعدة للمحتاجين وتمكين المجتمعات من خلال برامج تنموية مستدامة.</p>
+                            <div class="contact-info">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <span>اربد، الأردن</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-phone-alt me-2"></i>
+                                    <span style="direction:ltr">+962786264841</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    <span>info@sakhaa.org</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-xl-6 order-2 order-xl-1">
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link  px-2 px-md-3" href="/pages/home.html">الرئيسية</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-2 px-md-3" href="/pages/profile.html">برامجنا</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-2 px-md-3" href="/pages/about.html">من نحن؟</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-2 px-md-3" href="/pages/contact.html">تواصل معنا</a>
-                            </li>
+                    <div class="col-lg-2 col-md-6">
+                        <h4 class="footer-heading">روابط سريعة</h4>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="/">الرئيسية</a></li>
+                            <li><a href="/Home/About">من نحن</a></li>
+                            <li><a href="/Projects/Index">مشاريعنا</a></li>
+                            <li><a href="/Donation/DonationPrograms">برامجنا</a></li>
+                            <li><a href="/Home/SuccessStories">قصص النجاح</a></li>
+                            <li><a href="/Home/Contact">تواصل معنا</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-xs-12 col-sm-6 col-xl-3 order-1 order-xl-0">
-                        <div class="social-media-wrapper">
-                            <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-sm-end">
-                                <li class="me-3">
-                                    <a href="#!" class="link-dark">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="me-3">
-                                    <a href="#!" class="link-dark">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="me-3">
-                                    <a href="#!" class="link-dark">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="me-3">
-                                    <a href="#!" class="link-dark">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h4 class="footer-heading">خدماتنا</h4>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="/Shop/Index">المتجر الخيري</a></li>
+                            <li><a href="/Donation/GiftDonation">بطاقات الإهداء</a></li>
+                            <li><a href="/Home/BeneficiaryApplication">طلب استفادة</a></li>
+                            <li><a href="/Home/PublicReports">التقارير السنوية</a></li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-light py-1 py-md-2 border-top border-light-subtle">
-            <div class="container overflow-hidden">
-                <div class="row">
-                    <div class="col">
-                        <div class="footer-copyright-wrapper text-center">
-                            &copy; 2025. All Rights Reserved.
-                        </div>
-                        @* <div class="credits text-secondary text-center mt-2 fs-8"> *@
-                        @*     Built by <a href="#" class="link-secondary text-decoration-none">BootstrapBrain</a> with <span class="text-primary">&#9829;</span> *@
-                        @* </div> *@
-                    </div>
-                </div>
-            </div>
-        </div>
 
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="footer-heading">تواصل معنا</h4>
+                        @* <p>اشترك في نشرتنا الإخبارية للحصول على آخر الأخبار والتحديثات</p> *@
+                        @* <form class="newsletter-form mt-3"> *@
+                        @*     <div class="input-group"> *@
+                        @*         <input type="email" class="form-control" placeholder="البريد الإلكتروني" required> *@
+                        @*         <button class="btn btn-subscribe" type="submit">اشتراك</button> *@
+                        @*     </div> *@
+                        @* </form> *@
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center text-md-center">
+                        <p class="mb-0">&copy; @DateTime.Now.Year مؤسسة سخاء الخيرية. جميع الحقوق محفوظة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <style>
+
+        #logInHeader h2 {
+            top: 40% !important;
+        }
+        .footer {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .footer-top {
+            background-color: #F5F5DC;
+        }
+
+        .footer-heading {
+            color: #405712;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            padding-right: 1.5rem;
+        }
+
+            .footer-heading:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 1.5rem;
+                width: 50px;
+                height: 2px;
+                background-color: #DAA520;
+            }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .footer-links a:hover {
+                color: #DAA520;
+                /* padding-right: 5px; */
+            }
+
+        .contact-info {
+            color: #555;
+        }
+
+            .contact-info i {
+                color: #405712;
+                width: 20px;
+            }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #F5F5DC;
+            color: #405712;
+            transition: all 0.3s ease;
+        }
+
+            .social-link:hover {
+                background-color: #DAA520;
+                color: #fff;
+            }
+
+        .newsletter-form .form-control {
+            border-radius: 30px 0 0 30px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-subscribe {
+            background-color: #405712;
+            color: white;
+            border-radius: 0 30px 30px 0;
+            border: 1px solid #405712;
+            transition: all 0.3s ease;
+        }
+
+            .btn-subscribe:hover {
+                background-color: #DAA520;
+                border-color: #DAA520;
+            }
+
+        .footer-bottom {
+            background-color: #FAFAFA;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+            .footer-bottom-links a:hover {
+                color: #DAA520;
+            }
+
+        @@media (max-width: 767px) {
+            .footer-heading {
+                margin-top: 1.5rem;
+            }
+
+            .footer-bottom .text-md-end,
+            .footer-bottom .text-md-start {
+                text-align: center !important;
+            }
+
+            .footer-bottom-links {
+                margin-top: 1rem;
+            }
+
+                .footer-bottom-links a {
+                    margin: 0 0.75rem;
+                }
+        }
+
+        /* New Navbar Styles */
+        .sakhaa-navbar-wrapper {
+            position: relative;
+            padding: 15px 0;
+            direction: rtl;
+        }
+
+        .sakhaa-navbar {
+            background-color: #fff;
+            border-radius: 100px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            position: relative;
+            box-shadow: 0 0 5px rgba(64, 87, 18, 0.2470588235);
+        }
+
+        .sakhaa-logo {
+            display: flex;
+            align-items: center;
+        }
+
+            .sakhaa-logo img {
+                height: 50px;
+                width: auto;
+            }
+
+        .sakhaa-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            z-index: 100;
+            left: 25px;
+        }
+
+            .sakhaa-menu-toggle span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: #405712;
+                margin: 5px 0;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+        .sakhaa-nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .sakhaa-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .sakhaa-nav-item {
+            position: relative;
+        }
+
+        .sakhaa-nav-link {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-nav-link:hover {
+                color: #405712;
+                background-color: rgba(64, 87, 18, 0.08);
+            }
+
+        .sakhaa-has-dropdown > .sakhaa-nav-link:after {
+            content: "\f107";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .sakhaa-has-dropdown:hover > .sakhaa-nav-link:after {
+            transform: rotate(180deg);
+        }
+
+        .sakhaa-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sakhaa-has-dropdown:hover .sakhaa-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .sakhaa-dropdown li a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-dropdown li a:hover {
+                background-color: rgba(64, 87, 18, 0.08);
+                color: #405712;
+                /* padding-right: 25px; */
+            }
+
+        .sakhaa-user-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sakhaa-cart-link {
+            position: relative;
+            color: #333;
+            font-size: 1.2rem;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-cart-link:hover {
+                background-color: rgba(64, 87, 18, 0.08);
+                color: #405712;
+            }
+
+        .sakhaa-cart-count {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            background-color: #A31621;
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sakhaa-login-btn {
+            background-color: #405712;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-login-btn:hover {
+                background-color: #DAA520;
+                color: white;
+            }
+
+        .sakhaa-user-dropdown {
+            position: relative;
+        }
+
+        .sakhaa-user-dropdown:hover .sakhaa-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .sakhaa-user-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(64, 87, 18, 0.1);
+            border: none;
+            color: #405712;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-user-btn:hover {
+                background-color: rgba(64, 87, 18, 0.2);
+            }
+
+        .sakhaa-user-dropdown .sakhaa-dropdown {
+            left: 0;
+            right: auto;
+        }
+
+        /* Responsive Styles */
+        @@media (max-width: 992px) {
+            .sakhaa-navbar {
+                padding: 0 15px;
+                height: 70px;
+            }
+            
+            .sakhaa-menu-toggle {
+                display: block;
+            }
+            
+            .sakhaa-nav-container {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100%;
+                background-color: #fff;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 100px 20px 30px;
+                margin: 0;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 99;
+                overflow-y: auto;
+            }
+            
+            .sakhaa-nav-container.active {
+                right: 0;
+            }
+            
+            .sakhaa-nav {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+            
+            .sakhaa-nav-link {
+                padding: 15px;
+                border-bottom: 1px solid #f0f0f0;
+                border-radius: 0;
+            }
+            
+            .sakhaa-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0;
+                transition: max-height 0.3s ease;
+            }
+            
+            .sakhaa-has-dropdown.active .sakhaa-dropdown {
+                max-height: 300px;
+                padding: 10px 0;
+            }
+            
+            .sakhaa-dropdown li a {
+                padding: 10px 30px;
+            }
+            
+            .sakhaa-user-actions {
+                width: 100%;
+                justify-content: center;
+                margin-top: 20px;
+                padding-top: 20px;
+                /* border-top: 1px solid #f0f0f0; */
+            }
+            
+            /* Mobile user dropdown styles */
+            .sakhaa-user-dropdown:hover .sakhaa-dropdown {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+            }
+            
+            .sakhaa-user-dropdown.active .sakhaa-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .sakhaa-menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .sakhaa-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .sakhaa-menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            body.menu-open {
+                overflow: hidden;
+            }
+            
+            .sakhaa-has-dropdown > .sakhaa-nav-link:after {
+                float: left;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .sakhaa-navbar-wrapper {
+                padding: 10px;
+            }
+
+            .sakhaa-navbar {
+                border-radius: 10px;
+                height: 60px;
+            }
+
+            .sakhaa-logo img {
+                height: 45px;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .sakhaa-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+            .sakhaa-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+    </style>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -197,6 +721,105 @@
                 },
                 error: function() {
                     $('#cart-count').hide();
+                }
+            });
+        });
+    </script>
+    
+    <!-- Navbar JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.createElement('div');
+            overlay.className = 'sakhaa-overlay';
+            document.body.appendChild(overlay);
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navContainer = document.getElementById('navContainer');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navContainer.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+            
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+            
+            // Handle dropdown menus on mobile
+            if (window.innerWidth < 992) {
+                const dropdownItems = document.querySelectorAll('.sakhaa-has-dropdown');
+                
+                dropdownItems.forEach(item => {
+                    const link = item.querySelector('.sakhaa-nav-link');
+                    
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth < 992) {
+                            e.preventDefault();
+                            item.classList.toggle('active');
+                            
+                            // Close other open dropdowns
+                            dropdownItems.forEach(otherItem => {
+                                if (otherItem !== item && otherItem.classList.contains('active')) {
+                                    otherItem.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                });
+                
+                // Handle user dropdown on mobile
+                const userDropdown = document.querySelector('.sakhaa-user-dropdown');
+                if (userDropdown) {
+                    const userBtn = userDropdown.querySelector('.sakhaa-user-btn');
+                    
+                    userBtn.addEventListener('click', function(e) {
+                        if (window.innerWidth < 992) {
+                            e.preventDefault();
+                            userDropdown.classList.toggle('active');
+                            
+                            // Toggle dropdown visibility
+                            const dropdown = userDropdown.querySelector('.sakhaa-dropdown');
+                            if (userDropdown.classList.contains('active')) {
+                                dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+                                dropdown.style.padding = '10px 0';
+                                dropdown.style.opacity = '1';
+                                dropdown.style.visibility = 'visible';
+                            } else {
+                                dropdown.style.maxHeight = '0';
+                                dropdown.style.padding = '0';
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 992) {
+                    menuToggle.classList.remove('active');
+                    navContainer.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    
+                    document.querySelectorAll('.sakhaa-has-dropdown.active').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Reset user dropdown styles
+                    const userDropdown = document.querySelector('.sakhaa-user-dropdown');
+                    if (userDropdown) {
+                        userDropdown.classList.remove('active');
+                        const dropdown = userDropdown.querySelector('.sakhaa-dropdown');
+                        dropdown.style.maxHeight = '';
+                        dropdown.style.padding = '';
+                    }
                 }
             });
         });

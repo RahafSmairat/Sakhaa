@@ -305,7 +305,6 @@ namespace Sakhaa.Controllers
             var checkResult = CheckAdminAccess();
             if (checkResult != null) return checkResult;
 
-            // Get the donation and verify it exists
             var donation = _context.Donations
                 .Include(d => d.User)
                 .FirstOrDefault(d => d.Id == donationId);
@@ -315,7 +314,6 @@ namespace Sakhaa.Controllers
                 return NotFound();
             }
 
-            // Create new report
             var report = new DonationReport
             {
                 DonationId = donationId,
@@ -325,35 +323,28 @@ namespace Sakhaa.Controllers
                 ReportDescription = impactDescription
             };
 
-            // Handle file upload if provided
             if (reportFile != null && reportFile.Length > 0)
             {
-                // Create directory if it doesn't exist
                 string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
                 if (!Directory.Exists(uploadsFolder))
                 {
                     Directory.CreateDirectory(uploadsFolder);
                 }
 
-                // Generate unique filename
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-                // Save file
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await reportFile.CopyToAsync(fileStream);
                 }
 
-                // Save file path to report
                 report.FilePath = uniqueFileName;
             }
 
-            // Add report to context and save
             _context.DonationReports.Add(report);
             await _context.SaveChangesAsync();
 
-            // Redirect to donation details
             return RedirectToAction("DonationDetails", new { id = donationId });
         }
 
@@ -363,7 +354,6 @@ namespace Sakhaa.Controllers
             var checkResult = CheckAdminAccess();
             if (checkResult != null) return checkResult;
 
-            // Get the donation and verify it exists
             var donation = _context.Donations
                 .Include(d => d.User)
                 .FirstOrDefault(d => d.Id == donationId);
@@ -373,45 +363,37 @@ namespace Sakhaa.Controllers
                 return NotFound();
             }
 
-            // Create new report
             var report = new DonationReport
             {
                 DonationId = donationId,
                 UserId = donation.UserId,
-                ReportDate = DateTime.Now,  // Use current date
-                ReportName = reportType,    // Used as report name
+                ReportDate = DateTime.Now,  
+                ReportName = reportType,    
                 ReportDescription = impactDescription
             };
 
-            // Handle file upload if provided
             if (reportFile != null && reportFile.Length > 0)
             {
-                // Create directory if it doesn't exist
                 string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
                 if (!Directory.Exists(uploadsFolder))
                 {
                     Directory.CreateDirectory(uploadsFolder);
                 }
 
-                // Generate unique filename
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-                // Save file
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await reportFile.CopyToAsync(fileStream);
                 }
 
-                // Save file path to report
                 report.FilePath = uniqueFileName;
             }
 
-            // Add report to context and save
             _context.DonationReports.Add(report);
             await _context.SaveChangesAsync();
 
-            // Redirect to donation details
             return RedirectToAction("DonationDetails", new { id = donationId });
         }
         
@@ -1515,7 +1497,6 @@ namespace Sakhaa.Controllers
                 return NotFound();
             }
 
-            // Delete the file if it exists
             if (!string.IsNullOrEmpty(report.FilePath))
             {
                 string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports", report.FilePath);
@@ -1543,14 +1524,11 @@ namespace Sakhaa.Controllers
                 return NotFound();
             }
 
-            // Update report properties
             report.ReportName = reportName;
             report.ReportDescription = reportDescription;
 
-            // Handle file upload if provided
             if (reportFile != null && reportFile.Length > 0)
             {
-                // Delete old file if it exists
                 if (!string.IsNullOrEmpty(report.FilePath))
                 {
                     string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports", report.FilePath);
@@ -1560,24 +1538,20 @@ namespace Sakhaa.Controllers
                     }
                 }
 
-                // Create directory if it doesn't exist
                 string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "documents", "reports");
                 if (!Directory.Exists(uploadsFolder))
                 {
                     Directory.CreateDirectory(uploadsFolder);
                 }
 
-                // Generate unique filename
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(reportFile.FileName);
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-                // Save file
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await reportFile.CopyToAsync(fileStream);
                 }
 
-                // Save file path to report
                 report.FilePath = uniqueFileName;
             }
 

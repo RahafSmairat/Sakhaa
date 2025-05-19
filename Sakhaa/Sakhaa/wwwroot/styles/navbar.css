@@ -23,7 +23,7 @@ a {
   font-family: "Cairo", serif !important;
   background-color: #FAFAFA !important;
   box-shadow: 0 0 5px rgba(64, 87, 18, 0.2470588235);
-  padding: 0 0 0 2% !important;
+  padding: 1% 0 1% 2% !important;
   border-radius: 30px !important;
 }
 .navbar .navbar-brand {
@@ -31,7 +31,7 @@ a {
   padding: 0 !important;
 }
 .navbar .navbar-brand img {
-  width: 100% !important;
+  width: 50% !important;
 }
 .navbar .navbar-nav .last-group {
   order: 1;

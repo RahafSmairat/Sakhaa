@@ -39,13 +39,13 @@ namespace Sakhaa.Controllers
 
         public IActionResult Donate(int id, decimal amount)
         {
-            
             var project = _context.Projects.Find(id);
             if (project == null)
             {
                 return NotFound();
             }
 
+            HttpContext.Session.Remove("SelectedProgramId");
             
             return RedirectToAction("DonationApplicationForm", "Donation", new { projectId = id, amount = amount });
         }

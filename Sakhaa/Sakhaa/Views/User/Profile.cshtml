@@ -26,6 +26,72 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
 
+            // Handle address deletion forms
+            $('form[action="/User/DeleteAddress"]').on('submit', function(e) {
+                e.preventDefault();
+
+                const form = $(this);
+
+                Swal.fire({
+                    title: 'تأكيد حذف العنوان',
+                    text: 'هل أنت متأكد من رغبتك في حذف هذا العنوان؟',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#dc3545',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'نعم، حذف العنوان',
+                    cancelButtonText: 'إلغاء',
+                    position: 'center',
+                    customClass: {
+                        popup: 'swal-rtl'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: 'POST',
+                            data: form.serialize(),
+                            success: function(response) {
+                                if (response.success) {
+                                    Swal.fire({
+                                        title: 'تم الحذف',
+                                        text: response.message || 'تم حذف العنوان بنجاح',
+                                        icon: 'success',
+                                        customClass: {
+                                            popup: 'swal-rtl'
+                                        },
+                                        confirmButtonColor: '#405712'
+                                    }).then(() => {
+                                        window.location.reload();
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        title: 'خطأ',
+                                        text: response.message || 'حدث خطأ أثناء حذف العنوان',
+                                        icon: 'error',
+                                        customClass: {
+                                            popup: 'swal-rtl'
+                                        },
+                                        confirmButtonColor: '#405712'
+                                    });
+                                }
+                            },
+                            error: function() {
+                                Swal.fire({
+                                    title: 'خطأ',
+                                    text: 'حدث خطأ أثناء الاتصال بالخادم',
+                                    icon: 'error',
+                                    customClass: {
+                                        popup: 'swal-rtl'
+                                    },
+                                    confirmButtonColor: '#405712'
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
             $('.filter-option').click(function() {
                 const filterType = $(this).data('filter-type');
                 const filterValue = $(this).data('filter-value');
@@ -40,6 +106,56 @@
             setTimeout(function() {
                 $('.alert').alert('close');
             }, 5000);
+
+            // Profile form submission
+            $('.profile-form').on('submit', function(e) {
+                e.preventDefault();
+
+                // Re-enable disabled fields before submission so their values are included
+                $(this).find(':disabled').prop('disabled', false);
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: 'تم بنجاح',
+                                text: response.message || 'تم حفظ التعديلات بنجاح',
+                                icon: 'success',
+                                customClass: {
+                                    popup: 'swal-rtl'
+                                },
+                                confirmButtonColor: '#405712'
+                            }).then(() => {
+                                window.location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'خطأ',
+                                text: response.message || 'حدث خطأ أثناء تنفيذ العملية',
+                                icon: 'error',
+                                customClass: {
+                                    popup: 'swal-rtl'
+                                },
+                                confirmButtonColor: '#405712'
+                            });
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({
+                            title: 'خطأ',
+                            text: 'حدث خطأ أثناء الاتصال بالخادم',
+                            icon: 'error',
+                            customClass: {
+                                popup: 'swal-rtl'
+                            },
+                            confirmButtonColor: '#405712'
+                        });
+                    }
+                });
+            });
 
             $('.cancel-subscription-btn').click(function() {
                 const donationId = $(this).data('donation-id');
@@ -69,9 +185,9 @@
                                         title: 'تم إلغاء الاشتراك',
                                         text: 'تم إلغاء اشتراكك بنجاح',
                                         icon: 'success',
-                                                            customClass: {
-                        popup: 'swal-rtl'
-                    },
+                                        customClass: {
+                                            popup: 'swal-rtl'
+                                        },
                                         confirmButtonColor: '#405712'
                                     }).then(() => {
                                         window.location.reload();
@@ -81,9 +197,9 @@
                                         title: 'خطأ',
                                         text: response.message || 'حدث خطأ أثناء إلغاء الاشتراك',
                                         icon: 'error',
-                                                            customClass: {
-                        popup: 'swal-rtl'
-                    },
+                                        customClass: {
+                                            popup: 'swal-rtl'
+                                        },
                                         confirmButtonColor: '#405712'
                                     });
                                 }
@@ -93,9 +209,9 @@
                                     title: 'خطأ',
                                     text: 'حدث خطأ أثناء الاتصال بالخادم',
                                     icon: 'error',
-                                                        customClass: {
-                        popup: 'swal-rtl'
-                    },
+                                    customClass: {
+                                        popup: 'swal-rtl'
+                                    },
                                     confirmButtonColor: '#405712'
                                 });
                             }
@@ -153,7 +269,8 @@
                 });
             });
 
-            $('form[action^="/User/"]').not('form[action="/User/CancelDonation"]').each(function() {
+            // Handle other forms except profile form and cancel donation
+            $('form[action^="/User/"]').not('.profile-form').not('form[action="/User/CancelDonation"]').not('form[action="/User/DeleteAddress"]').each(function() {
                 var form = $(this);
                 var formAction = form.attr('action');
 
@@ -215,29 +332,29 @@
                     const programFilter = $('#reportProgramFilter').val();
                     const amountFilter = $('#reportAmountFilter').val();
                     const dateFilter = $('#reportDateFilter').val();
-                    
+
                     let visibleCount = 0;
-                    
+
                     $('.report-item').each(function() {
                         const $item = $(this);
                         const donationName = $item.data('donation-name');
                         const donationAmount = $item.data('donation-amount').toString();
                         const reportDate = $item.data('report-date');
-                        
+
                         let showItem = true;
-                        
+
                         if (programFilter && donationName !== programFilter) {
                             showItem = false;
                         }
-                        
+
                         if (amountFilter && donationAmount !== amountFilter) {
                             showItem = false;
                         }
-                        
+
                         if (dateFilter && reportDate !== dateFilter) {
                             showItem = false;
                         }
-                        
+
                         if (showItem) {
                             $item.show();
                             visibleCount++;
@@ -245,7 +362,7 @@
                             $item.hide();
                         }
                     });
-                    
+
                     // Show/hide "no reports" message
                     if (visibleCount === 0) {
                         $('#noReportsMessage').removeClass('d-none');
@@ -253,10 +370,10 @@
                         $('#noReportsMessage').addClass('d-none');
                     }
                 }
-                
+
                 // Event listeners for filters
                 $('#reportProgramFilter, #reportAmountFilter, #reportDateFilter').on('change', filterReports);
-                
+
                 // Initial filtering
                 filterReports();
             });
@@ -414,90 +531,91 @@
             background-color: #DAA520;
             color: white;
         }
-        
+
     /* Report specifics */
     .donation-amount {
         font-weight: 600;
         color: #405712;
     }
-    
+
     .report-date {
         font-size: 0.85rem;
         color: #6c757d;
     }
-    
+
     .report-meta {
         font-size: 0.9rem;
         color: #6c757d;
     }
-    
+
     .list-group .report-item {
         border-bottom: 1px solid #40571250;
-        border-top:none;
-        border-right:none;
-        border-left:none;
+        border-top: none;
+        border-right: none;
+        border-left: none;
         border-radius: 0;
         margin-bottom: 15px;
         box-shadow: none !important;
         padding: 3%;
     }
-    
-    
+
+
     /* Override statistics card styles */
     .reports-tab-stat-card {
         transition: none !important;
     }
-    
-    .reports-tab-stat-card:hover {
-        transform: none !important;
-        border: 1px solid #DAA520 !important;
-        box-shadow:none !important;
-    }
-    
-    .reports-tab-stat-card::before {
-        background: #405712 !important;
-        width: 4px !important;
-    }
-    
+
+        .reports-tab-stat-card:hover {
+            transform: none !important;
+            border: 1px solid #DAA520 !important;
+            box-shadow: none !important;
+        }
+
+        .reports-tab-stat-card::before {
+            background: #405712 !important;
+            width: 4px !important;
+        }
+
     .reports-tab-stat-icon {
         background: #405712 !important;
     }
-    
+
     .reports-tab-title::before {
         background: #405712 !important;
     }
-    
+
     .reports-tab-filter-label::before {
         background: #405712 !important;
     }
-    
+
     .reports-tab-filter-option.active {
         background: #405712 !important;
     }
-    .reports-tab-stat-card::before{
-        content:none;
+
+    .reports-tab-stat-card::before {
+        content: none;
     }
 
-    .report-review-btn{
-        border-radius:30px;
+    .report-review-btn {
+        border-radius: 30px;
         border: none;
-        background-color:transparent;
+        background-color: transparent;
         color: #DAA520;
     }
 
-    .report-review-btn:hover {
-        border-radius: 30px;
-        border: none;
-        background-color: #DAA520;
-        color:#FAFAFA;
-    }
+        .report-review-btn:hover {
+            border-radius: 30px;
+            border: none;
+            background-color: #DAA520;
+            color: #FAFAFA;
+        }
 
         .report-review-btn:active {
-        border-radius: 30px;
-        border: none;
-        background-color: #DAA520;
-        color:#FAFAFA;
-    }
+            border-radius: 30px;
+            border: none;
+            background-color: #DAA520;
+            color: #FAFAFA;
+        }
 </style>
 
 <div class="profile-container" style="direction:rtl">
@@ -598,6 +716,22 @@
                             </div>
 
                             <div class="card-body">
+                                @* @if (TempData["Success"] != null) *@
+                                @* { *@
+                                @*     <div class="alert alert-success alert-dismissible fade show" role="alert"> *@
+                                @*         <i class="fa-solid fa-check-circle me-2"></i> @TempData["Success"] *@
+                                @*         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button> *@
+                                @*     </div> *@
+                                @* } *@
+
+                                @* @if (TempData["Error"] != null) *@
+                                @* { *@
+                                @*     <div class="alert alert-danger alert-dismissible fade show" role="alert"> *@
+                                @*         <i class="fa-solid fa-exclamation-circle me-2"></i> @TempData["Error"] *@
+                                @*         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button> *@
+                                @*     </div> *@
+                                @* } *@
+
                                 <form asp-action="UpdateProfile" method="post" class="profile-form">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
@@ -890,7 +1024,7 @@
                                                                 data-address-phone="@address.PhoneNumber">
                                                             <i class="fa-solid fa-edit"></i> تعديل
                                                         </button>
-                                                        <form method="post" action="/User/DeleteAddress" class="d-inline" onsubmit="return confirm('هل أنت متأكد من حذف هذا العنوان؟');">
+                                                        <form method="post" action="/User/DeleteAddress" class="d-inline">
                                                             <input type="hidden" name="addressId" value="@address.AddressId" />
                                                             <button type="submit" class="btn btn-sm btn-outline-danger action-btn">
                                                                 <i class="fa-solid fa-trash"></i> حذف
@@ -1008,7 +1142,7 @@
                                                 <div>
                                                     @{
                                                         string statusClass = "pending";
-                                                        if (order.OrderStatus?.ToLower() == "completed")
+                                                        if (order.OrderStatus?.ToLower() == "delivered")
                                                         {
                                                             statusClass = "completed";
                                                         }
@@ -1017,7 +1151,29 @@
                                                             statusClass = "cancelled";
                                                         }
                                                     }
-                                                    <span class="order-status @statusClass">@order.OrderStatus</span>
+                                                    @switch (order.OrderStatus)
+                                                    {
+                                                        case "Pending":
+                                                            <span class="order-status @statusClass">قيد الانتظار</span>
+
+                                                            break;
+                                                        case "Processing":
+                                                            <span class="order-status @statusClass">قيد المعالجة</span>
+                                                            break;
+                                                        case "Shipped":
+                                                            <span class="order-status @statusClass">تم الشحن</span>
+                                                            break;
+                                                        case "Delivered":
+                                                            <span class="order-status @statusClass">تم التوصيل</span>
+                                                            break;
+                                                        case "Cancelled":
+                                                            <span class="order-status @statusClass">ملغي</span>
+                                                            break;
+                                                        default:
+                                                            <span class="order-status @statusClass">تم الطلب</span>
+                                                            break;
+                                                    }
+                                                    @* <span class="order-status @statusClass">@order.OrderStatus</span> *@
                                                 </div>
                                             </div>
 
@@ -1138,7 +1294,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+
                                 <!-- Filters section -->
                                 <div class="reports-tab-filters">
                                     <div class="row">
@@ -1224,7 +1380,7 @@
                                                 </div>
                                             }
                                         </div>
-                                        
+
                                         <div id="noReportsMessage" class="alert alert-info text-center mt-3 d-none">
                                             لا توجد تقارير مطابقة للمعايير المختارة
                                         </div>
@@ -1262,25 +1418,25 @@
             <form method="post" action="/User/AddAddress">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="title" class="form-label">عنوان العنوان</label>
-                        <input type="text" class="form-control" id="title" name="Title" required>
+                        <label for="title" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="title" name="Title" required style="direction:rtl">
                         <small class="form-text text-muted">مثال: المنزل، العمل، إلخ.</small>
                     </div>
                     <div class="mb-3">
                         <label for="street" class="form-label">الشارع</label>
-                        <input type="text" class="form-control" id="street" name="Street" required>
+                        <input type="text" class="form-control" id="street" name="Street" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">المدينة</label>
-                        <input type="text" class="form-control" id="city" name="City" required>
+                        <input type="text" class="form-control" id="city" name="City" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="country" class="form-label">البلد</label>
-                        <input type="text" class="form-control" id="country" name="Country" required>
+                        <input type="text" class="form-control" id="country" name="Country" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="phoneNumber" class="form-label">رقم الهاتف</label>
-                        <input type="tel" class="form-control" id="phoneNumber" name="PhoneNumber" required>
+                        <input type="tel" class="form-control" id="phoneNumber" name="PhoneNumber" required style="direction:rtl">
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="isDefault" name="IsDefault">
@@ -1311,23 +1467,23 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="editTitle" class="form-label">عنوان العنوان</label>
-                        <input type="text" class="form-control" id="editTitle" name="Title" required>
+                        <input type="text" class="form-control" id="editTitle" name="Title" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editStreet" class="form-label">الشارع</label>
-                        <input type="text" class="form-control" id="editStreet" name="Street" required>
+                        <input type="text" class="form-control" id="editStreet" name="Street" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editCity" class="form-label">المدينة</label>
-                        <input type="text" class="form-control" id="editCity" name="City" required>
+                        <input type="text" class="form-control" id="editCity" name="City" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editCountry" class="form-label">البلد</label>
-                        <input type="text" class="form-control" id="editCountry" name="Country" required>
+                        <input type="text" class="form-control" id="editCountry" name="Country" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editPhoneNumber" class="form-label">رقم الهاتف</label>
-                        <input type="tel" class="form-control" id="editPhoneNumber" name="PhoneNumber" required>
+                        <input type="tel" class="form-control" id="editPhoneNumber" name="PhoneNumber" required style="direction:rtl">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1351,16 +1507,16 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="cardHolderName" class="form-label">اسم حامل البطاقة</label>
-                        <input type="text" class="form-control" id="cardHolderName" name="CardHolderName" required>
+                        <input type="text" class="form-control" id="cardHolderName" name="CardHolderName" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="cardNumber" class="form-label">رقم البطاقة</label>
-                        <input type="text" class="form-control" id="cardNumber" name="CardNumber" required>
+                        <input type="text" class="form-control" id="cardNumber" name="CardNumber" required style="direction:rtl">
                     </div>
                     <div class="row mb-3">
                         <div class="col">
                             <label for="expiryDate" class="form-label">تاريخ الانتهاء (MM/YY)</label>
-                            <input type="text" class="form-control" id="expiryDate" name="ExpiryDate" placeholder="MM/YY" required>
+                            <input type="text" class="form-control" id="expiryDate" name="ExpiryDate" placeholder="MM/YY" required style="direction:rtl">
                         </div>
                         <div class="col">
                             <label for="cvv" class="form-label">رمز الحماية (CVV)</label>
@@ -1396,15 +1552,15 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="editCardHolderName" class="form-label">اسم حامل البطاقة</label>
-                        <input type="text" class="form-control" id="editCardHolderName" name="CardHolderName" required>
+                        <input type="text" class="form-control" id="editCardHolderName" name="CardHolderName" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editCardNumber" class="form-label">رقم البطاقة</label>
-                        <input type="text" class="form-control" id="editCardNumber" name="CardNumber" required>
+                        <input type="text" class="form-control" id="editCardNumber" name="CardNumber" required style="direction:rtl">
                     </div>
                     <div class="mb-3">
                         <label for="editExpiryDate" class="form-label">تاريخ الانتهاء (MM/YY)</label>
-                        <input type="text" class="form-control" id="editExpiryDate" name="ExpiryDate" placeholder="MM/YY" required>
+                        <input type="text" class="form-control" id="editExpiryDate" name="ExpiryDate" placeholder="MM/YY" required style="direction:rtl">
                     </div>
                 </div>
                 <div class="modal-footer">

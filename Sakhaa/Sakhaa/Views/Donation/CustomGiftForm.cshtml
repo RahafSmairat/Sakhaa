@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="giverPhone">رقم الهاتف</label>
-                    <input type="tel" id="giverPhone" name="giverPhone" placeholder="رقم الهاتف" required>
+                    <input type="tel" id="giverPhone" name="giverPhone" placeholder="رقم الهاتف" required style="direction:rtl">
                 </div>
                 <div class="form-group">
                     <label for="giverEmail">البريد الإلكتروني</label>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="receiverPhone">رقم الهاتف</label>
-                    <input type="tel" id="receiverPhone" name="receiverPhone" placeholder="رقم الهاتف" required>
+                    <input type="tel" id="receiverPhone" name="receiverPhone" placeholder="رقم الهاتف" required style="direction:rtl">
                 </div>
                 <div class="form-group">
                     <label for="receiverEmail">البريد الإلكتروني</label>
@@ -74,9 +74,8 @@
                 </div>
             </div>
             <div class="custom-amount-container hidden">
-                <label for="customAmount">أدخل المبلغ المطلوب:</label>
                 <div class="custom-amount-input">
-                    <input type="number" id="customAmount" name="customAmountInput" min="10" placeholder="أدخل المبلغ">
+                    <input type="number" id="customAmount" name="customAmountInput" min="10" placeholder="أدخل المبلغ" style="width:50%">
                     <span>د.أ</span>
                 </div>
             </div>
@@ -130,26 +129,26 @@
                     <label>اختر مناسبة الإهداء</label>
                     <div class="occasion-selector">
                         <div class="occasion-option" data-occasion="general">
-                            <img src="/images/gift/general.jpg" alt="عام" style="margin-top: 5%;">
+                            <img src="/images/gift/general.png" alt="عام" style="margin-top: 5%;">
                             <span>عام</span>
                         </div>
                         <div class="occasion-option" data-occasion="birthday">
-                            <img src="/images/gift/birthday.jpg" alt="عيد ميلاد" style="margin-top: 5%;">
+                            <img src="/images/gift/birthday.png" alt="عيد ميلاد" style="margin-top: 5%;">
                             <span>عيد ميلاد</span>
                         </div>
                         <div class="occasion-option" data-occasion="wedding">
-                            <img src="/images/gift/wedding.jpg" alt="زواج" style="margin-top: 5%;">
+                            <img src="/images/gift/wedding.png" alt="زواج" style="margin-top: 5%;">
                             <span>زواج</span>
                         </div>
                         <div class="occasion-option" data-occasion="graduation">
-                            <img src="/images/gift/graduation.jpg" alt="تخرج" style="margin-top: 5%;">
+                            <img src="/images/gift/graduation.png" alt="تخرج" style="margin-top: 5%;">
                             <span>تخرج</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>اختر زخرفة</label>
+                    <label>اختر إطار</label>
                     <div class="decoration-selector">
                         <div class="decoration-option" data-decoration="none">
                             <img src="/images/gift/decoration-none.png" alt="بدون">
@@ -161,11 +160,11 @@
                         </div>
                         <div class="decoration-option" data-decoration="geometric">
                             <img src="/images/gift/decoration-geometric.png" alt="هندسي">
-                            <span>هندسي</span>
+                            <span>أسود</span>
                         </div>
                         <div class="decoration-option" data-decoration="hearts">
                             <img src="/images/gift/decoration-hearts.png" alt="قلوب">
-                            <span>قلوب</span>
+                            <span>ذهبي</span>
                         </div>
                     </div>
                 </div>
@@ -179,10 +178,10 @@
                 <div id="giftCardPreview" class="gift-card">
                     <!-- The decoration will be added here by JavaScript -->
                     <div class="card-occasion-image">
-                        <img id="occasionImage" src="/images/gift/general.jpg" alt="مناسبة الإهداء">
+                        <img id="occasionImage" src="/images/gift/general.png" alt="مناسبة الإهداء">
                     </div>
                     <div class="card-content">
-                        <div class="card-header">
+                        <div class="card-header gift-card-header">
                             <h3 id="giftCardHeader">بطاقة إهداء من <span id="previewFrom">...</span> إلى <span id="previewTo">...</span></h3>
                         </div>
                         <div class="card-message" id="previewMessage">

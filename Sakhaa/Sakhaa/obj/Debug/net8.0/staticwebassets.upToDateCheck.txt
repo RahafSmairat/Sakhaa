@@ -1,5 +1,6 @@
 wwwroot\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf
 wwwroot\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\4a0d205c-4cce-43e9-8100-8d1e2f6df94c_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
 wwwroot\documents\beneficiaries\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf
 wwwroot\documents\beneficiaries\50617244-c975-472d-860e-160c43ceadaf_Rahaf Alsmairat - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf
@@ -8,18 +9,23 @@ wwwroot\documents\beneficiaries\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة 
 wwwroot\documents\beneficiaries\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsmairat - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf
 wwwroot\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf
+wwwroot\documents\beneficiaries\8d505d1d-1828-4a78-98c5-4588b961f8d5_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
+wwwroot\documents\beneficiaries\a5f26260-9b75-4fdc-96bf-a2f7fa1418ef_تقرير أثر التبرع.pdf
 wwwroot\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf
+wwwroot\documents\beneficiaries\b029d15e-e3dd-4eef-a419-eb00be09514e_التقرير_السنوي_للتبرعات.pdf
 wwwroot\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf
+wwwroot\documents\beneficiaries\d1ca9af8-cc65-4361-99e0-1ef9bd68b01c_التقرير_السنوي_للتبرعات.pdf
 wwwroot\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf
-wwwroot\documents\reports\56fe1f3c-a516-4c68-ae9a-a5fea40c1af8_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
-wwwroot\documents\reports\a78fe5fd-dc1b-4561-82dc-c72a4b19d4dc_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
-wwwroot\documents\reports\aad2347f-a799-449d-b35e-ee732d4317ad.pdf
-wwwroot\documents\reports\b05f658f-bf53-4ce1-ac85-1e141b9aaa5c.pdf
-wwwroot\documents\reports\b806cf8e-1a65-4873-bb57-4becdf5acfc8.pdf
-wwwroot\documents\reports\c0701280-6501-481b-b5b5-3531ce83ffa1_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
-wwwroot\documents\reports\cda60684-c27f-4e87-9f8f-c274a9afe543_Rahaf Alsmairat - Full Stack Web Developer (2).pdf
+wwwroot\documents\beneficiaries\f95f186d-4168-4caa-bfa2-768b2940f921_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
+wwwroot\documents\reports\01d5da08-5284-4943-a863-7f7a2ea137fe.pdf
+wwwroot\documents\reports\0673350f-4891-4da0-b842-e3d1a9f088de_تقرير أثر التبرع.pdf
+wwwroot\documents\reports\46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
+wwwroot\documents\reports\73625c97-e769-4644-818d-aa5aecc8a32f.pdf
+wwwroot\documents\reports\b84848a1-80b2-4a53-824c-999553c814cf_تقرير أثر التبرع.pdf
+wwwroot\documents\reports\c6a93599-fef0-434a-9676-4bf3f48cc1b1_تقرير أثر التبرع.pdf
+wwwroot\documents\reports\fdd49bba-26ae-4569-8cba-1142d91b2ee6_تقرير أثر التبرع.pdf
 wwwroot\favicon.ico
 wwwroot\images\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg
 wwwroot\images\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg
@@ -32,18 +38,20 @@ wwwroot\images\circle1.png
 wwwroot\images\deal (1).png
 wwwroot\images\generous 1.png
 wwwroot\images\gift.png
-wwwroot\images\gift\birthday.jpg
+wwwroot\images\gift\birthday.png
 wwwroot\images\gift\decoration-flowers.png
 wwwroot\images\gift\decoration-geometric.png
 wwwroot\images\gift\decoration-hearts.png
-wwwroot\images\gift\general.jpg
-wwwroot\images\gift\graduation.jpg
-wwwroot\images\gift\wedding.jpg
+wwwroot\images\gift\decoration-none.png
+wwwroot\images\gift\general.png
+wwwroot\images\gift\graduation.png
+wwwroot\images\gift\wedding.png
 wwwroot\images\gift-box.png
 wwwroot\images\girlImg.png
 wwwroot\images\Group 82.png
 wwwroot\images\hero.png
 wwwroot\images\hero_1.jpg
+wwwroot\images\heroS.png
 wwwroot\images\homeAbout.jpeg
 wwwroot\images\img_v_1-min.jpg
 wwwroot\images\img_v_2-min.jpg
@@ -54,6 +62,7 @@ wwwroot\images\img_v_7-min.jpg
 wwwroot\images\img_v_8-min.jpg
 wwwroot\images\leftCircle.png
 wwwroot\images\logo.png
+wwwroot\images\logo11.png
 wwwroot\images\love-letter.png
 wwwroot\images\money.png
 wwwroot\images\news\news_638812908952968622.jpg
@@ -223,5 +232,7 @@ wwwroot\uploads\products\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg
 wwwroot\uploads\products\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg
 wwwroot\uploads\products\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg
 wwwroot\uploads\products\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg
-wwwroot\uploads\sponsors\8cebb86e-f8d2-47c6-b348-e96e1fe1655f_Almarai_Corporate_Logo.svg.png
+wwwroot\uploads\sponsors\13dd50dd-297a-4eab-9623-4b25a50b9c50_1683000849orange-telecom-logo.jpg
+wwwroot\uploads\sponsors\8ab248fc-9c0a-40fe-bc86-5287612f32bd_Aramex-logo.png
+wwwroot\uploads\sponsors\9fa75f13-d6f9-4388-8505-406bb38757a3_ArabBankLogo.png
 wwwroot\uploads\sponsors\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png

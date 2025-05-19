@@ -11,7 +11,7 @@
         <form action="/Donation/ProcessPayment" method="post" class="payment-form">
             <div class="form-group full-width">
                 <label for="cardNumber">رقم البطاقة <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i></label>
-                <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="xxxx xxxx xxxx xxxx" pattern="[0-9\s]{13,19}" required>
+                <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="19" required>
             </div>
 
             <div class="form-group full-width">
@@ -23,33 +23,12 @@
                 <label class="expiry-label">تاريخ انتهاء صلاحية البطاقة</label>
                 <div class="form-row">
                     <div class="form-group month">
-                        <select id="expiryMonth" name="expiryMonth" class="form-control" required>
-                            <option value="" disabled selected>الشهر</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                    </div>
-                    <div class="form-group year">
-                        <select id="expiryYear" name="expiryYear" class="form-control" required>
-                            <option value="" disabled selected>السنة</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                        </select>
+                        <input type="hidden" id="expiryMonth" name="expiryMonth" value="12">
+                        <input type="hidden" id="expiryYear" name="expiryYear" value="25">
+                        <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" maxlength="5" required>
                     </div>
                     <div class="form-group cvc">
-                        <input type="text" id="cvc" name="cvc" class="form-control" placeholder="الرمز السري" pattern="[0-9]{3,4}" required>
+                        <input type="text" id="cvc" name="cvc" class="form-control" placeholder="الرمز السري" maxlength="3" required>
                     </div>
                 </div>
             </div>
@@ -115,21 +94,88 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const cardNumberInput = document.getElementById('cardNumber');
+        cardNumberInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 16) {
+                value = value.substr(0, 16);
+            }
+            
+            let formattedValue = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += '-';
+                }
+                formattedValue += value[i];
+            }
+            
+            e.target.value = formattedValue;
+        });
+
+        const expiryDateInput = document.getElementById('expiryDate');
+        const expiryMonthInput = document.getElementById('expiryMonth');
+        const expiryYearInput = document.getElementById('expiryYear');
+        
+        expiryDateInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                let month = value.substring(0, 2);
+                if (month.length === 1) {
+                    e.target.value = month;
+                    return;
+                }
+                
+                if (month > 12) {
+                    month = '12';
+                } else if (month < 1) {
+                    month = '01';
+                }
+                
+                expiryMonthInput.value = month;
+                
+                if (value.length > 2) {
+                    let year = value.substring(2, 4);
+                    e.target.value = month + '/' + year;
+                    
+                    expiryYearInput.value = year;
+                } else {
+                    e.target.value = month;
+                }
+            }
+        });
+
+        const cvcInput = document.getElementById('cvc');
+        cvcInput.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
         const form = document.querySelector('form');
         form.addEventListener('submit', function (event) {
-            const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
-            if (cardNumber.length < 13 || cardNumber.length > 19) {
+            const cardNumber = cardNumberInput.value.replace(/\D/g, '');
+            if (cardNumber.length < 13 || cardNumber.length > 16) {
                 alert('الرجاء إدخال رقم بطاقة صحيح');
                 event.preventDefault();
                 return;
             }
 
-            const cvc = document.getElementById('cvc').value;
-            if (cvc.length < 3 || cvc.length > 4) {
-                alert('الرجاء إدخال رمز أمان صحيح');
+            const cvc = cvcInput.value;
+            if (cvc.length !== 3) {
+                alert('الرجاء إدخال رمز أمان صحيح (3 أرقام)');
                 event.preventDefault();
                 return;
             }
+            
+            const expiryDate = expiryDateInput.value;
+            if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+                alert('الرجاء إدخال تاريخ انتهاء صحيح بصيغة MM/YY');
+                event.preventDefault();
+                return;
+            }
+            
+            const [expMonth, expYear] = expiryDate.split('/');
+            expiryMonthInput.value = parseInt(expMonth, 10);
+            expiryYearInput.value = parseInt(expYear, 10);
         });
     });
 </script>

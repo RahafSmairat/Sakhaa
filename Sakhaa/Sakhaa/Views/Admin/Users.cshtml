@@ -27,7 +27,7 @@
                     <th>رقم الهاتف</th>
                     <th>الدولة</th>
                     <th>تاريخ التسجيل</th>
-                    <th>الإجراءات</th>
+                    @* <th>الإجراءات</th> *@
                 </tr>
             </thead>
             <tbody>
@@ -43,14 +43,14 @@
                             <td>@user.PhoneNumber</td>
                             <td>@user.Country</td>
                             <td>@(user.CreatedAt?.ToString("yyyy-MM-dd") ?? "-")</td>
-                            <td>
-                                <a href="/Admin/UserDetails/@user.Id" class="btn btn-sm btn-outline-primary me-1">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="@user.Id" data-name="@user.FirstName @user.LastName">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
+                            @* <td> *@
+                            @*     <a href="/Admin/UserDetails/@user.Id" class="btn btn-sm btn-outline-primary me-1"> *@
+                            @*         <i class="fa-solid fa-eye"></i> *@
+                            @*     </a> *@
+                            @*     <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="@user.Id" data-name="@user.FirstName @user.LastName"> *@
+                            @*         <i class="fa-solid fa-trash"></i> *@
+                            @*     </button> *@
+                            @* </td> *@
                         </tr>
                     }
                 }

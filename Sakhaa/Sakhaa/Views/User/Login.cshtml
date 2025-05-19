@@ -1,21 +1,226 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Login";
 }
 
-<div id="loginContainer" class="section">
+<style>
+    .input-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .validation-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: right;
+    display: none;
+    direction: rtl;
+    width: 80%;
+    max-width: 400px;
+    }
+
+    .input-container input.invalid + .validation-message {
+    display: block;
+    }
+
+    .input-container input {
+    width: 80%;
+    max-width: 490px;
+    }
+
+    #loginContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    }
+
+    #loginContainer a, 
+    #loginContainer button {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    }
+
+    .password-container {
+    position: relative;
+    width: 80%;
+    max-width: 490px;
+    }
+
+    .password-toggle {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    }
+
+    .btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+    }
+
+    .btn-loading:after {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-left: 8px;
+    }
+
+    @@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+</style>
+
+@section Scripts {
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const emailInput = document.querySelector('input[name="Email"]');
+    const passwordInput = document.querySelector('input[name="Password"]');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const loginForm = document.querySelector('form');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const passwordToggle = document.getElementById('password-toggle');
+
+    // Function to show custom error message
+    function showError(input, errorElement, message) {
+    errorElement.textContent = message;
+    input.classList.add('invalid');
+    errorElement.style.display = 'block';
+    }
+
+    // Function to hide error message
+    function hideError(input, errorElement) {
+    input.classList.remove('invalid');
+    errorElement.style.display = 'none';
+    }
+
+    // Email validation
+    emailInput.addEventListener('input', function() {
+    if (emailInput.validity.valid) {
+    hideError(emailInput, emailError);
+    } else {
+    if (emailInput.validity.valueMissing) {
+    showError(emailInput, emailError, 'الرجاء إدخال البريد الإلكتروني');
+    } else if (emailInput.validity.typeMismatch) {
+    showError(emailInput, emailError, 'الرجاء إدخال بريد إلكتروني صحيح');
+    }
+    }
+    });
+
+    // Password validation
+    passwordInput.addEventListener('input', function() {
+    if (passwordInput.validity.valid) {
+    hideError(passwordInput, passwordError);
+    } else {
+    if (passwordInput.validity.valueMissing) {
+    showError(passwordInput, passwordError, 'الرجاء إدخال كلمة السر');
+    }
+    }
+    });
+
+    // Toggle password visibility
+    passwordToggle.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    passwordToggle.textContent = 'إخفاء';
+    } else {
+    passwordInput.type = 'password';
+    passwordToggle.textContent = 'إظهار';
+    }
+    });
+
+    // Form submission validation
+    loginForm.addEventListener('submit', function(e) {
+    let isValid = true;
+
+    // Validate email
+    if (!emailInput.validity.valid) {
+    e.preventDefault();
+    isValid = false;
+    if (emailInput.validity.valueMissing) {
+    showError(emailInput, emailError, 'الرجاء إدخال البريد الإلكتروني');
+    } else if (emailInput.validity.typeMismatch) {
+    showError(emailInput, emailError, 'الرجاء إدخال بريد إلكتروني صحيح');
+    }
+    }
+
+    // Validate password
+    if (!passwordInput.validity.valid) {
+    e.preventDefault();
+    isValid = false;
+    if (passwordInput.validity.valueMissing) {
+    showError(passwordInput, passwordError, 'الرجاء إدخال كلمة السر');
+    }
+    }
+
+    // If form is valid, show loading state
+    if (isValid) {
+    submitButton.classList.add('btn-loading');
+    submitButton.textContent = 'جاري تسجيل الدخول...';
+    }
+
+    return isValid;
+    });
+
+    // Initial validation check on page load
+    if (emailInput.value) {
+    if (!emailInput.validity.valid) {
+    showError(emailInput, emailError, emailInput.validity.typeMismatch ? 
+    'الرجاء إدخال بريد إلكتروني صحيح' : 'الرجاء إدخال البريد الإلكتروني');
+    }
+    }
+
+    if (passwordInput.value) {
+    if (!passwordInput.validity.valid) {
+    showError(passwordInput, passwordError, 'الرجاء إدخال كلمة السر');
+    }
+    }
+    });
+</script>
+}
+
+<div id="loginContainer" class="section" style="min-height: 550px; height:auto">
     @if (ViewBag.Error != null)
     {
         <div class="alert alert-danger alert-dismissible fade show" role="alert" style="direction: rtl;">
             @ViewBag.Error <br />
-            <a href="#"><b>هل نسيت كلمة السر؟</b></a>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            @* <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> *@
         </div>
     }
     <h2>تسجيل الدخول</h2>
-    <form asp-action="Login" method="post">
-        <input type="text" placeholder="البريد الإلكتروني" name="Email">
-        <input type="password" placeholder="كلمة السر" name="Password">
+    <form asp-action="Login" method="post" novalidate>
+        <div class="input-container">
+            <input type="email" placeholder="البريد الإلكتروني" name="Email" required>
+            <div id="email-error" class="validation-message">الرجاء إدخال البريد الإلكتروني</div>
+        </div>
+
+        <div class="input-container">
+            <div class="password-container">
+                <input type="password" placeholder="كلمة السر" name="Password" required style="width:100%">
+                @* <button type="button" id="password-toggle" class="password-toggle">إظهار</button> *@
+            </div>
+            <div id="password-error" class="validation-message">الرجاء إدخال كلمة السر</div>
+        </div>
         <a asp-action="Signup" asp-controller="User">إنشاء حساب</a>
         <button type="submit">تسجيل الدخول</button>
     </form>

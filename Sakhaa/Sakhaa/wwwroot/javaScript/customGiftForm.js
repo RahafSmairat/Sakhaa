@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update occasion image
         const occasion = selectedOccasion.value;
-        document.getElementById("occasionImage").src = "/images/gift/" + occasion + ".jpg";
+        document.getElementById("occasionImage").src = "/images/gift/" + occasion + ".png";
         
         // Update text color
         const color = selectedColor.value;

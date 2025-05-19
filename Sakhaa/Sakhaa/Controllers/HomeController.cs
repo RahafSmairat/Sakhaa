@@ -32,7 +32,14 @@ public class HomeController : Controller
                                     .Take(3)
                                     .ToList();
         
+        var activeProjects = _context.Projects
+                                   .Where(p => p.IsActive == true)
+                                   .OrderByDescending(p => p.CreatedAt)
+                                   .Take(6)
+                                   .ToList();
+        
         ViewBag.LatestFeedbacks = latestFeedbacks;
+        ViewBag.ActiveProjects = activeProjects;
         
         return View(latestNews);
     }

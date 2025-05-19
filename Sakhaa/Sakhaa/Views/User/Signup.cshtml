@@ -1,6 +1,406 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Signup";
+}
+
+<style>
+    .input-container {
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .validation-message {
+        color: #dc3545;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        text-align: right;
+        display: none;
+        direction: rtl;
+        width: 80%;
+        max-width: 400px;
+    }
+    
+    .input-container input.invalid + .validation-message,
+    .input-container select.invalid + .validation-message {
+        display: block;
+    }
+    
+    .input-container input,
+    .input-container select {
+        width: 80%;
+        max-width: 490px;
+    }
+    
+    #signUpContainer form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #signUpContainer a, 
+    #signUpContainer button {
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+    }
+    
+    .password-container {
+        position: relative;
+        width: 80%;
+        max-width: 490px;
+    }
+    
+    .password-toggle {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        background: none;
+        border: none;
+        font-size: 1rem;
+    }
+    
+    .btn-loading {
+        position: relative;
+        pointer-events: none;
+        opacity: 0.8;
+    }
+    
+    .btn-loading:after {
+        content: "";
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        border-left-color: transparent;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+    
+    @@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const firstNameInput = document.querySelector('input[name="FirstName"]');
+            const lastNameInput = document.querySelector('input[name="LastName"]');
+            const emailInput = document.querySelector('input[name="Email"]');
+            const phoneInput = document.querySelector('input[name="PhoneNumber"]');
+            const countrySelect = document.querySelector('select[name="Country"]');
+            const passwordInput = document.querySelector('input[name="Password"]');
+            const confirmPasswordInput = document.querySelector('input[name="ConfirmPassword"]');
+            const submitButton = document.querySelector('button[type="submit"]');
+            const passwordToggle = document.getElementById('password-toggle');
+            const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
+            
+            const firstNameError = document.getElementById('firstName-error');
+            const lastNameError = document.getElementById('lastName-error');
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+            const countryError = document.getElementById('country-error');
+            const passwordError = document.getElementById('password-error');
+            const confirmPasswordError = document.getElementById('confirmPassword-error');
+            
+            // Function to show custom error message
+            function showError(input, errorElement, message) {
+                errorElement.textContent = message;
+                input.classList.add('invalid');
+                errorElement.style.display = 'block';
+            }
+            
+            // Function to hide error message
+            function hideError(input, errorElement) {
+                input.classList.remove('invalid');
+                errorElement.style.display = 'none';
+            }
+            
+            // Letters only regex pattern
+            const lettersOnlyPattern = /^[\u0600-\u06FFa-zA-Z\s]+$/;
+            
+            // First Name validation
+            firstNameInput.addEventListener('input', function() {
+                if (firstNameInput.validity.valid) {
+                    if (!lettersOnlyPattern.test(firstNameInput.value)) {
+                        showError(firstNameInput, firstNameError, 'الاسم الأول يجب أن يحتوي على أحرف فقط');
+                    } else {
+                        hideError(firstNameInput, firstNameError);
+                    }
+                } else {
+                    if (firstNameInput.validity.valueMissing) {
+                        showError(firstNameInput, firstNameError, 'الرجاء إدخال الاسم الأول');
+                    }
+                }
+            });
+            
+            // Last Name validation
+            lastNameInput.addEventListener('input', function() {
+                if (lastNameInput.validity.valid) {
+                    if (!lettersOnlyPattern.test(lastNameInput.value)) {
+                        showError(lastNameInput, lastNameError, 'الاسم الأخير يجب أن يحتوي على أحرف فقط');
+                    } else {
+                        hideError(lastNameInput, lastNameError);
+                    }
+                } else {
+                    if (lastNameInput.validity.valueMissing) {
+                        showError(lastNameInput, lastNameError, 'الرجاء إدخال الاسم الأخير');
+                    }
+                }
+            });
+            
+            // Email validation
+            emailInput.addEventListener('input', function() {
+                if (emailInput.validity.valid) {
+                    hideError(emailInput, emailError);
+                } else {
+                    if (emailInput.validity.valueMissing) {
+                        showError(emailInput, emailError, 'الرجاء إدخال البريد الإلكتروني');
+                    } else if (emailInput.validity.typeMismatch) {
+                        showError(emailInput, emailError, 'الرجاء إدخال بريد إلكتروني صحيح');
+                    }
+                }
+            });
+            
+            // Phone validation
+            phoneInput.addEventListener('input', function() {
+                if (phoneInput.validity.valid) {
+                    if (phoneInput.value.length !== 10) {
+                        showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يكون 10 أرقام');
+                    } else if (!/^\d+$/.test(phoneInput.value)) {
+                        showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يحتوي على أرقام فقط');
+                    } else {
+                        hideError(phoneInput, phoneError);
+                    }
+                } else {
+                    if (phoneInput.validity.valueMissing) {
+                        showError(phoneInput, phoneError, 'الرجاء إدخال رقم الهاتف');
+                    } else if (phoneInput.validity.tooShort) {
+                        showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يكون 10 أرقام');
+                    }
+                }
+            });
+            
+            // Country validation
+            countrySelect.addEventListener('change', function() {
+                if (countrySelect.validity.valid) {
+                    hideError(countrySelect, countryError);
+                } else {
+                    if (countrySelect.validity.valueMissing) {
+                        showError(countrySelect, countryError, 'الرجاء اختيار الدولة');
+                    }
+                }
+            });
+            
+            // Password validation
+            passwordInput.addEventListener('input', function() {
+                if (passwordInput.validity.valid) {
+                    hideError(passwordInput, passwordError);
+                } else {
+                    if (passwordInput.validity.valueMissing) {
+                        showError(passwordInput, passwordError, 'الرجاء إدخال كلمة السر');
+                    } else if (passwordInput.validity.tooShort) {
+                        showError(passwordInput, passwordError, 'كلمة السر يجب أن تكون 6 أحرف على الأقل');
+                    }
+                }
+                
+                // Check password confirmation
+                if (confirmPasswordInput.value && passwordInput.value !== confirmPasswordInput.value) {
+                    showError(confirmPasswordInput, confirmPasswordError, 'كلمة السر غير متطابقة');
+                } else if (confirmPasswordInput.value) {
+                    hideError(confirmPasswordInput, confirmPasswordError);
+                }
+            });
+            
+            // Confirm Password validation
+            confirmPasswordInput.addEventListener('input', function() {
+                if (confirmPasswordInput.validity.valid) {
+                    hideError(confirmPasswordInput, confirmPasswordError);
+                    
+                    // Check if passwords match
+                    if (passwordInput.value !== confirmPasswordInput.value) {
+                        showError(confirmPasswordInput, confirmPasswordError, 'كلمة السر غير متطابقة');
+                    }
+                } else {
+                    if (confirmPasswordInput.validity.valueMissing) {
+                        showError(confirmPasswordInput, confirmPasswordError, 'الرجاء تأكيد كلمة السر');
+                    }
+                }
+            });
+            
+            // Toggle password visibility
+            if (passwordToggle) {
+                passwordToggle.addEventListener('click', function() {
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        passwordToggle.textContent = 'إخفاء';
+                    } else {
+                        passwordInput.type = 'password';
+                        passwordToggle.textContent = 'إظهار';
+                    }
+                });
+            }
+            
+            // Toggle confirm password visibility
+            if (confirmPasswordToggle) {
+                confirmPasswordToggle.addEventListener('click', function() {
+                    if (confirmPasswordInput.type === 'password') {
+                        confirmPasswordInput.type = 'text';
+                        confirmPasswordToggle.textContent = 'إخفاء';
+                    } else {
+                        confirmPasswordInput.type = 'password';
+                        confirmPasswordToggle.textContent = 'إظهار';
+                    }
+                });
+            }
+            
+            // Form submission validation
+            form.addEventListener('submit', function(e) {
+                let isValid = true;
+                
+                // Validate all fields
+                if (!firstNameInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(firstNameInput, firstNameError, 'الرجاء إدخال الاسم الأول');
+                } else if (!lettersOnlyPattern.test(firstNameInput.value)) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(firstNameInput, firstNameError, 'الاسم الأول يجب أن يحتوي على أحرف فقط');
+                }
+                
+                if (!lastNameInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(lastNameInput, lastNameError, 'الرجاء إدخال الاسم الأخير');
+                } else if (!lettersOnlyPattern.test(lastNameInput.value)) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(lastNameInput, lastNameError, 'الاسم الأخير يجب أن يحتوي على أحرف فقط');
+                }
+                
+                if (!emailInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    if (emailInput.validity.valueMissing) {
+                        showError(emailInput, emailError, 'الرجاء إدخال البريد الإلكتروني');
+                    } else if (emailInput.validity.typeMismatch) {
+                        showError(emailInput, emailError, 'الرجاء إدخال بريد إلكتروني صحيح');
+                    }
+                }
+                
+                if (!phoneInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    if (phoneInput.validity.valueMissing) {
+                        showError(phoneInput, phoneError, 'الرجاء إدخال رقم الهاتف');
+                    } else if (phoneInput.validity.tooShort) {
+                        showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يكون 10 أرقام');
+                    }
+                } else if (phoneInput.value.length !== 10) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يكون 10 أرقام');
+                } else if (!/^\d+$/.test(phoneInput.value)) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يحتوي على أرقام فقط');
+                }
+                
+                if (!countrySelect.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(countrySelect, countryError, 'الرجاء اختيار الدولة');
+                }
+                
+                if (!passwordInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    if (passwordInput.validity.valueMissing) {
+                        showError(passwordInput, passwordError, 'الرجاء إدخال كلمة السر');
+                    } else if (passwordInput.validity.tooShort) {
+                        showError(passwordInput, passwordError, 'كلمة السر يجب أن تكون 6 أحرف على الأقل');
+                    }
+                }
+                
+                if (!confirmPasswordInput.validity.valid) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(confirmPasswordInput, confirmPasswordError, 'الرجاء تأكيد كلمة السر');
+                }
+                
+                // Check if passwords match
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    e.preventDefault();
+                    isValid = false;
+                    showError(confirmPasswordInput, confirmPasswordError, 'كلمة السر غير متطابقة');
+                }
+                
+                // If form is valid, show loading state
+                if (isValid) {
+                    submitButton.classList.add('btn-loading');
+                    submitButton.textContent = 'جاري التسجيل...';
+                }
+                
+                return isValid;
+            });
+            
+            // Initial validation check on page load
+            const inputs = [firstNameInput, lastNameInput, emailInput, phoneInput, passwordInput, confirmPasswordInput];
+            const errorElements = [firstNameError, lastNameError, emailError, phoneError, passwordError, confirmPasswordError];
+            const errorMessages = [
+                'الرجاء إدخال الاسم الأول',
+                'الرجاء إدخال الاسم الأخير',
+                'الرجاء إدخال البريد الإلكتروني',
+                'الرجاء إدخال رقم الهاتف',
+                'الرجاء إدخال كلمة السر',
+                'الرجاء تأكيد كلمة السر'
+            ];
+            
+            inputs.forEach((input, index) => {
+                if (input.value && !input.validity.valid) {
+                    showError(input, errorElements[index], errorMessages[index]);
+                }
+            });
+            
+            // Additional validation for first and last name
+            if (firstNameInput.value && !lettersOnlyPattern.test(firstNameInput.value)) {
+                showError(firstNameInput, firstNameError, 'الاسم الأول يجب أن يحتوي على أحرف فقط');
+            }
+            
+            if (lastNameInput.value && !lettersOnlyPattern.test(lastNameInput.value)) {
+                showError(lastNameInput, lastNameError, 'الاسم الأخير يجب أن يحتوي على أحرف فقط');
+            }
+            
+            // Additional validation for phone number
+            if (phoneInput.value && phoneInput.value.length !== 10) {
+                showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يكون 10 أرقام');
+            } else if (phoneInput.value && !/^\d+$/.test(phoneInput.value)) {
+                showError(phoneInput, phoneError, 'رقم الهاتف يجب أن يحتوي على أرقام فقط');
+            }
+            
+            if (countrySelect.value && !countrySelect.validity.valid) {
+                showError(countrySelect, countryError, 'الرجاء اختيار الدولة');
+            }
+            
+            // Check passwords match on page load
+            if (confirmPasswordInput.value && passwordInput.value !== confirmPasswordInput.value) {
+                showError(confirmPasswordInput, confirmPasswordError, 'كلمة السر غير متطابقة');
+            }
+        });
+    </script>
 }
 
 <div id="signUpContainer" class="section">
@@ -12,19 +412,53 @@
         </div>
     }
     <h2>إنشاء حساب</h2>
-    <form asp-action="Signup" method="post">
-        <input type="text" placeholder="الاسم الأول" name="FirstName">
-        <input type="text" placeholder="الاسم الأخير" name="LastName">
-        <input type="email" placeholder="البريد الإلكتروني" name="Email">
-        <input type="text" placeholder="رقم الهاتف" name="PhoneNumber">
-        <select name="Country">
-            <option disabled selected value="">الدولة</option>
-            <option>الأردن</option>
-        </select>
-        <input type="password" placeholder="كلمة السر" name="Password">
-        <input type="password" placeholder="تأكيد كلمة السر" name="ConfirmPassword">
+    <form asp-action="Signup" method="post" novalidate>
+        <div class="input-container">
+            <input type="text" placeholder="الاسم الأول" name="FirstName" required>
+            <div id="firstName-error" class="validation-message">الرجاء إدخال الاسم الأول</div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" placeholder="الاسم الأخير" name="LastName" required>
+            <div id="lastName-error" class="validation-message">الرجاء إدخال الاسم الأخير</div>
+        </div>
+        
+        <div class="input-container">
+            <input type="email" placeholder="البريد الإلكتروني" name="Email" required>
+            <div id="email-error" class="validation-message">الرجاء إدخال البريد الإلكتروني</div>
+        </div>
+        
+        <div class="input-container">
+            <input type="tel" placeholder="رقم الهاتف" name="PhoneNumber" required minlength="10" maxlength="10">
+            <div id="phone-error" class="validation-message">الرجاء إدخال رقم الهاتف</div>
+        </div>
+        
+        <div class="input-container">
+            <select name="Country" required>
+                <option disabled selected value="">الدولة</option>
+                <option>الأردن</option>
+            </select>
+            <div id="country-error" class="validation-message">الرجاء اختيار الدولة</div>
+        </div>
+        
+        <div class="input-container">
+            <div class="password-container">
+                <input type="password" placeholder="كلمة السر" name="Password" required minlength="6" style="width:100%">
+                @* <button type="button" id="password-toggle" class="password-toggle">إظهار</button> *@
+            </div>
+            <div id="password-error" class="validation-message">الرجاء إدخال كلمة السر</div>
+        </div>
+        
+        <div class="input-container">
+            <div class="password-container">
+                <input type="password" placeholder="تأكيد كلمة السر" name="ConfirmPassword" required style="width:100%">
+                @* <button type="button" id="confirm-password-toggle" class="password-toggle">إظهار</button> *@
+            </div>
+            <div id="confirmPassword-error" class="validation-message">الرجاء تأكيد كلمة السر</div>
+        </div>
+        
         <a asp-action="Login" asp-controller="User" style="color: #FAFAFA;">لديك حساب بالفعل؟</a>
-        <button type="submit">تسجيل</button>
+        <button type="submit" style="margin-top:1%">تسجيل</button>
     </form>
 </div>
 
