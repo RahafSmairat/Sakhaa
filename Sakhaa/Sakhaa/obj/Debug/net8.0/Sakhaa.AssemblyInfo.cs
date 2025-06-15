@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sakhaa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ab73140f7582f1f5d5fa997d8bacd225bbc0b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sakhaa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sakhaa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,3 +1,4 @@
+wwwroot\documents\beneficiaries\0910024f-f426-4c8e-adb8-8853cba0b5f3_73625c97-e769-4644-818d-aa5aecc8a32f.pdf
 wwwroot\documents\beneficiaries\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf
 wwwroot\documents\beneficiaries\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\4a0d205c-4cce-43e9-8100-8d1e2f6df94c_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
@@ -10,12 +11,14 @@ wwwroot\documents\beneficiaries\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsma
 wwwroot\documents\beneficiaries\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf
 wwwroot\documents\beneficiaries\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf
 wwwroot\documents\beneficiaries\8d505d1d-1828-4a78-98c5-4588b961f8d5_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf
+wwwroot\documents\beneficiaries\a3866226-f9b0-4e2e-99dc-8582dd9264df_73625c97-e769-4644-818d-aa5aecc8a32f.pdf
 wwwroot\documents\beneficiaries\a5f26260-9b75-4fdc-96bf-a2f7fa1418ef_تقرير أثر التبرع.pdf
 wwwroot\documents\beneficiaries\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf
 wwwroot\documents\beneficiaries\b029d15e-e3dd-4eef-a419-eb00be09514e_التقرير_السنوي_للتبرعات.pdf
 wwwroot\documents\beneficiaries\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\d1ca9af8-cc65-4361-99e0-1ef9bd68b01c_التقرير_السنوي_للتبرعات.pdf
+wwwroot\documents\beneficiaries\e687620b-8d80-4b09-b34d-869ab382c4fc_73625c97-e769-4644-818d-aa5aecc8a32f.pdf
 wwwroot\documents\beneficiaries\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf
 wwwroot\documents\beneficiaries\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf
 wwwroot\documents\beneficiaries\f95f186d-4168-4caa-bfa2-768b2940f921_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf

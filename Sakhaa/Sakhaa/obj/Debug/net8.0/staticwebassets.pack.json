@@ -1,959 +1,971 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sakhaa.bundle.scp.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sakhaa.bundle.scp.css",
       "PackagePath": "staticwebassets\\Sakhaa.6ru2w4op2n.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\0910024f-f426-4c8e-adb8-8853cba0b5f3_73625c97-e769-4644-818d-aa5aecc8a32f.pdf",
+      "PackagePath": "staticwebassets\\documents\\beneficiaries\\0910024f-f426-4c8e-adb8-8853cba0b5f3_73625c97-e769-4644-818d-aa5aecc8a32f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\1b01de88-83a9-41f0-94d2-bdd061be524e_مصدقة (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\43d3ed2c-3ecd-4b3b-b6d8-0e80af6f41dd_Firas Abu-Malloh - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\4a0d205c-4cce-43e9-8100-8d1e2f6df94c_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\4a0d205c-4cce-43e9-8100-8d1e2f6df94c_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\4a0d205c-4cce-43e9-8100-8d1e2f6df94c_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\4a80c430-19e3-4c2f-ae79-c207040080ab_Rahaf Alsmairat - Full Stack Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\50617244-c975-472d-860e-160c43ceadaf_Rahaf Alsmairat - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\50617244-c975-472d-860e-160c43ceadaf_Rahaf Alsmairat - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\50617244-c975-472d-860e-160c43ceadaf_Rahaf Alsmairat - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\64e400c3-3508-4b98-a288-734fe1e77965_مصدقة.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\66422e2c-45a1-4aef-900d-ea4e5f3aba6a_Rezume__1_ (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\6a1729ee-3ed7-4393-bca9-ed44cbe7962e_مصدقة (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsmairat - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsmairat - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\85083d67-a5f6-4b00-8e43-a08ddc7b1c1b_Rahaf Alsmairat - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\87a80085-a510-489f-9cff-430d9f03216f_CV Sample Template (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\8d38c6fb-f207-40a9-9182-afa2885d402c_مصدقة (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\8d505d1d-1828-4a78-98c5-4588b961f8d5_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\8d505d1d-1828-4a78-98c5-4588b961f8d5_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\8d505d1d-1828-4a78-98c5-4588b961f8d5_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\a5f26260-9b75-4fdc-96bf-a2f7fa1418ef_تقرير أثر التبرع.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\a3866226-f9b0-4e2e-99dc-8582dd9264df_73625c97-e769-4644-818d-aa5aecc8a32f.pdf",
+      "PackagePath": "staticwebassets\\documents\\beneficiaries\\a3866226-f9b0-4e2e-99dc-8582dd9264df_73625c97-e769-4644-818d-aa5aecc8a32f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\a5f26260-9b75-4fdc-96bf-a2f7fa1418ef_تقرير أثر التبرع.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\a5f26260-9b75-4fdc-96bf-a2f7fa1418ef_تقرير أثر التبرع.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\aa80fcf2-9a2e-4ae2-abf7-a50100dee4aa_مصدقة.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\b029d15e-e3dd-4eef-a419-eb00be09514e_التقرير_السنوي_للتبرعات.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\b029d15e-e3dd-4eef-a419-eb00be09514e_التقرير_السنوي_للتبرعات.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\b029d15e-e3dd-4eef-a419-eb00be09514e_التقرير_السنوي_للتبرعات.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\c12938e3-51eb-4604-bcf7-c46cc4ccb675_Firas Abu-Malloh - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\d046de09-2d09-4ba3-b35e-dba5b17daa7e_Rahaf Alsmairat - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\d1ca9af8-cc65-4361-99e0-1ef9bd68b01c_التقرير_السنوي_للتبرعات.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\d1ca9af8-cc65-4361-99e0-1ef9bd68b01c_التقرير_السنوي_للتبرعات.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\d1ca9af8-cc65-4361-99e0-1ef9bd68b01c_التقرير_السنوي_للتبرعات.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\e687620b-8d80-4b09-b34d-869ab382c4fc_73625c97-e769-4644-818d-aa5aecc8a32f.pdf",
+      "PackagePath": "staticwebassets\\documents\\beneficiaries\\e687620b-8d80-4b09-b34d-869ab382c4fc_73625c97-e769-4644-818d-aa5aecc8a32f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\eb2d9640-8fac-4ba7-a4e7-d68a2822c979_Firas Abu-Malloh - Full Stack Web Developer.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\f1df1a37-b2d4-4a47-9e94-6c0801980ea9_مصدقة (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\f95f186d-4168-4caa-bfa2-768b2940f921_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\beneficiaries\\f95f186d-4168-4caa-bfa2-768b2940f921_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
       "PackagePath": "staticwebassets\\documents\\beneficiaries\\f95f186d-4168-4caa-bfa2-768b2940f921_46b12ba9-7352-4f9f-bd8f-56266daced87.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\01d5da08-5284-4943-a863-7f7a2ea137fe.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\01d5da08-5284-4943-a863-7f7a2ea137fe.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\01d5da08-5284-4943-a863-7f7a2ea137fe.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\0673350f-4891-4da0-b842-e3d1a9f088de_تقرير أثر التبرع.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\0673350f-4891-4da0-b842-e3d1a9f088de_تقرير أثر التبرع.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\0673350f-4891-4da0-b842-e3d1a9f088de_تقرير أثر التبرع.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\46b12ba9-7352-4f9f-bd8f-56266daced87.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\46b12ba9-7352-4f9f-bd8f-56266daced87.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\73625c97-e769-4644-818d-aa5aecc8a32f.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\73625c97-e769-4644-818d-aa5aecc8a32f.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\73625c97-e769-4644-818d-aa5aecc8a32f.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\b84848a1-80b2-4a53-824c-999553c814cf_تقرير أثر التبرع.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\b84848a1-80b2-4a53-824c-999553c814cf_تقرير أثر التبرع.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\b84848a1-80b2-4a53-824c-999553c814cf_تقرير أثر التبرع.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\c6a93599-fef0-434a-9676-4bf3f48cc1b1_تقرير أثر التبرع.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\c6a93599-fef0-434a-9676-4bf3f48cc1b1_تقرير أثر التبرع.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\c6a93599-fef0-434a-9676-4bf3f48cc1b1_تقرير أثر التبرع.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\fdd49bba-26ae-4569-8cba-1142d91b2ee6_تقرير أثر التبرع.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\documents\\reports\\fdd49bba-26ae-4569-8cba-1142d91b2ee6_تقرير أثر التبرع.pdf",
       "PackagePath": "staticwebassets\\documents\\reports\\fdd49bba-26ae-4569-8cba-1142d91b2ee6_تقرير أثر التبرع.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg",
       "PackagePath": "staticwebassets\\images\\1ec72860-111c-4f66-a95b-1163f1c3a2ed_WhatsApp Image 2025-04-20 at 2.48.48 PM.jpeg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\Charity.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\Charity.jpg",
       "PackagePath": "staticwebassets\\images\\Charity.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\Group 82.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\Group 82.png",
       "PackagePath": "staticwebassets\\images\\Group 82.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg",
       "PackagePath": "staticwebassets\\images\\ab85e902-8678-4e04-ac8a-b97090b0c527_img_v_8-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG.png",
       "PackagePath": "staticwebassets\\images\\bodyBG.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG1.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\bodyBG1.png",
       "PackagePath": "staticwebassets\\images\\bodyBG1.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg",
       "PackagePath": "staticwebassets\\images\\ce1bae3e-807f-46d1-940e-37e97ee076eb_img_v_8-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg",
       "PackagePath": "staticwebassets\\images\\ce8e55f4-1aa4-46d4-91dc-736f077188a6_3-help.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\circle1.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\circle1.png",
       "PackagePath": "staticwebassets\\images\\circle1.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\deal (1).png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\deal (1).png",
       "PackagePath": "staticwebassets\\images\\deal (1).png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\generous 1.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\generous 1.png",
       "PackagePath": "staticwebassets\\images\\generous 1.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift-box.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift-box.png",
       "PackagePath": "staticwebassets\\images\\gift-box.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift.png",
       "PackagePath": "staticwebassets\\images\\gift.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\birthday.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\birthday.png",
       "PackagePath": "staticwebassets\\images\\gift\\birthday.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-flowers.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-flowers.png",
       "PackagePath": "staticwebassets\\images\\gift\\decoration-flowers.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-geometric.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-geometric.png",
       "PackagePath": "staticwebassets\\images\\gift\\decoration-geometric.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-hearts.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-hearts.png",
       "PackagePath": "staticwebassets\\images\\gift\\decoration-hearts.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-none.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\decoration-none.png",
       "PackagePath": "staticwebassets\\images\\gift\\decoration-none.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\general.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\general.png",
       "PackagePath": "staticwebassets\\images\\gift\\general.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\graduation.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\graduation.png",
       "PackagePath": "staticwebassets\\images\\gift\\graduation.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\wedding.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\gift\\wedding.png",
       "PackagePath": "staticwebassets\\images\\gift\\wedding.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\girlImg.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\girlImg.png",
       "PackagePath": "staticwebassets\\images\\girlImg.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero.png",
       "PackagePath": "staticwebassets\\images\\hero.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\heroS.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\heroS.png",
       "PackagePath": "staticwebassets\\images\\heroS.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero_1.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\hero_1.jpg",
       "PackagePath": "staticwebassets\\images\\hero_1.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\homeAbout.jpeg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\homeAbout.jpeg",
       "PackagePath": "staticwebassets\\images\\homeAbout.jpeg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_1-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_1-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_1-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_2-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_2-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_2-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_4-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_4-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_4-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_5-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_5-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_5-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_6-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_6-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_6-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_7-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_7-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_7-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_8-min.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\img_v_8-min.jpg",
       "PackagePath": "staticwebassets\\images\\img_v_8-min.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\leftCircle.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\leftCircle.png",
       "PackagePath": "staticwebassets\\images\\leftCircle.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\logo.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\logo11.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\logo11.png",
       "PackagePath": "staticwebassets\\images\\logo11.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\love-letter.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\love-letter.png",
       "PackagePath": "staticwebassets\\images\\love-letter.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\money.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\money.png",
       "PackagePath": "staticwebassets\\images\\money.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812908952968622.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812908952968622.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812908952968622.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926223390968.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926223390968.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812926223390968.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926401261562.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926401261562.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812926401261562.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926544421351.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926544421351.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812926544421351.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926907847900.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812926907847900.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812926907847900.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812927228841485.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\news\\news_638812927228841485.jpg",
       "PackagePath": "staticwebassets\\images\\news\\news_638812927228841485.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\pragrams.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\pragrams.png",
       "PackagePath": "staticwebassets\\images\\pragrams.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program1.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program1.png",
       "PackagePath": "staticwebassets\\images\\program1.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program3.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program3.png",
       "PackagePath": "staticwebassets\\images\\program3.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program4.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program4.png",
       "PackagePath": "staticwebassets\\images\\program4.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812993373130868.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812993373130868.png",
       "PackagePath": "staticwebassets\\images\\program_638812993373130868.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812994270576387.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812994270576387.png",
       "PackagePath": "staticwebassets\\images\\program_638812994270576387.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812995451188517.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812995451188517.png",
       "PackagePath": "staticwebassets\\images\\program_638812995451188517.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812996022859181.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812996022859181.png",
       "PackagePath": "staticwebassets\\images\\program_638812996022859181.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812996905375387.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\program_638812996905375387.png",
       "PackagePath": "staticwebassets\\images\\program_638812996905375387.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821470968328545.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821470968328545.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821470968328545.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821471229489525.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821471229489525.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821471229489525.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821472058942662.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821472058942662.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821472058942662.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821480858452327.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821480858452327.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821480858452327.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821508835745124.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821508835745124.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821508835745124.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821510073553058.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\project_638821510073553058.jpg",
       "PackagePath": "staticwebassets\\images\\project_638821510073553058.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\rightCircle.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\rightCircle.png",
       "PackagePath": "staticwebassets\\images\\rightCircle.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\self-love (1).png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\self-love (1).png",
       "PackagePath": "staticwebassets\\images\\self-love (1).png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg1.jpeg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg1.jpeg",
       "PackagePath": "staticwebassets\\images\\statisticsImg1.jpeg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg2.jpeg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg2.jpeg",
       "PackagePath": "staticwebassets\\images\\statisticsImg2.jpeg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg3.jpeg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\statisticsImg3.jpeg",
       "PackagePath": "staticwebassets\\images\\statisticsImg3.jpeg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\stories\\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\stories\\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg",
       "PackagePath": "staticwebassets\\images\\stories\\5b282f4c-dae6-40fd-a54d-f1f2a25d447b_istockphoto-1439973042-612x612.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\successStories.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\successStories.png",
       "PackagePath": "staticwebassets\\images\\successStories.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\images\\sustainable 1.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\images\\sustainable 1.png",
       "PackagePath": "staticwebassets\\images\\sustainable 1.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\about.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\about.js",
       "PackagePath": "staticwebassets\\javaScript\\about.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\admin.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\admin.js",
       "PackagePath": "staticwebassets\\javaScript\\admin.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\customGiftForm.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\customGiftForm.js",
       "PackagePath": "staticwebassets\\javaScript\\customGiftForm.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\giftForm.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\giftForm.js",
       "PackagePath": "staticwebassets\\javaScript\\giftForm.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\home.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\home.js",
       "PackagePath": "staticwebassets\\javaScript\\home.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\navAndFooterFetch.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\navAndFooterFetch.js",
       "PackagePath": "staticwebassets\\javaScript\\navAndFooterFetch.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\payment.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\javaScript\\payment.js",
       "PackagePath": "staticwebassets\\javaScript\\payment.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2 (1).pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2 (1).pdf",
       "PackagePath": "staticwebassets\\publicReports\\Angular Part#2 (1).pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2.pdf",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\publicReports\\Angular Part#2.pdf",
       "PackagePath": "staticwebassets\\publicReports\\Angular Part#2.pdf"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css",
       "PackagePath": "staticwebassets\\styles\\about.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.css.map",
       "PackagePath": "staticwebassets\\styles\\about.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\about.scss",
       "PackagePath": "staticwebassets\\styles\\about.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.css",
       "PackagePath": "staticwebassets\\styles\\admin.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.min.css",
       "PackagePath": "staticwebassets\\styles\\admin.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\admin.scss",
       "PackagePath": "staticwebassets\\styles\\admin.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css",
       "PackagePath": "staticwebassets\\styles\\contact.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.css.map",
       "PackagePath": "staticwebassets\\styles\\contact.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\contact.scss",
       "PackagePath": "staticwebassets\\styles\\contact.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\customGiftForm.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\customGiftForm.css",
       "PackagePath": "staticwebassets\\styles\\customGiftForm.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css",
       "PackagePath": "staticwebassets\\styles\\donationInfo.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.css.map",
       "PackagePath": "staticwebassets\\styles\\donationInfo.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\donationInfo.scss",
       "PackagePath": "staticwebassets\\styles\\donationInfo.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\footer.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\footer.css",
       "PackagePath": "staticwebassets\\styles\\footer.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css",
       "PackagePath": "staticwebassets\\styles\\giftForm.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.css.map",
       "PackagePath": "staticwebassets\\styles\\giftForm.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\giftForm.scss",
       "PackagePath": "staticwebassets\\styles\\giftForm.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css",
       "PackagePath": "staticwebassets\\styles\\home.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.css.map",
       "PackagePath": "staticwebassets\\styles\\home.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\home.scss",
       "PackagePath": "staticwebassets\\styles\\home.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css",
       "PackagePath": "staticwebassets\\styles\\login.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.css.map",
       "PackagePath": "staticwebassets\\styles\\login.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\login.scss",
       "PackagePath": "staticwebassets\\styles\\login.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css",
       "PackagePath": "staticwebassets\\styles\\navbar.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.css.map",
       "PackagePath": "staticwebassets\\styles\\navbar.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\navbar.scss",
       "PackagePath": "staticwebassets\\styles\\navbar.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css",
       "PackagePath": "staticwebassets\\styles\\payment.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.css.map",
       "PackagePath": "staticwebassets\\styles\\payment.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\payment.scss",
       "PackagePath": "staticwebassets\\styles\\payment.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css",
       "PackagePath": "staticwebassets\\styles\\profile.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.css.map",
       "PackagePath": "staticwebassets\\styles\\profile.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.min.css",
       "PackagePath": "staticwebassets\\styles\\profile.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\profile.scss",
       "PackagePath": "staticwebassets\\styles\\profile.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css",
       "PackagePath": "staticwebassets\\styles\\programs.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.css.map",
       "PackagePath": "staticwebassets\\styles\\programs.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programs.scss",
       "PackagePath": "staticwebassets\\styles\\programs.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css",
       "PackagePath": "staticwebassets\\styles\\programsDetails.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.css.map",
       "PackagePath": "staticwebassets\\styles\\programsDetails.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\programsDetails.scss",
       "PackagePath": "staticwebassets\\styles\\programsDetails.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css",
       "PackagePath": "staticwebassets\\styles\\reports.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.css.map",
       "PackagePath": "staticwebassets\\styles\\reports.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.min.css",
       "PackagePath": "staticwebassets\\styles\\reports.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\reports.scss",
       "PackagePath": "staticwebassets\\styles\\reports.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\shop-rtl.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\shop-rtl.css",
       "PackagePath": "staticwebassets\\styles\\shop-rtl.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css",
       "PackagePath": "staticwebassets\\styles\\signUp.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.css.map",
       "PackagePath": "staticwebassets\\styles\\signUp.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\signUp.scss",
       "PackagePath": "staticwebassets\\styles\\signUp.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\styles.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\styles.css",
       "PackagePath": "staticwebassets\\styles\\styles.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css",
       "PackagePath": "staticwebassets\\styles\\successStories.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.css.map",
       "PackagePath": "staticwebassets\\styles\\successStories.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.min.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.min.css",
       "PackagePath": "staticwebassets\\styles\\successStories.min.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\successStories.scss",
       "PackagePath": "staticwebassets\\styles\\successStories.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css",
       "PackagePath": "staticwebassets\\styles\\variables.css"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css.map",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.css.map",
       "PackagePath": "staticwebassets\\styles\\variables.css.map"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.scss",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\styles\\variables.scss",
       "PackagePath": "staticwebassets\\styles\\variables.scss"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\08a92a64-012a-472c-8c9f-7578937ee9a4_How to Make Plant-Based Soap_ Melt-and-Pour Vegan Soap Made Easy -.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\0b8b65ce-771f-46f8-9bb2-8898ee556759_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\4c3d349d-7281-4ff1-8585-92f12381da40_download (6).jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\4f935947-de7c-4cdb-8712-727b87e0df29_Lavender Soap DIY Recipe - It All Started With Paint.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\51aabb52-f445-4e4f-a61e-dbe1398affab_20 Latest Crochet Flower Bookmark Ideas To Try In 2025! - Ask Bart (1).jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\521fa840-7c5e-4b1b-a688-889926def198_20 Latest Crochet Bookmark Ideas To Try In 2025! - Ask Bart.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut & Shea Butter Natural Soap - Organic Coconut & Shea Butter.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut & Shea Butter Natural Soap - Organic Coconut & Shea Butter.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\83f36b61-d9cf-44ab-935e-45ba722aaa5d_Coconut & Shea Butter Natural Soap - Organic Coconut & Shea Butter.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8dd552e8-df16-4e1e-adb6-4274e3cb3ba4_Spring Blossom Crochet Keychain Pattern.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\a01c0065-d82c-4d28-ae55-3c86e7951637_DIY Honey Almond Soap with Wheatgerm.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\aadc1156-46a9-4850-962e-b58232db9881_Crochet Bow Keychain craft idea made by me !.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b368058c-a0f3-4c41-857d-4ea2811be2a9_Crochet Bookmark, Multi Colored Bookmark, Tasseled Bookmark, Book Club Bookmarks, Book Club Accessories, Student's Planner Bookmark.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b368901e-9d60-421f-94df-471870964c52_spring candles.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\baebf3a5-1578-4507-a27a-be1af2025aa4_20 Latest Crochet Heart Ideas To Try In 2025! - Ask Bart.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\baf3886e-de71-4bf5-95fd-799dada9ff36_not mine.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c0023eea-be3d-4ba0-ac93-9a22adf8213e_download (7).jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\e2c7150d-4605-472f-a652-f48a8eee15ce_download (8).jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\products\\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\f500a12f-f1c6-4dea-aa13-e7f76544ff00_download (4).jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\13dd50dd-297a-4eab-9623-4b25a50b9c50_1683000849orange-telecom-logo.jpg",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\13dd50dd-297a-4eab-9623-4b25a50b9c50_1683000849orange-telecom-logo.jpg",
       "PackagePath": "staticwebassets\\uploads\\sponsors\\13dd50dd-297a-4eab-9623-4b25a50b9c50_1683000849orange-telecom-logo.jpg"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\8ab248fc-9c0a-40fe-bc86-5287612f32bd_Aramex-logo.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\8ab248fc-9c0a-40fe-bc86-5287612f32bd_Aramex-logo.png",
       "PackagePath": "staticwebassets\\uploads\\sponsors\\8ab248fc-9c0a-40fe-bc86-5287612f32bd_Aramex-logo.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\9fa75f13-d6f9-4388-8505-406bb38757a3_ArabBankLogo.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\9fa75f13-d6f9-4388-8505-406bb38757a3_ArabBankLogo.png",
       "PackagePath": "staticwebassets\\uploads\\sponsors\\9fa75f13-d6f9-4388-8505-406bb38757a3_ArabBankLogo.png"
     },
     {
-      "Id": "C:\\Users\\Orange\\Downloads\\Sakhaa MP Project\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png",
+      "Id": "C:\\Users\\Orange\\Desktop\\Sakhaa\\Sakhaa\\Sakhaa\\wwwroot\\uploads\\sponsors\\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png",
       "PackagePath": "staticwebassets\\uploads\\sponsors\\bdd827fc-32a5-4360-be32-097bc4efcf69_JoPlastlogo.png"
     },
     {
